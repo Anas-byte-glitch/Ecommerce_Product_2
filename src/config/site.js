@@ -14,6 +14,8 @@ export const site = {
   // Cart placeholders (USD): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,
+  // Order numbers look like "GLN-4K7Q2M" (demo checkout).
+  orderPrefix: 'GLN',
   // Optional background video for the home "About Us" block (muted, looping). Empty = poster only.
   homeVideoSrc: '',
   // Dark button under the footer tagline (stands in for the reference's "Buy template").
