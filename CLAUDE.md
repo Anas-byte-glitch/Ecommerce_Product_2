@@ -10,11 +10,10 @@ template's images, video, text assets, payment logos, author contact details, th
 The build is split into 9 phases; each phase runs in a fresh session.
 Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 
-> **Status:** Phase 1 is done and verified (2026-10-01): dependencies installed and
-> `package-lock.json` committed; `npm run build` and `npm run lint` are clean; every route
-> was tested in the dev server; Navbar, mobile menu and Footer were measured against the
-> reference at 1440/1000/390 and match except for the intentional omissions listed in
-> `docs/DESIGN_NOTES.md` §14. Next: Phase 2. Start each session with `npm install`.
+> **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
+> are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
+> (identical page heights, every text/link/button box within 0.6px; differences listed in
+> `docs/DESIGN_NOTES.md` §17). Next: Phase 3. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -30,8 +29,10 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 - zustand (+ `persist`) for wishlist / cart
 - lucide-react icons — reference uses Phosphor **bold**; use lucide `Search`, `Heart`,
   `ShoppingCart`, `Menu`, `X` with `strokeWidth={2.25}` (= Phosphor bold), see DESIGN_NOTES §9
-- Fonts: Switzer (self-hosted woff2 in `src/assets/fonts`, Fontshare ITF FFL) and
-  Inter (`@fontsource/inter` 400/700), `font-display: swap`
+- Fonts: Switzer (Fontshare ITF FFL) and Inter 4.000 (OFL, the reference's own build — not
+  @fontsource, which renders ~1.6% wider), both self-hosted woff2 in `src/assets/fonts`,
+  `font-display: swap`. Inter body text uses the reference's `cv03 cv04 cv09 cv11` features
+  (built into `type-body` / `type-body-lg`).
 
 Scripts: `npm run dev` · `npm run build` · `npm run lint` · `npm run preview`.
 Lint = ESLint 9 flat config with `@eslint/js`, `eslint-plugin-react` (recommended +
@@ -41,21 +42,25 @@ jsx-runtime, `react/prop-types` off), `eslint-plugin-react-hooks` and
 ## Folder structure
 ```
 src/
-  config/site.js          brand name, wordmark split, tagline, instagram, payments, nav + footer links
+  config/site.js          brand name, wordmark split, tagline, instagram, payments, nav + footer links,
+                          showPrices (card price row), homeVideoSrc (optional About-block video)
   data/                   products, categories, collections, journals, faqs, testimonials, customers
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
-    ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder
-                          (to add: Accordion, Reveal, Drawer, SectionHeader)
-    product/              ProductCard, ProductGrid, ProductSlider (later phases)
-    home/                 home page sections (later)
+    ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
+                          Reveal, TextReveal, SectionHeader, Marquee, MediaBanner
+                          (to add: Accordion, Drawer)
+    product/              ProductCard, FavouriteButton, ProductGrid
+    home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
+    shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter —
+                          used above the footer on most pages (table in docs/SITE_MAP.md)
     journal/              JournalCard … (later)
   pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites,
                           About, Contact, Journals, JournalArticle, Legal, NotFound
   store/                  wishlistStore, cartStore, uiStore
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
   assets/fonts/           Switzer woff2
-  utils/                  formatPrice, cn, useNavOverHero
+  utils/                  formatPrice, cn, useNavOverHero, motion (appear/word-effect settings)
 docs/                     SITE_MAP.md, DESIGN_NOTES.md
 ```
 
@@ -86,6 +91,25 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
   so their box is exactly one line-height tall, like the reference.
 - Elements whose text must render like the reference in Chromium need a compositing layer
   (`will-change-transform` or a motion wrapper) — see DESIGN_NOTES §2.
+- **Motion:** use `<Reveal>` for the reference's opacity appear (spring 1.5s, delay 0.2, at 50%
+  visibility, once) and `<TextReveal text=… as=…>` for headings (per-word blur/fade/slide;
+  `onMount` for heroes). Both render static content under `prefers-reduced-motion`; so does
+  `<Marquee>` (speed / hoverSpeed in px/s, `inert` duplicate copies). Read timings from the
+  reference page data, see DESIGN_NOTES §13/§15.
+- Section headings: `<SectionHeader eyebrow title action? align?>` (display size, balanced
+  wrapping, h2). Product lists: `<ProductGrid products columns?>` → `<ProductCard>`
+  (fixed 440px / 200px image box, heart wired to the wishlist, price row = `site.showPrices`).
+  Look products up with `getProductsBySlugs(slugs)`.
+- Image overlays: `bg-fade-up` (the template's eased black-from-bottom gradient), `bg-hero-fade`,
+  `bg-card-fade`. Image placeholders live in `placeholders` (`heroWide`, `bannerWide`,
+  `promoTall`, `genderWomen/Men`, `portrait`, …).
+- Page content that should rasterize text like the reference sits in a wrapper with
+  `will-change-transform` (Home does this below its fixed hero; don't put it on an ancestor
+  of a `position: fixed` element).
+- Shared sections go directly above the footer in the order ContinueJourney →
+  FeaturedCustomers → Newsletter (they carry their own `bg-white`/padding; ContinueJourney has
+  no top padding by design).
+- Compare against the reference with `site.showPrices = false` (the reference shows no prices).
 - Commit in small, meaningful steps; keep `npm run build` and `npm run lint` clean.
 
 ## Reference URLs
@@ -127,3 +151,11 @@ table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScal
 - Payment badges are neutral SVG text pills with the reference logos' widths, 15.2px tall.
 - Mobile-menu headings replicate the reference: "Navigation" Switzer 500, "Pages"/"Others"
   Inter 400 20/24 (`type-menu-heading`).
+
+## Known gaps / decisions (Phase 2, verified)
+- Home hero is `position: fixed` with a 100vh spacer; the rest of Home is a positioned white
+  wrapper that scrolls over it (as on the reference).
+- Gender cards: whole card links (reference ≥810 links only its "Shop Now" button).
+- Tickers are not draggable (reference: draggable) and pause while focused.
+- Product card price row (`site.showPrices`, default true) is a deliberate addition.
+- The home navbar fade-in (reference: 1s, delay 0.8) is not built.

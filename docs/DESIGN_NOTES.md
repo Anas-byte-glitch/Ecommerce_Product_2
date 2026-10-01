@@ -35,10 +35,18 @@ The default Tailwind `sm` / `xl` / `2xl` breakpoints are removed in `index.css`.
 | Family | Source | Weights used |
 |---|---|---|
 | **Switzer** (Fontshare, ITF Free Font License) | self-hosted woff2 in `src/assets/fonts/` | 400, 400 italic, 500, 600 |
-| **Inter** (Google / OFL) | `@fontsource/inter` | 400, 700 |
+| **Inter** 4.000 (OFL) | self-hosted woff2 in `src/assets/fonts/` (the build the reference serves; latin + latin-ext) | 400, 700 |
 
 Switzer = headings, nav, buttons, labels, wordmark. Inter = body copy / paragraphs.
 Fallback: `"Switzer", "Inter", ui-sans-serif, system-ui, sans-serif`.
+
+**Inter (Phase 2):** `@fontsource/inter` ships Inter 4.001, which sets text ~1.6% wider than the
+4.000 build Framer serves (hero subheading on one line: 954.0 vs 939.0px). We now self-host the
+reference's own latin / latin-ext 400 + 700 files. The reference's paragraph presets also enable
+`font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11"` (cv11 = single-storey *a*);
+`type-body` / `type-body-lg` apply them via `--inter-features`. With both, Inter line widths match
+the reference exactly (476.81 / 462.31px for the two hero subheading lines). Switzer has none of
+these features, so the setting is a no-op there.
 
 Our four Switzer woff2 files are **byte-identical** to the ones the reference serves
 (Switzer 1.200, unhinted TrueType). The reference also loads 500 italic / 700 / 700 italic
@@ -126,7 +134,7 @@ All buttons: square corners, `padding: 12px 32px`, height 50px, label Switzer 50
 
 Hover: not fully measurable (pill shapes unchanged); use a subtle opacity/colour shift
 (`opacity: .85`, 300 ms) _(estimate)_. Hero CTA "Shop New Arrivals" is 460px wide
-(desktop); "Show All" is content width (160px).
+(desktop, `max-width`); "Show All" is a **fixed 160px** wide (label 73.8 + padding would be 137.8).
 
 ## 8. Badges
 
@@ -238,7 +246,8 @@ Collection" (dark) and "Women's Collection" (light grey). Both buttons are inert
 
 `<footer>` bg `#FFFFFF`. Inner column: padding `32px` (desktop), `24px 24px 32px` (tablet),
 `24px 16px` (phone); `gap: 56px` between top row and brand row. No copyright line,
-no top border. Footer height: **510.4 / 424 / 848.8** at 1440 / 1000 / 390 (ours identical).
+no top border. Footer height: **510.4 / 424 / 848.8** at 1440 / 1000 / 390 (ours identical). The footer has
+`overflow: clip` (the 238px wordmark's glyph box would otherwise extend the page by 19px).
 
 ### Desktop
 - **Top row** (`justify-between`, `align-items: flex-start`, height 200):
@@ -277,16 +286,30 @@ the same widths, all 15.2px tall (Switzer 500 8.5px), labels "Card", "Bank", "Pa
 "Wallet", "Cash" (`site.payments`; the 3rd is the widest slot). Slot x-positions match the
 reference exactly.
 
-## 11. Product card (measured, for later phases)
+## 11. Product card (measured on home, Phase 2 — `ProductCard.jsx`)
 
-- Link wraps card; `gap: 12px` image→info.
-- Image box 448×440 at desktop (aspect **448 / 440 ≈ 1.018**), bg `#E8E8E8`,
-  `object-fit: cover`, overflow clip; second image fades in on hover (opacity 0→1).
-- Top overlay 12px inset: badge left, favourite button right (34×34 white circle,
-  heart icon). Clicking increments the navbar heart counter (persisted in
-  `localStorage.favorites`).
-- Info row padding `0 8px`: title h6 Switzer 400 20/26 `#222` left; category label
-  12px right. **No price displayed** (reference prices come from Shopify).
+Two Framer variants: **Desktop** (used at ≥810, also on tablet) and **Mobile** (≤809).
+
+| | Desktop / Tablet | Phone |
+|---|---|---|
+| Card | link, column, gap 12 | same |
+| Image box | **fixed height 440px**, width = column (448 @1440, 468 @1000, 350 in New Arrivals) | fixed **200px** tall (171 wide @390) |
+| Top overlay | inset 12px, 34px row: badge left, heart right | heart only (badge hidden) |
+| Info | row `justify-between`, padding 0 8; Meta column (max-w 220, gap 8): title h6 20/26 + price row (0px tall on the reference); category label 12px right-aligned, top-aligned | column, gap 4, padding 0 8: category label first, then title 17.6/22.88 (wraps at 155px) + price row |
+| Height (no price) | 440 + 12 + 34 = **486** | 200 + 12 + 14.4 + 4 + title + 8 = 261.28 (1-line) / 284.16 (2-line) |
+
+- Images: `object-fit: cover`, bg `#E8E8E8`. Hover: primary image fades out while the second
+  fades in, **0.5s tween, ease `cubic-bezier(0, .28, .45, 1.01)`** (`ease-card`).
+- Badge: see §8 (white, 8×16 padding → 104.9×30.4 for "Best Sellers").
+- Favourite button: 34px white circle, 18px **Phosphor Heart regular** (stroke 16/256 → lucide
+  `strokeWidth={1.5}`), colour ink. Hover → filled ink heart. Saved → filled **accent** heart
+  (hover: ink). It sits inside the card link; clicking toggles the wishlist (reference stores
+  `localStorage.favorites`; ours `useWishlistStore`) and does not navigate.
+- **Deviation — price:** the reference shows no price (Shopify is blocked/empty: the price row is
+  0px tall). Ours renders `formatPrice(price)` (+ struck compare-at price) in that row when
+  `site.showPrices` is true (default). With `showPrices: false` the card is pixel-identical in
+  size (an empty 0px row keeps the 8px gap). All height comparisons were done with it off.
+- Cards fade in (opacity, see §13) when half visible.
 
 ## 12. Image aspect ratios (placeholders)
 
@@ -299,15 +322,20 @@ reference exactly.
 | Journal featured card | 664×480 | 1.383 : 1 |
 | Journal card | 448×416 | 1.077 : 1 |
 | Collection tiles | 960×500, 400×500, 680×500, 1376×800 | mixed bento |
-| Hero | full-bleed 100vw × 100vh | cover |
+| Hero | full-bleed 100vw × 100vh | cover (reference photo 16:9) |
+| Icons banner (best sellers) | 912×439 / 952×398 / 358×460 | 16:9 photo, cover |
+| Promo card (new arrivals) | 644×966 / 952×466 / 358×460 | 2:3 photo, cover |
+| Gender cards | 720×800 / 1000×800 / 390×460 | 7:8 photo, cover |
+| Customer cards | 250×300 | 5:6 |
+| About video / newsletter | 100vw × 100vh | 16:9, cover |
 
 ## 13. Motion / misc
 
-- Smooth scrolling via Lenis on the reference (consider later; not required).
-- Headings animate in word-by-word (opacity) — `Reveal` component in later phases.
-- Product card hover: image cross-fade.
-- The footer (and most sections) fade/slide in when scrolled into view (Framer appear
-  effect, `animateOnce`, threshold 0.5) — not built yet; the footer is static in Phase 1.
+- Smooth scrolling via Lenis on the reference (not replicated).
+- All appear effects are read from the page data (`__framer__appearAnimationsContent` and the
+  page module's `__framer__*` / text `effect` props). Details in §15. All of ours honour
+  `prefers-reduced-motion` (static content, no ticker movement).
+- The footer has no appear effect on the reference's home page.
 
 ## 14. Phase 1 verification results (2026-10-01)
 
@@ -334,3 +362,143 @@ button, "Supported Payments" title, payment slot and wordmark position/size/type
 **Not verifiable here:** the reference icon glyphs as rendered (framer.com blocked — names,
 weight and colours come from the page modules instead); hover transition timings; the search
 and cart drawers' behaviour with real products (Shopify blocked).
+
+## 15. Home page (Phase 2, measured 2026-10-01)
+
+Page height **9102.2 / 10840 / 9520** at 1440 / 1000 / 390 (900 tall viewport) — ours identical.
+Order: Hero (fixed) → Best Sellers (+ Icons banner) → For Everyone → Features ticker →
+New Arrivals (+ promo) → About Us media block → Continue Your Journey → Featured Customers →
+Newsletter → Footer. Section headings everywhere use the **display** size (80/88 · 64/70.4 ·
+40/44, `type-display`) with `text-wrap: balance`; eyebrow → heading gap 16.
+
+### Appear effects (page data)
+| What | Effect |
+|---|---|
+| Hero image | opacity 0→1 + scale 1.1→1, delay 0.2, 1.2s, ease `[.22, 1, .36, 1]`, on load |
+| Hero eyebrow / subheading / CTA | opacity 0→1, spring bounce 0 1.5s, delays **0.3 / 0.7 / 0.9**, on load |
+| Hero headings (both) | per **word**: from `blur(10px)`, opacity 0, y 10 → rest; spring bounce 0 1.5s; start 0.5s, +0.05s per word; on load |
+| Section headings | same word effect, start 0.2s, trigger in view (threshold 0), once |
+| Eyebrows, Show All, cards, banners | opacity 0→1, spring bounce 0 1.5s, delay 0.2, when 50% visible, once (`Reveal`) |
+| Navbar (home only) | opacity 0→1, 1s linear, delay 0.8 — **not built** (shared Layout) |
+
+### Hero (`HomeHero.jsx`)
+- `position: fixed; height: 100vh; z-index` low — the rest of the page (white, positioned)
+  scrolls **over** it; a 100vh spacer keeps the flow (the reference's "Transparent Stack").
+- Padding 140/32/56 · 120/24/48 · 120/16/32. Content column `justify-between`.
+- Image overlay: `linear-gradient(180deg, #000 -30%, transparent 41%, #000 100%)` (`bg-hero-fade`).
+- Top: eyebrow (mist) + h1 "Beyond Ordinary Elegance", max-w 640, gap 8.
+- **"Crafted For Legacy"** is the hero's second display heading, not a separate band/marquee:
+  desktop bottom-right (max-w 481, right-aligned, y=668 @1440), tablet right column (444 wide,
+  right-aligned), phone **above** the subheading (left-aligned, y=669.3 @390).
+- Bottom row: desktop `justify-between`; tablet two 444px columns with 64px gap; phone column,
+  gap 24. Subheading block (max-w 540, gap 16): Inter body-L cream (balanced) + Light button
+  **460px max** (fills 444 / 358 on tablet / phone).
+
+### Best Sellers (`BestSellers.jsx`)
+- Section `pt 140/120`, Container. Header row (`justify-between`, items end): header max-w 515
+  + **Show All 160px fixed** (dark). Phone: header, 24px gap, button; header→grid gap **64**
+  on phones, 32 otherwise.
+- Grid: 3 cols (1fr) ≥1200, 2 cols below; gap 24 row / 16 column, items start.
+  Order: 4 cards, then the **Icons banner as a 2-column grid cell** (next to card 4 on desktop,
+  own row on tablet/phone). Banner heights **439 / 398 / 460** (fixed).
+
+### Media banner (`MediaBanner.jsx`) — Icons banner + promo card
+- Image cover + "SmoothGradient" overlay: black at the bottom eased to transparent
+  (21 stops, `bg-fade-up`). Title h2 `type-h3` (56/64.4 · 46.08/52.99 · 32/36.8) cream, max-w 360.
+  Light button.
+- Variants: **Default** (≥810): padding 24, row, title bottom-left, button bottom-right.
+  **Short** (phone): padding 16, column `justify-between` (title top, button bottom).
+  **Long** (promo, desktop): padding 24, column, title top / button bottom.
+
+### For Everyone (`ForEveryone.jsx`)
+- Section `pt 140/120`, full-bleed. Header centred (padding 0 32/24/16), heading 1376 wide.
+- Two cards: desktop row 720×800 each; tablet column 1000×800; phone column 390×460.
+- Desktop/tablet hover ("Default-Hover"): a panel `rgba(33,33,33,.5)` + `backdrop-filter: blur(4px)`,
+  radius 8, **102% × 105%**, left −1.27%, slides from top 102.4% to −2.4% (**0.6s tween, ease
+  `[0, .4, .22, .99]`**); then the title (h2 size 64/73.6, cream) appears per word (from blur 4px,
+  y 12; 1s tween ease `[.12,.23,.17,.98]`, 0.15s per word) and a Light "Shop Now" button
+  (from y 40, spring stiffness 125 / damping 35 / mass 2). Title y = card+330.2, button +419.8
+  (1440). Mouse leave: content disappears, panel slides back down.
+- Phone ("Mobile"): whole card is a link; title 36/41.4 always visible, centred, over
+  `linear-gradient(180deg, transparent 0%, #000 152%)` (`bg-card-fade`); no button.
+- **Deviation:** on the reference only the "Shop Now" button links (desktop/tablet); ours makes the
+  whole card the link (button is a visual span) — same targets.
+
+### Features ticker (`FeaturesTicker.jsx`)
+- Section `pt 140/120`, full-bleed. Words `type-ticker` (120/144 · 94.08/112.9 · 60/72) colour
+  **muted #6D6A67**, separated by 12px muted dots, gap 40 between all items.
+- Framer Ticker: **40 px/s to the left**, hover modifier 100% (no slow-down), draggable
+  (drag not replicated). Section height 284 / 232.9 / 192.
+
+### New Arrivals (`NewArrivals.jsx`)
+- Header full width (no button). Header → content gap 32.
+- Desktop: row gap 16 — column of 2 cards (max-w 350) · promo card flex-1 (644×966) · column of 2.
+  Order: elara, ivy | promo | knox, ryder.
+- Tablet/phone: column gap 16 — 2-col grid (elara, ivy) · promo (952×466 Default / 358×460 Short)
+  · 2-col grid (knox, ryder).
+
+### About Us media block (`AboutVideo.jsx`)
+- Section padding **140/120 top and bottom**, full-bleed block **100vh**. Reference: autoplay muted
+  looping video (not copied). Ours: poster placeholder; `<video muted loop playsInline autoPlay>`
+  only when `site.homeVideoSrc` is set and the user doesn't prefer reduced motion.
+- SmoothGradient overlay. Content: desktop at the bottom, padding 32, row `justify-between`
+  items-end (heading block max-w 739: eyebrow + 8 + h1 display); tablet bottom, padding 24,
+  column gap 32; phone fills the block, padding 16, heading top / button bottom.
+
+## 16. Shared sections (Phase 2 — `src/components/shared/`)
+
+Which routes use them: see SITE_MAP.md. On the reference, Featured Customers and the newsletter
+form **one** section (`padding 140 0 140` desktop, `140 0 120` tablet/phone, gap 16).
+
+### Continue Your Journey (`ContinueJourney.jsx`)
+- `bg-white`, **no top padding** (the previous section's bottom padding provides 140/120).
+- Header max-w 575 + Show All (160px). Static grid (no slider/marquee): **3 cards at ≥1200
+  (the 4th is hidden)**, 2×2 below. Default products: harper-rope-chain, nova-open-ring,
+  luna-charm-bracelet, titan-figaro-chain (`journeyProducts`); prop `products`.
+- Height 729.2 / 1204 / 828.1.
+
+### Featured Customers (`FeaturedCustomers.jsx`, `CustomerCard.jsx`)
+- `pt 140` at **all** breakpoints. Column, gap 32, overflow hidden. Header centred, max-w 843,
+  no side padding; the eyebrow's box is only **13px** tall (overflowing text) on the reference —
+  replicated (header 205 / 99.4 / 117 tall).
+- Ticker (custom code component): **60 px/s left, 40 px/s while hovered**, gap 16, items aligned
+  to the bottom, draggable (not replicated). Cards 250×300: image cover + SmoothGradient; name
+  `type-h6-lg` cream (24/31.2 · 22.08/28.7 · 20/26) and product 12px Switzer 500 `#E8E8E8`,
+  gap 4, 16px from the left/bottom. Each links to `site.instagram`.
+
+### Newsletter (`Newsletter.jsx`)
+- 16px below the customers ticker; full-bleed **100vh** image + SmoothGradient; section bottom
+  padding 140 / 120.
+- Content: desktop/tablet at the bottom-left, padding 32 / 24, max-w 540, column gap 24:
+  h2 "The Next Spotlight Could Be Yours" (`type-h2` 64/73.6 · 52/59.8 · 36/41.4, cream) + 8 +
+  paragraph `type-body` mist (balanced), then the form. Phone: fills the block, padding 16,
+  heading top / form bottom.
+- Form: email input **481×53** (phone 358×53), white, no border/radius, padding 16 / right
+  196 (phone 136), Switzer 400 16px/1, text ink, placeholder `your@email.com` muted; submit
+  "Subscribe" inset 4px top/right/bottom, **180 wide** (phone 120), bg ink, Switzer 400 20px
+  (phone 18px), cream. UI only (no submission yet).
+
+## 17. Phase 2 verification results (2026-10-01)
+
+Compared `/` on both sites at 1440 / 1000 / 390 × 900 with `site.showPrices = false`: every
+heading, eyebrow, card title, category label, badge, banner title, paragraph (x, y, w, h,
+font-size) and every link / button / heart / input box. Tolerance 0.6px.
+
+**Matches exactly:** page heights (9102.2 / 10840 / 9520), all text boxes, all link/button boxes
+(incl. Show All 160px, hero CTA 460px), heart buttons, form fields, gender-card hover geometry
+and timing, ticker speeds (measured 40.0 and 59.9 → 40.0 px/s), no horizontal scroll at
+320–1920px. With prices on, cards grow by one 22px price row (expected).
+
+**Differences (intentional / not verifiable):**
+
+| Where | Reference | Ours |
+|---|---|---|
+| Images, video | photos, mp4 | neutral SVG placeholders, poster (video only via `site.homeVideoSrc`) |
+| Product prices | none (Shopify) | `formatPrice` row when `site.showPrices` |
+| Gender cards ≥810 | only "Shop Now" links | whole card links |
+| Tickers | draggable | not draggable; also pause while focused (a11y) |
+| Ticker start offset | depends on load time | starts at 0 |
+| Navbar on home | fades in (1s, delay 0.8) | no fade |
+| Lenis smooth scroll | yes | native scroll |
+| Framer / Framer Commerce badges | bottom-right | not copied |
+| Card heart icon | Phosphor (blocked in the sandbox, not visible) | lucide Heart stroke 1.5 |
