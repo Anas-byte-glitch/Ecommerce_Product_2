@@ -3,11 +3,12 @@ import { placeholders } from '../assets/placeholders'
 // Sub-collections, URL: /{audience}-category/{slug}. Product lists match the reference.
 // Array order = bento tile order on /women-category and /men-category (verified from the
 // reference page modules); `tileLabel` is the tile caption, `image` the tile's bento shape.
+// `label` = small "/ label /" above the page heading, `title` = the page heading (read from the reference).
 export const collections = [
   {
     slug: 'women-necklace',
     audience: 'women',
-    eyebrow: 'Necklaces',
+    label: 'Necklaces',
     title: "Women's Necklaces",
     tileLabel: 'Necklace',
     image: placeholders.collectionWide,
@@ -16,7 +17,7 @@ export const collections = [
   {
     slug: 'women-ring',
     audience: 'women',
-    eyebrow: 'Rings',
+    label: 'Rings',
     title: "Women's Rings",
     tileLabel: 'Rings',
     image: placeholders.collectionNarrow,
@@ -25,7 +26,7 @@ export const collections = [
   {
     slug: 'women-bracelet',
     audience: 'women',
-    eyebrow: 'Bracelets',
+    label: 'Bracelets',
     title: "Women's Bracelets",
     tileLabel: 'Bracelets',
     image: placeholders.collectionHalf,
@@ -34,7 +35,7 @@ export const collections = [
   {
     slug: 'women-earring',
     audience: 'women',
-    eyebrow: 'Earrings',
+    label: 'Earrings',
     title: "Women's Earrings",
     tileLabel: 'Earrings',
     image: placeholders.collectionHalf,
@@ -43,7 +44,7 @@ export const collections = [
   {
     slug: 'women-bestsellers',
     audience: 'women',
-    eyebrow: 'Best Sellers',
+    label: 'Best Sellers',
     title: "Women's Bestsellers",
     tileLabel: 'Best Sellers',
     image: placeholders.collectionWide,
@@ -52,7 +53,7 @@ export const collections = [
   {
     slug: 'women-newarrivals',
     audience: 'women',
-    eyebrow: 'New Arrivals',
+    label: 'New Arrivals',
     title: "Women's New Arrivals",
     tileLabel: 'New Arrivals',
     image: placeholders.collectionNarrow,
@@ -61,7 +62,7 @@ export const collections = [
   {
     slug: 'women-onsale',
     audience: 'women',
-    eyebrow: 'On Sale',
+    label: 'On Sale',
     title: "Women's Exclusive Sale",
     tileLabel: 'On Sale',
     image: placeholders.collectionFull,
@@ -70,7 +71,7 @@ export const collections = [
   {
     slug: 'men-chain',
     audience: 'men',
-    eyebrow: 'Chains',
+    label: 'Chains',
     title: "Men's Chains",
     tileLabel: 'Chains',
     image: placeholders.collectionWide,
@@ -79,7 +80,7 @@ export const collections = [
   {
     slug: 'men-ring',
     audience: 'men',
-    eyebrow: 'Rings',
+    label: 'Rings',
     title: "Men's Rings",
     tileLabel: 'Rings',
     image: placeholders.collectionNarrow,
@@ -88,7 +89,7 @@ export const collections = [
   {
     slug: 'men-bracelet',
     audience: 'men',
-    eyebrow: 'Bracelets',
+    label: 'Bracelets',
     title: "Men's Bracelets",
     tileLabel: 'Bracelets',
     image: placeholders.collectionHalf,
@@ -97,7 +98,7 @@ export const collections = [
   {
     slug: 'men-earring',
     audience: 'men',
-    eyebrow: 'Earrings',
+    label: 'Earrings',
     title: "Men's Earrings",
     tileLabel: 'Earrings',
     image: placeholders.collectionHalf,
@@ -106,7 +107,7 @@ export const collections = [
   {
     slug: 'men-bestsellers',
     audience: 'men',
-    eyebrow: 'Best Sellers',
+    label: 'Best Sellers',
     title: "Men's Bestsellers",
     tileLabel: 'Best Sellers',
     image: placeholders.collectionNarrow,
@@ -115,7 +116,7 @@ export const collections = [
   {
     slug: 'men-newarrivals',
     audience: 'men',
-    eyebrow: 'New Arrivals',
+    label: 'New Arrivals',
     title: "Men's New Arrivals",
     tileLabel: 'New Arrivals',
     image: placeholders.collectionWide,
@@ -124,7 +125,7 @@ export const collections = [
   {
     slug: 'men-onsale',
     audience: 'men',
-    eyebrow: 'On Sale',
+    label: 'On Sale',
     title: 'Men Exclusive Sale',
     tileLabel: 'On Sale',
     image: placeholders.collectionFull,

@@ -17,6 +17,7 @@ export default function SectionHeader({
   headerClassName,
   eyebrowClassName,
   titleClassName,
+  titleAs = 'h2',
 }) {
   const centered = align === 'center'
 
@@ -34,6 +35,7 @@ export default function SectionHeader({
         </Reveal>
       )}
       <TextReveal
+        as={titleAs}
         text={title}
         className={cn(
           'w-full text-balance type-display',

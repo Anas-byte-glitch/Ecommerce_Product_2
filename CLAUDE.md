@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). Next: Phase 3. Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). Next: Phase 4. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -48,11 +48,14 @@ src/
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
     ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
-                          Reveal, TextReveal, SectionHeader, Marquee, MediaBanner
+                          Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
+                          HoverTile (image tile with hover panel), EmptyState
                           (to add: Accordion, Drawer)
     product/              ProductCard, FavouriteButton, ProductGrid
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
-    shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter —
+    shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
+                          SharedSections (all three, in order), ImageHero (fixed full-screen hero
+                          for /shop + audience pages), CollectionBento, AudienceCta —
                           used above the footer on most pages (table in docs/SITE_MAP.md)
     journal/              JournalCard … (later)
   pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites,
@@ -109,6 +112,10 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
 - Shared sections go directly above the footer in the order ContinueJourney →
   FeaturedCustomers → Newsletter (they carry their own `bg-white`/padding; ContinueJourney has
   no top padding by design).
+- Pages with a full-screen hero: `<ImageHero label title fade wide?>` first, then everything else in
+  `<div className="relative bg-white will-change-transform">` ending with `<SharedSections />`.
+  Pages without a hero start with `pt-[180px]`. `document.title` is the brand name everywhere.
+- Collection data uses `label` / `title` (page header); `tileLabel` is the mosaic caption.
 - Compare against the reference with `site.showPrices = false` (the reference shows no prices).
 - Commit in small, meaningful steps; keep `npm run build` and `npm run lint` clean.
 
