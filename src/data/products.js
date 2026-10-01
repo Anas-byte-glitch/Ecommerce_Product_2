@@ -1,8 +1,9 @@
 import { placeholders } from '../assets/placeholders'
+import { productDetails } from './productDetails'
 
 // 25 products, order = /favourite grid on the reference (see docs/SITE_MAP.md).
 // Prices are placeholders: the reference loads them from Shopify and shows none.
-// Descriptions/materials/dimensions/care are placeholders until the PDP phase.
+// Product page texts live in productDetails.js (read from the reference).
 const rows = [
   // slug, name, category, audience, badge, price, compareAtPrice, createdAt, salesRank
   ['aurora-bar-necklace', 'Aurora Bar Necklace', 'necklace', 'women', 'Best Sellers', 89, null, '2025-09-02', 1],
@@ -53,10 +54,14 @@ export const products = rows.map(
     compareAtPrice: compareAtPrice ?? undefined,
     onSale: compareAtPrice != null,
     images: [placeholders.product, placeholders.productAlt],
-    description: 'Placeholder description.',
-    materials: 'Placeholder materials.',
-    dimensions: 'Placeholder dimensions.',
-    care: 'Placeholder care instructions.',
+    // Product page gallery: 4 images, like the reference (Aurora's 2nd image is 4:5, the rest 1:1).
+    gallery: [
+      placeholders.product,
+      slug === 'aurora-bar-necklace' ? placeholders.galleryPortrait : placeholders.productAlt,
+      placeholders.galleryWide,
+      placeholders.galleryWideAlt,
+    ],
+    ...productDetails[slug], // description, details, materials, dimensions, care, matchWith
     createdAt,
     salesRank,
   }),
