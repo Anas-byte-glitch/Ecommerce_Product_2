@@ -9,4 +9,4 @@ export const customers = [
   { id: 'olivia-brooks', name: 'Olivia Brooks', product: 'Aurora Bar Necklace' },
   { id: 'sophia-mitchell', name: 'Sophia Mitchell', product: 'Luna Hoop Earrings' },
   { id: 'charlotte-hayes', name: 'Charlotte Hayes', product: 'Nova Signet Ring' },
-].map((customer) => ({ ...customer, image: placeholders.square, link: site.instagram }))
+].map((customer) => ({ ...customer, image: placeholders.portrait, link: site.instagram }))

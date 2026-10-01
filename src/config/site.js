@@ -9,6 +9,10 @@ export const site = {
   currency: 'USD',
   // Neutral payment labels (no brand logos). Order matters: the 3rd pill is the widest.
   payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
+  // Show a placeholder price under product-card titles (the reference shows none).
+  showPrices: true,
+  // Optional background video for the home "About Us" block (muted, looping). Empty = poster only.
+  homeVideoSrc: '',
   // Dark button under the footer tagline (stands in for the reference's "Buy template").
   footerCta: { label: 'Shop Now', to: '/shop' },
 }
