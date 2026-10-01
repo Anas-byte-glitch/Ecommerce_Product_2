@@ -656,3 +656,30 @@ visual reference**; it reuses the tokens, type utilities, square buttons and spa
   $208 (two lines) and $258 (qty 2) → Free; qty capped at 10 (plus disabled), minus disabled at 1.
 - Saved lines whose product no longer exists are dropped (and quantities clamped) when the
   persisted cart loads.
+
+## 21. Checkout (demo) and success page (Phase 5B-1 — no reference)
+
+The template's checkout is Shopify (blocked), so this is designed in the project's language.
+- **`/checkout`** (title "Checkout - Glintura"): `pt-180` header (eyebrow "Checkout", h1 display
+  "Complete Your Order"); desktop: form (flex 1) + `OrderSummary` (452px, `sticky top-24`),
+  stacked below 1200px. Empty cart → redirect to `/cart`.
+- Form (`noValidate`, `Field` component): Contact (email), Delivery (full name, phone, address,
+  city + postal code in 2 columns from 810px, country select), Shipping method (standard, cost from
+  the cart store), Payment: radios **"Card (demo)" / "Cash on delivery"** with a demo note — **no
+  card fields, no payment data is ever collected**. Inputs: 48px, white, 1px `mist` border
+  (`error` on invalid), square; labels `type-eyebrow`, errors `type-body` in the new
+  **`--color-error: #b42318`** token (`text-error`, `border-error`).
+- Validation (client only): all fields required, email `x@y.zz`, phone `+`, digits, spaces,
+  `( ) - .` with ≥ 7 digits. On submit: every error shown inline (`aria-invalid`,
+  `aria-describedby` → `<id>-error`), focus to the first invalid field; after the first submit,
+  errors update live and clear when fixed.
+- Placing the order builds `{ id: "<site.orderPrefix>-XXXXXX" (6 random chars), createdAt,
+  customer, payment, lines, count, subtotal, shipping, total }`, stores it in `useOrderStore`
+  (**memory only, not persisted**), clears the cart and goes to `/checkout/success`.
+- **`/checkout/success`** ("Order Confirmed - Glintura"): eyebrow, h1 "Thank You", order number,
+  payment, the order's lines + totals (`OrderSummary`), "Continue shopping" → `/shop`. No order
+  in memory (e.g. after a refresh) → redirect to `/`.
+- Totals are always shown, regardless of `site.showPrices`.
+- Verified flow: empty-cart redirect; reload keeps the cart; empty submit → 7 errors, focus on
+  Email; invalid email/phone messages clear when fixed; missing country focuses Country; order
+  placed → success page, cart counter 0; refresh of success → `/`; no horizontal scroll at 390.

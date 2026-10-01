@@ -13,6 +13,7 @@ import JournalArticle from './pages/JournalArticle'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
 import Checkout from './pages/Checkout'
+import CheckoutSuccess from './pages/CheckoutSuccess'
 import Cart from './pages/Cart'
 import { getProduct } from './data/products'
 
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: '/favourite', element: <Favourites /> },
       { path: '/cart', element: <Cart />, handle: { title: () => 'Cart' } },
       { path: '/checkout', element: <Checkout />, handle: { title: () => 'Checkout' } },
+      { path: '/checkout/success', element: <CheckoutSuccess />, handle: { title: () => 'Order Confirmed' } },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
       { path: '/journals', element: <Journals /> },
