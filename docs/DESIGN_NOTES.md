@@ -563,3 +563,63 @@ Matched within 0.6px: page heights above, all headings / labels / card titles / 
 badges, all card, tile and button boxes. Differences: the "Explore" button label (reference typo
 "Explor"), placeholders for all images, whole-tile links, hover timings not re-measured beyond
 the Home values (same component).
+
+## 19. Product page and Favourites (Phase 4, measured 2026-10-01)
+
+Page heights (ours identical, prices off): `/product/aurora-bar-necklace` 4957 / 5897 (1440 / 390);
+`/favourite` with all 25 saved 8719 / 8332. **Document title on product pages: "Name - Glintura"**
+(route `handle.title`, set in `Layout`); every other page: the brand name.
+
+### Product page layout
+- Section `pt 180`, padding 0 32/24/16. **Desktop: two columns, gap 24** — gallery (flex 1,
+  `position: sticky; top: 24px`) and info (flex 1, `sticky; top: 0`). **Tablet / phone: one
+  column, gap 32** (gallery first).
+- Gallery (`ProductGallery`): main box **640px tall** (676 wide @1440, 952 @1000), **550** on phones,
+  bg mist, image cover; dark "Best Seller" badge top-right (16px inset, best sellers only).
+  10px below: 4 thumbnails in a row, gap 8, ratio **163 × 196.1** (83.5 × 100.4 on phones),
+  `rgba(0,0,0,.25)` overlay. Clicking a thumb shows it in the main box (verified). Reference
+  images: 4 per product, ratios 1:1, 1:1 (Aurora: 4:5), 16:9, 16:9 → placeholders `product`,
+  `productAlt`/`galleryPortrait`, `galleryWide`, `galleryWideAlt`.
+- Info column (gap 32 between blocks):
+  - Header (gap 16): row 34px = eyebrow (category, accent) · 8 · stock slot 28×30 (4px dot
+    `#969696`; Shopify stock, shows "Out" in the sandbox) · 8 · heart (`FavouriteButton`); phones add
+    4px under this row. Title **h1 `type-h5`** (40/44 · 34.08/37.5 · 24/26.4), max-w 550.
+    Description `type-body` ink-soft, max-w 550.
+  - 16px → row 32px: price (left, `site.showPrices`; reference empty) + **quantity selector 165×32**
+    (white, padding 0 8, −/+ hit areas 40×40, value Switzer 600 16/16; minus disabled at 1).
+  - 16px → **two 40px full-width buttons, gap 8**: "Add to Cart" and "Buy Now" (labels from the page
+    module; on the reference they stay in a grey "Loading" state because Shopify is blocked).
+    Purchase-button variants in the module: dark (`#222` → hover `rgba(51,51,51,.85)`), light
+    (`#E8E8E8` → hover `#D9D9D9`), label Switzer 500 16/19.2 −0.2. Ours: Add to Cart = dark,
+    Buy Now = light _(variant per button not readable — estimate)_.
+  - Accordion (`Accordion`): 4 white cards, gap 10: Description, Materials / Composition,
+    Dimensions & Fit, Care. Title row padding 16, `type-h6-lg` (24/31.2 · 22.08/28.7 · 20/26),
+    16px "+" icon on the right. **All closed by default; several can be open at once**; the icon
+    rotates 45° (→ ×) and the body expands (spring bounce 0.2, 0.4s). Body `type-body`
+    ink-soft, padding 0 16 16, ~515px wide. Closed card height 63.2 / 60.7 / 58.
+  - "Perfect match with" `type-quote` ink-soft, 16px → 3 horizontal cards (`HorizontalCard`),
+    gap 16: 160×160 image + info (padding 8, `justify-between`: category label top, title + price
+    row bottom). Same 3 products on most pages (data in `productDetails.js`).
+- Reviews (`ProductTestimonials`): section padding 140/120, content max-w 936 centred: name
+  `type-h6-lg`, 5px, icon 24 + product name `type-body` (row 26px), 16px, quote **`type-h4`**
+  (48/57.6 · 40/48 · 28/33.6); 32px → **3 progress bars**, 2px, track `#9A948E`, fill ink, gap 10,
+  row 450 wide (full width on phones). **Auto-advances every ~7s** (fill animates linearly), 3
+  reviews per product (`testimonials.js`). Ours: crossfade 0.4s, bars clickable, no auto-advance
+  under reduced motion. The reference icon could not be identified (lucide `ShoppingBag` used).
+- Then the shared sections: Continue Your Journey **does render its products** on product pages
+  (harper / nova-open-ring / luna-charm; 4 below 1200px), Featured Customers, Newsletter.
+
+### Cart (`cartStore`)
+`items: [{ slug, quantity }]`, `addItem(slug, quantity)` merges lines with the same slug,
+`removeItem(slug)`, `clear()`, persisted (`glintura-cart`); navbar counter = `useCartCount()` (sum
+of quantities). No visible feedback could be measured on the reference (Shopify blocked) → the
+clicked button reads **"Added" for 1.5s**. Buy Now also just adds to the cart (no checkout yet).
+
+### Favourites (`/favourite`)
+- Hero = `ImageHero` ("Favourites" / "Your Loved Collection", heading max-w 680, matches). Grid
+  section padding 140/120, `ProductGrid` (3 / 2 / 2 columns), then the shared sections.
+- **Reference behaviour:** it lists **all 25 products** whether or not anything is saved; clicking a
+  card heart stores a Shopify product ID in `localStorage.favorites` and bumps the navbar counter,
+  but the list does not change (its filter needs the blocked Shopify data). **Decision:** ours shows
+  only saved products (catalogue order, hearts filled); empty state = "Nothing here yet" (`type-h4`)
+  + short text + dark "Explore Collections" → `/shop`.

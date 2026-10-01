@@ -35,8 +35,8 @@ export default function ProductTestimonials({ reviews, productName }) {
           >
             <figcaption className="flex flex-col items-center gap-[5px]">
               <span className="text-ink type-h6-lg">{review.name}</span>
-              <span className="flex items-center gap-[5px] text-ink-soft type-body">
-                <ShoppingBag size={24} strokeWidth={1.5} aria-hidden="true" />
+              <span className="flex h-[26px] items-center gap-[5px] text-ink-soft type-body">
+                <ShoppingBag size={24} strokeWidth={1.5} aria-hidden="true" className="mt-0.5" />
                 {productName}
               </span>
             </figcaption>

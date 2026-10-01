@@ -40,8 +40,12 @@ function ProductView({ product }) {
           <div className="flex w-full flex-col gap-8 lg:sticky lg:top-0 lg:flex-1">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4">
-                <div className="flex h-[34px] items-center gap-2">
+                <div className="mb-1 flex h-[34px] items-center gap-2 md:mb-0">
                   <Eyebrow>{product.categoryLabel}</Eyebrow>
+                  {/* Stock-status slot (28px, 4px dot): the reference's Shopify stock indicator. */}
+                  <span aria-hidden="true" className="grid h-[30px] w-7 place-items-center">
+                    <span className="size-1 rounded-pill bg-[#969696]" />
+                  </span>
                   <FavouriteButton slug={product.slug} name={product.name} />
                 </div>
                 <h1 className="max-w-[550px] text-ink type-h5">{product.name}</h1>
