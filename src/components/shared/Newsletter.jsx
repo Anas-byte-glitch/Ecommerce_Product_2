@@ -15,7 +15,7 @@ export default function Newsletter({ className }) {
           <div className="flex w-full flex-1 flex-col items-start justify-between md:max-w-[540px] md:justify-center md:gap-6">
             <div className="flex w-full flex-col gap-2">
               <TextReveal text="The Next Spotlight Could Be Yours" className="w-full text-cream type-h2" />
-              <p className="text-mist type-body">
+              <p className="text-balance text-mist type-body">
                 Join our newsletter for exclusive updates and the opportunity to be featured
                 alongside our growing community.
               </p>

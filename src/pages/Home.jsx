@@ -12,8 +12,10 @@ export default function Home() {
   return (
     <>
       <HomeHero />
-      {/* Positioned + opaque, so everything after the pinned hero scrolls over it. */}
-      <div className="relative bg-white">
+      {/* Positioned + opaque, so everything after the pinned hero scrolls over it.
+          will-change: own compositing layer like the reference page wrapper (same subpixel
+          glyph positioning in Chromium, DESIGN_NOTES §2). */}
+      <div className="relative bg-white will-change-transform">
         <BestSellers />
         <ForEveryone />
         <FeaturesTicker />

@@ -42,7 +42,7 @@ function GenderCard({ title, to, image }) {
         initial={false}
         animate={{ top: active ? '-2.4%' : '102.4%' }}
         transition={reduceMotion ? { duration: 0 } : { duration: 0.6, ease: PANEL_EASE }}
-        className="absolute left-[-1.27%] z-8 hidden h-[104.82%] w-[102.36%] rounded-lg bg-overlay backdrop-blur-[4px] md:block"
+        className="absolute left-[-1.27%] z-8 hidden h-[105%] w-[102%] rounded-lg bg-overlay backdrop-blur-[4px] md:block"
       />
       {active && (
         <div aria-hidden="true" className="relative z-10 hidden w-full flex-col items-center gap-4 md:flex">
