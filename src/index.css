@@ -72,8 +72,6 @@
 
   body {
     @apply bg-white font-body text-ink antialiased;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
   }
 
   h1,
@@ -134,9 +132,9 @@
   line-height: 36.8px;
   letter-spacing: -0.48px;
   @media (width >= 810px) {
-    font-size: 46px;
-    line-height: 53px;
-    letter-spacing: -0.69px;
+    font-size: 46.08px;
+    line-height: 52.992px;
+    letter-spacing: -0.6912px;
   }
   @media (width >= 1200px) {
     font-size: 56px;
@@ -168,9 +166,9 @@
   line-height: 26.4px;
   letter-spacing: -1.2px;
   @media (width >= 810px) {
-    font-size: 34px;
-    line-height: 37.5px;
-    letter-spacing: -0.17px;
+    font-size: 34.08px;
+    line-height: 37.488px;
+    letter-spacing: -0.1704px;
   }
   @media (width >= 1200px) {
     font-size: 40px;
@@ -181,8 +179,8 @@
 
 @utility type-quote {
   font-family: var(--font-display);
-  font-size: 22px;
-  line-height: 26.5px;
+  font-size: 22.08px;
+  line-height: 26.496px;
   @media (width >= 810px) {
     font-size: 28px;
     line-height: 30.8px;
@@ -201,8 +199,8 @@
   font-size: 20px;
   line-height: 26px;
   @media (width >= 810px) {
-    font-size: 22px;
-    line-height: 28.7px;
+    font-size: 22.08px;
+    line-height: 28.704px;
   }
   @media (width >= 1200px) {
     font-size: 24px;
@@ -214,7 +212,7 @@
 @utility type-h6 {
   font-family: var(--font-display);
   font-size: 17.6px;
-  line-height: 22.9px;
+  line-height: 22.88px;
   @media (width >= 810px) {
     font-size: 20px;
     line-height: 26px;
@@ -227,9 +225,9 @@
   line-height: 72px;
   letter-spacing: -1.5px;
   @media (width >= 810px) {
-    font-size: 94px;
-    line-height: 113px;
-    letter-spacing: -2.35px;
+    font-size: 94.08px;
+    line-height: 112.896px;
+    letter-spacing: -2.352px;
   }
   @media (width >= 1200px) {
     font-size: 120px;
@@ -282,8 +280,8 @@
 @utility type-link-lg {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 18px;
-  line-height: 23.5px;
+  font-size: 18.08px;
+  line-height: 23.504px;
   @media (width >= 1200px) {
     font-size: 20px;
     line-height: 26px;
@@ -297,6 +295,13 @@
   font-size: 16px;
   line-height: 19.2px;
   letter-spacing: -0.2px;
+}
+
+/* Mobile-menu "Pages" / "Others" headings (the reference uses Inter here, unlike "Navigation") */
+@utility type-menu-heading {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 24px;
 }
 
 /* "/ Eyebrow /" labels */
@@ -330,9 +335,9 @@
   line-height: 22.4px;
   letter-spacing: -0.08px;
   @media (width >= 810px) {
-    font-size: 18px;
-    line-height: 25.3px;
-    letter-spacing: -0.09px;
+    font-size: 18.08px;
+    line-height: 25.312px;
+    letter-spacing: -0.0904px;
   }
   @media (width >= 1200px) {
     font-size: 20px;
@@ -343,9 +348,9 @@
 
 @utility type-body {
   font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 19.7px;
-  letter-spacing: -0.07px;
+  font-size: 14.08px;
+  line-height: 19.712px;
+  letter-spacing: -0.0704px;
   @media (width >= 810px) {
     font-size: 16px;
     line-height: 22.4px;
