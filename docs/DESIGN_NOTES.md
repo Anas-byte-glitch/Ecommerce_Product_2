@@ -502,3 +502,64 @@ and timing, ticker speeds (measured 40.0 and 59.9 → 40.0 px/s), no horizontal 
 | Lenis smooth scroll | yes | native scroll |
 | Framer / Framer Commerce badges | bottom-right | not copied |
 | Card heart icon | Phosphor (blocked in the sandbox, not visible) | lucide Heart stroke 1.5 |
+
+## 18. Shop, category and collection pages (Phase 3, measured 2026-10-01)
+
+Page heights (ours identical): `/shop` 5108 / 5517 (1440 / 390); `/women-category` and
+`/men-category` 7784 / 7951 / 8933 (1440 / 1000 / 390); `/women-category/women-necklace` 4552 /
+4437 (1440 / 390); `/men-category/men-onsale` 3793 / 3977 / 3988 (1440 / 1000 / 390).
+**Document title is just the brand name ("Glintura") on every page of the reference**, and so
+is ours (`Layout`).
+
+### Image hero (`ImageHero`) — /shop, /women-category, /men-category
+Same fixed hero as Home (padding 140/32/56 · 120/24/48 · 120/16/32, image zoom-in 1.1→1 over
+1.2s, per-word heading from 0.5s) but content is **bottom-aligned**: eyebrow (mist) + h1 `type-display`,
+gap 8, bottom of the h1 at 844 (1440) / 868 (phone). Heading max-width **680** (shop, men) or
+**878** (women). Overlay gradients per page: shop `#000 0% → 0 41% → #000 100%`; women
+`#000 -28%, .73 -10%, 0 63%, #000 104%`; men `#000 -44% → 0 41% → #000 100%`.
+Labels: "Shop" / "Only For Her" / "Only For Him".
+
+### /shop
+After the hero: the Home "For Everyone" block with eyebrow "Shop By Category", h2 "Choose your
+category", the same two hover cards (Women's / Men's, 720×800 desktop) — **but 140/120px bottom
+padding** (no ticker follows) — then the three shared sections.
+
+### Audience pages — collection mosaic (`CollectionBento`, `HoverTile`)
+- Section `pt 140/120`, header max-w 800 (padding 0 32/24/16 → heading 736 / 752 / 326 wide), h2
+  display size; "/ Browse Women Collections /" / "/ Browse Men Collections /", heading
+  "Discover What You're Looking For" (both). Header → mosaic gap 32; **rows gap 16, tiles gap 16**.
+- Desktop rows (500 tall): **960 + 400**, **680 + 680**, **960 + 400** (men: **400 + 960**), then one
+  **1376 × 800** tile. Tablet: rows of two equal 468px tiles (500 tall), last tile 952 × 800.
+  Phone: one column, every tile **358 × 460** (gap 16).
+- Tile hover = Home gender card (blurred panel 102% × 105% sliding up, per-word title, "Shop Now")
+  with title size by tile: 500px tiles **h3** (56/64.4 · 46.08/53), 800px tile **h2** (64/73.6).
+  Phone: label always shown at h2 (36/41.4) over `bg-card-fade`.
+- The reference tile links only on its phone variant / "Shop Now" button; ours links the whole
+  tile everywhere.
+
+### Cross-audience block (`AudienceCta`)
+Section `py 140/120` around a 100vh image block with `bg-fade-up` at 90% opacity. Content
+column gap 32, box **645px wide, padding-left 32**, centred: eyebrow ("For Him" / "For Her") +
+10px + h2 `type-h2` centred ("Discover Our Men's / Women's Collection") + Light button
+("Explor…" typo on the reference → ours "Explore Men's / Women's Collection", 11px wider).
+Phone, women's page: same box (ends at the right screen edge). Phone, **men's** page:
+padding 16 all round, content fills the block — eyebrow + heading at the top (eyebrow left,
+heading centred), button bottom-left.
+
+### Collection pages (14)
+- No image hero (navbar dark). Header section: `pt 180` at every breakpoint, padding 0 32/24/16,
+  centred "/ Label /" + h1 `type-display` (title), 123.2 / 105.6 / 123.2 tall (1440 / 1000 / 390).
+- Product section `py 140/120`, Container, `ProductGrid` (3 cols desktop at 448px; 2 cols tablet
+  468px and phone 171px; same cards, badges and heights as Home).
+- Empty state (`men-onsale`, products `[]`): box 1376 wide, padding 24, content max-w 514,
+  gap 24: h4 `type-h4` "This Collection Is Coming Soon" (48/57.6 · 40/48 · 28/33.6) + dark button
+  "Explore Collections" (→ the audience page). Card height 237.2 desktop.
+- Texts (label / title) are stored in `src/data/collections.js` as `label` and `title`
+  (e.g. "Necklaces" / "Women's Necklaces"; `men-onsale` = "On Sale" / "Men Exclusive Sale").
+- A collection slug under the wrong audience (`/women-category/men-chain`) renders the 404 page.
+
+### Phase 3 verification (1440 / 390, 1000 where the layout switches; showPrices off)
+Matched within 0.6px: page heights above, all headings / labels / card titles / category labels /
+badges, all card, tile and button boxes. Differences: the "Explore" button label (reference typo
+"Explor"), placeholders for all images, whole-tile links, hover timings not re-measured beyond
+the Home values (same component).

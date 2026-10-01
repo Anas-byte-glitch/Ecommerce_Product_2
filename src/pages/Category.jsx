@@ -11,7 +11,7 @@ export default function Category({ audience }) {
 
   return (
     <>
-      <ImageHero label={category.eyebrow} title={category.title} fade={audience} />
+      <ImageHero label={category.eyebrow} title={category.title} fade={audience} wide={audience === 'women'} />
       <div className="relative bg-white will-change-transform">
         <CollectionBento
           audience={audience}
@@ -19,7 +19,7 @@ export default function Category({ audience }) {
           title={category.browseTitle}
           collections={getCollectionsByAudience(audience)}
         />
-        <AudienceCta label={cross.label} title={cross.title} cta={cross.cta} to={cross.to} />
+        <AudienceCta label={cross.label} title={cross.title} cta={cross.cta} to={cross.to} balanced={audience === 'men'} />
         <SharedSections />
       </div>
     </>

@@ -23,7 +23,7 @@ export default function CollectionBento({ audience, label, title, collections })
           eyebrow={label}
           title={title}
           align="center"
-          className="mx-auto w-full max-w-[800px] md:px-6 lg:px-8"
+          className="mx-auto w-full max-w-[800px] px-4 md:px-6 lg:px-8"
         />
         <div className="flex flex-col gap-4">
           {rows.map((row) => {

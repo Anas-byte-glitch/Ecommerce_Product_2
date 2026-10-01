@@ -13,9 +13,10 @@ const fades = {
 }
 
 // Full-screen hero for /shop, /women-category and /men-category: pinned (position: fixed) while
-// the page content scrolls over it, label + display heading bottom-left (max-w 878).
+// the page content scrolls over it, label + display heading bottom-left (heading max-w 680,
+// 878 with `wide` — the women's page).
 // Pages render it first, then wrap everything else in `relative bg-white`.
-export default function ImageHero({ image = placeholders.heroWide, label, title, fade = 'shop' }) {
+export default function ImageHero({ image = placeholders.heroWide, label, title, fade = 'shop', wide = false }) {
   useNavOverHero()
   const reduceMotion = useReducedMotion()
 
@@ -36,7 +37,7 @@ export default function ImageHero({ image = placeholders.heroWide, label, title,
           />
           <div aria-hidden="true" className={`absolute inset-0 ${fades[fade]}`} />
         </div>
-        <div className="relative z-10 flex w-full max-w-[878px] flex-col items-start gap-2">
+        <div className={`relative z-10 flex w-full flex-col ${wide ? 'max-w-[878px]' : 'max-w-[680px]'} items-start gap-2`}>
           <Eyebrow tone="dark">{label}</Eyebrow>
           <TextReveal as="h1" text={title} onMount startDelay={0.5} className="w-full text-cream type-display" />
         </div>

@@ -19,7 +19,7 @@ export default function Collection({ audience }) {
   return (
     <>
       <section className="px-4 pt-[180px] md:px-6 lg:px-8">
-        <SectionHeader eyebrow={collection.label} title={collection.title} align="center" />
+        <SectionHeader eyebrow={collection.label} title={collection.title} align="center" titleAs="h1" />
       </section>
       <section className="py-section-sm lg:py-section">
         <Container>
