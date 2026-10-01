@@ -7,8 +7,10 @@ export const site = {
   instagram: 'https://instagram.com',
   locale: 'en-US',
   currency: 'USD',
-  // Neutral payment labels (no brand logos).
-  payments: ['Card', 'Wallet', 'Bank', 'Pay Later', 'Cash'],
+  // Neutral payment labels (no brand logos). Order matters: the 3rd pill is the widest.
+  payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
+  // Dark button under the footer tagline (stands in for the reference's "Buy template").
+  footerCta: { label: 'Shop Now', to: '/shop' },
 }
 
 export const mainNav = [
@@ -26,6 +28,8 @@ export const footerColumns = [
       { label: "Women's Collection", to: '/women-category' },
       { label: "Men's Collection", to: '/men-category' },
       { label: 'Favourites', to: '/favourite' },
+      // Fourth slot = the reference's "My Account" (Shopify), which is not built.
+      { label: 'Collections', to: '/shop' },
     ],
   },
   {
