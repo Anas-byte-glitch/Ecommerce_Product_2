@@ -121,14 +121,46 @@ Every PDP has: main image + gallery (4 thumbs), category eyebrow, title, short
 description, quantity, two buttons, 4 accordions ("Description", "Materials / Composition",
 "Dimensions & Fit", "Care"), "Perfect match with", reviews, "Continue Your Journey".
 
-## Home sections (order, for later phases)
+## Home sections (verified, Phase 2)
 
-Hero ("/ Exclusive Collection /", "Beyond Ordinary Elegance", "Crafted For Legacy",
-CTA "Shop New Arrivals" → /shop) · Best Sellers ("Our Most Loved Designs", Show All) ·
-Category ("/ For Everyone /", "Style knows no gender") · Ticker (Waterproof · Skin
-Friendly · Everyday Wear) · New Arrivals · About us (video — replace with image) ·
-More Products · Featured customer + CTA ("You Could Be Our Next Feature" / "The Next
-Spotlight Could Be Yours") · Footer.
+1. Hero (fixed; eyebrow "Exclusive Collection", h1 "Beyond Ordinary Elegance", second heading
+   "Crafted For Legacy" in the hero's bottom row, subheading, CTA "Shop New Arrivals" → /shop)
+2. Best Sellers ("Our Most Loved Designs", Show All → /shop; aurora-bar-necklace,
+   stella-tennis-bracelet, atlas-cuban-chain, atlas-curb-bracelet) + Icons banner cell
+   ("The Icons of the Glintura", "Explore Best Sellers" → /shop)
+3. For Everyone ("Style knows no gender"; Women's → /women-category, Men's → /men-category)
+4. Features ticker (Waterproof · Skin Friendly · Everyday Wear · Premium Quality · Hand Finished)
+5. New Arrivals ("Our Latest Obsessions"; elara-crystal-necklace, ivy-twist-ring | promo
+   "Discover The Collection" / "Explore Collections" → /shop | knox-rope-bracelet, ryder-black-stud)
+6. About Us media block ("For Every Single Expression of Style", "Explore About Us" → /about)
+7. Continue Your Journey (shared) · 8. Featured Customers (shared) · 9. Newsletter (shared) · Footer
+
+## Shared sections per route (verified 2026-10-01 at 1440)
+
+Visible headings checked on every route below. Components in `src/components/shared/`.
+"Journey" = Continue Your Journey (`ContinueJourney`), "Customers" = Featured Customers
+(`FeaturedCustomers`), "Newsletter" = "The Next Spotlight Could Be Yours" (`Newsletter`; on the
+reference it is the second half of the Featured Customers section, so the two always appear
+together, in this order, directly above the footer).
+
+| Route | Journey | Customers | Newsletter | Notes |
+|---|---|---|---|---|
+| `/` | ✓ | ✓ | ✓ | |
+| `/shop` | ✓ | ✓ | ✓ | |
+| `/women-category`, `/men-category` | ✓ | ✓ | ✓ | |
+| all 14 collection pages (`/women-category/*`, `/men-category/*`, incl. empty `men-onsale`) | ✓ | ✓ | ✓ | |
+| `/product/:slug` (checked aurora-bar-necklace, ryder-black-stud) | ✓* | ✓ | ✓ | *PDP has its own "Continue Your Journey" block (not the `More Products` section; no product links rendered in the sandbox) — check in the PDP phase |
+| `/favourite` | ✓ | ✓ | ✓ | |
+| `/about` | ✓ | ✓ | ✓ | |
+| `/journals` | ✓ | ✓ | ✓ | |
+| `/contact` | — | — | — | |
+| `/journals/:slug` | — | — | — | |
+| `/terms`, `/privacy-policy`, `/refund-policy` | — | — | — | |
+| `/404` | — | — | — | |
+
+At 1440 the Journey strip shows **harper-rope-chain, nova-open-ring, luna-charm-bracelet** on every
+route that has it; below 1200px a 4th card, **titan-figaro-chain**, is shown too (verified on `/`,
+`/shop` and `/about` at 1000 and a collection page at 390). It is one shared component everywhere.
 
 ## Journals (4)
 

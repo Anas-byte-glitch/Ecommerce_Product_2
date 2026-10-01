@@ -65,3 +65,6 @@ export const products = rows.map(
 export const getProduct = (slug) => products.find((p) => p.slug === slug)
 
 export const getProductsBySlugs = (slugs) => slugs.map(getProduct).filter(Boolean)
+
+// Default "Continue Your Journey" strip (home page order on the reference).
+export const journeyProducts = ['harper-rope-chain', 'nova-open-ring', 'luna-charm-bracelet', 'titan-figaro-chain']
