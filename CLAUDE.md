@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** too (§20). Next: checkout / search. Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). Next: search. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -55,6 +55,7 @@ src/
     product/              ProductCard, FavouriteButton, ProductGrid, ProductGallery,
                           QuantityStepper, AddToCart, HorizontalCard, ProductTestimonials
     cart/                 CartDrawer (mounted in Layout), CartLine, CartEmpty, FreeShippingNote
+    checkout/             Field (labelled input + inline error), OrderSummary (cart summary or order)
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
     shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
                           SharedSections (all three, in order), ImageHero (fixed full-screen hero
@@ -62,9 +63,10 @@ src/
                           used above the footer on most pages (table in docs/SITE_MAP.md)
     journal/              JournalCard … (later)
   pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites, Cart,
-                          Checkout (placeholder),
+                          Checkout (demo, validation),
+                          CheckoutSuccess,
                           About, Contact, Journals, JournalArticle, Legal, NotFound
-  store/                  wishlistStore, cartStore, uiStore
+  store/                  wishlistStore, cartStore, uiStore, orderStore (`lastOrder`, memory only)
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
   assets/fonts/           Switzer woff2
   utils/                  formatPrice, cn, useNavOverHero, motion (appear/word-effect settings)
@@ -75,7 +77,7 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
 - Function components only; one component per file, default export.
 - **Tailwind utilities only** — no inline `style` props, no CSS modules. Use the tokens:
   colours `ink, ink-soft, muted, accent, cream, mist, smoke, white, black, overlay,
-  ink-hover, white-hover`; fonts `font-display` (Switzer), `font-body` (Inter);
+  ink-hover, white-hover, error`; fonts `font-display` (Switzer), `font-body` (Inter);
   type utilities `type-display, type-h2 … type-h6, type-h6-lg, type-quote, type-ticker,
   type-stat, type-wordmark, type-wordmark-xl, type-link-lg, type-nav, type-menu-heading,
   type-eyebrow, type-badge, type-counter, type-body-lg, type-body` (each already
