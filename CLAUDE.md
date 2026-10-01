@@ -10,11 +10,11 @@ template's images, video, text assets, payment logos, author contact details, th
 The build is split into 9 phases; each phase runs in a fresh session.
 Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 
-> **Status:** Phase 1 code was written while the npm registry was blocked in the
-> session sandbox, so there is **no `package-lock.json` yet** and `npm install`,
-> `npm run build` and `npm run lint` have **not been run**. First step of the next
-> session: `npm install`, then build + lint, fix anything that fails, compare the
-> Navbar/Footer against the reference at 1440/1000/390, and commit the lockfile.
+> **Status:** Phase 1 is done and verified (2026-10-01): dependencies installed and
+> `package-lock.json` committed; `npm run build` and `npm run lint` are clean; every route
+> was tested in the dev server; Navbar, mobile menu and Footer were measured against the
+> reference at 1440/1000/390 and match except for the intentional omissions listed in
+> `docs/DESIGN_NOTES.md` §14. Next: Phase 2. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -28,11 +28,15 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 - react-router-dom v7 (`createBrowserRouter` in `src/App.jsx`)
 - motion (`motion/react`) for animation
 - zustand (+ `persist`) for wishlist / cart
-- lucide-react icons (reference uses Phosphor: MagnifyingGlass, Heart, ShoppingCart, List/X)
+- lucide-react icons — reference uses Phosphor **bold**; use lucide `Search`, `Heart`,
+  `ShoppingCart`, `Menu`, `X` with `strokeWidth={2.25}` (= Phosphor bold), see DESIGN_NOTES §9
 - Fonts: Switzer (self-hosted woff2 in `src/assets/fonts`, Fontshare ITF FFL) and
   Inter (`@fontsource/inter` 400/700), `font-display: swap`
 
 Scripts: `npm run dev` · `npm run build` · `npm run lint` · `npm run preview`.
+Lint = ESLint 9 flat config with `@eslint/js`, `eslint-plugin-react` (recommended +
+jsx-runtime, `react/prop-types` off), `eslint-plugin-react-hooks` and
+`eslint-plugin-react-refresh`; it runs with `--max-warnings 0`, so warnings fail it.
 
 ## Folder structure
 ```
@@ -61,8 +65,9 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
   colours `ink, ink-soft, muted, accent, cream, mist, smoke, white, black, overlay,
   ink-hover, white-hover`; fonts `font-display` (Switzer), `font-body` (Inter);
   type utilities `type-display, type-h2 … type-h6, type-h6-lg, type-quote, type-ticker,
-  type-stat, type-wordmark, type-wordmark-xl, type-link-lg, type-nav, type-eyebrow,
-  type-badge, type-counter, type-body-lg, type-body` (each already responsive);
+  type-stat, type-wordmark, type-wordmark-xl, type-link-lg, type-nav, type-menu-heading,
+  type-eyebrow, type-badge, type-counter, type-body-lg, type-body` (each already
+  responsive, exact measured values such as 18.08/23.504 — don't round them);
   spacing `h-nav`, `pt-section` (140px) / `pt-section-sm` (120px); `max-w-site` (1440px);
   `rounded-pill`.
 - **Mobile-first**. Breakpoints are the reference's: default = phone (≤809),
@@ -77,6 +82,10 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
   `useWishlistCount()`. Cart: `useCartStore` (`items`, `addItem`, `removeItem`),
   counter via `useCartCount()`. Both persisted to localStorage.
 - Prices are placeholders; format with `formatPrice()` (reference shows no prices).
+- Links that the reference renders as a text block (nav, footer, menu) are `block w-fit`
+  so their box is exactly one line-height tall, like the reference.
+- Elements whose text must render like the reference in Chromium need a compositing layer
+  (`will-change-transform` or a motion wrapper) — see DESIGN_NOTES §2.
 - Commit in small, meaningful steps; keep `npm run build` and `npm run lint` clean.
 
 ## Reference URLs
@@ -99,12 +108,22 @@ chromium.launch({ proxy: { server: process.env.HTTPS_PROXY },
   args: ['--ignore-certificate-errors-spki-list=' + SPKI] })
 ```
 Measure with `getComputedStyle` / `getBoundingClientRect` at 1440, 1000 and 390 px.
+Launch the local dev server's browser **without** the proxy (it can't reach localhost).
 Framer renders only the active breakpoint variant (nav `data-framer-name` =
-`Desktop-*`, `Tablet-*`, `Mobile-*`). Blocked hosts in this sandbox: framer.com (icons),
-the Shopify Storefront API (prices, add-to-cart, collection tile labels), unpkg, iconify.
+`Desktop-*`, `Tablet-*`, `Mobile-*`). Blocked hosts in this sandbox: framer.com (icon
+glyphs), `*.myshopify.com` (prices, add-to-cart), unpkg, iconify, api.fontshare.com.
+When something doesn't render, read the component props from the page's JS modules
+(capture `.mjs` responses from framerusercontent.com and grep them — e.g. icon
+`iconSelection`/`weight`, tile labels, `webPageId` link targets mapped through the route
+table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScaleFactor: 3`.
 
-## Known gaps / decisions (Phase 1)
-- Navbar omits Search, User (My Account) and Country flag icons from the reference.
-- Mobile-menu group headings all use Switzer 500 18px (reference mixes in Inter 20px).
-- Footer omits "Buy template"; Navigation column has 3 links (no My Account).
-- Payment badges are neutral 22px SVG text pills (reference: ~15px brand logos).
+## Known gaps / decisions (Phase 1, verified)
+- Navbar omits the User (My Account → myshopify) and Country flag icons. Desktop right
+  cluster keeps the reference width (196px) so the wordmark stays at x=701.5; the icons
+  themselves sit 88px (desktop) / 44px (tablet) / 36px (phone) right of the reference.
+- Search and Cart icons are buttons without drawers yet (drawers in a later phase).
+- "My Account" slot (footer + menu Navigation column) → "Collections" (`/shop`).
+- Footer "Buy template" button → "Shop Now" (`/shop`), from `site.footerCta`.
+- Payment badges are neutral SVG text pills with the reference logos' widths, 15.2px tall.
+- Mobile-menu headings replicate the reference: "Navigation" Switzer 500, "Pages"/"Others"
+  Inter 400 20/24 (`type-menu-heading`).

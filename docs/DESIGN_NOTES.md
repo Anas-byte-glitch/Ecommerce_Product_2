@@ -4,12 +4,18 @@ Measured on 2026-10-01 from https://glintura.framer.website with headless Chromi
 (Playwright, `getComputedStyle` + `getBoundingClientRect`) at 1440, 1000 and 390 px wide
 (900 px tall). All values below are **measured** unless marked _(estimate)_.
 
-> Reference limits: the template loads its icons from `framer.com/m/phosphor-icons/*`,
-> its product/collection commerce data from a Shopify Storefront API, a flag icon from
-> `api.iconify.design` and Lenis CSS from `unpkg.com`. Those hosts were blocked in the
-> research sandbox, so icon glyphs, prices, add-to-cart buttons and the collection-card
-> labels on `/women-category` + `/men-category` could not be observed. Icon names are
-> known from the URLs (Phosphor `MagnifyingGlass`, `Heart`, `ShoppingCart`, `User`).
+> Reference limits: the template loads its icon glyphs from `framer.com/m/phosphor-icons/*`,
+> its product commerce data from a Shopify Storefront API (`*.myshopify.com`), a flag icon
+> from `api.iconify.design` and Lenis CSS from `unpkg.com`. Those hosts are blocked in the
+> sandbox (still blocked on 2026-10-01, Phase 1 verification), so icon glyphs, prices and
+> add-to-cart buttons cannot be *seen*. Component props can still be read from the page's
+> own JS modules (framerusercontent.com, reachable): that is how the icon names/weights/colours
+> (§9) and the collection-tile labels (SITE_MAP.md) were verified.
+>
+> **Phase 1 verification (2026-10-01):** Navbar, mobile menu and footer were compared
+> element-by-element against the reference at 1440 / 1000 / 390 (same text-node walk with
+> `getBoundingClientRect` + `getComputedStyle` on `/contact` for both sites). Results are
+> in §14.
 
 ---
 
@@ -33,6 +39,18 @@ The default Tailwind `sm` / `xl` / `2xl` breakpoints are removed in `index.css`.
 
 Switzer = headings, nav, buttons, labels, wordmark. Inter = body copy / paragraphs.
 Fallback: `"Switzer", "Inter", ui-sans-serif, system-ui, sans-serif`.
+
+Our four Switzer woff2 files are **byte-identical** to the ones the reference serves
+(Switzer 1.200, unhinted TrueType). The reference also loads 500 italic / 700 / 700 italic
+(not needed so far).
+
+**Text rendering:** body uses `-webkit-font-smoothing: antialiased` and default
+`text-rendering` / `font-synthesis` (as the reference). The reference nav and page wrapper
+have `will-change: transform`; in Chromium that puts the text on its own compositing layer
+with subpixel glyph positioning. Without it our Switzer looked unevenly spaced at 16–20px
+(same advance widths, different rasterization). Navbar `<header>` and `<footer>` therefore
+carry `will-change-transform`; later sections get the same effect from their Reveal/motion
+wrappers — check zoomed (DPR 3) crops against the reference when building them.
 
 ## 3. Color palette
 
@@ -91,7 +109,10 @@ some toggles (`8px`, `10px`, `24px` — later phases).
 | Body | Inter 400 | 16/22.4 −0.08 | 16/22.4 | 14.08/19.7 −0.07 |
 | Body bold | Inter 700 | 16/22.4 | 16/22.4 | 14.08/19.7 |
 
-Tokens in `index.css` round 18.08 → 18px, 22.08 → 22px, 46.08 → 46px, etc.
+Tokens in `index.css` use these exact values (18.08 / 23.504, 22.08 / 28.704, 46.08 / 52.992 …),
+not rounded — verified to match the reference footer to the sub-pixel.
+
+Extra: `type-menu-heading` = Inter 400 20/24 (mobile-menu "Pages" / "Others" headings).
 
 ## 7. Buttons (measured on home)
 
@@ -121,93 +142,140 @@ Hover: not fully measurable (pill shapes unchanged); use a subtle opacity/colour
 
 Structure: `position: fixed; top:0; inset-x:0; height: 70.4px; padding: 16px 32px`
 (tablet `16px 24px`, phone `16px`), inner row height 38.4px, `justify-between`, items centred.
+The reference `<nav>` has `will-change: transform` (see §2).
 
 ### Desktop (>= 1200)
+Three flex children with `justify-between` — the wordmark is **not** mathematically centred:
+Left (272px) · Wordmark (113×38.4) · Right (196px). At 1440: Left x=32, wordmark x=701.5,
+Right x=1212.
 - **Left**: links Collections (`/shop`), About, Journal (`/journals`), Contact.
-  Switzer 400 16/19.2 −0.2, gap 16px between links.
-- **Centre**: wordmark "Glin" + italic "tura", Switzer 400 32/38.4, absolutely centred
-  (x = 701.5 of 1440 → centred).
-- **Right** (gap 24px, icons 20×20): Search, **Heart** (`/favourite`) with counter,
-  **Cart** with counter, User (myshopify — omitted), Country flag (20×15 — omitted).
-- Heart counter: 20×20 circle bg `accent`, digit Switzer 400 12px `cream`, offset
+  Switzer 400 16/19.2 −0.2, gap 16px, each link box 19.2px tall (x = 32 / 123.8 / 181.8 / 247.4).
+- **Centre**: wordmark "Glin" + italic "tura", Switzer 400 32/38.4 (p 113px wide).
+- **Right** (gap 24px, icons 20×20, y=25.2): Search 1212, **Heart** (`/favourite`) 1256 with
+  counter, **Cart** 1300 with counter, User 1344 (myshopify — omitted), Country flag 1388
+  (20×15, Shopify locale picker — omitted).
+- Heart counter: 20×20 circle bg `accent`, digit Switzer 400 12/12 `cream`, offset
   `+11px x / −8px y` from the icon's top-left.
-- Cart counter: 20×20 circle bg `accent`, digit Switzer 500 12px `cream`, offset
+- Cart counter: 20×20 circle bg `accent`, digit Switzer 500 12/12 `cream`, offset
   `+10px x / −10px y`.
 - Counters are always visible (they show "0").
 
+**Ours:** the right cluster is `lg:w-[196px] justify-end` holding Search, Heart, Cart, so the
+wordmark lands exactly at x=701.5; the three icons sit at 1300 / 1344 / 1388 (reference:
+1212 / 1256 / 1300) because User and Country are not built.
+
 ### Tablet (810–1199) / Phone (<= 809)
-- Left: wordmark only. Right: Search, Cart (+counter), Country, Menu button (24×24).
-  Gap 24px (tablet) / 16px (phone). **No heart icon** — Favourites is in the menu.
+- Left: wordmark only (x = 24 / 16). Right: Search, Cart (+counter), Country, Menu button
+  (24×24). Gap 24px (tablet) / 16px (phone). **No heart icon** — Favourites is in the menu.
+- Reference x at 1000: Search 820, Cart 864, Country 908, Menu 952; at 390: 242 / 278 / 314 / 350.
+  **Ours** (no Country): Search 864, Cart 908, Menu 952 at 1000; 278 / 314 / 350 at 390.
+
+### Icons (verified from the reference page modules)
+Framer Phosphor component, **weight `bold`** for every navbar icon:
+`MagnifyingGlass`, `Heart`, `ShoppingCart`, `User`, `List` (menu, switches to `X` when open).
+Colour: light variant `#FFFFFF`, dark variant `#222222`.
+Phosphor bold stroke = 24/256 of the icon size → lucide `strokeWidth={2.25}` at any size.
+Closest lucide glyphs (overlay-compared with `@phosphor-icons/core` bold SVGs):
+
+| Phosphor | lucide | Notes |
+|---|---|---|
+| MagnifyingGlass | `Search` | near-identical; Phosphor lens ~1px larger |
+| Heart | `Heart` | near-identical |
+| ShoppingCart | `ShoppingCart` | same silhouette; Phosphor wheels are rings, lucide dots |
+| List | `Menu` | lines 4→20 (Phosphor 3.75→20.25); `AlignJustify` (3→21) is further off |
+| X | `X` | lucide arms slightly shorter (6→18 vs 4.8→19.2) |
+| User | `User` | not used (omitted) |
 
 ### Colour states ("light" over hero vs "dark")
-- `light`: transparent bg, text `#FFFFFF`, wordmark `#F8F6F3`. Used while
-  `scrollY < 100vh` on pages with a full-screen image hero:
+- `light`: transparent bg, links `#FFFFFF`, icons `#FFFFFF`, wordmark + counter digits
+  `#F8F6F3`. Used while `scrollY < 100vh` on pages with a full-screen image hero:
   `/`, `/shop`, `/women-category`, `/men-category`, `/favourite`, `/about`,
   `/journals/:slug`.
-- `dark`: bg `#FFFFFF`, text/wordmark `#222222`. Used always on
+- `dark`: bg `#FFFFFF`, text/icons/wordmark `#222222`. Used always on
   `/women-category/:c`, `/men-category/:c`, `/product/:slug`, `/contact`, `/journals`,
   `/terms`, `/privacy-policy`, `/refund-policy`, `/404`, and on hero pages once
-  `scrollY >= 100vh` (threshold measured: exactly the viewport height).
+  `scrollY >= 100vh` (threshold measured: exactly the viewport height; ours verified:
+  transparent at 899px, white at 900px with a 900px viewport).
 - No backdrop blur, no shadow, no border.
 
 ### Scroll behaviour (measured with wheel events)
 - Scrolling **down** (even 100px): navbar slides up `translateY(-85px)` (hidden).
 - Scrolling **up**: navbar slides back to `translateY(0)`.
 - At the top it is always shown. Transition ≈ 300–400 ms ease _(estimate)_.
+- Ours verified: −85px after 100px down, 0 after 50px up, shown at the top, stays shown
+  while the menu is open.
 
 ### Hover
 - Light links: `#FFFFFF → #D9D9D9`. Dark links: `#222222 → rgba(51,51,51,.85)`.
 - Wordmark and icons: no change.
 
+### Search / cart (later phases)
+Search icon opens a right-hand drawer (452px wide at 1440, 24px inset, white, "Search..."
+input with magnifier, X close, page dimmed). Cart opens the same drawer shape: "Your cart is
+empty" header, "Feed Me Something / Have a look to our beautiful products", buttons "Men's
+Collection" (dark) and "Women's Collection" (light grey). Both buttons are inert in Phase 1.
+
 ### Mobile menu (tablet + phone)
-- Menu button toggles Open ↔ Close icon (Phosphor-style list / X, 24×24).
+- Menu button toggles Open ↔ Close icon (Phosphor List / X bold, 24×24).
 - The navbar itself **expands in height** to full viewport (`100vh`), bg `#FFFFFF`,
   text dark; content fades in while the height animates (~300 ms, observed clipping
   at 100 ms). Top bar stays identical (wordmark + icons).
-- Below the bar: `padding: 64px 0; gap: 32px`, three groups (each `gap: 16px`):
-  - **Navigation**: Women's Collection, Men's Collection, Favourites (My Account omitted)
+- Open, the nav is a column: bar (38.4) + **10px gap** (not the 16px bottom padding) → menu
+  block at y=64.4 with `padding: 64px 0; gap: 32px` → first heading at **y=128.4**
+  (ours: `pt-[58px]` under the 70.4px bar). Three groups (each `gap: 16px`):
+  - **Navigation**: Women's Collection, Men's Collection, Favourites, My Account → ours
+    "Collections" (`/shop`) in the 4th slot
   - **Pages**: Home, About, Journals, Contact
   - **Others**: Terms, Privacy Policy, Refund Policy, Instagram, 404
-- Group heading: `muted`, Switzer 500 18px/23.5 (reference uses Inter 400 20/24 for
-  "Pages"/"Others" — an inconsistency in the template; we use Switzer 500 for all three).
-- Items: Switzer 400 16/19.2 −0.2 `#222`, `gap: 8px`.
-- Menu closes on navigation.
+- Group headings, `muted`: "Navigation" = Switzer 500 18.08/23.504; "Pages" and "Others" =
+  **Inter 400 20/24** (template inconsistency, replicated with `type-menu-heading`).
+- Items: Switzer 400 16/19.2 −0.2 `#222`, `gap: 8px`, 19.2px tall.
+  Verified positions (both sites, 390 & 1000): headings y 128.4 / 300.7 / 473.5; items
+  167.9 → 249.5, 340.7 → 422.3, 513.5 → 622.3 (27.2px steps).
+- Closes on Escape, on link click and on the toggle (verified).
 
 ## 10. Footer
 
 `<footer>` bg `#FFFFFF`. Inner column: padding `32px` (desktop), `24px 24px 32px` (tablet),
 `24px 16px` (phone); `gap: 56px` between top row and brand row. No copyright line,
-no top border.
+no top border. Footer height: **510.4 / 424 / 848.8** at 1440 / 1000 / 390 (ours identical).
 
 ### Desktop
-- **Top row** (`justify-between`, height 200):
-  - Left (412px wide): tagline h6 Switzer 400 24/31.2 `#222`
-    "Discover timeless jewelry designed to become part of your everyday story";
-    (reference has "Buy template" dark button below with 24px gap — **omitted**).
-  - Right: three columns, `gap: 64px`. Each column: heading (`muted`, Switzer 500 20/26
-    −0.4) then links (Switzer 500 20/26 −0.4 `#222`), heading→links 16px.
-    Links box is 158px tall, items distributed (`justify-between`): Navigation and
-    Pages = 4 items (18px gaps), Others = 5 items (7px gaps). We keep the 158px
-    `justify-between` box; Navigation now has 3 items (My Account removed).
-- **Brand row** (`justify-between`, items-end): left "Supported Payments" (h6 Switzer 400
-  20/26) + payment row (gap 10px between title and row; badges 12px apart, ~15px tall);
-  right huge wordmark "Glintura" Switzer 400 238/190.4 −4.76, right aligned, 806px wide.
+- **Top row** (`justify-between`, `align-items: flex-start`, height 200):
+  - Left (412px wide, column, gap 24px): tagline h6 Switzer 400 24/31.2 `#222`
+    "Discover timeless jewelry designed to become part of your everyday story" (93.6 tall),
+    then a Dark-Large button (50px tall) at y=149.6. Reference label "Buy template" →
+    **ours "Shop Now" → `/shop`** (`site.footerCta`), same button style.
+  - Right: three columns, `gap: 64px` (x = 907 / 1146.8 / 1286.6). Each column: heading
+    (`muted`, Switzer 500 20/26 −0.4, width = text) then links (Switzer 500 20/26 −0.4
+    `#222`, 26px tall, width = text), heading→links 16px.
+    Links box is 158px tall with `justify-between`: Navigation and Pages = 4 items
+    (y 74 / 118 / 162 / 206), Others = 5 items (74 / 107 / 140 / 173 / 206).
+    Navigation's 4th item is "My Account" (Shopify) → **ours "Collections" (`/shop`)**.
+- **Brand row** (`justify-between`, items-end, 190.4 tall): left "Supported Payments" block
+  312px wide (h6 Switzer 400 20/26 at y=427.2, gap 10px, logo row 15.2 tall, items centred,
+  gap 12px); right huge wordmark "Glintura" Switzer 400 238/190.4 −4.76, 806px wide.
 
 ### Tablet
-- Same structure. Left 340px wide (tagline 22px/28.7). Right columns `gap: 40px`,
-  headings/links 18px/23.5, links box 160.5px. Wordmark 140/112 −2.8 (473px wide).
+- Same structure. Left 340px wide (tagline 22.08/28.704, button 47.5 tall). Right columns
+  `gap: 40px` (x = 540 / 748 / 860), headings/links 18.08/23.504 (letter-spacing normal),
+  links box 160.5px. Wordmark 140/112 −2.8 (473px wide). Payments title y=340.8.
 
 ### Phone
-- Single column. Tagline 20/26.
-- Link columns: 2-col grid, column gap 40px, row gap ~72px; Navigation + Pages in row 1,
-  Others in row 2. Links gap 8px (not justify-between). Headings/links 18px.
-- Brand row stacked: wordmark first (94/75.2 −1.88, left aligned), then Supported
-  Payments (17.6/22.9) with `gap: 16px`.
+- Single column, `gap: 64px` between the Left block (tagline 20/26 + button) and the links.
+- Link columns: CSS grid, 2 columns × 2 **equal (1fr) rows**, gap 40px; Navigation + Pages in
+  row 1 (y=211.5), Others in row 2 (y=440.5). Links gap 8px (not justify-between),
+  headings/links 18.08/23.504. Links never wrap ("Women's Collection" is 168px wide and
+  overflows its 159px track).
+- Brand row stacked (`gap: 16px`): wordmark first (94/75.2 −1.88, left aligned, y=685.5),
+  then Supported Payments (17.6/22.88, y=776.7) with the logo row top-aligned (y=809.6).
 
 ### Payments
-Reference shows brand logos (Apple Pay, Google Pay, PayPal, Amazon, Visa) as images —
-**not copied**. We render five neutral SVG text pills with brand-free labels:
-"Card", "Wallet", "Bank", "Pay Later", "Cash" (configured in `src/config/site.js`).
+Reference shows five brand logos (Apple Pay 40×15.2, Google Pay 34×13.8, PayPal 53×14.1,
+Amazon 39×12, Visa 37×12, gap 12) — **not copied**. Ours: five neutral SVG text pills with
+the same widths, all 15.2px tall (Switzer 500 8.5px), labels "Card", "Bank", "Pay Later",
+"Wallet", "Cash" (`site.payments`; the 3rd is the widest slot). Slot x-positions match the
+reference exactly.
 
 ## 11. Product card (measured, for later phases)
 
@@ -238,3 +306,31 @@ Reference shows brand logos (Apple Pay, Google Pay, PayPal, Amazon, Visa) as ima
 - Smooth scrolling via Lenis on the reference (consider later; not required).
 - Headings animate in word-by-word (opacity) — `Reveal` component in later phases.
 - Product card hover: image cross-fade.
+- The footer (and most sections) fade/slide in when scrolled into view (Framer appear
+  effect, `animateOnce`, threshold 0.5) — not built yet; the footer is static in Phase 1.
+
+## 14. Phase 1 verification results (2026-10-01)
+
+Compared on `/contact` (both sites) at 1440 / 1000 / 390 × 900, every text node + icon box
+(x, y, w, h, font family/size/weight/style, line-height, letter-spacing, colour). Tolerance 0.6px.
+
+**Matches exactly (all three widths):** navbar height (70.4), padding, link positions and
+type, wordmark position (x=701.5 desktop, 24/16 tablet/phone) and type, counter offsets and
+type, light/dark colours, scroll-hide (−85px) and 100vh switch; mobile menu (open height =
+viewport, every heading/item position, fonts); footer height and every heading, link, tagline,
+button, "Supported Payments" title, payment slot and wordmark position/size/type.
+
+**Remaining differences (intentional, do-not-copy):**
+
+| Where | Reference | Ours |
+|---|---|---|
+| Navbar right, desktop | Search 1212, Heart 1256, Cart 1300, User 1344, Country 1388 | Search 1300, Heart 1344, Cart 1388 (counters move with them) |
+| Navbar right, tablet / phone | Search, Cart, Country, Menu | Search, Cart, Menu — Search/Cart 44px (tablet) / 36px (phone) further right |
+| Footer + menu Navigation 4th link | My Account (myshopify) | Collections → `/shop` |
+| Footer button | Buy template (contra.com) | Shop Now → `/shop` |
+| Payments | brand logos (12–15.2px tall) | neutral text pills, 15.2px tall, same widths |
+| Icon glyphs | Phosphor bold | lucide equivalents at stroke 2.25 (see §9 table) |
+
+**Not verifiable here:** the reference icon glyphs as rendered (framer.com blocked — names,
+weight and colours come from the page modules instead); hover transition timings; the search
+and cart drawers' behaviour with real products (Shopify blocked).

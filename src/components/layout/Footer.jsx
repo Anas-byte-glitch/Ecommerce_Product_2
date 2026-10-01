@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom'
 import { footerColumns, site } from '../../config/site'
+import Button from '../ui/Button'
 
-// Neutral payment pill (text label only, no brand logos).
-function PaymentBadge({ label }) {
-  const width = Math.round(label.length * 6.6 + 20)
+// Widths of the five reference payment logos, so the pills sit where the logos do.
+const PAYMENT_WIDTHS = [40, 34, 53, 39, 37]
+
+// Neutral payment pill (text label only, no brand logos), as tall as the tallest reference logo.
+function PaymentBadge({ label, width }) {
   return (
     <svg
       width={width}
-      height="22"
-      viewBox={`0 0 ${width} 22`}
+      height="15.2"
+      viewBox={`0 0 ${width} 15.2`}
       role="img"
       aria-label={label}
-      className="shrink-0"
+      className="block shrink-0"
     >
-      <rect x="0.5" y="0.5" width={width - 1} height="21" rx="10.5" fill="#ffffff" stroke="#222222" />
+      <rect x="0.5" y="0.5" width={width - 1} height="14.2" rx="7.1" fill="#ffffff" stroke="#222222" />
       <text
         x="50%"
         y="50%"
@@ -21,7 +24,7 @@ function PaymentBadge({ label }) {
         textAnchor="middle"
         fill="#222222"
         fontFamily="Switzer, Inter, sans-serif"
-        fontSize="11"
+        fontSize="8.5"
         fontWeight="500"
       >
         {label}
@@ -30,7 +33,7 @@ function PaymentBadge({ label }) {
   )
 }
 
-const linkClass = 'text-ink type-link-lg transition-colors duration-300 hover:text-ink-hover'
+const linkClass = 'block w-fit whitespace-nowrap text-ink type-link-lg transition-colors duration-300 hover:text-ink-hover'
 
 function FooterLink({ link }) {
   if (link.to) {
@@ -49,14 +52,19 @@ function FooterLink({ link }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    // will-change: own compositing layer, as on the reference (same glyph positioning).
+    <footer className="bg-white will-change-transform">
       <div className="flex flex-col gap-14 px-4 py-6 md:px-6 md:pt-6 md:pb-8 lg:p-8">
-        <div className="flex flex-col gap-16 md:flex-row md:justify-between md:gap-10">
-          <h2 className="text-ink type-h6-lg md:max-w-[340px] lg:max-w-[412px]">{site.tagline}</h2>
+        <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between md:gap-10">
+          <div className="flex flex-col items-start gap-6 md:w-[340px] lg:w-[412px]">
+            <h2 className="text-ink type-h6-lg">{site.tagline}</h2>
+            <Button to={site.footerCta.to}>{site.footerCta.label}</Button>
+          </div>
 
-          <div className="grid grid-cols-2 gap-x-10 gap-y-[72px] md:flex md:gap-10 lg:gap-16">
+          {/* Phone: 2 equal-height rows with a 40px gap, like the reference grid. */}
+          <div className="grid auto-rows-fr grid-cols-2 gap-10 md:flex lg:gap-16">
             {footerColumns.map((column) => (
-              <div key={column.title} className="flex flex-col gap-4">
+              <div key={column.title} className="flex flex-col items-start gap-4">
                 <p className="text-muted type-link-lg">{column.title}</p>
                 <ul className="flex flex-col gap-2 md:h-[160.5px] md:justify-between md:gap-0 lg:h-[158px]">
                   {column.links.map((link) => (
@@ -70,13 +78,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col-reverse gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
-          <div className="flex flex-col gap-2.5">
+        <div className="flex flex-col-reverse items-start gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
+          <div className="flex flex-col gap-2.5 self-stretch md:w-[312px] md:self-auto">
             <h2 className="text-ink type-h6">Supported Payments</h2>
-            <ul className="flex flex-wrap items-center gap-3">
-              {site.payments.map((label) => (
+            <ul className="flex flex-wrap items-start gap-3 md:items-center">
+              {site.payments.map((label, index) => (
                 <li key={label}>
-                  <PaymentBadge label={label} />
+                  <PaymentBadge label={label} width={PAYMENT_WIDTHS[index] ?? label.length * 5 + 12} />
                 </li>
               ))}
             </ul>

@@ -57,9 +57,28 @@ luna-charm-bracelet) and "Featured Customers".
 | `men-onsale` | On Sale | Men Exclusive Sale | _(empty → "This Collection Is Coming Soon" + "Explore Collections")_ |
 
 On `/women-category` and `/men-category` the collections are shown as a 7-tile bento
-grid (rows: 960+400, 680+680, 960+400, 1376 wide; 500/500/500/800 tall). The tile
-labels/links are rendered by a Shopify component that was blocked during research —
-**assumed** to be the 7 collections above in sitemap order (unverified).
+grid after the header "/ Browse Women Collections /" (men: "/ Browse Men Collections /") +
+h2 "Discover What You're Looking For". **Verified 2026-10-01** from the reference page
+modules (each tile is a Framer component with a link + label prop) and the tile photos:
+tiles are the 7 collections above **in sitemap order**.
+
+| Row (desktop px) | Women tile → label | Men tile → label |
+|---|---|---|
+| 1: 960 + 400 (500 tall) | women-necklace "Necklace", women-ring "Rings" | men-chain "Chains", men-ring "Rings" |
+| 2: 680 + 680 | women-bracelet "Bracelets", women-earring "Earrings" | men-bracelet "Bracelets", men-earring "Earrings" |
+| 3 | 960 + 400: women-bestsellers "Best Sellers", women-newarrivals "New Arrivals" | **400 + 960** (mirrored): men-bestsellers "Best Sellers", men-newarrivals "New Arrivals" |
+| 4: 1376 × 800 | women-onsale "On Sale" | men-onsale "On Sale" |
+
+Labels are stored as `tileLabel` in `src/data/collections.js` (note "Necklace", singular,
+while the collection eyebrow is "Necklaces"). The labels render through a sub-component
+that stays empty in the sandbox, so the label *styling* is still unmeasured.
+
+After the grid comes a cross-link section to the other audience: women page "Men's
+recommendation" / "Discover Our Men's Collection" / "For Him" / button "Explor Men's
+Collection" (sic) → `/men-category`; men page "Women's Recommendation" / "Discover Our
+Women's Collection" / "For Her" / "Explor Women's Collection" → `/women-category`. Then
+"/ Explore more products /" (harper-rope-chain, nova-open-ring, luna-charm-bracelet) and
+"/ Featured Customers /".
 
 ## Products (25)
 
