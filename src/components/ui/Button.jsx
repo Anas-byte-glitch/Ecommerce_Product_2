@@ -4,6 +4,7 @@ import { cn } from '../../utils/cn'
 const variants = {
   dark: 'bg-ink text-cream',
   light: 'bg-white text-ink',
+  muted: 'bg-mist text-ink', // on white backgrounds (cart)
 }
 
 // Square button, 12px 32px padding, Switzer 500 20/26 (18px below 1200px).

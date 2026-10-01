@@ -3,6 +3,7 @@ import { Outlet, useMatches } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
+import CartDrawer from '../cart/CartDrawer'
 import { site } from '../../config/site'
 
 // Document title: the brand name on every page (as on the reference), or the deepest route's
@@ -25,6 +26,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <CartDrawer />
     </>
   )
 }
