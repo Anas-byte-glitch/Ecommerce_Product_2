@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). Next: Phase 5. Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** too (§20). Next: checkout / search. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -51,16 +51,18 @@ src/
     ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
                           Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
                           HoverTile (image tile with hover panel), EmptyState, Accordion
-                          (multi-open, + → ×) (to add: Drawer)
+                          (multi-open, + → ×), Drawer (focus trap, Escape, scroll lock)
     product/              ProductCard, FavouriteButton, ProductGrid, ProductGallery,
                           QuantityStepper, AddToCart, HorizontalCard, ProductTestimonials
+    cart/                 CartDrawer (mounted in Layout), CartLine, CartEmpty, FreeShippingNote
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
     shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
                           SharedSections (all three, in order), ImageHero (fixed full-screen hero
                           for /shop + audience pages), CollectionBento, AudienceCta —
                           used above the footer on most pages (table in docs/SITE_MAP.md)
     journal/              JournalCard … (later)
-  pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites,
+  pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites, Cart,
+                          Checkout (placeholder),
                           About, Contact, Journals, JournalArticle, Legal, NotFound
   store/                  wishlistStore, cartStore, uiStore
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
@@ -88,8 +90,14 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
 - Pages whose first section is a full-screen dark image hero must call
   `useNavOverHero()` so the navbar starts transparent/white-text (see DESIGN_NOTES §9).
 - Unknown product / collection / journal slugs render `<NotFound />`.
-- Cart API: `useCartStore` → `items [{slug, quantity}]`, `addItem(slug, qty)` (merges same slug),
-  `removeItem(slug)`, `clear()`; `useCartCount()` = total quantity (navbar). Persisted.
+- Cart API (`store/cartStore.js`): `useCartStore` → `items [{slug, quantity}]`, `isDrawerOpen`,
+  `openDrawer()`, `closeDrawer()`, `addItem(slug, qty)` (merges same slug), `updateQuantity(slug, qty)`,
+  `removeItem(slug)`, `clearCart()`; quantities clamped to `MIN_QUANTITY`/`MAX_QUANTITY` (1–10).
+  `useCartCount()` = total quantity (navbar); `useCartSummary()` / `summarizeCart(items)` →
+  `{ lines (with product, lineTotal), count, subtotal, shipping, total, freeShipping,
+  remainingForFreeShipping }`; `getLineTotal(line)`. Only `items` is persisted; unknown slugs are
+  dropped on load. Shipping uses `site.freeShippingThreshold` / `site.flatShipping`. The cart
+  always shows prices, regardless of `site.showPrices`.
 - Page titles: add `handle: { title: (params) => … }` to a route; `Layout` sets
   `"<title> - <brand>"`, otherwise just the brand.
 - Wishlist: `useWishlistStore` (`toggle(slug)`, `has(slug)`, `items`), counter via

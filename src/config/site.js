@@ -11,6 +11,9 @@ export const site = {
   payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
   // Show a placeholder price under product-card titles (the reference shows none).
   showPrices: true,
+  // Cart placeholders (USD): free shipping from this subtotal, otherwise a flat rate.
+  freeShippingThreshold: 150,
+  flatShipping: 8,
   // Optional background video for the home "About Us" block (muted, looping). Empty = poster only.
   homeVideoSrc: '',
   // Dark button under the footer tagline (stands in for the reference's "Buy template").

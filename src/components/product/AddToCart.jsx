@@ -7,9 +7,11 @@ const base =
 
 // "Add to Cart" (dark) + "Buy Now" (light grey) — the reference's Shopify purchase buttons,
 // which never finish loading in the sandbox. Both add `quantity` to the cart; the clicked
-// button reads "Added" for 1.5s. Checkout is not built yet (Buy Now behaves like Add to Cart).
+// button reads "Added" for 1.5s and the cart drawer opens. Buy Now behaves like Add to Cart
+// (checkout comes later).
 export default function AddToCart({ slug, quantity }) {
   const addItem = useCartStore((state) => state.addItem)
+  const openDrawer = useCartStore((state) => state.openDrawer)
   const [added, setAdded] = useState(null)
   const timer = useRef(0)
 
@@ -17,6 +19,7 @@ export default function AddToCart({ slug, quantity }) {
 
   const add = (which) => {
     addItem(slug, quantity)
+    openDrawer()
     setAdded(which)
     clearTimeout(timer.current)
     timer.current = setTimeout(() => setAdded(null), 1500)

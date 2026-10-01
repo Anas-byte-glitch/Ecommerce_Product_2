@@ -12,6 +12,8 @@ import Journals from './pages/Journals'
 import JournalArticle from './pages/JournalArticle'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
+import Checkout from './pages/Checkout'
+import Cart from './pages/Cart'
 import { getProduct } from './data/products'
 
 // Same URL paths as the reference (docs/SITE_MAP.md).
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
         handle: { title: (params) => getProduct(params.slug)?.name },
       },
       { path: '/favourite', element: <Favourites /> },
+      { path: '/cart', element: <Cart />, handle: { title: () => 'Cart' } },
+      { path: '/checkout', element: <Checkout />, handle: { title: () => 'Checkout' } },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
       { path: '/journals', element: <Journals /> },

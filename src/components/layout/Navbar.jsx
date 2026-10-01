@@ -5,7 +5,7 @@ import { Heart, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { mainNav } from '../../config/site'
 import { useUiStore } from '../../store/uiStore'
 import { useWishlistCount } from '../../store/wishlistStore'
-import { useCartCount } from '../../store/cartStore'
+import { useCartCount, useCartStore } from '../../store/cartStore'
 import { cn } from '../../utils/cn'
 import Wordmark from '../ui/Wordmark'
 import MobileMenu from './MobileMenu'
@@ -32,6 +32,7 @@ export default function Navbar() {
   const navOverHero = useUiStore((state) => state.navOverHero)
   const wishlistCount = useWishlistCount()
   const cartCount = useCartCount()
+  const openCart = useCartStore((state) => state.openDrawer)
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [pastHero, setPastHero] = useState(false)
@@ -141,10 +142,14 @@ export default function Navbar() {
               <Counter value={wishlistCount} className="-top-2 left-[11px]" />
             </Link>
 
-            {/* The cart drawer is built in a later phase. */}
             <button
               type="button"
               aria-label={`Cart (${cartCount})`}
+              aria-haspopup="dialog"
+              onClick={() => {
+                setMenuOpen(false)
+                openCart()
+              }}
               className="relative size-5 cursor-pointer"
             >
               <ShoppingCart size={20} strokeWidth={ICON_STROKE} aria-hidden="true" />

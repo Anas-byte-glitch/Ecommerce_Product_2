@@ -623,3 +623,36 @@ clicked button reads **"Added" for 1.5s**. Buy Now also just adds to the cart (n
   but the list does not change (its filter needs the blocked Shopify data). **Decision:** ours shows
   only saved products (catalogue order, hearts filled); empty state = "Nothing here yet" (`type-h4`)
   + short text + dark "Explore Collections" → `/shop`.
+
+## 20. Cart drawer and /cart (Phase 5A — no reference, designed in the project's language)
+
+The template's cart is a Shopify component (blocked in the sandbox), so this part has **no
+visual reference**; it reuses the tokens, type utilities, square buttons and spacing above.
+
+- **`Drawer`** (`ui/Drawer.jsx`): portal, `z-60`, backdrop `bg-overlay`; panel white, full width on
+  phones, **452px with a 24px inset from 810px** (the reference search/cart drawer shape, §9).
+  Header (title `type-h6-lg` + 20px X), scrolling body, pinned footer, `mist` 1px dividers.
+  Slides in (spring, bounce 0, 0.5s; backdrop fades 0.3s); under reduced motion it only appears.
+  Focus moves to the close button, Tab / Shift+Tab are trapped, Escape and backdrop click close it,
+  focus returns to the trigger, page scroll is locked (`overflow-hidden` on `<html>`).
+- **Cart drawer** (`cart/CartDrawer.jsx`, mounted once in `Layout`): title "Cart (count)"; lines
+  (`CartLine`: 96px thumbnail, category `type-badge`, name `type-h6` linking to the product and
+  closing the drawer, line total, `QuantityStepper` 1–10, "Remove"); footer: Subtotal, the
+  free-shipping line, dark "Checkout" → `/checkout` (placeholder page) and muted (`bg-mist`)
+  "View cart" → `/cart`. Empty: "Your cart is empty" + "Continue shopping" → `/shop`.
+- **Opens from** the navbar cart icon and **after Add to Cart and Buy Now** on the product page.
+  _Deliberate deviation:_ those buttons also keep their "Added" label for 1.5s (§19).
+- **`/cart`** (`pages/Cart.jsx`, title "Cart - Glintura"): `pt-180` header (eyebrow "Your Cart",
+  h1 display "Shopping Cart"), lines with 96px (phone) / 160px images; order summary in a
+  `bg-smoke` box (Subtotal, Shipping "Free" or amount, Total `type-h6-lg`, free-shipping line,
+  Checkout button, "Continue shopping" link). Desktop: two columns (summary 452px, `sticky top-24`);
+  tablet/phone stacked. Same empty state. **No shared sections** on this page.
+- **Prices always show in the cart**, even with `site.showPrices = false` (that flag only hides
+  the decorative price rows on product cards / the product page).
+- **Shipping:** `site.freeShippingThreshold` (150) and `site.flatShipping` (8), placeholders.
+  Shipping = 0 for an empty cart or subtotal ≥ threshold, else the flat rate. Message:
+  "Add $X more for free shipping" / "You've unlocked free shipping".
+  Verified: $129 → shipping $8, total $137, "Add $21.00 more"; $149 → $8 / "Add $1.00 more";
+  $208 (two lines) and $258 (qty 2) → Free; qty capped at 10 (plus disabled), minus disabled at 1.
+- Saved lines whose product no longer exists are dropped (and quantities clamped) when the
+  persisted cart loads.
