@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). Next: Phase 4. Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). Next: Phase 5. Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -44,14 +44,16 @@ jsx-runtime, `react/prop-types` off), `eslint-plugin-react-hooks` and
 src/
   config/site.js          brand name, wordmark split, tagline, instagram, payments, nav + footer links,
                           showPrices (card price row), homeVideoSrc (optional About-block video)
-  data/                   products, categories, collections, journals, faqs, testimonials, customers
+  data/                   products (+ productDetails: PDP texts, matchWith), categories, collections,
+                          journals, faqs, testimonials (3 reviews per product), customers
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
     ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
                           Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
-                          HoverTile (image tile with hover panel), EmptyState
-                          (to add: Accordion, Drawer)
-    product/              ProductCard, FavouriteButton, ProductGrid
+                          HoverTile (image tile with hover panel), EmptyState, Accordion
+                          (multi-open, + → ×) (to add: Drawer)
+    product/              ProductCard, FavouriteButton, ProductGrid, ProductGallery,
+                          QuantityStepper, AddToCart, HorizontalCard, ProductTestimonials
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
     shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
                           SharedSections (all three, in order), ImageHero (fixed full-screen hero
@@ -86,6 +88,10 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
 - Pages whose first section is a full-screen dark image hero must call
   `useNavOverHero()` so the navbar starts transparent/white-text (see DESIGN_NOTES §9).
 - Unknown product / collection / journal slugs render `<NotFound />`.
+- Cart API: `useCartStore` → `items [{slug, quantity}]`, `addItem(slug, qty)` (merges same slug),
+  `removeItem(slug)`, `clear()`; `useCartCount()` = total quantity (navbar). Persisted.
+- Page titles: add `handle: { title: (params) => … }` to a route; `Layout` sets
+  `"<title> - <brand>"`, otherwise just the brand.
 - Wishlist: `useWishlistStore` (`toggle(slug)`, `has(slug)`, `items`), counter via
   `useWishlistCount()`. Cart: `useCartStore` (`items`, `addItem`, `removeItem`),
   counter via `useCartCount()`. Both persisted to localStorage.
