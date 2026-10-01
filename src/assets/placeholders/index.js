@@ -12,6 +12,14 @@ import collectionHalf from './collection-half.svg'
 import collectionFull from './collection-full.svg'
 import hero from './hero.svg'
 import avatar from './avatar.svg'
+import heroWide from './hero-wide.svg'
+import bannerWide from './banner-wide.svg'
+import aboutPoster from './about-poster.svg'
+import newsletterWide from './newsletter-wide.svg'
+import promoTall from './promo-tall.svg'
+import genderWomen from './gender-women.svg'
+import genderMen from './gender-men.svg'
+import portrait from './portrait.svg'
 
 export const placeholders = {
   product,
@@ -27,4 +35,13 @@ export const placeholders = {
   collectionFull,
   hero,
   avatar,
+  // Home page (16:9 unless noted)
+  heroWide,
+  bannerWide,
+  aboutPoster,
+  newsletterWide,
+  promoTall, // 2:3
+  genderWomen, // 7:8
+  genderMen, // 7:8
+  portrait, // 5:6, featured customers
 }

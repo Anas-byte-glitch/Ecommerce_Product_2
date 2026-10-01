@@ -53,7 +53,7 @@ function FooterLink({ link }) {
 export default function Footer() {
   return (
     // will-change: own compositing layer, as on the reference (same glyph positioning).
-    <footer className="bg-white will-change-transform">
+    <footer className="overflow-clip bg-white will-change-transform">
       <div className="flex flex-col gap-14 px-4 py-6 md:px-6 md:pt-6 md:pb-8 lg:p-8">
         <div className="flex flex-col gap-16 md:flex-row md:items-start md:justify-between md:gap-10">
           <div className="flex flex-col items-start gap-6 md:w-[340px] lg:w-[412px]">
