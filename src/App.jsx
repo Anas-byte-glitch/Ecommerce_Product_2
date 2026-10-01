@@ -12,6 +12,7 @@ import Journals from './pages/Journals'
 import JournalArticle from './pages/JournalArticle'
 import Legal from './pages/Legal'
 import NotFound from './pages/NotFound'
+import { getProduct } from './data/products'
 
 // Same URL paths as the reference (docs/SITE_MAP.md).
 const router = createBrowserRouter([
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       { path: '/men-category', element: <Category audience="men" /> },
       { path: '/women-category/:collection', element: <Collection audience="women" /> },
       { path: '/men-category/:collection', element: <Collection audience="men" /> },
-      { path: '/product/:slug', element: <ProductDetail /> },
+      {
+        path: '/product/:slug',
+        element: <ProductDetail />,
+        handle: { title: (params) => getProduct(params.slug)?.name },
+      },
       { path: '/favourite', element: <Favourites /> },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
