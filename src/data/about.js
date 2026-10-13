@@ -24,7 +24,7 @@ export const beliefs = [
 export const stats = [
   { value: 3000, suffix: '+', label: 'Customers Served' },
   { value: 14, suffix: '+', label: 'Collections' },
-  { value: 20, suffix: '+', label: 'Countries Shipped To' },
+  { value: 20, suffix: '+', label: 'Countries Served' },
   { value: 25, suffix: '+', label: 'Pieces In Range' },
 ]
 

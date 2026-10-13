@@ -76,7 +76,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'vivian-charm-bracelet': {
-    description: "A delicate chain with five tiny charms already attached, so it feels personal from the very first day. Vivian is cheerful, light and just a little playful.",
+    description: "A delicate chain with five tiny charms already attached, so it feels personal from the very first day. Vivian is cheerful, light and just a little bit playful, a charming everyday companion.",
     details: `Vivian is the ${site.name} charm bracelet in rose gold: a fine chain, five small charms and a clasp that opens with one hand.`,
     materials: "Stainless steel with 3-micron rose-gold plating. Nickel-free and comfortable all day. Free from lead and cadmium.",
     dimensions: "Length: 7 in plus a 1 in extender. Chain: 3 mm. Lobster clasp. Includes five charms. Supplied in a gift box. All measurements are approximate.",
@@ -148,7 +148,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'teague-leather-bracelet': {
-    description: "Braided black leather with a small steel clasp. Teague is relaxed and rugged, and it softens as it ages, so every wrist ends up giving it a slightly different look.",
+    description: "Braided black leather with a small steel clasp. Teague is relaxed and rugged, and it softens as it ages, so every wrist ends up giving it a slightly different look over the years.",
     details: `The ${site.name} Teague Leather Bracelet pairs braided leather cord with steel fittings and a magnetic clasp for easy wear.`,
     materials: "Braided genuine leather with a 316L stainless steel clasp and end caps. Matte black finish. Free from lead and cadmium.",
     dimensions: "Length: 8 in plus a 1 in extension. Cord: 6 mm. Magnetic fold-over clasp. About 14 g. Supplied in a gift box.",
@@ -156,7 +156,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'quill-link-bracelet': {
-    description: "Tough gunmetal links with a fold-over clasp. Quill is built to be knocked about and still look sharp, and it can be resized in a minute by taking a link or two out.",
+    description: "Tough gunmetal links with a fold-over clasp. Quill is built to be knocked about and still look sharp, and it can be resized in a minute by taking a link or two out yourself.",
     details: `Quill is the ${site.name} link bracelet in gunmetal titanium steel: strong, light and easy to adjust. Packed in a gift box. Made to be worn every day.`,
     materials: "Titanium steel with a gunmetal PVD coating. Scratch-resistant, tarnish-proof and light. Free from lead and cadmium.",
     dimensions: "Length: 8.5 in, resizable by removing links. Links: 8 mm. Fold-over clasp. About 36 g. Supplied in a gift box.",
@@ -188,7 +188,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'soren-rope-bracelet': {
-    description: "A tightly twisted steel rope in dark gunmetal. Soren is slim, rugged and easy to layer with a watch or with other bracelets, and its low profile suits almost any wrist size.",
+    description: "A tightly twisted steel rope in dark gunmetal. Soren is slim, rugged and easy to layer with a watch or with other bracelets, and its low profile suits any wrist.",
     details: `The ${site.name} Soren Rope Bracelet: a twisted rope chain in gunmetal, a smart everyday piece for a slim wrist or a broad one.`,
     materials: "316L stainless steel with a gunmetal PVD coat. Scratch-resistant, tarnish-proof and nickel-free.",
     dimensions: "Length: 8.5 in. Width: 5 mm. Lobster clasp. Roughly 28 g. Supplied in a gift box.",
