@@ -7,7 +7,7 @@ import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 import ProductGrid from '../product/ProductGrid'
 
-const BEST_SELLERS = ['aurora-bar-necklace', 'stella-tennis-bracelet', 'atlas-cuban-chain', 'atlas-curb-bracelet']
+const BEST_SELLERS = ['tessa-line-necklace', 'odette-tennis-bracelet', 'halden-cuban-chain', 'teague-curb-bracelet']
 
 // 4 best sellers + the "Icons" banner as a 2-column cell of the same grid
 // (3 columns from 1200px: banner next to the 4th card; 2 columns below: banner on its own row).

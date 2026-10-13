@@ -6,7 +6,7 @@ import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 import ProductGrid from '../product/ProductGrid'
 
-const NEW_ARRIVALS = ['elara-crystal-necklace', 'ivy-twist-ring', 'knox-rope-bracelet', 'ryder-black-stud']
+const NEW_ARRIVALS = ['linnea-crystal-necklace', 'maisie-twist-ring', 'quill-rope-bracelet', 'beckett-black-stud']
 
 const COLUMN = 'grid-cols-2 lg:grid-cols-1'
 const COLUMN_SIZE = 'lg:max-w-[350px] lg:flex-1'

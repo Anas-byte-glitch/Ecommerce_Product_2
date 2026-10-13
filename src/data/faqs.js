@@ -1,39 +1,41 @@
-// Contact page FAQ (questions and answers read from the reference, 2026-10-01).
+import { site } from '../config/site'
+
+// Contact page FAQ (original placeholder wording — adjust the answers to your real policies).
 export const faqs = [
   {
     id: 'shipping-time',
-    question: 'How long does shipping take?',
+    question: 'When will my order arrive?',
     answer:
-      'Orders are typically processed within 1–2 business days. Standard shipping usually arrives within 3–7 business days, while international delivery times may vary depending on your location.',
+      'We pack orders within one to two working days. Domestic parcels usually take three to seven days to reach you; international delivery depends on the destination and customs.',
   },
   {
     id: 'international',
-    question: 'Do you ship internationally?',
+    question: 'Can you deliver abroad?',
     answer:
-      'Yes! We ship to customers worldwide. Shipping options and delivery estimates are shown during checkout based on your destination.',
+      'Yes, we post to many countries. The delivery options and estimated dates for your address appear at checkout before you pay.',
   },
   {
     id: 'returns',
-    question: 'Can I return or exchange my order?',
+    question: 'What if I change my mind?',
     answer:
-      'Absolutely. We offer hassle-free returns and exchanges within 30 days of delivery. Items must be unused and returned in their original packaging.',
+      `No problem. You can send something back for a refund or swap within ${site.returnWindowDays} days of delivery, as long as it is unworn and in its original packaging.`,
   },
   {
     id: 'tracking',
-    question: 'How can I track my order?',
+    question: 'Where is my parcel?',
     answer:
-      "Once your order has been shipped, you'll receive a confirmation email with a tracking number so you can monitor your package in real time.",
+      'As soon as your order leaves us you will receive an email with a tracking number, so you can follow the parcel all the way to your door.',
   },
   {
     id: 'payment',
-    question: 'What payment methods do you accept?',
+    question: 'How can I pay?',
     answer:
-      'We accept major credit and debit cards, PayPal, Apple Pay, Google Pay, and other secure payment methods available in your region.',
+      'Major credit and debit cards, plus the wallets and local payment options available where you live, all protected by secure checkout.',
   },
   {
     id: 'tarnish',
-    question: 'Will my jewelry tarnish?',
+    question: 'Does the finish wear off?',
     answer:
-      'Our jewelry is crafted with high-quality materials and designed for everyday wear. Following our care instructions will help maintain its shine and longevity.',
+      'Our pieces are made for daily wear from durable materials. Keep them dry, keep them away from perfume, and follow the care notes on each product page to keep them looking fresh.',
   },
 ]
