@@ -18,13 +18,15 @@ export default function SectionHeader({
   eyebrowClassName,
   titleClassName,
   titleAs = 'h2',
+  gap = 'gap-4',
 }) {
   const centered = align === 'center'
 
   const header = (
     <div
       className={cn(
-        'flex flex-col gap-4',
+        'flex flex-col',
+        gap,
         centered ? 'items-center text-center' : 'items-start',
         headerClassName,
       )}

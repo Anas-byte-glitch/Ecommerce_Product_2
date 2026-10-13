@@ -5,4 +5,7 @@ import { create } from 'zustand'
 export const useUiStore = create()((set) => ({
   navOverHero: false,
   setNavOverHero: (value) => set({ navOverHero: value }),
+  searchOpen: false,
+  openSearch: () => set({ searchOpen: true }),
+  closeSearch: () => set({ searchOpen: false }),
 }))

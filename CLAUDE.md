@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). Next: search. Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). Next: Phase 7 (see docs/ROADMAP.md). Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -50,12 +50,15 @@ src/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
     ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
                           Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
-                          HoverTile (image tile with hover panel), EmptyState, Accordion
-                          (multi-open, + → ×), Drawer (focus trap, Escape, scroll lock)
+                          HoverTile (image tile with hover panel; link or description variant), EmptyState,
+                          CountUp, Accordion (multi-open, + → ×; `gap`, `bodyClassName`), Drawer (focus trap, Escape, scroll lock)
     product/              ProductCard, FavouriteButton, ProductGrid, ProductGallery,
                           QuantityStepper, AddToCart, HorizontalCard, ProductTestimonials
     cart/                 CartDrawer (mounted in Layout), CartLine, CartEmpty, FreeShippingNote
     checkout/             Field (labelled input + inline error), OrderSummary (cart summary or order)
+    about/                Beliefs, Materials, WhyUs, FounderQuote
+    contact/              ContactForm (demo, nothing sent), ContactInfo
+    search/               SearchDrawer
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
     shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
                           SharedSections (all three, in order), ImageHero (fixed full-screen hero
@@ -66,10 +69,10 @@ src/
                           Checkout (demo, validation),
                           CheckoutSuccess,
                           About, Contact, Journals, JournalArticle, Legal, NotFound
-  store/                  wishlistStore, cartStore, uiStore, orderStore (`lastOrder`, memory only)
+  store/                  wishlistStore, cartStore, uiStore (also `searchOpen`), orderStore (`lastOrder`, memory only)
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
   assets/fonts/           Switzer woff2
-  utils/                  formatPrice, cn, useNavOverHero, motion (appear/word-effect settings)
+  utils/                  formatPrice, cn, validation (email/phone), searchProducts, useNavOverHero, motion (appear/word-effect settings)
 docs/                     SITE_MAP.md, DESIGN_NOTES.md
 ```
 
@@ -100,6 +103,11 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
   remainingForFreeShipping }`; `getLineTotal(line)`. Only `items` is persisted; unknown slugs are
   dropped on load. Shipping uses `site.freeShippingThreshold` / `site.flatShipping`. The cart
   always shows prices, regardless of `site.showPrices`.
+- Search: navbar button → `useUiStore.openSearch()` → `SearchDrawer` (Drawer + `searchProducts`). Buy Now
+  adds to the cart and goes to `/checkout`; Add to Cart opens the cart drawer.
+- Contact details come from `site.contactEmail / contactPhone / officeAddress` (fake placeholders).
+  `ContactForm` sends nothing (no backend) — see its comment.
+- `SectionHeader` takes `gap` (default `gap-4`; About uses `gap-2.5`) and `titleAs`.
 - Page titles: add `handle: { title: (params) => … }` to a route; `Layout` sets
   `"<title> - <brand>"`, otherwise just the brand.
 - Wishlist: `useWishlistStore` (`toggle(slug)`, `has(slug)`, `items`), counter via
