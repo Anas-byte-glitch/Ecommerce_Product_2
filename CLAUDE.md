@@ -48,7 +48,7 @@ src/
                           journals, faqs, testimonials (3 reviews per product), customers
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
-    ui/                   Container, Button, Badge, Eyebrow, Wordmark, PagePlaceholder,
+    ui/                   Container, Button, Badge, Eyebrow, Wordmark,
                           Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
                           HoverTile (image tile with hover panel; link or description variant), EmptyState,
                           CountUp, Accordion (multi-open, + → ×; `gap`, `bodyClassName`), Drawer (focus trap, Escape, scroll lock)
