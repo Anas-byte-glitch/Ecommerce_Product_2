@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). **Phase 7 (journals, articles, legal pages, 404, newsletter form, navbar fade-in)** too (§25). **Phase 8A (settings, fonts, motion, responsive QA, accessibility)** too (§26). Next: Phase 8B (performance, SEO, deploy files; see docs/ROADMAP.md). Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). **Phase 7 (journals, articles, legal pages, 404, newsletter form, navbar fade-in)** too (§25). **Phase 8A (settings, fonts, motion, responsive QA, accessibility)** too (§26). **Phase 8B (performance, SEO, deploy files)** too (§27). Next: Phase 9 (release; see docs/ROADMAP.md). Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -46,10 +46,10 @@ src/
   config/site.js          brand name, wordmark split, tagline, instagram, payments, nav + footer links,
                           showPrices (card price row), homeVideoSrc (optional About-block video)
   data/                   products (+ productDetails: PDP texts, matchWith), categories, collections,
-                          journals, legal (terms/privacy/refund texts — template, not legal advice), faqs, testimonials (3 reviews per product), customers
+                          journals, seo (meta descriptions), legal (terms/privacy/refund texts — template, not legal advice), faqs, testimonials (3 reviews per product), customers
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
-    ui/                   Container, Button, Badge, Eyebrow, Wordmark,
+    ui/                   Image (the only image component), Container, Button, Badge, Eyebrow, Wordmark,
                           Reveal, TextReveal, SectionHeader, Marquee, MediaBanner,
                           HoverTile (image tile with hover panel; link or description variant), EmptyState,
                           CountUp, Accordion (multi-open, + → ×; `gap`, `bodyClassName`), Drawer (focus trap, Escape, scroll lock)
@@ -73,7 +73,10 @@ src/
   store/                  wishlistStore, cartStore, uiStore (also `searchOpen`), orderStore (`lastOrder`, memory only)
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
   assets/fonts/           Hanken Grotesk + Inter woff2 (+ OFL licence text)
+  seo/                    applySeo (head per route), jsonLd (Organization/WebSite/Product/Article/Breadcrumb), routes (sitemap list)
   utils/                  formatPrice, cn, validation (email/phone), searchProducts, useNavOverHero, motion (appear/word-effect settings)
+scripts/                  loadSource.mjs, generate-seo-files.mjs (sitemap.xml, robots.txt, vercel.json copy; runs in `npm run build`)
+public/                   icons, og-image, .htaccess, _redirects, _headers (copied to dist)
 docs/                     SITE_MAP.md, DESIGN_NOTES.md
 ```
 
@@ -181,6 +184,13 @@ table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScal
   counts; `text-accent-text` (darker accent) is for SMALL accent text (Eyebrow) — plain `text-accent` only for icons /
   large elements; card/section titles use `titleAs` / `headingAs` so heading levels never skip (h1 → h2 → h3); use
   `dl` only with `div > dt + dd` rows (no nested divs); aria-labels must contain the visible text.
+- **Images:** always `<Image src alt …>` from `components/ui/Image` (lazy + async by default; `priority` only for the
+  LCP image — heroes and the PDP main photo). Never a bare `<img>`. **Motion:** use `m.*` (LazyMotion, loaded in
+  `App.jsx`), not `motion.*`. **Routes:** every page except Home is `React.lazy` (`App.jsx`); the footer lives inside the
+  Suspense boundary in `Layout` — redirects must render a `min-h-screen` placeholder next to `<Navigate>`.
+- **SEO:** a route gets its description / noindex / JSON-LD from `handle.seo(params)` in `App.jsx` (texts in
+  `data/seo.js`); `Layout` applies it with `seo/applySeo`. `index.html` + manifest are filled from `site.js` by the Vite
+  plugin in `vite.config.js`; sitemap/robots come from `seo/routes.js` at build. New indexable route → add it there.
 - Newsletter: one shared `useNewsletterForm` hook + `NewsletterForm` (UI only, nothing is sent); the reference
   footer has no form. Legal text lives in `src/data/legal.js` and takes brand / email / hours / return window from
   `site.js` (`returnWindowDays`, `damageReportDays`, `refundTime`, `businessHours`). `NotFound` serves `*`, `/404` and
