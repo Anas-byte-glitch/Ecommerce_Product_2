@@ -36,7 +36,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "wren-open-ring", "vivian-charm-bracelet"],
   },
   'brisa-silver-chain': {
-    description: "A clean, fine-linked silver chain that goes with almost anything. Brisa is the layer you put on in the morning and then forget you are wearing at all.",
+    description: "A clean, fine-linked silver chain that goes with almost anything. Brisa is the layer you put on in the morning and then forget you are wearing.",
     details: `The Brisa Silver Chain by ${site.name}: a slim silver-tone chain made to sit under, over or beside your other favourites. Packed in a gift box.`,
     materials: "Stainless steel with a silver-tone finish. Nickel-free, gentle on skin and resistant to fading.",
     dimensions: "Length: 18 in plus a 2 in extender. Width: 2 mm. Spring-ring clasp. Roughly 7 g. Supplied in a gift box.",
@@ -84,7 +84,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'anselm-drop-earrings': {
-    description: "Two stones, one above the other, swinging just a little. Anselm goes from the office to dinner without needing a change, and the soft movement catches the light whenever you turn your head.",
+    description: "Two stones, one above the other, swinging just a little. Anselm goes from the office to dinner without needing a change, and the soft movement catches the light whenever you turn your head to speak.",
     details: `The Anselm Drop Earrings by ${site.name} add a soft sparkle to any outfit with a small stone on top and a larger drop below.`,
     materials: "Sterling silver (925) with AAA cubic zirconia, plated in rhodium for lasting brilliance. Free from lead and cadmium. Tested for skin safety.",
     dimensions: "Drop: 28 mm. Stones: 4 mm top, 6 mm below. Post backs. About 4 g a pair. Supplied in a gift box.",
@@ -140,7 +140,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'fenn-curb-bracelet': {
-    description: "A chunky curb bracelet with a high shine and a heavy, reassuring feel. Fenn is a statement piece that suits plain shirts best and sits comfortably beside a watch.",
+    description: "A chunky curb bracelet with a high shine and a heavy, reassuring feel. Fenn is a statement piece that suits plain shirts best and sits comfortably beside a watch on the same wrist.",
     details: `The Fenn Curb Bracelet by ${site.name}: broad, polished silver-tone links with a substantial weight on the wrist.`,
     materials: "316L stainless steel with a high-polish silver finish. Corrosion-resistant, nickel-free and gentle on skin.",
     dimensions: "Length: 8.5 in. Width: 10 mm. Lobster clasp. Around 48 g. Supplied in a gift box.",
@@ -188,7 +188,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'soren-rope-bracelet': {
-    description: "A tightly twisted steel rope in dark gunmetal. Soren is slim, rugged and easy to layer with a watch or with other bracelets, and its low profile suits any wrist.",
+    description: "A tightly twisted steel rope in dark gunmetal. Soren is slim, rugged and easy to layer with a watch or with other bracelets, and its low profile suits almost any wrist size.",
     details: `The ${site.name} Soren Rope Bracelet: a twisted rope chain in gunmetal, a smart everyday piece for a slim wrist or a broad one.`,
     materials: "316L stainless steel with a gunmetal PVD coat. Scratch-resistant, tarnish-proof and nickel-free.",
     dimensions: "Length: 8.5 in. Width: 5 mm. Lobster clasp. Roughly 28 g. Supplied in a gift box.",
@@ -196,7 +196,7 @@ export const productDetails = {
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'beckett-black-stud': {
-    description: "A small round stud in matte black. Beckett is the easiest earring to wear and the hardest to take off at night, with a clean look that fits any outfit.",
+    description: "A small round stud in matte black. Beckett is the easiest earring to wear and the hardest to take off at night, with a clean, quiet look that fits any outfit you own.",
     details: `Beckett is the matte black stud from ${site.name}: tiny, round and light enough to forget you have it on. Packed in a gift box.`,
     materials: "Titanium steel with a matte black PVD finish. Nickel-free, very light and safe for sensitive ears.",
     dimensions: "Stud: 6 mm. Post: 10 mm. Butterfly backs. About 2 g a pair. Supplied in a gift box.",

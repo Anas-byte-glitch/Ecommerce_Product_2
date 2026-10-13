@@ -2,12 +2,12 @@
 // with your own customers' words before launch).
 export const productTestimonials = {
   'marlow-line-necklace': [
-    { name: "Hannah Ellery", quote: "Clean and delicate, and it has not tangled once. I wear it with everything from tees to dresses." },
+    { name: "Hannah Ellery", quote: "Quietly beautiful workmanship. A slim minimalist bar that looks refined enough for every occasion." },
     { name: "Priya Nandakumar", quote: "Lovely weight on the neck and a really nice finish. It looks more expensive than it was." },
     { name: "Callie Rowan", quote: "I stack it with two longer chains. The bar keeps everything looking tidy. Great quality." },
   ],
   'isla-pearl-pendant': [
-    { name: "Imogen Pryce", quote: "The pearl has a gentle shine that photographs beautifully. I was complimented the first day." },
+    { name: "Imogen Pryce", quote: "Gorgeous natural glow on this pearl. Classy, timeless and beautifully crafted for any day." },
     { name: "Dalia Reyes", quote: "Bought it for my sister's birthday and she has not taken it off. Highly recommended." },
     { name: "Frances Tilden", quote: "Pretty without trying too hard. It works for work and for dinners alike. I love it." },
   ],
@@ -37,7 +37,7 @@ export const productTestimonials = {
     { name: "Maeve Sutherland", quote: "Wore it for an anniversary dinner and everyone asked where it was from. I love it." },
   ],
   'wren-open-ring': [
-    { name: "Esme Calloway", quote: "The open shape is so easy to adjust. It fits my index finger perfectly. I love it." },
+    { name: "Esme Calloway", quote: "The open shape is so easy to adjust and fits my index finger perfectly. Light and lovely." },
     { name: "Talia Brennan", quote: "Light, pretty and a good thumb ring too. I bought a second one as a gift. I love it." },
     { name: "Yara Mansour", quote: "I like how simple it is. Sits well with my other thin bands. Highly recommended." },
   ],
@@ -102,7 +102,7 @@ export const productTestimonials = {
     { name: "Rhys Dalton", quote: "Looks sharp and takes knocks well. A good everyday piece. Highly recommended." },
   ],
   'jasper-cross-hoop': [
-    { name: "Kieran Doyle", quote: "Neat little hoop and the cross comes off when I want a plainer look. Would buy again." },
+    { name: "Kieran Doyle", quote: "A neat little hoop, and the cross comes off whenever I want a plainer look." },
     { name: "Nate Alvarez", quote: "Comfortable, small and secure. Nice detail without being flashy. Highly recommended." },
     { name: "Wes Holloway", quote: "Good quality for the price. The click closure feels dependable. A real favourite." },
   ],
@@ -117,7 +117,7 @@ export const productTestimonials = {
     { name: "Hester Blythe", quote: "Good fit, nice weight, and the colour matches my other gold pieces." },
   ],
   'soren-rope-bracelet': [
-    { name: "Gareth Lowe", quote: "The rope texture gives it real character. Comfortable and well made. Truly lovely." },
+    { name: "Gareth Lowe", quote: "The rope texture gives it real character. Highly recommended. Would buy again." },
     { name: "Anton Weber", quote: "Slim enough to wear with a watch. The clasp is easy to use. Highly recommended." },
     { name: "Cormac Brady", quote: "Strong, good looking and easy to layer. I would buy it again. Highly recommended." },
   ],
