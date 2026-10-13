@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). **Phase 7 (journals, articles, legal pages, 404, newsletter form, navbar fade-in)** too (§25). Next: Phase 8 (see docs/ROADMAP.md). Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). **Phase 7 (journals, articles, legal pages, 404, newsletter form, navbar fade-in)** too (§25). **Phase 8A (settings, fonts, motion, responsive QA, accessibility)** too (§26). Next: Phase 8B (performance, SEO, deploy files; see docs/ROADMAP.md). Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -29,8 +29,9 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 - zustand (+ `persist`) for wishlist / cart
 - lucide-react icons — reference uses Phosphor **bold**; use lucide `Search`, `Heart`,
   `ShoppingCart`, `Menu`, `X` with `strokeWidth={2.25}` (= Phosphor bold), see DESIGN_NOTES §9
-- Fonts: Switzer (Fontshare ITF FFL) and Inter 4.000 (OFL, the reference's own build — not
-  @fontsource, which renders ~1.6% wider), both self-hosted woff2 in `src/assets/fonts`,
+- Fonts: **Hanken Grotesk** (OFL; replaces Switzer, whose licence is unclear for resale — DESIGN_NOTES §26) as
+  `font-display` and Inter 4.000 (OFL, the reference's own build — not
+  @fontsource, which renders ~1.6% wider), both self-hosted woff2 in `src/assets/fonts` (no remote font requests),
   `font-display: swap`. Inter body text uses the reference's `cv03 cv04 cv09 cv11` features
   (built into `type-body` / `type-body-lg`).
 
@@ -71,7 +72,7 @@ src/
                           About, Contact, Journals, JournalArticle, Legal, NotFound
   store/                  wishlistStore, cartStore, uiStore (also `searchOpen`), orderStore (`lastOrder`, memory only)
   assets/placeholders/    neutral SVG placeholders (+ index.js exporting `placeholders`)
-  assets/fonts/           Switzer woff2
+  assets/fonts/           Hanken Grotesk + Inter woff2 (+ OFL licence text)
   utils/                  formatPrice, cn, validation (email/phone), searchProducts, useNavOverHero, motion (appear/word-effect settings)
 docs/                     SITE_MAP.md, DESIGN_NOTES.md
 ```
@@ -80,7 +81,7 @@ docs/                     SITE_MAP.md, DESIGN_NOTES.md
 - Function components only; one component per file, default export.
 - **Tailwind utilities only** — no inline `style` props, no CSS modules. Use the tokens:
   colours `ink, ink-soft, muted, accent, cream, mist, smoke, white, black, overlay,
-  ink-hover, white-hover, error`; fonts `font-display` (Switzer), `font-body` (Inter);
+  ink-hover, white-hover, error`; fonts `font-display` (Hanken Grotesk, one token in `src/index.css`), `font-body` (Inter);
   type utilities `type-display, type-h2 … type-h6, type-h6-lg, type-quote, type-ticker,
   type-stat, type-wordmark, type-wordmark-xl, type-link-lg, type-nav, type-menu-heading,
   type-eyebrow, type-badge, type-counter, type-body-lg, type-body` (each already
@@ -172,6 +173,14 @@ When something doesn't render, read the component props from the page's JS modul
 `iconSelection`/`weight`, tile labels, `webPageId` link targets mapped through the route
 table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScaleFactor: 3`.
 
+- **All store settings live in `src/config/site.js`** (documented at its top: name, wordmark, tagline, description,
+  siteUrl, locale/currency/currencyDisplay, showPrices, shipping, delivery estimate, return/damage/refund windows,
+  contact data, social, orderPrefix). `index.html` title/description are filled from it by a Vite plugin; `storagePrefix`
+  derives the localStorage keys. Never hardcode brand, money or contact values in components.
+- Accessibility conventions: skip link + `<main id="main">` in `Layout`; `LiveAnnouncer` announces cart/favourites
+  counts; `text-accent-text` (darker accent) is for SMALL accent text (Eyebrow) — plain `text-accent` only for icons /
+  large elements; card/section titles use `titleAs` / `headingAs` so heading levels never skip (h1 → h2 → h3); use
+  `dl` only with `div > dt + dd` rows (no nested divs); aria-labels must contain the visible text.
 - Newsletter: one shared `useNewsletterForm` hook + `NewsletterForm` (UI only, nothing is sent); the reference
   footer has no form. Legal text lives in `src/data/legal.js` and takes brand / email / hours / return window from
   `site.js` (`returnWindowDays`, `damageReportDays`, `refundTime`, `businessHours`). `NotFound` serves `*`, `/404` and
@@ -185,7 +194,7 @@ table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScal
 - "My Account" slot (footer + menu Navigation column) → "Collections" (`/shop`).
 - Footer "Buy template" button → "Shop Now" (`/shop`), from `site.footerCta`.
 - Payment badges are neutral SVG text pills with the reference logos' widths, 15.2px tall.
-- Mobile-menu headings replicate the reference: "Navigation" Switzer 500, "Pages"/"Others"
+- Mobile-menu headings replicate the reference: "Navigation" display font 500, "Pages"/"Others"
   Inter 400 20/24 (`type-menu-heading`).
 
 ## Known gaps / decisions (Phase 2, verified)
