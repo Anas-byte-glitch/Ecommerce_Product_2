@@ -83,8 +83,11 @@
   --color-black: #000000;
   --color-ink: #222222;
   --color-ink-soft: #2b2b2b;
-  --color-muted: #6d6a67;
+  --color-muted: #6a6764; /* was #6d6a67 (4.4:1 on mist); 4.6:1 now */
   --color-accent: #b9836a;
+  /* Darker accent for SMALL TEXT only (WCAG AA 4.5:1 on white and cream: 4.8 / 4.5). The brand accent
+     above is 3.2:1 on white. Set this equal to the accent to restore the reference colour. */
+  --color-accent-text: #9c6349;
   --color-cream: #f8f6f3;
   --color-mist: #e8e8e8;
   --color-smoke: #f0f0f0;

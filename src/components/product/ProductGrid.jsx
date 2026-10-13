@@ -9,13 +9,14 @@ export default function ProductGrid({
   columns = 'grid-cols-2 lg:grid-cols-3',
   className,
   itemClassName,
+  titleAs,
   children,
 }) {
   return (
     <div className={cn('grid items-start gap-x-4 gap-y-6', columns, className)}>
       {products.map((product) => (
         <Reveal key={product.slug} className={itemClassName}>
-          <ProductCard product={product} />
+          <ProductCard product={product} titleAs={titleAs} />
         </Reveal>
       ))}
       {children}

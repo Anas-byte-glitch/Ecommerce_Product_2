@@ -796,3 +796,51 @@ exactly unless noted. Titles: the reference sets only the brand on `/journals` a
   deliberate additions (small red / white tags under the field).
 - **Navbar fade-in.** Reference (all pages): navbar opacity 0 → 1, ~1s linear, starting ~0.8s after load; footer
   has none. Built on `Navbar` (`motion.header`), skipped under `prefers-reduced-motion`.
+
+## 26. Phase 8A — settings, fonts, motion, responsive QA, accessibility (2026-10-13)
+- **Settings.** One file, `src/config/site.js`, with a documented header. Moved in: description, siteUrl, social,
+  currencyDisplay, deliveryEstimate (checkout), storage key prefix (derived), `Intl` locale for prices, count-up
+  numbers and journal dates. `index.html` `%SITE_NAME%` / `%SITE_DESCRIPTION%` are replaced by a small Vite plugin
+  (`vite.config.js`). Proof: brand, wordmark, locale (de-DE), currency (EUR), shipping, threshold, return window,
+  e-mail, tagline and order prefix were changed in the file; every route showed the new values (titles "Zenvo",
+  "12,00 €", "45 days", 0 leftover "Glintura" in rendered text); values reverted afterwards.
+  Remaining literal brand mentions: code comments only. Page copy (FAQ, journals, legal, product texts) is content,
+  to be rewritten in Phase 9.
+- **Fonts.** Switzer: the Fontshare licence text could **not** be read here (fontshare.com is blocked by the
+  sandbox network); the font files only carry "protected under … copyright law … see fontshare.com/terms" and secondary
+  sources say the ITF Free Font License forbids redistributing the font files. Verdict: **unclear, treated as not
+  allowed** → not shipped. Candidates (width of 7 real headings/buttons vs Switzer, mean ratio): **Hanken Grotesk
+  0.998** (OFL), Figtree 1.002, Instrument Sans 1.025, Geist 1.024, Albert Sans 1.025, DM Sans 1.034. Hanken
+  Grotesk (400, 500, 600, 400 italic; latin) was applied through `--font-display` and the `@font-face` blocks.
+  Page heights vs Switzer at 1440/390 on 11 routes: identical except `/about` 1440 −57px and
+  `/women-category/women-necklace` 390 −44px (one heading line fewer). Preload for the 3 critical files in
+  `index.html`; requests to any non-local host: 0. OFL licence text in `src/assets/fonts`.
+- **Motion.** Reviewed Reveal, TextReveal, CountUp, Marquee, hero scale-in, Navbar fade, Drawer, Accordion, HoverTile
+  and CSS hover transitions. All motion/react components already honour `prefers-reduced-motion`; the CSS
+  transitions did not → global `@media (prefers-reduced-motion: reduce)` rule (transition/animation ≈ 0) in
+  `index.css`. No animation moves layout (transform/opacity only). Scrolling through 14 routes at 360×640, 1920×1080
+  and 1440×500 left no element stuck at opacity 0 (a Reveal needs 50% of the block visible: no block is taller
+  than 2 viewports). `<noscript>` message added (the app needs JS; nothing is hidden by CSS alone).
+- **Responsive QA.** 10 widths (360 … 1920) × 19 routes (incl. product, collection, article, legal, 404, cart with
+  items, checkout, success): horizontal overflow 0, elements outside the viewport 0, distorted images 0, overlapping
+  fixed elements only the intended navbar-over-fixed-hero. "Clipped" text reports were the intended tickers and the
+  hover-zoom image boxes. Nothing needed fixing.
+- **Accessibility (axe-core 4, wcag2a/aa 2.1/2.2 + best-practice, tooling kept outside the project).** First pass found: low-contrast
+  eyebrow text, wordmark/aria-label mismatches (navbar Home, Favourites, Cart, customer cards), muted text on mist,
+  hard-coded grey link on the article page, `dl` with nested divs (cart, checkout summary), heading order (cards,
+  PDP accordion, cart-empty, contact info). All fixed; final run: **0 violations on all 19 routes at 1440 and 390
+  and in the open states** (search, cart drawer, mobile menu, FAQ + PDP accordions open, contact / checkout /
+  newsletter errors). Added: skip link, `<main id="main" tabindex="-1">`, `LiveAnnouncer` (cart/favourites count),
+  global `:focus-visible` accent outline was already there (contact fields use focus-within).
+  **Contrast (computed):** accent `#b9836a` = 3.22:1 on white, 2.99 on cream, 2.63 on mist → fails 4.5:1 for small
+  text. **Changed (tell the client):** new token `--color-accent-text: #9c6349` (4.8 on white, 4.5 on cream) used
+  for the eyebrow text only; the brand accent itself is unchanged (icons, hearts, counters, buttons). To go back to
+  the reference colour set the token to `#b9836a` (axe will then report contrast again). `--color-muted`
+  `#6d6a67` (4.39 on mist) → `#6a6764` (4.59 on mist, 5.6 on white). Counter badge (cream on accent, 2.99) is
+  not flagged by axe (decorative number next to a labelled control) — left as is.
+- **Keyboard-only purchase flow** (script, 1440 and 390): skip link first; Collections link (390: via the menu button,
+  `aria-expanded` toggles) → /shop → product card → Add to Cart (Enter) → drawer opens with focus inside, Tab is
+  trapped, Escape closes and focus returns to the trigger → /cart → Checkout → all 7 fields + submit by keyboard →
+  `/checkout/success`. Every step reachable. Notes: ~66 Tab presses to reach Add to Cart on a product page (gallery
+  thumbnails, navbar, breadcrumbs); ~25 to the first checkout field.
+- Deliberately left: none of the axe findings. Not verified with a real screen reader.
