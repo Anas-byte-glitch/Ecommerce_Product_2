@@ -10,7 +10,7 @@ export const site = {
   // Neutral payment labels (no brand logos). Order matters: the 3rd pill is the widest.
   payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
   // Show a placeholder price under product-card titles (the reference shows none).
-  showPrices: true,
+  showPrices: false,
   // Contact details shown on /contact — clearly fake placeholders, replace with your own.
   contactEmail: 'hello@example.com',
   contactPhone: '+1 000 000 0000',
