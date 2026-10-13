@@ -38,13 +38,14 @@ export default function Layout() {
       <ScrollToTop />
       <Navbar />
       <LiveAnnouncer />
-      <main id="main" tabIndex={-1} className="outline-none">
-        {/* Fallback keeps a full-screen block so the footer never jumps into view while a page chunk loads. */}
-        <Suspense fallback={<div className="min-h-screen" />}>
+      {/* While a page chunk loads, a full-screen block stands in for page AND footer, so the footer
+          never jumps into view when the page arrives (layout shift). */}
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <main id="main" tabIndex={-1} className="outline-none">
           <Outlet />
-        </Suspense>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </Suspense>
       <CartDrawer />
       <SearchDrawer />
     </>
