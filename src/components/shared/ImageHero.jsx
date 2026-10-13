@@ -10,6 +10,7 @@ const fades = {
   women:
     'bg-[linear-gradient(180deg,#000_-28%,rgb(0_0_0/0.73)_-10%,rgb(0_0_0/0)_63%,#000_104%)]',
   men: 'bg-[linear-gradient(180deg,#000_-44%,rgb(0_0_0/0)_41%,#000_100%)]',
+  about: 'bg-[linear-gradient(180deg,#000_-31%,rgb(0_0_0/0)_41%,#000_100%)]',
 }
 
 // Full-screen hero for /shop, /women-category and /men-category: pinned (position: fixed) while
