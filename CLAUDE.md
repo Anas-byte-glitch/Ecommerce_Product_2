@@ -13,7 +13,7 @@ Phase 1: research, setup, design tokens, routing, Navbar, Footer, data.
 > **Status:** Phase 1 (setup, Navbar, Footer, data) and **Phase 2 (Home page + shared sections)**
 > are done and verified (2026-10-01). The home page matches the reference at 1440/1000/390
 > (identical page heights, every text/link/button box within 0.6px; differences listed in
-> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). Next: Phase 7 (see docs/ROADMAP.md). Start each session with `npm install`.
+> `docs/DESIGN_NOTES.md` §17). **Phase 3 (Shop, audience pages, 14 collections)** is done too (DESIGN_NOTES §18). **Phase 4 (product page, cart store, Favourites)** too (§19). **Phase 5A (cart drawer + /cart)** and **5B-1 (demo checkout + success)** too (§20–21). **Phase 5B-2 + 6 (search, Buy Now, About, Contact)** too (§22–24). **Phase 7 (journals, articles, legal pages, 404, newsletter form, navbar fade-in)** too (§25). Next: Phase 8 (see docs/ROADMAP.md). Start each session with `npm install`.
 
 ## ALWAYS before building a page
 1. Read `docs/DESIGN_NOTES.md` (measured values: breakpoints, type scale, colours,
@@ -45,7 +45,7 @@ src/
   config/site.js          brand name, wordmark split, tagline, instagram, payments, nav + footer links,
                           showPrices (card price row), homeVideoSrc (optional About-block video)
   data/                   products (+ productDetails: PDP texts, matchWith), categories, collections,
-                          journals, faqs, testimonials (3 reviews per product), customers
+                          journals, legal (terms/privacy/refund texts — template, not legal advice), faqs, testimonials (3 reviews per product), customers
   components/
     layout/               Navbar, MobileMenu, Footer, Layout, ScrollToTop
     ui/                   Container, Button, Badge, Eyebrow, Wordmark,
@@ -60,11 +60,11 @@ src/
     contact/              ContactForm (demo, nothing sent), ContactInfo
     search/               SearchDrawer
     home/                 HomeHero, BestSellers, ForEveryone, FeaturesTicker, NewArrivals, AboutVideo
-    shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter,
+    shared/               ContinueJourney, FeaturedCustomers (+ CustomerCard), Newsletter (+ NewsletterForm),
                           SharedSections (all three, in order), ImageHero (fixed full-screen hero
                           for /shop + audience pages), CollectionBento, AudienceCta —
                           used above the footer on most pages (table in docs/SITE_MAP.md)
-    journal/              JournalCard … (later)
+    journal/              JournalCard (featured + grid variants)
   pages/                  Home, Shop, Category, Collection, ProductDetail, Favourites, Cart,
                           Checkout (demo, validation),
                           CheckoutSuccess,
@@ -172,6 +172,11 @@ When something doesn't render, read the component props from the page's JS modul
 `iconSelection`/`weight`, tile labels, `webPageId` link targets mapped through the route
 table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScaleFactor: 3`.
 
+- Newsletter: one shared `useNewsletterForm` hook + `NewsletterForm` (UI only, nothing is sent); the reference
+  footer has no form. Legal text lives in `src/data/legal.js` and takes brand / email / hours / return window from
+  `site.js` (`returnWindowDays`, `damageReportDays`, `refundTime`, `businessHours`). `NotFound` serves `*`, `/404` and
+  unknown slugs; `vercel.json` rewrites all paths to `index.html`.
+
 ## Known gaps / decisions (Phase 1, verified)
 - Navbar omits the User (My Account → myshopify) and Country flag icons. Desktop right
   cluster keeps the reference width (196px) so the wordmark stays at x=701.5; the icons
@@ -189,4 +194,4 @@ table in `script_main.*.mjs`). For text-quality checks screenshot at `deviceScal
 - Gender cards: whole card links (reference ≥810 links only its "Shop Now" button).
 - Tickers are not draggable (reference: draggable) and pause while focused.
 - Product card price row (`site.showPrices`, default true) is a deliberate addition.
-- The home navbar fade-in (reference: 1s, delay 0.8) is not built.
+- The navbar page-load fade-in (reference: 1s, delay 0.8) is built in Phase 7 (all pages).
