@@ -844,3 +844,66 @@ exactly unless noted. Titles: the reference sets only the brand on `/journals` a
   `/checkout/success`. Every step reachable. Notes: ~66 Tab presses to reach Add to Cart on a product page (gallery
   thumbnails, navbar, breadcrumbs); ~25 to the first checkout field.
 - Deliberately left: none of the axe findings. Not verified with a real screen reader.
+
+## 27. Phase 8B — performance, SEO, deploy files (2026-10-13)
+- **Badge.** Cart/favourites counter: background `accent` → `accent-text` (#9c6349), cream text = 4.53:1.
+- **Lazy routes.** All pages except Home are `React.lazy` chunks. Home stays eager — measured on the built site
+  (Lighthouse mobile, `/`): eager 94 (LCP 2.6 s, TBT 170 ms) vs lazy 86 (LCP 3.0 s, TBT 290 ms). The Suspense fallback is a
+  `min-h-screen` block and the footer sits inside the boundary, so nothing jumps; redirect pages render the same block
+  (`/checkout` with an empty cart: CLS 1.79 → 0.045).
+- **Images.** One component, `ui/Image.jsx`: lazy + `decoding=async`, `priority` (eager + `fetchpriority=high`) only on
+  hero images and the PDP main photo; accepts `srcSet`/`sizes`/`webp` or a `{src,srcSet,webp,width,height}` object, so
+  Phase 9 only edits `placeholders`. Every slot already has a fixed box (aspect-ratio / fixed height), CLS 0 on all pages.
+- **Bundle (gzip).** Before: one 610 kB / **190 kB** JS + 8.7 kB CSS. Changes: route chunks, `LazyMotion` +
+  `m.*` with `domAnimation` (the full `motion` feature set dropped), data/search unchanged. After: entry **145 kB**
+  (+ motion features 4.5 kB, shared SVG motion 10 kB, route chunks 0.3–6.3 kB each). Biggest parts of the entry:
+  react-dom ≈ 111 kB, motion core ≈ 40–50 kB, react-router ≈ 48 kB, app data ≈ 22 kB, lucide 5 kB (named imports only,
+  tree-shaken). No unused dependency found; `zustand` / `lucide-react` are small. Tooling (visualizer, Lighthouse) lived
+  in a temp folder, not in `package.json`.
+- **Lighthouse** (built site, `vite preview`, Lighthouse 12, Chromium headless; mobile = default throttling):
+  see the table in the 8B report. Before (home): mobile 67 (TBT 910 ms, LCP 3.1 s), desktop 99; product page mobile 91.
+  SEO was 92 (no robots.txt). Not reachable: `/cart` and `/checkout` SEO = 66 because they are deliberately `noindex`
+  (Lighthouse "is-crawlable"); `/checkout` is measured with an empty cart, so it is the redirect to `/cart`.
+  Informational (not scored) audits `llms-txt` and `ard-schema` fail — not part of any category score.
+- **SEO.** `handle.seo(params)` per route → `Layout` → `applySeo`: description (`data/seo.js`, original wording,
+  brand/return window from `site.js`), canonical (`siteUrl`), `og:*` / `twitter:*`, robots (`noindex` on cart, checkout,
+  success and unknown slugs / 404), `<html lang>` = `site.locale`. Titles unchanged (match the reference). Static
+  defaults for non-JS crawlers (title, description, canonical, OG/Twitter incl. `og-image.png`, theme-color, icons,
+  manifest, Organization + WebSite JSON-LD) are in `index.html`, filled from `site.js` by the Vite plugin.
+  JSON-LD per route: Product (price/currency only when `showPrices`, availability InStock; placeholder images fall back
+  to `og-image.png` because Vite inlines the tiny SVGs as `data:` URIs), Article, BreadcrumbList (product, collection,
+  audience, article — the site has no visible breadcrumb trail except the article back-link, so this mirrors the URL
+  hierarchy). All blocks parsed as valid JSON in the browser. `sitemap.xml` (53 URLs: pages, 14 collections, 25 products,
+  4 articles with `lastmod`) and `robots.txt` (`Disallow: /checkout`, `Sitemap:` line) are written by
+  `scripts/generate-seo-files.mjs` after `vite build`; excluded: cart, checkout, success, favourites, 404.
+- **SPA limitation (honest).** Without prerendering, crawlers that do not run JavaScript only see `index.html`: the
+  site-wide title/description/OG image and the Organization + WebSite JSON-LD, not the per-route values. Google and Bing
+  render JavaScript (indexing can lag); Facebook, X/Twitter, LinkedIn, Slack and WhatsApp previews do not, so every shared
+  URL shows the home preview. Options: (a) post-build static prerender of the known routes with headless Chromium into
+  `dist/<route>/index.html` (route list already exists in `seo/routes.js`; ≈ ½–1 day; no framework change; needs Chromium in
+  the build, so ship the prerendered build in the Zip); (b) `vite-react-ssg` / react-snap-style SSG (≈ 1–2 days: the router
+  becomes a static route list and `localStorage`/`window`/IntersectionObserver uses in stores and motion wrappers must be
+  guarded); (c) a framework with SSR (Next/Remix) — a rewrite, not recommended for a template. Recommendation: (a).
+- **Deploy files.** `vercel.json`: SPA rewrite, `Cache-Control: immutable` for `/assets/*`, 1-day cache for icons/OG, security
+  headers (nosniff, Referrer-Policy, X-Frame-Options SAMEORIGIN, Permissions-Policy, HSTS 1 year, CSP `default-src 'self'`,
+  inline styles allowed for the animation library, `img-src 'self' data: https:`, `frame-ancestors 'self'`). The CSP was
+  tested by injecting the header with Playwright across 8 routes + cart drawer + search: no violations. `_redirects`
+  (Netlify fallback), `_headers` (same policy for Netlify), `.htaccess` (below). `vercel.json` is also copied into `dist/`.
+  **.htaccess logic (not run on Apache here):** `Options -MultiViews -Indexes` (no accidental file matching / listings);
+  rewrite block: pass `index.html`, then if the request is not an existing file (`!-f`) and not a directory (`!-d`) →
+  `index.html` (so `/journals/x` and unknown URLs reach React, while `/assets/*`, `sitemap.xml`, `robots.txt` are served as
+  files); HTTPS redirect commented out (uses `%{HTTPS}` and `X-Forwarded-Proto` for proxies); MIME types for
+  webmanifest/woff2/svg; Brotli/Deflate for text types (each in `<IfModule>`, so a missing module cannot cause a 500);
+  `Cache-Control: immutable, 1 year` for files named `*-<8 hash chars>.ext`, `no-cache` for `index.html`, 1 day for icons/
+  sitemap; security headers + CSP in `<IfModule mod_headers.c>`. Known caveat: a host without `AllowOverride FileInfo/Indexes`
+  ignores or rejects parts of it — check the host's error log after upload.
+- **Verified with `vite preview` on `dist/`:** deep links (`/journals/<slug>`, `/women-category/women-ring`) answer 200 with
+  the app, unknown URLs and unknown slugs render the 404 page, `sitemap.xml` / `robots.txt` / manifest / icons are real
+  files, and `dist/` contains `.htaccess`, `_redirects`, `_headers`, `vercel.json`, `manifest.webmanifest`, `sitemap.xml`,
+  `robots.txt`, icons and `og-image.*`. Not verified: Apache, Netlify and Vercel header behavior on real servers.
+- **Lighthouse, final run (built site, vite preview).** Mobile performance: `/` 89 (an earlier run of the same build gave 94 — mobile
+  TBT varies 120–270 ms between runs), `/shop` 93, product 91, `/cart` 94, `/checkout` 94 (redirects to `/cart`, CLS 0.045), `/about` 93,
+  `/contact` 92, `/journals` 91, article 94, `/terms` 92. Desktop 99–100 everywhere. Accessibility 100, Best Practices 100 on all 20 runs;
+  SEO 100 except `/cart` and `/checkout` (66, intentional `noindex`). Mobile LCP is 2.7–2.9 s under Lighthouse's simulated slow 4G (the
+  hero image, a placeholder, fades in over 1.2 s after load; real photos will change this); the home page's mobile score sits at the 90
+  limit because of main-thread time (react-dom + motion ≈ 150 kB gzip).

@@ -1,11 +1,11 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 import { appearSpring } from '../../utils/motion'
 
 // Fades its children in once when half of the block is in view (Framer "appear" effect:
 // opacity 0 → 1, spring 1.5s, 0.2s delay, threshold 0.5). `onMount` animates on load instead.
 export default function Reveal({ as = 'div', delay = 0.2, amount = 0.5, onMount = false, className, children, ...props }) {
   const reduceMotion = useReducedMotion()
-  const Tag = motion[as]
+  const Tag = m[as]
 
   if (reduceMotion) {
     const Static = as

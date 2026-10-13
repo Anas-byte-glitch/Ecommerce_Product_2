@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { cn } from '../../utils/cn'
 import Badge from '../ui/Badge'
+import Image from '../ui/Image'
 
 // Main image (640px tall, 550 on phones) + a row of 4 thumbnails (163 × 196 ratio, 8px gap,
 // 10px below). Clicking a thumbnail shows it in the main box; inactive thumbs are dimmed 25%.
@@ -11,7 +12,7 @@ export default function ProductGallery({ images, name, badge }) {
   return (
     <div className="flex w-full flex-col gap-2.5">
       <div className="relative h-[550px] w-full overflow-hidden bg-mist md:h-[640px]">
-        <img src={images[active]} alt={name} className="absolute inset-0 size-full object-cover" />
+        <Image priority src={images[active]} alt={name} className="absolute inset-0 size-full object-cover" />
         {badge && (
           <div className="absolute inset-x-0 top-0 flex justify-end p-4">
             <Badge variant="dark">{badge}</Badge>
@@ -28,7 +29,7 @@ export default function ProductGallery({ images, name, badge }) {
             aria-pressed={index === active}
             className="relative aspect-[163/196.1] flex-1 cursor-pointer overflow-hidden bg-mist"
           >
-            <img src={image} alt="" className="absolute inset-0 size-full object-cover" />
+            <Image src={image} alt="" className="absolute inset-0 size-full object-cover" />
             <span
               aria-hidden="true"
               className={cn('absolute inset-0 bg-black/25 transition-opacity duration-300', index === active && 'opacity-0')}

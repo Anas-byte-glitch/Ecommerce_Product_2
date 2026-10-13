@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { AnimatePresence, m, useReducedMotion } from 'motion/react'
 import { Heart, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { mainNav, site } from '../../config/site'
 import { useUiStore } from '../../store/uiStore'
@@ -19,7 +19,7 @@ function Counter({ value, className }) {
   return (
     <span
       className={cn(
-        'pointer-events-none absolute grid size-5 place-items-center rounded-pill bg-accent text-cream type-counter',
+        'pointer-events-none absolute grid size-5 place-items-center rounded-pill bg-accent-text text-cream type-counter',
         className,
       )}
     >
@@ -87,7 +87,7 @@ export default function Navbar() {
   return (
     // will-change: own compositing layer, like the reference nav (also gives the same
     // subpixel glyph positioning in Chromium).
-    <motion.header
+    <m.header
       className="fixed inset-x-0 top-0 z-50 will-change-transform"
       // Page-load fade-in measured on the reference (all pages): opacity 0 → 1, 1s, 0.8s delay.
       initial={reduceMotion ? false : { opacity: 0 }}
@@ -191,6 +191,6 @@ export default function Navbar() {
           {menuOpen && <MobileMenu onNavigate={() => setMenuOpen(false)} />}
         </AnimatePresence>
       </nav>
-    </motion.header>
+    </m.header>
   )
 }

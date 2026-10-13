@@ -4,6 +4,7 @@ import { formatPrice } from '../../utils/formatPrice'
 import { cn } from '../../utils/cn'
 import Badge from '../ui/Badge'
 import FavouriteButton from './FavouriteButton'
+import Image from '../ui/Image'
 
 // Product card (reference "Desktop" variant from 810px, "Mobile" below):
 // image box 440px tall (200px on phones), badge top-left (hidden on phones), favourite top-right,
@@ -17,17 +18,17 @@ export default function ProductCard({ product, className, titleAs: Title = 'h3' 
       className={cn('group flex w-full flex-col items-start gap-3', className)}
     >
       <div className="relative h-[200px] w-full overflow-hidden bg-mist md:h-[440px]">
-        <img
+        <Image
           src={image}
           alt={product.name}
-          loading="lazy"
+         
           className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0"
         />
-        <img
+        <Image
           src={hoverImage}
           alt=""
           aria-hidden="true"
-          loading="lazy"
+         
           className="absolute inset-0 z-1 size-full object-cover opacity-0 transition-opacity duration-500 ease-card group-hover:opacity-100"
         />
         <div className="absolute inset-x-3 top-3 z-3 flex h-[34px] items-center justify-end">

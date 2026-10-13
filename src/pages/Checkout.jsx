@@ -63,7 +63,15 @@ export default function Checkout() {
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
 
-  if (summary.lines.length === 0 && !placed.current) return <Navigate to="/cart" replace />
+  if (summary.lines.length === 0 && !placed.current) {
+    // The block keeps the footer below the fold while the next page loads (no layout shift).
+    return (
+      <>
+        <Navigate to="/cart" replace />
+        <div className="min-h-screen" />
+      </>
+    )
+  }
 
   const update = (field) => (event) => {
     const next = { ...values, [field]: event.target.value }

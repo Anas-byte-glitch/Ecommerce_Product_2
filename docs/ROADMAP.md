@@ -14,13 +14,9 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 
 - **8A** Polish: settings in site.js, fonts (Switzer → Hanken Grotesk, OFL), motion review, responsive QA, accessibility (axe: 0 violations) (branch `phase-8a`)
 
+- **8B** Performance (lazy routes, Image component, LazyMotion), SEO (per-route meta, JSON-LD, icons, manifest, generated sitemap/robots), deploy files (branch `phase-8b`)
+
 ## Remaining
-- **8B** Polish, part 2:
-  - performance (lazy routes, image sizes and loading attributes, bundle report, Lighthouse);
-  - SEO (meta per route, Open Graph, favicon set, robots.txt, sitemap generated from routes and slugs,
-    `site.siteUrl` is already in site.js);
-  - deploy files (`public/_redirects`, `public/.htaccess`; `vercel.json` exists);
-  - re-check items DESIGN_NOTES lists as "could not verify".
 - **9** Release:
   - invent a new short brand name (4–8 letters, similar wordmark width) and replace "Glintura";
   - rewrite ALL template texts (About, FAQ, product descriptions/materials/care, reviews, customer
@@ -36,3 +32,21 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
     docs/DESIGN_NOTES.md, docs/SITE_MAP.md, docs/ROADMAP.md, reference/, measuring scripts;
   - `npm run check:release` fails if the Zips contain "glintura", "framer", "framerusercontent", the
     template author's data, original-text phrases or excluded files; test both Zips from a clean folder.
+
+## Deploy (draft for the buyer docs — full guides come in Phase 9)
+Build: `npm run build` → `dist/` (also writes `sitemap.xml`, `robots.txt`, `manifest.webmanifest` and a copy of
+`vercel.json` from `src/config/site.js` + the data files). Before building set `siteUrl`, `name`, `description`
+in `src/config/site.js`. Upload the **contents** of `dist/` (or let the host run the build).
+- **Vercel:** import the repo (framework Vite, build `npm run build`, output `dist`). `vercel.json` already has
+  the SPA rewrite, long cache for `/assets/*` and security headers.
+- **Netlify:** build `npm run build`, publish `dist`. `_redirects` (SPA fallback) and `_headers` ship inside `dist`.
+- **Apache / cPanel:** upload everything inside `dist/`, **including the hidden `.htaccess`** (enable "show hidden
+  files" in the file manager / FTP client). Needs mod_rewrite; compression, caching and headers use optional modules.
+  Uncomment the HTTPS redirect (and HSTS) once the certificate works. The site must be served from the domain
+  root. Not tested on a real server in the build environment — see DESIGN_NOTES §27.
+- **Replace placeholders:** `public/og-image.png` (1200×630, social preview), `public/icon.svg`
+  + PNGs (`favicon-16/32`, `apple-touch-icon` 180, `icon-192/512` — export from your logo with any tool), then
+  rebuild. `index.html` and the manifest read brand, description and URL from `site.js`.
+- **Images:** every image goes through `src/components/ui/Image.jsx`. Put real photos in `src/assets/…`, and change an
+  entry of `placeholders` (`src/assets/placeholders/index.js`) to `{ src, srcSet, webp, width, height }`.
+- **SEO texts:** meta descriptions are in `src/data/seo.js`, titles on the routes in `src/App.jsx`.

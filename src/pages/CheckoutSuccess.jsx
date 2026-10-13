@@ -8,7 +8,14 @@ import Eyebrow from '../components/ui/Eyebrow'
 // Thank-you page for the order kept in memory; after a refresh there is no order → home.
 export default function CheckoutSuccess() {
   const order = useOrderStore((state) => state.lastOrder)
-  if (!order) return <Navigate to="/" replace />
+  if (!order) {
+    return (
+      <>
+        <Navigate to="/" replace />
+        <div className="min-h-screen" />
+      </>
+    )
+  }
 
   return (
     <section className="pt-[180px] pb-section-sm lg:pb-section">

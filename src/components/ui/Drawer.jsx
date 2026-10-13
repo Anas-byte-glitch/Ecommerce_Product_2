@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { AnimatePresence, m, useReducedMotion } from 'motion/react'
 import { X } from 'lucide-react'
 
 const FOCUSABLE =
@@ -59,7 +59,7 @@ export default function Drawer({ open, onClose, title, children, footer }) {
     <AnimatePresence>
       {open && (
         <div className="fixed inset-0 z-60">
-          <motion.div
+          <m.div
             aria-hidden="true"
             className="absolute inset-0 bg-overlay"
             onClick={onClose}
@@ -68,7 +68,7 @@ export default function Drawer({ open, onClose, title, children, footer }) {
             exit={{ opacity: 0 }}
             transition={fade}
           />
-          <motion.div
+          <m.div
             ref={panelRef}
             role="dialog"
             aria-modal="true"
@@ -94,7 +94,7 @@ export default function Drawer({ open, onClose, title, children, footer }) {
             </div>
             <div className="flex-1 overflow-y-auto px-6 py-4">{children}</div>
             {footer && <div className="border-t border-mist px-6 py-5">{footer}</div>}
-          </motion.div>
+          </m.div>
         </div>
       )}
     </AnimatePresence>,

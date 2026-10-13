@@ -1,10 +1,13 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 import { placeholders } from '../../assets/placeholders'
 import { useNavOverHero } from '../../utils/useNavOverHero'
 import { appearSpring } from '../../utils/motion'
 import Button from '../ui/Button'
 import Eyebrow from '../ui/Eyebrow'
 import TextReveal from '../ui/TextReveal'
+import Image from '../ui/Image'
+
+const MotionImage = m.create(Image)
 
 // Full-screen hero, pinned (position: fixed) while the rest of the page scrolls over it,
 // like the reference. "Crafted For Legacy" is the second heading, bottom-right (top of the
@@ -13,14 +16,14 @@ function Appear({ delay, className, children }) {
   const reduceMotion = useReducedMotion()
   if (reduceMotion) return <div className={className}>{children}</div>
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={appearSpring(delay)}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -35,7 +38,8 @@ export default function HomeHero() {
         className="fixed inset-x-0 top-0 z-0 flex h-screen flex-col overflow-hidden px-4 pt-section-sm pb-8 md:px-6 md:pb-12 lg:px-8 lg:pt-section lg:pb-14"
       >
         <div className="absolute inset-0">
-          <motion.img
+          <MotionImage
+            priority
             src={placeholders.heroWide}
             alt=""
             className="size-full object-cover"

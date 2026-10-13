@@ -5,6 +5,7 @@ import Button from '../ui/Button'
 import Eyebrow from '../ui/Eyebrow'
 import Reveal from '../ui/Reveal'
 import TextReveal from '../ui/TextReveal'
+import Image from '../ui/Image'
 
 // Full-bleed, viewport-tall media block. The reference plays a video here; we show a poster
 // placeholder, or a muted looping video when `site.homeVideoSrc` is set (poster only under
@@ -28,7 +29,7 @@ export default function AboutVideo() {
             aria-hidden="true"
           />
         ) : (
-          <img src={placeholders.aboutPoster} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
+          <Image src={placeholders.aboutPoster} alt="" className="absolute inset-0 size-full object-cover" />
         )}
         <div aria-hidden="true" className="absolute inset-0 z-1 bg-fade-up" />
 

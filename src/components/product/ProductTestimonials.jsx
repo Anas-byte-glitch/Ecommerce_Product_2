@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { AnimatePresence, m, useReducedMotion } from 'motion/react'
 import { ShoppingBag } from 'lucide-react'
 import Container from '../ui/Container'
 
@@ -25,7 +25,7 @@ export default function ProductTestimonials({ reviews, productName }) {
     <section aria-label="Customer reviews" className="relative bg-white py-section-sm lg:py-section">
       <Container className="flex flex-col items-center gap-8">
         <AnimatePresence mode="wait" initial={false}>
-          <motion.figure
+          <m.figure
             key={index}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -41,7 +41,7 @@ export default function ProductTestimonials({ reviews, productName }) {
               </span>
             </figcaption>
             <blockquote className="w-full text-ink type-h4">{review.quote}</blockquote>
-          </motion.figure>
+          </m.figure>
         </AnimatePresence>
 
         <div className="flex w-full gap-2.5 md:w-[450px]">
@@ -57,7 +57,7 @@ export default function ProductTestimonials({ reviews, productName }) {
               {/* 2px track (#9A948E) with the ink fill; the button adds an 8px hit area above/below. */}
               <span className="relative block h-0.5 overflow-hidden bg-[#9a948e]">
                 {i === index && (
-                  <motion.span
+                  <m.span
                     key={index}
                     className="absolute inset-y-0 left-0 bg-ink"
                     initial={{ width: reduceMotion ? '100%' : '0%' }}

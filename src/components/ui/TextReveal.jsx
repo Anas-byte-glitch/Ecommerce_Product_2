@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 import { wordEffect } from '../../utils/motion'
 
 // Heading whose words blur/fade/slide in one after another (Framer text effect, "word"
@@ -21,7 +21,7 @@ export default function TextReveal({
     const Tag = as
     return <Tag className={className}>{text}</Tag>
   }
-  const MotionTag = motion[as]
+  const MotionTag = m[as]
 
   const trigger = onMount
     ? { animate: 'visible' }
@@ -31,13 +31,13 @@ export default function TextReveal({
     <MotionTag className={className} initial="hidden" {...trigger}>
       {words.map((word, index) => (
         <span key={index}>
-          <motion.span
+          <m.span
             className="inline-block"
             variants={{ hidden, visible }}
             transition={{ ...transition, delay: startDelay + index * stagger }}
           >
             {word}
-          </motion.span>
+          </m.span>
           {index < words.length - 1 && ' '}
         </span>
       ))}

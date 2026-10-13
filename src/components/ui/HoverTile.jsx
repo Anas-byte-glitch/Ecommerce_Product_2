@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 import { cn } from '../../utils/cn'
 import TextReveal from './TextReveal'
+import Image from './Image'
 
 const PANEL_EASE = [0, 0.4, 0.22, 0.99]
 
@@ -27,7 +28,7 @@ export default function HoverTile({ title, to, image, description, className, ti
       onBlur={() => setActive(false)}
       className={cn('relative flex w-full items-center justify-center overflow-hidden', className)}
     >
-      <img src={image} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
+      <Image src={image} alt="" className="absolute inset-0 size-full object-cover" />
 
       {/* Phone */}
       <div aria-hidden="true" className={cn('absolute inset-0 z-8 md:hidden', description ? 'bg-material-fade' : 'bg-card-fade')} />
@@ -41,7 +42,7 @@ export default function HoverTile({ title, to, image, description, className, ti
       )}
 
       {/* Tablet / desktop */}
-      <motion.div
+      <m.div
         aria-hidden="true"
         initial={false}
         animate={{ top: active ? '-2.4%' : '102.4%' }}
@@ -66,14 +67,14 @@ export default function HoverTile({ title, to, image, description, className, ti
           {description ? (
             <p className="text-center text-mist type-body">{description}</p>
           ) : (
-            <motion.span
+            <m.span
               initial={reduceMotion ? false : { opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: 'spring', damping: 35, mass: 2, stiffness: 125 }}
               className="inline-flex bg-white px-8 py-3 text-ink type-link-lg"
             >
               Shop Now
-            </motion.span>
+            </m.span>
           )}
         </div>
       )}

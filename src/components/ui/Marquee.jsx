@@ -1,5 +1,5 @@
 import { Children, useEffect, useRef, useState } from 'react'
-import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from 'motion/react'
+import { m, useAnimationFrame, useMotionValue, useReducedMotion } from 'motion/react'
 import { cn } from '../../utils/cn'
 
 // Endless horizontal ticker moving left at `speed` px/s (`hoverSpeed` while hovered, like the
@@ -70,9 +70,9 @@ export default function Marquee({ speed = 40, hoverSpeed = speed, gapClassName =
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     >
-      <motion.div className={cn('flex w-max', alignClass, gapClassName)} style={{ x }}>
+      <m.div className={cn('flex w-max', alignClass, gapClassName)} style={{ x }}>
         {Array.from({ length: reduceMotion ? 1 : copies }, (_, copy) => group(copy))}
-      </motion.div>
+      </m.div>
     </div>
   )
 }

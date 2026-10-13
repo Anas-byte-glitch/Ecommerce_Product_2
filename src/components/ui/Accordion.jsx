@@ -1,5 +1,5 @@
 import { useId, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { AnimatePresence, m, useReducedMotion } from 'motion/react'
 import { Plus } from 'lucide-react'
 
 // White cards stacked 10px apart (`gap`; the FAQ uses 16px and a wider body); several can be open at once (as on the reference). The "+"
@@ -34,7 +34,7 @@ export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max
                 className="flex w-full cursor-pointer items-center gap-3 p-4 text-left text-ink"
               >
                 <span className="flex-1 type-h6-lg">{item.title}</span>
-                <motion.span
+                <m.span
                   aria-hidden="true"
                   className="grid size-4 shrink-0 place-items-center"
                   initial={false}
@@ -42,12 +42,12 @@ export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max
                   transition={transition}
                 >
                   <Plus size={16} strokeWidth={2} />
-                </motion.span>
+                </m.span>
               </button>
             </Heading>
             <AnimatePresence initial={false}>
               {isOpen && (
-                <motion.div
+                <m.div
                   id={panelId}
                   role="region"
                   aria-label={item.title}
@@ -58,7 +58,7 @@ export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max
                   className="overflow-hidden"
                 >
                   <p className={`px-4 pb-4 text-ink-soft type-body ${bodyClassName}`}>{item.content}</p>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
