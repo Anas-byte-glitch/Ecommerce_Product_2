@@ -16,6 +16,7 @@ import Checkout from './pages/Checkout'
 import CheckoutSuccess from './pages/CheckoutSuccess'
 import Cart from './pages/Cart'
 import { getProduct } from './data/products'
+import { getJournal } from './data/journals'
 
 // Same URL paths as the reference (docs/SITE_MAP.md).
 const router = createBrowserRouter([
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
       { path: '/journals', element: <Journals /> },
-      { path: '/journals/:slug', element: <JournalArticle /> },
+      {
+        path: '/journals/:slug',
+        element: <JournalArticle />,
+        handle: { title: (params) => getJournal(params.slug)?.title },
+      },
       { path: '/terms', element: <Legal type="terms" /> },
       { path: '/privacy-policy', element: <Legal type="privacy" /> },
       { path: '/refund-policy', element: <Legal type="refund" /> },
