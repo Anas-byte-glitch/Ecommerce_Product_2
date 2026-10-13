@@ -19,7 +19,7 @@ function Counter({ value, className }) {
   return (
     <span
       className={cn(
-        'pointer-events-none absolute grid size-5 place-items-center rounded-pill bg-accent text-cream type-counter',
+        'pointer-events-none absolute grid size-5 place-items-center rounded-pill bg-accent-text text-cream type-counter',
         className,
       )}
     >
