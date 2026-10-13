@@ -53,7 +53,7 @@ export const reasons = [
 ]
 
 export const founder = {
-  name: 'Grace Mitchell',
+  name: 'Maren Ashby',
   role: 'Founder',
   quote: `" ${site.name} was built on the belief that beautiful jewelry should be worn, loved, and remembered not saved for special occasions"`,
 }

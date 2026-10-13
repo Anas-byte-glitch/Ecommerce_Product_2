@@ -13,7 +13,7 @@ import {
   pageDescriptions,
   productDescriptionForMeta,
 } from './data/seo'
-import { articleLd, breadcrumbLd, productLd } from './seo/jsonLd'
+import { articleLd, productLd } from './seo/jsonLd'
 
 // Every page except Home is its own chunk (Home stays eager: it is the landing page and the LCP route).
 const Shop = lazy(() => import('./pages/Shop'))
@@ -40,10 +40,7 @@ const categoryRoute = (audience) => {
     path: `/${info.slug}`,
     element: <Category audience={audience} />,
     handle: {
-      seo: () => ({
-        description: audienceDescription(info),
-        jsonLd: [breadcrumbLd([['Home', '/'], [info.label, `/${info.slug}`]])],
-      }),
+      seo: () => ({ description: audienceDescription(info) }),
     },
   }
 }
@@ -57,16 +54,7 @@ const collectionRoute = (audience) => {
       seo: (params) => {
         const collection = getCollection(audience, params.collection)
         if (!collection) return { noindex: true }
-        return {
-          description: collectionDescription(collection),
-          jsonLd: [
-            breadcrumbLd([
-              ['Home', '/'],
-              [info.label, `/${info.slug}`],
-              [collection.title, `/${info.slug}/${collection.slug}`],
-            ]),
-          ],
-        }
+        return { description: collectionDescription(collection) }
       },
     },
   }
@@ -93,10 +81,7 @@ const router = createBrowserRouter([
             if (!product) return { noindex: true }
             return {
               description: productDescriptionForMeta(product),
-              jsonLd: [
-                productLd(product),
-                breadcrumbLd([['Home', '/'], ['Shop', '/shop'], [product.name, `/product/${product.slug}`]]),
-              ],
+              jsonLd: [productLd(product)],
             }
           },
         },
@@ -118,10 +103,7 @@ const router = createBrowserRouter([
             if (!journal) return { noindex: true }
             return {
               description: journal.excerpt,
-              jsonLd: [
-                articleLd(journal),
-                breadcrumbLd([['Home', '/'], ['Journals', '/journals'], [journal.title, `/journals/${journal.slug}`]]),
-              ],
+              jsonLd: [articleLd(journal)],
             }
           },
         },

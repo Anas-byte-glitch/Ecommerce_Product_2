@@ -17,14 +17,14 @@
 //  contactEmail / contactPhone / officeAddress / businessHours
 //                       Shown on /contact and in the legal pages (placeholders — replace them).
 //  social               Social links (footer, featured customers).
-//  orderPrefix          Demo order numbers look like "GLN-4K7Q2M".
+//  orderPrefix          Demo order numbers look like "ORV-4K7Q2M".
 //  homeVideoSrc         Optional looping video for the home About block ('' = still image).
 //  footerCta            The dark button under the footer tagline.
 // ─────────────────────────────────────────────────────────────────────────────
 export const site = {
-  name: 'Glintura',
-  // The wordmark renders `start` upright and `end` in italic ("Glin" + "tura").
-  wordmark: { start: 'Glin', end: 'tura' },
+  name: 'Orvelle',
+  // The wordmark renders `start` upright and `end` in italic ("Orve" + "lle").
+  wordmark: { start: 'Orve', end: 'lle' },
   tagline: 'Discover timeless jewelry designed to become part of your everyday story',
   description: 'Timeless jewelry designed to become part of your everyday story.',
   siteUrl: 'https://example.com',
@@ -50,7 +50,7 @@ export const site = {
   flatShipping: 8,
   deliveryEstimate: '3–5 business days',
   // Order numbers look like "GLN-4K7Q2M" (demo checkout).
-  orderPrefix: 'GLN',
+  orderPrefix: 'ORV',
   // Optional background video for the home "About Us" block (muted, looping). Empty = poster only.
   homeVideoSrc: '',
   // Dark button under the footer tagline (stands in for the reference's "Buy template").
@@ -95,7 +95,6 @@ export const footerColumns = [
       { label: 'Privacy Policy', to: '/privacy-policy' },
       { label: 'Refund Policy', to: '/refund-policy' },
       { label: 'Instagram', href: site.social.instagram },
-      { label: '404', to: '/404' },
     ],
   },
 ]
