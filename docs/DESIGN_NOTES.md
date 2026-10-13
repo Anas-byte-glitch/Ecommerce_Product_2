@@ -698,3 +698,62 @@ The template's checkout is Shopify (blocked), so this is designed in the project
 - **Buy Now — deliberate deviation:** the reference's Buy Now is a Shopify checkout button. Ours adds
   the chosen quantity to the cart and navigates straight to `/checkout` (no drawer, no "Added"
   label). "Add to Cart" is unchanged (adds, opens the cart drawer, "Added" for 1.5s).
+
+## 23. About page (Phase 6, measured 2026-10-01)
+
+Page heights (ours identical): **8264 / 9174 / 10516** at 1440 / 1000 / 390 (title "Glintura" like other pages).
+Sections in order: ImageHero ("About Us" / "The Meaning Behind Every Piece", gradient `#000 -31% → 0 41% → #000`,
+heading max-w 680) → Beliefs (+ stats) → Materials → Why Us → features ticker (same as Home) →
+founder quote → shared sections. All section paddings 140 / 120 / 120 top; **the founder section is
+140 top and bottom at tablet too** (template quirk, replicated). Header eyebrow → heading gap is **10px**
+on this page (`SectionHeader gap="gap-2.5"`), 16 elsewhere. Texts: `src/data/about.js`.
+- **Beliefs** ("Our Beliefs" / "{site.name} beliefs", header max-w 700): 4 rows, gap 24 (16 phone), a 1px
+  `#AA9D8D` rule above rows 2–4 (16px below it); row = padding 16 0, heading `01.` (`type-eyebrow` muted) + h6
+  `type-h6-lg` left, text `type-body-lg` right (560 wide desktop, half/half tablet; stacked, gap 16, phone).
+  Rows are `items-start`.
+- **Stats** (32px below): 4 cards across (344 / 238 wide; 2 × 2 grid gap 16 on phones). Number `type-stat`
+  `#1C1C1A`, caption new `type-stat-label` (Inter 24/31.2 · 22.08/28.7 · 18.08/23.5, −2% tracking) `#666`,
+  gap 16. Values 2,000+ / 25+ / 15+ / 25+ (Happy Customers, Collection, Country Served, Product Designed).
+  **Count-up** (`CountUp`): 0 → value once when 50% visible, **1.1s, ease-out** (sampled: 232 at 160ms,
+  1,248 at 326ms, 1,911 at 636ms, 2,000 at ~1.1s); reduced motion = final value; screen readers get the final value.
+- **Materials** ("Our materials" / "Crafted with Care", header max-w 686): 3 tiles with **no gaps**:
+  458.67 × 494 desktop, 2 + 1 (476 wide) tablet, 358 × 460 stacked phone. `HoverTile` without link
+  (`tabIndex=0`, focus reveals): hover panel as the Home cards, title `type-h2` at y+172.6, text (`type-body`
+  mist, centred) at y+254.2. Phone: title (h2, top) and text (bottom) over `bg-material-fade`
+  (`#fff0 −4% → #000 110%`), padding 16. Texts: Silver / Gold / Titanium.
+- **Why Us** ("What Makes Us Different", centred, header max-w 846): desktop `[01, 03] 400 · image 556 × 998 ·
+  [02, 04] 400`, gap 10, cards 400 × 494, bg mist, padding 24, number `type-link-lg` muted + title `type-h4`
+  (max-w 320) on top, text `type-body-lg` at the bottom. Tablet: row of 2 cards (471 × 494) / image
+  952 × 466 / row of 2; phone: columns of 2 cards (358 × 460), image 358 × 460. Image = `MediaBanner` ("Made to
+  Be Exceptional", "Explore Collections" → `/shop`; on the reference this button has no link).
+- **Founder**: circle 260 (168 phone) bg mist with the 2:3 photo at ~71% width (grey on both sides), name
+  `type-quote` ink-soft, role `type-body-lg` muted (gap 4, 16 under the circle); quote `type-h4` centred, max-w 960
+  (`" {site.name} was built on the belief…"`, straight quotes as on the reference).
+- Differences: images are placeholders; h1 boxes of the section headings are full width (reference hugs the
+  text); the button link above.
+
+## 24. Contact page (Phase 6, measured 2026-10-01)
+
+Page heights (ours identical): **2743 / 4183 / 3837** at 1440 / 1000 / 390. **No shared sections.**
+- Header: `pt-180`, "/ Contact /" + **h1** "We're Here to Support" (display). Form section padding 140 / 120 top,
+  FAQ section 140 / 120 top and bottom.
+- Form block: desktop row, gap 24: photo **660 wide, as tall as the form** (710.8) + form 692 wide
+  (padding 16, gap 24); tablet/phone: photo above (ratio 736 : 1006 → 952 × 1301 / 358 × 489, gap 16), form below.
+  Labels `type-h6-lg` ink, gap 10 to the control; control = bg `rgba(232,232,232,.3)` (`bg-mist/30`), 56px tall,
+  padding 16, no border, text Switzer 400 16/19.2 ink, placeholders muted (`JANE SMITH`, `+01 1523 150 151`,
+  `JANE@SMITH.CO`, `YOUR TEXT`); message box 200px, padding 16; "Submit" = full-width dark button
+  (50 / 47.5 tall). Focus: visible accent outline (reference has none; deliberate). Message is optional.
+- Info row (32px below the form on tablet/phone, 24 desktop): 3 cards (desktop flex-1 × **160** tall, stacked
+  natural height below 1200px), padding 16: 32px accent icon (Mailbox / Phone / MapPin — Phosphor *bold* on the
+  reference, lucide here), 16, title `type-h6-lg`, 12, text `type-body` (max-w 400). Values from
+  `site.contactEmail / contactPhone / officeAddress` (**fake placeholders**; the reference's author data is not copied).
+- **Form behaviour.** Reference: browser validation (required name / phone / email), POSTs to a Framer Forms
+  endpoint; on success the photo area becomes a white panel with "Thank You" (`type-h2`) and the button label
+  turns into "Thank you" (fields keep their values). **Ours: nothing is sent** (no backend; documented in
+  `ContactForm.jsx`): inline errors (`aria-invalid`, `aria-describedby`, focus to the first invalid field, live
+  re-validation after the first submit), phone/email checks from `utils/validation.js`, then the same "Thank You"
+  panel (`role=status`, plus a note that this is a demo), button "Thank you", and the **form resets** (deliberate:
+  the reference does not reset). Typing again hides the panel.
+- FAQ ("Faq" / "Frequently Asked Questions"): `Accordion` with `gap-4` (16) and a 1075px-wide body; **all closed
+  by default, several can be open** (verified on the reference), same animation/icon as the product page;
+  closed 63.2 / 60.7 / 58 tall, open = +60.8 (2-line answers). Answers are in `src/data/faqs.js`.

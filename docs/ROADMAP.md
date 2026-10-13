@@ -9,7 +9,7 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 - **4** Product page (25 products), /favourite, wishlist + cart stores
 - **5A** Cart drawer + /cart
 - **5B-1** Demo checkout + success page
-- **5B-2 + 6** Search, Buy Now, About page, Contact page with FAQ — _in progress on branch `phase-5b2-6`_
+- **5B-2 + 6** Search, Buy Now, About page, Contact page with FAQ (branch `phase-5b2-6`)
 
 ## Remaining
 - **7** Journals list + 4 article pages (`/journals`, `/journals/:slug`), legal pages (`/terms`,

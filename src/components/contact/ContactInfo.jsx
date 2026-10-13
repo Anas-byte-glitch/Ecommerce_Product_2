@@ -13,7 +13,7 @@ export default function ContactInfo() {
     <ul className="flex flex-col gap-4 lg:flex-row lg:gap-6">
       {items.map(({ Icon, title, text, href }) => (
         <li key={title} className="flex flex-col gap-4 p-4 lg:h-40 lg:flex-1">
-          <Icon size={32} strokeWidth={2.25} aria-hidden="true" className="text-accent" />
+          <Icon size={32} strokeWidth={2.25} aria-hidden="true" className="shrink-0 text-accent" />
           <div className="flex flex-col gap-3">
             <h3 className="text-ink type-h6-lg">{title}</h3>
             <p className="max-w-[400px] text-ink-soft type-body">
