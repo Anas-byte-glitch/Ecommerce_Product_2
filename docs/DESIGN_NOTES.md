@@ -683,3 +683,18 @@ The template's checkout is Shopify (blocked), so this is designed in the project
 - Verified flow: empty-cart redirect; reload keeps the cart; empty submit → 7 errors, focus on
   Email; invalid email/phone messages clear when fixed; missing country focuses Country; order
   placed → success page, cart counter 0; refresh of success → `/`; no horizontal scroll at 390.
+
+## 22. Search and Buy Now (Phase 5B-2 — no reference)
+
+- **Search** (`search/SearchDrawer.jsx`, `utils/searchProducts.js`): the navbar Search button opens the
+  shared `Drawer` (title "Search"; the reference search is a Shopify-backed right drawer, §9). The
+  input (`data-autofocus`, 48px, `mist` border, magnifier on the left) is focused on open; results
+  update instantly. Matching: every query word must be the **start of a word** in the product name,
+  category label or audience words ("men"/"mens"/"him" → men's pieces, "women"/"her" → women's;
+  "men" does not match "women"). Rows: 64px thumbnail, name `type-h6`, category `type-badge`, link to
+  `/product/:slug` (closes the panel). Empty query → only the "Show all" link (→ `/shop`); no
+  match → "No results". Focus trap and Escape come from `Drawer`; query resets when it closes.
+  State: `useUiStore` → `searchOpen`, `openSearch()`, `closeSearch()`.
+- **Buy Now — deliberate deviation:** the reference's Buy Now is a Shopify checkout button. Ours adds
+  the chosen quantity to the cart and navigates straight to `/checkout` (no drawer, no "Added"
+  label). "Add to Cart" is unchanged (adds, opens the cart drawer, "Added" for 1.5s).
