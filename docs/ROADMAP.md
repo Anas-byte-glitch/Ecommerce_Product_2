@@ -16,8 +16,14 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 
 - **8B** Performance (lazy routes, Image component, LazyMotion), SEO (per-route meta, JSON-LD, icons, manifest, generated sitemap/robots), deploy files (branch `phase-8b`)
 
+- **9A** Brand (Orvelle, order prefix ORV), original copy, leftover scan (branch `phase-9a`)
+
 ## Remaining
-- **9** Release:
+- **9B** Real images (Unsplash/Pexels/Pixabay, licences checked, `images.json` + `CREDITS.md`, WebP/srcset via the `Image`
+  component and the `placeholders` map), licensed home video or still.
+- **9C** Optional prerender step, buyer documentation, `npm run package` (source + built Zips from an allowlist),
+  `npm run check:release`.
+- **9** (original plan, remaining parts):
   - invent a new short brand name (4–8 letters, similar wordmark width) and replace "Glintura";
   - rewrite ALL template texts (About, FAQ, product descriptions/materials/care, reviews, customer
     names, journal articles, legal pages) in original wording with about the same lengths; scan for
@@ -50,3 +56,15 @@ in `src/config/site.js`. Upload the **contents** of `dist/` (or let the host run
 - **Images:** every image goes through `src/components/ui/Image.jsx`. Put real photos in `src/assets/…`, and change an
   entry of `placeholders` (`src/assets/placeholders/index.js`) to `{ src, srcSet, webp, width, height }`.
 - **SEO texts:** meta descriptions are in `src/data/seo.js`, titles on the routes in `src/App.jsx`.
+
+## Phase 9A rewrite log (counts only)
+- `src/data/productDetails.js`: 25 products × 5 texts (description, details, materials, dimensions, care) rewritten; 25 products renamed
+  (names/slugs/matchWith updated in products, collections, customers, texts; mapping in DESIGN_NOTES §28).
+- `src/data/testimonials.js`: 75 reviews (25 × 3), all reviewer names new.
+- `src/data/journals.js`: 4 articles (titles, slugs, excerpts, 33 headings/paragraphs, 1 list), same structure.
+- `src/data/legal.js`: 3 pages (terms 13 sections, privacy 13, refund 8) rewritten, same section structure.
+- `src/data/about.js` (4 beliefs, 3 materials, 4 reasons, stats, founder), `src/data/faqs.js` (6 Q&A), `src/data/customers.js` (6),
+  `src/data/categories.js` (2 audiences), `src/data/seo.js` (new in 8B, original), `src/config/site.js` (tagline, description, hours).
+- JSX copy: Home (hero eyebrow/title/text/button/second title, best sellers, new arrivals, about block, ticker 5 phrases, for-everyone),
+  Shop, Favourites, About, Contact, Journals, shared sections (journey, customers, newsletter), empty/success messages.
+- Generic functional strings (Add to Cart, Search, Checkout, Submit, form errors, FAQ/Frequently Asked Questions, nav labels) kept.
