@@ -1,7 +1,8 @@
+import { site } from '../../config/site'
 import { useEffect, useRef, useState } from 'react'
 import { animate, useInView, useReducedMotion } from 'motion/react'
 
-const format = new Intl.NumberFormat('en-US')
+const format = new Intl.NumberFormat(site.locale)
 
 // Counts from 0 to `value` once, when it scrolls into view (~1.1s, ease-out; measured on the
 // reference). Reduced motion shows the final number. Screen readers always get the final value.

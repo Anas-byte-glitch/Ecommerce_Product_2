@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { site } from '../config/site'
+import { site, storagePrefix } from '../config/site'
 import { getProduct } from '../data/products'
 
 export const MIN_QUANTITY = 1
@@ -43,7 +43,7 @@ export const useCartStore = create()(
       clearCart: () => set({ items: [] }),
     }),
     {
-      name: 'glintura-cart',
+      name: `${storagePrefix}-cart`,
       partialize: (state) => ({ items: state.items }),
       merge: (persisted, current) => ({ ...current, items: sanitize(persisted?.items) }),
     },

@@ -3,12 +3,13 @@ import { Outlet, useMatches } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
+import LiveAnnouncer from './LiveAnnouncer'
 import CartDrawer from '../cart/CartDrawer'
 import SearchDrawer from '../search/SearchDrawer'
 import { site } from '../../config/site'
 
 // Document title: the brand name on every page (as on the reference), or the deepest route's
-// `handle.title(params)` + " - brand" (product pages: "Aurora Bar Necklace - Glintura").
+// `handle.title(params)` + " - brand" (product pages: "Aurora Bar Necklace - <brand>").
 export default function Layout() {
   const matches = useMatches()
   const match = matches[matches.length - 1]
@@ -21,9 +22,16 @@ export default function Layout() {
 
   return (
     <>
+      <a
+        href="#main"
+        className="fixed top-2 left-2 z-[100] -translate-y-[200%] bg-ink px-4 py-2 text-cream type-link-lg focus:translate-y-0 focus:outline-2 focus:outline-offset-2 focus:outline-accent"
+      >
+        Skip to content
+      </a>
       <ScrollToTop />
       <Navbar />
-      <main>
+      <LiveAnnouncer />
+      <main id="main" tabIndex={-1} className="outline-none">
         <Outlet />
       </main>
       <Footer />

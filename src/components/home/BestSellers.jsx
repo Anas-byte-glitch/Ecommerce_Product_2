@@ -1,3 +1,4 @@
+import { site } from '../../config/site'
 import { placeholders } from '../../assets/placeholders'
 import { getProductsBySlugs } from '../../data/products'
 import Container from '../ui/Container'
@@ -24,7 +25,7 @@ export default function BestSellers() {
           <Reveal className="col-span-2 h-[460px] md:h-[398px] lg:h-[439px]">
             <MediaBanner
               image={placeholders.bannerWide}
-              title="The Icons of the Glintura"
+              title={`The Icons of the ${site.name}`}
               cta={{ label: 'Explore Best Sellers', to: '/shop' }}
               className="h-full"
             />

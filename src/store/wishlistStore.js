@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { storagePrefix } from '../config/site'
 
 export const useWishlistStore = create()(
   persist(
@@ -15,7 +16,7 @@ export const useWishlistStore = create()(
       count: () => get().items.length,
       clear: () => set({ items: [] }),
     }),
-    { name: 'glintura-wishlist' },
+    { name: `${storagePrefix}-wishlist` },
   ),
 )
 

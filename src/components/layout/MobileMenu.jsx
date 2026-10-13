@@ -24,7 +24,7 @@ export default function MobileMenu({ onNavigate }) {
       >
         {footerColumns.map((column, index) => (
           <div key={column.title} className="flex flex-col items-start gap-4">
-            {/* Reference quirk: only the first heading uses Switzer; the others use Inter 20/24. */}
+            {/* Reference quirk: only the first heading uses display font; the others use Inter 20/24. */}
             <p className={cn('text-muted', index === 0 ? 'type-link-lg' : 'type-menu-heading')}>
               {column.title}
             </p>
