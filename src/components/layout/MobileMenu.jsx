@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { footerColumns } from '../../config/site'
 import { cn } from '../../utils/cn'
 
 // Tablet + phone menu: the white navbar "expands" to the full viewport height.
 export default function MobileMenu({ onNavigate }) {
   return (
-    <motion.div
+    <m.div
       id="mobile-menu"
       className="h-[calc(100dvh-var(--spacing-nav))] overflow-y-auto bg-white lg:hidden"
       initial={{ clipPath: 'inset(0% 0% 100% 0%)' }}
@@ -16,7 +16,7 @@ export default function MobileMenu({ onNavigate }) {
     >
       {/* Open, the reference bar has a 10px gap instead of its 16px bottom padding, so the
           64px top padding starts 6px higher: 58px here. */}
-      <motion.div
+      <m.div
         className="flex flex-col gap-8 px-4 pt-[58px] pb-16 md:px-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 0.1, duration: 0.3 } }}
@@ -54,7 +54,7 @@ export default function MobileMenu({ onNavigate }) {
             </ul>
           </div>
         ))}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }

@@ -3,6 +3,7 @@ import { useCartStore, MAX_QUANTITY } from '../../store/cartStore'
 import { formatPrice } from '../../utils/formatPrice'
 import { cn } from '../../utils/cn'
 import QuantityStepper from '../product/QuantityStepper'
+import Image from '../ui/Image'
 
 // One cart line: square thumbnail (96px in the drawer, 160px on /cart from 810px), name (links
 // to the product), category, quantity stepper, remove, line total. Prices always show here.
@@ -21,7 +22,7 @@ export default function CartLine({ line, size = 'small', onNavigate }) {
         aria-hidden="true"
         className={cn('relative shrink-0 overflow-hidden bg-mist', size === 'large' ? 'size-24 md:size-40' : 'size-24')}
       >
-        <img src={product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
+        <Image src={product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
       </Link>
       <div className="flex min-w-0 flex-1 flex-col justify-between gap-3">
         <div className="flex items-start justify-between gap-4">

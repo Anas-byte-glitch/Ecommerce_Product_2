@@ -1,8 +1,11 @@
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 import { placeholders } from '../../assets/placeholders'
 import { useNavOverHero } from '../../utils/useNavOverHero'
 import Eyebrow from '../ui/Eyebrow'
 import TextReveal from '../ui/TextReveal'
+import Image from '../ui/Image'
+
+const MotionImage = m.create(Image)
 
 // Overlay gradients measured per page on the reference (top fade / clear middle / black bottom).
 const fades = {
@@ -29,7 +32,8 @@ export default function ImageHero({ image = placeholders.heroWide, label, title,
         className="fixed inset-x-0 top-0 z-0 flex h-screen flex-col justify-end overflow-hidden px-4 pt-section-sm pb-8 md:px-6 md:pb-12 lg:px-8 lg:pt-section lg:pb-14"
       >
         <div className="absolute inset-0">
-          <motion.img
+          <MotionImage
+            priority
             src={image}
             alt=""
             className="size-full object-cover"

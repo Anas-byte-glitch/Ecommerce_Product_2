@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { formatJournalDate } from '../../data/journals'
 import { cn } from '../../utils/cn'
+import Image from '../ui/Image'
 
 // Journal card. `featured` = the wide "Long" card of the list hero (image + info side by side from
 // 810px, stacked on phones); default = grid card (image 416px tall, 382 on phones, then meta row).
@@ -8,10 +9,10 @@ import { cn } from '../../utils/cn'
 export default function JournalCard({ journal, featured = false }) {
   const image = (
     <div className={cn('relative overflow-hidden bg-mist', featured ? 'h-[350px] w-full md:h-[480px] md:w-[452px] lg:w-[664px]' : 'h-[382px] md:h-[416px]')}>
-      <img
+      <Image
         src={journal.image}
         alt=""
-        loading="lazy"
+       
         className="absolute inset-0 size-full object-cover transition-transform duration-600 ease-card group-hover:scale-110"
       />
       <div className="absolute inset-x-0 top-0 p-4">

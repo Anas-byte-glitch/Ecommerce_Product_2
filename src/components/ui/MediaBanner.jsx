@@ -1,5 +1,6 @@
 import { cn } from '../../utils/cn'
 import Button from './Button'
+import Image from './Image'
 
 // Image block with a smooth black-to-clear gradient from the bottom, an h3-size title
 // (max 360px) and a light button. Default layout = the reference "Short" variant on phones
@@ -8,7 +9,7 @@ import Button from './Button'
 export default function MediaBanner({ image, title, cta, className, contentClassName, titleClassName, titleAs: Title = 'h2' }) {
   return (
     <div className={cn('relative flex w-full overflow-hidden', className)}>
-      <img src={image} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
+      <Image src={image} alt="" className="absolute inset-0 size-full object-cover" />
       <div aria-hidden="true" className="absolute inset-0 z-1 bg-fade-up" />
       <div
         className={cn(

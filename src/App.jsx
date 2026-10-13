@@ -1,22 +1,26 @@
+import { lazy } from 'react'
+import { LazyMotion } from 'motion/react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
-import Shop from './pages/Shop'
-import Category from './pages/Category'
-import Collection from './pages/Collection'
-import ProductDetail from './pages/ProductDetail'
-import Favourites from './pages/Favourites'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Journals from './pages/Journals'
-import JournalArticle from './pages/JournalArticle'
-import Legal from './pages/Legal'
-import NotFound from './pages/NotFound'
-import Checkout from './pages/Checkout'
-import CheckoutSuccess from './pages/CheckoutSuccess'
-import Cart from './pages/Cart'
 import { getProduct } from './data/products'
 import { getJournal } from './data/journals'
+
+// Every page except Home is its own chunk (Home stays eager: it is the landing page and the LCP route).
+const Shop = lazy(() => import('./pages/Shop'))
+const Category = lazy(() => import('./pages/Category'))
+const Collection = lazy(() => import('./pages/Collection'))
+const ProductDetail = lazy(() => import('./pages/ProductDetail'))
+const Favourites = lazy(() => import('./pages/Favourites'))
+const About = lazy(() => import('./pages/About'))
+const Contact = lazy(() => import('./pages/Contact'))
+const Journals = lazy(() => import('./pages/Journals'))
+const JournalArticle = lazy(() => import('./pages/JournalArticle'))
+const Legal = lazy(() => import('./pages/Legal'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const Checkout = lazy(() => import('./pages/Checkout'))
+const CheckoutSuccess = lazy(() => import('./pages/CheckoutSuccess'))
+const Cart = lazy(() => import('./pages/Cart'))
 
 // Same URL paths as the reference (docs/SITE_MAP.md).
 const router = createBrowserRouter([
@@ -56,5 +60,9 @@ const router = createBrowserRouter([
 ])
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <LazyMotion features={() => import('./utils/motionFeatures').then((module) => module.default)}>
+      <RouterProvider router={router} />
+    </LazyMotion>
+  )
 }

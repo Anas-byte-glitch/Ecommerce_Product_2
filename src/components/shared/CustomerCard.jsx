@@ -1,3 +1,4 @@
+import Image from '../ui/Image'
 // 250 × 300 photo card linking to Instagram: name + product over a bottom gradient.
 export default function CustomerCard({ customer }) {
   return (
@@ -7,7 +8,7 @@ export default function CustomerCard({ customer }) {
       rel="noopener noreferrer"
       className="relative block h-[300px] w-[250px] overflow-hidden"
     >
-      <img src={customer.image} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
+      <Image src={customer.image} alt="" className="absolute inset-0 size-full object-cover" />
       <div aria-hidden="true" className="absolute inset-0 bg-fade-up" />
       <div className="absolute inset-x-0 bottom-4 flex flex-col items-start gap-1 px-4">
         <p className="text-cream type-h6-lg">{customer.name}</p>

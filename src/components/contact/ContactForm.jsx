@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { placeholders } from '../../assets/placeholders'
 import { cn } from '../../utils/cn'
 import { isValidEmail, isValidPhone } from '../../utils/validation'
+import Image from '../ui/Image'
 
 const FIELDS = [
   { id: 'name', label: 'Name', placeholder: 'JANE SMITH', type: 'text', autoComplete: 'name', required: true },
@@ -71,7 +72,7 @@ export default function ContactForm() {
             </p>
           </div>
         ) : (
-          <img src={placeholders.promoTall} alt="" loading="lazy" className="absolute inset-0 size-full object-cover" />
+          <Image src={placeholders.promoTall} alt="" className="absolute inset-0 size-full object-cover" />
         )}
       </div>
 

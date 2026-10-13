@@ -5,6 +5,7 @@ import { products } from '../../data/products'
 import { useUiStore } from '../../store/uiStore'
 import { searchProducts } from '../../utils/searchProducts'
 import Drawer from '../ui/Drawer'
+import Image from '../ui/Image'
 
 // Search panel (same drawer as the cart): focused input, instant results as compact rows,
 // "No results" state and a "Show all" link to /shop. Not on the reference (its search is a
@@ -50,7 +51,7 @@ export default function SearchDrawer() {
               <li key={product.slug}>
                 <Link to={`/product/${product.slug}`} onClick={close} className="flex items-center gap-4 py-3">
                   <span className="relative size-16 shrink-0 overflow-hidden bg-mist">
-                    <img src={product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
+                    <Image src={product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
                   </span>
                   <span className="flex min-w-0 flex-col gap-1">
                     <span className="text-ink type-h6">{product.name}</span>

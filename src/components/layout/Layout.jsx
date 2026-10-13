@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Outlet, useMatches } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -32,7 +32,10 @@ export default function Layout() {
       <Navbar />
       <LiveAnnouncer />
       <main id="main" tabIndex={-1} className="outline-none">
-        <Outlet />
+        {/* Fallback keeps a full-screen block so the footer never jumps into view while a page chunk loads. */}
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <CartDrawer />
