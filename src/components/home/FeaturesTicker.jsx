@@ -1,6 +1,6 @@
 import Marquee from '../ui/Marquee'
 
-const FEATURES = ['Waterproof', 'Skin Friendly', 'Everyday Wear', 'Premium Quality', 'Hand Finished']
+const FEATURES = ['Water Safe', 'Gentle On Skin', 'All-Day Comfort', 'Quality Checked', 'Polished By Hand']
 
 // Giant muted words separated by 12px dots, scrolling left at 40px/s (no hover slow-down).
 export default function FeaturesTicker() {

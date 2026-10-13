@@ -19,14 +19,14 @@ export default function NewArrivals() {
   return (
     <section className="pt-section-sm lg:pt-section">
       <Container className="flex flex-col gap-8">
-        <SectionHeader eyebrow="New Arrivals" title="Our Latest Obsessions" headerClassName="w-full" />
+        <SectionHeader eyebrow="New Arrivals" title="Fresh Off the Bench" headerClassName="w-full" />
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
           <ProductGrid products={products.slice(0, 2)} columns={COLUMN} className={COLUMN_SIZE} />
           <Reveal className="h-[460px] md:h-[466px] lg:h-[966px] lg:flex-1">
             <MediaBanner
               image={placeholders.promoTall}
-              title="Discover The Collection"
-              cta={{ label: 'Explore Collections', to: '/shop' }}
+              title="Meet the New Range"
+              cta={{ label: 'Browse Collections', to: '/shop' }}
               className="h-full"
               contentClassName="lg:max-w-[408px] lg:flex-col lg:items-start"
               titleClassName="lg:flex-none"

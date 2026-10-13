@@ -14,7 +14,7 @@ export default function Journals() {
     <>
       <section className="px-4 pt-[180px] md:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-site flex-col gap-8">
-          <SectionHeader eyebrow="Journals" title="Notes on the modern elegance" titleAs="h1" headerClassName="w-full max-w-[780px]" />
+          <SectionHeader eyebrow="Journals" title="Stories on living with jewelry" titleAs="h1" headerClassName="w-full max-w-[780px]" />
           <Reveal>
             <JournalCard journal={featured} featured />
           </Reveal>
@@ -23,7 +23,7 @@ export default function Journals() {
 
       <section className="py-section-sm lg:py-section">
         <Container className="flex flex-col gap-8">
-          <SectionHeader eyebrow="Explore more journals" title="Timeless Stories" headerClassName="w-full max-w-[843px]" />
+          <SectionHeader eyebrow="More from the journal" title="Worth Reading Next" headerClassName="w-full max-w-[843px]" />
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {others.map((journal) => (
               <Reveal key={journal.slug}>

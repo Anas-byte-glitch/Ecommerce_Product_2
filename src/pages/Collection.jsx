@@ -27,8 +27,8 @@ export default function Collection({ audience }) {
             <ProductGrid products={products} titleAs="h2" />
           ) : (
             <EmptyState
-              title="This Collection Is Coming Soon"
-              cta={{ label: 'Explore Collections', to: `/${audience}-category` }}
+              title="New Pieces Are On The Way"
+              cta={{ label: 'Browse Collections', to: `/${audience}-category` }}
             />
           )}
         </Container>

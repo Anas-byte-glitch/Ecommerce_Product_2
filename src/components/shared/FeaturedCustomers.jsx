@@ -12,8 +12,8 @@ export default function FeaturedCustomers({ customers = defaultCustomers, classN
     <section className={cn('relative bg-white pt-section', className)}>
       <div className="flex flex-col items-center gap-8 overflow-hidden">
         <SectionHeader
-          eyebrow="Featured Customers"
-          title="You Could Be Our Next Feature"
+          eyebrow="Customer Gallery"
+          title="Wear It, Share It, Get Featured"
           align="center"
           className="w-full max-w-[843px]"
           eyebrowClassName="h-[13px]"

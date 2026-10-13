@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <>
       <section className="px-4 pt-[180px] md:px-6 lg:px-8">
-        <SectionHeader eyebrow="Contact" title="We're Here to Support" align="center" titleAs="h1" />
+        <SectionHeader eyebrow="Contact" title="We're Happy to Help" align="center" titleAs="h1" />
       </section>
 
       <section className="pt-section-sm lg:pt-section">

@@ -25,8 +25,8 @@ export const site = {
   name: 'Orvelle',
   // The wordmark renders `start` upright and `end` in italic ("Orve" + "lle").
   wordmark: { start: 'Orve', end: 'lle' },
-  tagline: 'Discover timeless jewelry designed to become part of your everyday story',
-  description: 'Timeless jewelry designed to become part of your everyday story.',
+  tagline: 'Everyday jewelry made to be worn often, kept close and loved for years',
+  description: 'Everyday jewelry in silver, gold and titanium, made to be worn often and kept for years.',
   siteUrl: 'https://example.com',
   social: { instagram: 'https://instagram.com' },
   locale: 'en-US',

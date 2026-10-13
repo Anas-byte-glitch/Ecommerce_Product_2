@@ -17,7 +17,7 @@ export default function BestSellers() {
       <Container className="flex flex-col gap-16 md:gap-8">
         <SectionHeader
           eyebrow="Best Sellers"
-          title="Our Most Loved Designs"
+          title="Our Top Picks Right Now"
           action={{ label: 'Show All', to: '/shop', className: 'w-[160px]' }}
           headerClassName="w-full md:max-w-[515px]"
         />
@@ -25,8 +25,8 @@ export default function BestSellers() {
           <Reveal className="col-span-2 h-[460px] md:h-[398px] lg:h-[439px]">
             <MediaBanner
               image={placeholders.bannerWide}
-              title={`The Icons of the ${site.name}`}
-              cta={{ label: 'Explore Best Sellers', to: '/shop' }}
+              title={`The ${site.name} Essentials`}
+              cta={{ label: 'Shop Best Sellers', to: '/shop' }}
               className="h-full"
             />
           </Reveal>
