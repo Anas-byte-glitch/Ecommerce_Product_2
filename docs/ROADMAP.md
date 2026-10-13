@@ -19,6 +19,8 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 - **9A** Brand (Orvelle, order prefix ORV), original copy, leftover scan (branch `phase-9a`)
 
 ## Remaining
+- **9B-1** (done) image/video inventory: `docs/IMAGE_SLOTS.md` (144 slots), `docs/IMAGE_SHOPPING_LIST.md` (sources unreachable from the build environment → manual download into `assets-incoming/`).
+- **9B-2** processing script, wiring, `images.json`/`CREDITS.md`, video.
 - **9B** Real images (Unsplash/Pexels/Pixabay, licences checked, `images.json` + `CREDITS.md`, WebP/srcset via the `Image`
   component and the `placeholders` map), licensed home video or still.
 - **9C** Optional prerender step, buyer documentation, `npm run package` (source + built Zips from an allowlist),
