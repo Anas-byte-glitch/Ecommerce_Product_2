@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { Heart, Menu, Search, ShoppingCart, X } from 'lucide-react'
 import { mainNav } from '../../config/site'
 import { useUiStore } from '../../store/uiStore'
@@ -29,6 +29,7 @@ function Counter({ value, className }) {
 }
 
 export default function Navbar() {
+  const reduceMotion = useReducedMotion()
   const navOverHero = useUiStore((state) => state.navOverHero)
   const wishlistCount = useWishlistCount()
   const cartCount = useCartCount()
@@ -88,9 +89,13 @@ export default function Navbar() {
     // subpixel glyph positioning in Chromium).
     <motion.header
       className="fixed inset-x-0 top-0 z-50 will-change-transform"
-      initial={false}
-      animate={{ y: hidden && !menuOpen ? HIDDEN_OFFSET : 0 }}
-      transition={{ duration: 0.4, ease: [0.44, 0, 0.56, 1] }}
+      // Page-load fade-in measured on the reference (all pages): opacity 0 → 1, 1s, 0.8s delay.
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1, y: hidden && !menuOpen ? HIDDEN_OFFSET : 0 }}
+      transition={{
+        y: { duration: 0.4, ease: [0.44, 0, 0.56, 1] },
+        opacity: { duration: 1, delay: 0.8, ease: 'linear' },
+      }}
     >
       <nav
         aria-label="Main"
