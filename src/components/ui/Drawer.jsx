@@ -20,8 +20,10 @@ export default function Drawer({ open, onClose, title, children, footer }) {
     const trigger = document.activeElement
     const root = document.documentElement
     root.classList.add('overflow-hidden')
-    // Focus the first control (the close button) once the panel is mounted.
-    const frame = requestAnimationFrame(() => panelRef.current?.querySelector(FOCUSABLE)?.focus())
+    // Focus `[data-autofocus]` (e.g. a search input) or else the first control (the close button).
+    const frame = requestAnimationFrame(() =>
+      (panelRef.current?.querySelector('[data-autofocus]') ?? panelRef.current?.querySelector(FOCUSABLE))?.focus(),
+    )
 
     const onKey = (event) => {
       if (event.key === 'Escape') {

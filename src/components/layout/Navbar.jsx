@@ -33,6 +33,7 @@ export default function Navbar() {
   const wishlistCount = useWishlistCount()
   const cartCount = useCartCount()
   const openCart = useCartStore((state) => state.openDrawer)
+  const openSearch = useUiStore((state) => state.openSearch)
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [pastHero, setPastHero] = useState(false)
@@ -128,8 +129,16 @@ export default function Navbar() {
           {/* lg width = the reference's 5-icon cluster (User + Country are not built), so the
               wordmark lands where it does on the reference (x = 701.5 at 1440px). */}
           <div className="flex items-center justify-end gap-4 md:gap-6 lg:w-[196px]">
-            {/* The search drawer is built in a later phase. */}
-            <button type="button" aria-label="Search" className="relative size-5 cursor-pointer">
+            <button
+              type="button"
+              aria-label="Search"
+              aria-haspopup="dialog"
+              onClick={() => {
+                setMenuOpen(false)
+                openSearch()
+              }}
+              className="relative size-5 cursor-pointer"
+            >
               <Search size={20} strokeWidth={ICON_STROKE} aria-hidden="true" />
             </button>
 
