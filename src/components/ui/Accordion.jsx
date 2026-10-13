@@ -2,9 +2,9 @@ import { useId, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { Plus } from 'lucide-react'
 
-// White cards stacked 10px apart; several can be open at once (as on the reference). The "+"
+// White cards stacked 10px apart (`gap`; the FAQ uses 16px and a wider body); several can be open at once (as on the reference). The "+"
 // turns 45° into an "×" and the body expands (spring, bounce 0.2, 0.4s). All closed by default.
-export default function Accordion({ items }) {
+export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max-w-[515px]' }) {
   const [open, setOpen] = useState(() => new Set())
   const reduceMotion = useReducedMotion()
   const baseId = useId()
@@ -19,7 +19,7 @@ export default function Accordion({ items }) {
     })
 
   return (
-    <div className="flex w-full flex-col gap-2.5">
+    <div className={`flex w-full flex-col ${gap}`}>
       {items.map((item, index) => {
         const isOpen = open.has(index)
         const panelId = `${baseId}-panel-${index}`
@@ -57,7 +57,7 @@ export default function Accordion({ items }) {
                   transition={transition}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-[515px] px-4 pb-4 text-ink-soft type-body">{item.content}</p>
+                  <p className={`px-4 pb-4 text-ink-soft type-body ${bodyClassName}`}>{item.content}</p>
                 </motion.div>
               )}
             </AnimatePresence>

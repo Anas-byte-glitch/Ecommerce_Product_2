@@ -5,6 +5,7 @@ import { useCartStore, useCartSummary } from '../store/cartStore'
 import { useOrderStore } from '../store/orderStore'
 import { formatPrice } from '../utils/formatPrice'
 import { cn } from '../utils/cn'
+import { isValidEmail, isValidPhone } from '../utils/validation'
 import Field from '../components/checkout/Field'
 import OrderSummary from '../components/checkout/OrderSummary'
 import Container from '../components/ui/Container'
@@ -21,16 +22,14 @@ const LABELS = {
   postalCode: 'Postal code',
   country: 'Country',
 }
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
-const PHONE = /^\+?[0-9\s().-]{7,20}$/
 
 function validate(values) {
   const errors = {}
   for (const field of FIELDS) {
     if (!values[field].trim()) errors[field] = `${LABELS[field]} is required`
   }
-  if (!errors.email && !EMAIL.test(values.email.trim())) errors.email = 'Enter a valid email address'
-  if (!errors.phone && (!PHONE.test(values.phone.trim()) || values.phone.replace(/\D/g, '').length < 7)) {
+  if (!errors.email && !isValidEmail(values.email)) errors.email = 'Enter a valid email address'
+  if (!errors.phone && !isValidPhone(values.phone)) {
     errors.phone = 'Enter a valid phone number (digits, spaces, + ( ) - only)'
   }
   return errors

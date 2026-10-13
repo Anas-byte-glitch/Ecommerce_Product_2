@@ -11,6 +11,10 @@ export const site = {
   payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
   // Show a placeholder price under product-card titles (the reference shows none).
   showPrices: false,
+  // Contact details shown on /contact — clearly fake placeholders, replace with your own.
+  contactEmail: 'hello@example.com',
+  contactPhone: '+1 000 000 0000',
+  officeAddress: 'Example Studio, 100 Placeholder Avenue, Sample City, ST 00000, Country',
   // Cart placeholders (USD): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,
