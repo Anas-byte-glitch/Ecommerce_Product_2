@@ -4,7 +4,7 @@ import { Plus } from 'lucide-react'
 
 // White cards stacked 10px apart (`gap`; the FAQ uses 16px and a wider body); several can be open at once (as on the reference). The "+"
 // turns 45° into an "×" and the body expands (spring, bounce 0.2, 0.4s). All closed by default.
-export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max-w-[515px]' }) {
+export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max-w-[515px]', headingAs: Heading = 'h3' }) {
   const [open, setOpen] = useState(() => new Set())
   const reduceMotion = useReducedMotion()
   const baseId = useId()
@@ -25,7 +25,7 @@ export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max
         const panelId = `${baseId}-panel-${index}`
         return (
           <div key={item.title} className="w-full bg-white">
-            <h3>
+            <Heading>
               <button
                 type="button"
                 aria-expanded={isOpen}
@@ -44,7 +44,7 @@ export default function Accordion({ items, gap = 'gap-2.5', bodyClassName = 'max
                   <Plus size={16} strokeWidth={2} />
                 </motion.span>
               </button>
-            </h3>
+            </Heading>
             <AnimatePresence initial={false}>
               {isOpen && (
                 <motion.div

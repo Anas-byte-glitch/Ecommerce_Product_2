@@ -68,6 +68,7 @@ function ProductView({ product }) {
             </div>
 
             <Accordion
+              headingAs="h2"
               items={[
                 { title: 'Description', content: product.details },
                 { title: 'Materials / Composition', content: product.materials },
