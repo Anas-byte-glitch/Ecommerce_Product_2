@@ -901,3 +901,9 @@ exactly unless noted. Titles: the reference sets only the brand on `/journals` a
   the app, unknown URLs and unknown slugs render the 404 page, `sitemap.xml` / `robots.txt` / manifest / icons are real
   files, and `dist/` contains `.htaccess`, `_redirects`, `_headers`, `vercel.json`, `manifest.webmanifest`, `sitemap.xml`,
   `robots.txt`, icons and `og-image.*`. Not verified: Apache, Netlify and Vercel header behavior on real servers.
+- **Lighthouse, final run (built site, vite preview).** Mobile performance: `/` 89 (an earlier run of the same build gave 94 — mobile
+  TBT varies 120–270 ms between runs), `/shop` 93, product 91, `/cart` 94, `/checkout` 94 (redirects to `/cart`, CLS 0.045), `/about` 93,
+  `/contact` 92, `/journals` 91, article 94, `/terms` 92. Desktop 99–100 everywhere. Accessibility 100, Best Practices 100 on all 20 runs;
+  SEO 100 except `/cart` and `/checkout` (66, intentional `noindex`). Mobile LCP is 2.7–2.9 s under Lighthouse's simulated slow 4G (the
+  hero image, a placeholder, fades in over 1.2 s after load; real photos will change this); the home page's mobile score sits at the 90
+  limit because of main-thread time (react-dom + motion ≈ 150 kB gzip).
