@@ -25,8 +25,8 @@ export const site = {
   name: 'Orvelle',
   // The wordmark renders `start` upright and `end` in italic ("Orve" + "lle").
   wordmark: { start: 'Orve', end: 'lle' },
-  tagline: 'Everyday jewelry made to be worn often, kept close and loved for years',
-  description: 'Everyday jewelry in silver, gold and titanium, made to be worn often and kept for years.',
+  tagline: 'Everyday jewelry made for daily wear, kept close and loved for years',
+  description: 'Everyday jewelry in silver, gold and titanium, made for daily wear and kept for years.',
   siteUrl: 'https://example.com',
   social: { instagram: 'https://instagram.com' },
   locale: 'en-US',
@@ -44,7 +44,7 @@ export const site = {
   returnWindowDays: 30,
   damageReportDays: 7,
   refundTime: '5–10 business days',
-  businessHours: 'Monday – Friday, 9:00 AM – 6:00 PM',
+  businessHours: 'Monday to Friday, 9am to 6pm',
   // Cart placeholders (in the currency above): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,

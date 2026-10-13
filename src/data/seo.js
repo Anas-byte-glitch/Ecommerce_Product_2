@@ -3,7 +3,7 @@ import { site } from '../config/site'
 // Meta descriptions (≈ 120–160 characters, original wording). The brand, return window and
 // currency-free facts come from src/config/site.js; titles live on the routes (App.jsx `handle`).
 export const pageDescriptions = {
-  home: `${site.name} makes everyday jewelry meant to be worn, layered and kept: necklaces, rings, bracelets and earrings for women and men.`,
+  home: `${site.name} makes everyday jewelry made to be layered, lived in and kept: necklaces, rings, bracelets and earrings for women and men.`,
   shop: `Browse every ${site.name} piece in one place. Filter by type, sort by what is new or most loved, and find your next favourite.`,
   favourites: `Your saved ${site.name} pieces, kept in one list so you can come back to them when you are ready.`,
   cart: `Review the pieces in your ${site.name} cart before checking out.`,

@@ -1,7 +1,7 @@
 import { m, useReducedMotion } from 'motion/react'
 import { wordEffect } from '../../utils/motion'
 
-// Heading whose words blur/fade/slide in one after another (Framer text effect, "word"
+// Heading whose words blur/fade/slide in one after another (per-word text effect, "word"
 // tokenization). Trigger on mount (hero) or when the heading enters the viewport.
 export default function TextReveal({
   as = 'h2',

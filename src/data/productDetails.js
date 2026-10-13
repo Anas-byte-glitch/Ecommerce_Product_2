@@ -40,7 +40,7 @@ export const productDetails = {
     details: `The Brisa Silver Chain by ${site.name}: a slim silver-tone chain made to sit under, over or beside your other favourites.`,
     materials: "Stainless steel with a silver-tone finish. Nickel-free, gentle on skin and resistant to fading.",
     dimensions: "Length: 18 in plus a 2 in extender. Width: 2 mm. Spring-ring clasp. Roughly 7 g.",
-    care: "Remove before swimming or workouts. Clean with a soft dry cloth and keep it in a pouch away from rougher metals.",
+    care: "Remove before swimming or workouts. Use a soft dry cloth to clean it and keep it in a pouch away from rougher metals.",
     matchWith: ["isolde-diamond-band", "pippa-charm-bracelet", "linnea-crystal-necklace"],
   },
   'elowen-signet-ring': {

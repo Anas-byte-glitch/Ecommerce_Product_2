@@ -50,7 +50,7 @@ export const journals = [
     date: '2026-05-18',
     readTime: "8 min",
     title: "How to Build a Collection That Lasts",
-    excerpt: "A well-edited jewelry box grows over time. Here is how to choose pieces you will reach for again and again.",
+    excerpt: "A well-edited jewelry box grows over time. Here is how to choose pieces you will keep picking up, day after day.",
     image: placeholders.journal,
     body: [
       { type: 'heading', text: "Begin With the Basics" },
@@ -69,7 +69,7 @@ export const journals = [
       },
       { type: 'paragraph', text: "Between them these pieces cover most moods and outfits, and each can be built on later." },
       { type: 'heading', text: "Choose Quality Over Quantity" },
-      { type: 'paragraph', text: "A few well-made pieces will give you more than a drawer full of cheap ones. Look at the clasp, the finish and the weight. Ask what the piece is made from and how to look after it. Good jewelry is built to be worn often, and it should still feel good on the fortieth day as it did on the first." },
+      { type: 'paragraph', text: "A few well-made pieces will give you more than a drawer full of cheap ones. Look at the clasp, the finish and the weight. Ask what the piece is made from and how to look after it. Good jewelry is made for daily life, and it should still feel good on the fortieth day as it did on the first." },
       { type: 'heading', text: "Let It Grow Naturally" },
       { type: 'paragraph', text: "Once the basics are in place, add new pieces slowly. A gift, a souvenir from a trip or something that simply caught your eye can each find a place. Notice what you reach for most and build around that. A collection that reflects your real life will always feel more personal, and more worn, than one assembled to tick off a list." },
     ],
