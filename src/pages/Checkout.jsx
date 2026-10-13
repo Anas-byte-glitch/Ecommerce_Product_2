@@ -142,7 +142,7 @@ export default function Checkout() {
 
             <Section title="Shipping method">
               <div className="flex items-center justify-between border border-mist bg-white px-4 py-3">
-                <span className="text-ink type-body">Standard delivery (3–5 business days)</span>
+                <span className="text-ink type-body">Standard delivery ({site.deliveryEstimate})</span>
                 <span className="text-ink type-body">{summary.shipping === 0 ? 'Free' : formatPrice(summary.shipping)}</span>
               </div>
             </Section>

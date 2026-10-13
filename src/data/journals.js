@@ -94,5 +94,5 @@ export const getAdjacentJournals = (slug) => {
   return { previous: journals[index - 1], next: journals[index + 1] }
 }
 
-const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+const dateFormat = new Intl.DateTimeFormat(site.locale, { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
 export const formatJournalDate = (iso) => dateFormat.format(new Date(iso))
