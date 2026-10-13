@@ -1,5 +1,5 @@
 import { Suspense, useEffect } from 'react'
-import { Outlet, useMatches } from 'react-router-dom'
+import { Outlet, useLocation, useMatches } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
@@ -7,18 +7,25 @@ import LiveAnnouncer from './LiveAnnouncer'
 import CartDrawer from '../cart/CartDrawer'
 import SearchDrawer from '../search/SearchDrawer'
 import { site } from '../../config/site'
+import { applySeo } from '../../seo/applySeo'
 
-// Document title: the brand name on every page (as on the reference), or the deepest route's
-// `handle.title(params)` + " - brand" (product pages: "Aurora Bar Necklace - <brand>").
+// Document head per route: title = brand (as on the reference) or the deepest route's
+// `handle.title(params)` + " - brand"; description / noindex / JSON-LD from `handle.seo(params)` (App.jsx).
 export default function Layout() {
   const matches = useMatches()
+  const { pathname } = useLocation()
   const match = matches[matches.length - 1]
   const pageTitle = match?.handle?.title?.(match.params)
   const title = pageTitle ? `${pageTitle} - ${site.name}` : site.name
+  const seo = match?.handle?.seo?.(match.params) ?? {}
+  const description = seo.description ?? site.description
+  const noindex = seo.noindex ?? false
+  const jsonLdKey = JSON.stringify(seo.jsonLd ?? [])
 
+  // Title, description, canonical, Open Graph, robots and route JSON-LD (src/seo).
   useEffect(() => {
-    document.title = title
-  }, [title])
+    applySeo({ title, description, path: pathname, noindex, jsonLd: JSON.parse(jsonLdKey) })
+  }, [title, description, pathname, noindex, jsonLdKey])
 
   return (
     <>
