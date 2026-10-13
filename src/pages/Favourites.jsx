@@ -19,7 +19,7 @@ export default function Favourites() {
         <section className="py-section-sm lg:py-section">
           <Container>
             {items.length > 0 ? (
-              <ProductGrid products={items} />
+              <ProductGrid products={items} titleAs="h2" />
             ) : (
               <div className="flex flex-col items-center gap-6 p-6 text-center">
                 <h2 className="text-ink type-h4">Nothing here yet</h2>

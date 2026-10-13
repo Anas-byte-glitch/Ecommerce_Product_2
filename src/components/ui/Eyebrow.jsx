@@ -6,7 +6,7 @@ export default function Eyebrow({ tone = 'light', className, children }) {
     <p
       className={cn(
         'flex items-center gap-2 type-eyebrow',
-        tone === 'light' ? 'text-accent' : 'text-mist',
+        tone === 'light' ? 'text-accent-text' : 'text-mist',
         className,
       )}
     >

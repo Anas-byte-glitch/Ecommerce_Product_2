@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { Heart, Menu, Search, ShoppingCart, X } from 'lucide-react'
-import { mainNav } from '../../config/site'
+import { mainNav, site } from '../../config/site'
 import { useUiStore } from '../../store/uiStore'
 import { useWishlistCount } from '../../store/wishlistStore'
 import { useCartCount, useCartStore } from '../../store/cartStore'
@@ -121,7 +121,7 @@ export default function Navbar() {
 
           <Link
             to="/"
-            aria-label="Home"
+            aria-label={`${site.name} home`}
             onClick={() => setMenuOpen(false)}
             className={cn(
               'type-wordmark transition-colors duration-300',
@@ -149,16 +149,15 @@ export default function Navbar() {
 
             <Link
               to="/favourite"
-              aria-label={`Favourites (${wishlistCount})`}
               className="relative hidden size-5 lg:block"
             >
+              <span className="sr-only">Favourites</span>
               <Heart size={20} strokeWidth={ICON_STROKE} aria-hidden="true" />
               <Counter value={wishlistCount} className="-top-2 left-[11px]" />
             </Link>
 
             <button
               type="button"
-              aria-label={`Cart (${cartCount})`}
               aria-haspopup="dialog"
               onClick={() => {
                 setMenuOpen(false)
@@ -166,6 +165,7 @@ export default function Navbar() {
               }}
               className="relative size-5 cursor-pointer"
             >
+              <span className="sr-only">Cart</span>
               <ShoppingCart size={20} strokeWidth={ICON_STROKE} aria-hidden="true" />
               <Counter value={cartCount} className="-top-2.5 left-2.5 font-medium" />
             </button>

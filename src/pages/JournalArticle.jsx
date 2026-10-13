@@ -46,7 +46,7 @@ function AdjacentLink({ journal, direction }) {
     <div className={cn('flex w-full flex-col gap-2.5 md:w-[230px]', next ? 'items-end text-right' : 'items-start text-left')}>
       <Link
         to={`/journals/${journal.slug}`}
-        className="flex items-center gap-2 text-[#9a948e] type-eyebrow hover:text-ink"
+        className="flex items-center gap-2 text-muted type-eyebrow hover:text-ink"
         aria-label={`${next ? 'Next' : 'Previous'} article: ${journal.title}`}
       >
         {!next && <Arrow size={16} strokeWidth={ICON} aria-hidden="true" />}
@@ -78,7 +78,7 @@ export default function JournalArticle() {
         <article className="flex flex-col items-center gap-section-sm px-4 py-section-sm md:px-6 lg:gap-section lg:px-8 lg:py-section">
           <div className="flex w-full max-w-[1200px] flex-col gap-8">
             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <Link to="/journals" className="flex items-center gap-2 text-[#9a948e] type-eyebrow hover:text-ink">
+              <Link to="/journals" className="flex items-center gap-2 text-muted type-eyebrow hover:text-ink">
                 <ArrowLeft size={16} strokeWidth={ICON} aria-hidden="true" />
                 All Journals
               </Link>

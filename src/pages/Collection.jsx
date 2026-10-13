@@ -24,7 +24,7 @@ export default function Collection({ audience }) {
       <section className="py-section-sm lg:py-section">
         <Container>
           {products.length > 0 ? (
-            <ProductGrid products={products} />
+            <ProductGrid products={products} titleAs="h2" />
           ) : (
             <EmptyState
               title="This Collection Is Coming Soon"

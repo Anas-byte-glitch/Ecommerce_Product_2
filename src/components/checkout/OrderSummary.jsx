@@ -1,8 +1,10 @@
 import { formatPrice } from '../../utils/formatPrice'
 
-function Row({ label, value, strong = false }) {
+function Row({ label, value, strong = false, className = '' }) {
   return (
-    <div className={strong ? 'flex justify-between text-ink type-h6-lg' : 'flex justify-between text-ink-soft type-body'}>
+    <div
+      className={`${className} flex justify-between ${strong ? 'text-ink type-h6-lg' : 'text-ink-soft type-body'}`}
+    >
       <dt>{label}</dt>
       <dd>{value}</dd>
     </div>
@@ -33,9 +35,7 @@ export default function OrderSummary({ summary, title = 'Order summary', classNa
         <dl className="flex flex-col gap-3 border-t border-mist pt-4">
           <Row label="Subtotal" value={formatPrice(summary.subtotal)} />
           <Row label="Shipping" value={summary.shipping === 0 ? 'Free' : formatPrice(summary.shipping)} />
-          <div className="border-t border-mist pt-3">
-            <Row label="Total" value={formatPrice(summary.total)} strong />
-          </div>
+          <Row label="Total" value={formatPrice(summary.total)} strong className="border-t border-mist pt-3" />
         </dl>
       </div>
     </div>

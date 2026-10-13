@@ -8,7 +8,7 @@ import FavouriteButton from './FavouriteButton'
 // Product card (reference "Desktop" variant from 810px, "Mobile" below):
 // image box 440px tall (200px on phones), badge top-left (hidden on phones), favourite top-right,
 // second image cross-fades in on hover; title + category label underneath.
-export default function ProductCard({ product, className }) {
+export default function ProductCard({ product, className, titleAs: Title = 'h3' }) {
   const [image, hoverImage = image] = product.images
 
   return (
@@ -39,7 +39,7 @@ export default function ProductCard({ product, className }) {
       {/* Phones: category above the title (4px gap); from 810px: title left, category right. */}
       <div className="flex w-full flex-col gap-1 px-2 md:flex-row md:items-start md:justify-between md:gap-0">
         <div className="order-1 flex w-full flex-col gap-2 md:max-w-[220px] md:flex-1">
-          <h3 className="text-ink type-h6">{product.name}</h3>
+          <Title className="text-ink type-h6">{product.name}</Title>
           {/* Empty 0px row keeps the reference's 8px gap under the title when prices are off. */}
           <div className="flex items-center gap-2">
             {site.showPrices && (
