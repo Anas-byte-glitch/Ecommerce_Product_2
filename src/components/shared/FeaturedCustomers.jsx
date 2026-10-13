@@ -13,7 +13,7 @@ export default function FeaturedCustomers({ customers = defaultCustomers, classN
       <div className="flex flex-col items-center gap-8 overflow-hidden">
         <SectionHeader
           eyebrow="Customer Gallery"
-          title="Wear It, Share It, Get Featured"
+          title="Show Us How You Wear Yours Today"
           align="center"
           className="w-full max-w-[843px]"
           eyebrowClassName="h-[13px]"

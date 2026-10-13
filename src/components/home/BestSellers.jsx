@@ -7,7 +7,7 @@ import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 import ProductGrid from '../product/ProductGrid'
 
-const BEST_SELLERS = ['tessa-line-necklace', 'odette-tennis-bracelet', 'halden-cuban-chain', 'teague-curb-bracelet']
+const BEST_SELLERS = ['marlow-line-necklace', 'tessa-tennis-bracelet', 'rhett-cuban-chain', 'fenn-curb-bracelet']
 
 // 4 best sellers + the "Icons" banner as a 2-column cell of the same grid
 // (3 columns from 1200px: banner next to the 4th card; 2 columns below: banner on its own row).
@@ -25,7 +25,7 @@ export default function BestSellers() {
           <Reveal className="col-span-2 h-[460px] md:h-[398px] lg:h-[439px]">
             <MediaBanner
               image={placeholders.bannerWide}
-              title={`The ${site.name} Essentials`}
+              title={`${site.name} Daily Essentials`}
               cta={{ label: 'Shop Best Sellers', to: '/shop' }}
               className="h-full"
             />

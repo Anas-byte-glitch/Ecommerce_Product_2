@@ -6,7 +6,7 @@ import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 import ProductGrid from '../product/ProductGrid'
 
-const NEW_ARRIVALS = ['linnea-crystal-necklace', 'maisie-twist-ring', 'quill-rope-bracelet', 'beckett-black-stud']
+const NEW_ARRIVALS = ['linnea-crystal-necklace', 'maisie-twist-ring', 'soren-rope-bracelet', 'beckett-black-stud']
 
 const COLUMN = 'grid-cols-2 lg:grid-cols-1'
 const COLUMN_SIZE = 'lg:max-w-[350px] lg:flex-1'
@@ -19,13 +19,13 @@ export default function NewArrivals() {
   return (
     <section className="pt-section-sm lg:pt-section">
       <Container className="flex flex-col gap-8">
-        <SectionHeader eyebrow="New Arrivals" title="Fresh Off the Bench" headerClassName="w-full" />
+        <SectionHeader eyebrow="New Arrivals" title="Fresh From Our Workshop" headerClassName="w-full" />
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start">
           <ProductGrid products={products.slice(0, 2)} columns={COLUMN} className={COLUMN_SIZE} />
           <Reveal className="h-[460px] md:h-[466px] lg:h-[966px] lg:flex-1">
             <MediaBanner
               image={placeholders.promoTall}
-              title="Meet the New Range"
+              title="Meet the Newest Pieces"
               cta={{ label: 'Browse Collections', to: '/shop' }}
               className="h-full"
               contentClassName="lg:max-w-[408px] lg:flex-col lg:items-start"

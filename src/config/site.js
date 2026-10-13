@@ -44,7 +44,7 @@ export const site = {
   returnWindowDays: 30,
   damageReportDays: 7,
   refundTime: '5–10 business days',
-  businessHours: 'Monday to Friday, 9am to 6pm',
+  businessHours: 'Monday to Friday, from 9:00 AM until 6:00 PM',
   // Cart placeholders (in the currency above): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,

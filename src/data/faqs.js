@@ -16,7 +16,7 @@ export const faqs = [
   },
   {
     id: 'returns',
-    question: 'What if I change my mind?',
+    question: 'What if I need to return or swap it?',
     answer:
       `No problem. You can send something back for a refund or swap within ${site.returnWindowDays} days of delivery, as long as it is unworn and in its original packaging.`,
   },
@@ -28,7 +28,7 @@ export const faqs = [
   },
   {
     id: 'payment',
-    question: 'How can I pay?',
+    question: 'Which ways of paying do you offer?',
     answer:
       'Major credit and debit cards, plus the wallets and local payment options available where you live, all protected by secure checkout.',
   },

@@ -68,8 +68,8 @@ export default function HomeHero() {
             <div className="order-1 flex w-full flex-col items-start gap-4 overflow-hidden md:order-0 md:flex-1 lg:max-w-[540px]">
               <Appear delay={0.7} className="w-full">
                 <p className="text-balance text-cream type-body-lg">
-                  Necklaces, rings, bracelets and earrings with calm lines, made to feel like
-                  your own.
+                  Necklaces, rings, bracelets and earrings with calm lines and honest materials,
+                  made to feel yours.
                 </p>
               </Appear>
               <Appear delay={0.9} className="w-full md:max-w-[460px]">
