@@ -1,5 +1,7 @@
 # Site Map — Glintura reference
 
+> Phase 9A renamed all products and journal articles: the slugs below are the REFERENCE site's. Our current slugs: DESIGN_NOTES §28 (products) and `src/data/journals.js`.
+
 Source: https://glintura.framer.website/sitemap.xml (55 URLs) plus crawling every page
 at 1440px on 2026-10-01. Our app uses the **same paths**.
 

@@ -13,7 +13,7 @@ export default function Materials() {
   return (
     <section className="pt-section-sm lg:pt-section">
       <Container className="flex flex-col gap-8">
-        <SectionHeader gap="gap-2.5" eyebrow="Our materials" title="Crafted with Care" headerClassName="w-full max-w-[686px]" />
+        <SectionHeader gap="gap-2.5" eyebrow="Our materials" title="Made With Patience" headerClassName="w-full max-w-[686px]" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {materials.map((material, index) => (
             <Reveal key={material.title}>

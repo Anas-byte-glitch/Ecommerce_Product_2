@@ -17,16 +17,16 @@
 //  contactEmail / contactPhone / officeAddress / businessHours
 //                       Shown on /contact and in the legal pages (placeholders — replace them).
 //  social               Social links (footer, featured customers).
-//  orderPrefix          Demo order numbers look like "GLN-4K7Q2M".
+//  orderPrefix          Demo order numbers look like "ORV-4K7Q2M".
 //  homeVideoSrc         Optional looping video for the home About block ('' = still image).
 //  footerCta            The dark button under the footer tagline.
 // ─────────────────────────────────────────────────────────────────────────────
 export const site = {
-  name: 'Glintura',
-  // The wordmark renders `start` upright and `end` in italic ("Glin" + "tura").
-  wordmark: { start: 'Glin', end: 'tura' },
-  tagline: 'Discover timeless jewelry designed to become part of your everyday story',
-  description: 'Timeless jewelry designed to become part of your everyday story.',
+  name: 'Orvelle',
+  // The wordmark renders `start` upright and `end` in italic ("Orve" + "lle").
+  wordmark: { start: 'Orve', end: 'lle' },
+  tagline: 'Everyday jewelry made for daily wear, kept close and loved for years',
+  description: 'Everyday jewelry in silver, gold and titanium, made for daily wear and kept for years.',
   siteUrl: 'https://example.com',
   social: { instagram: 'https://instagram.com' },
   locale: 'en-US',
@@ -44,13 +44,13 @@ export const site = {
   returnWindowDays: 30,
   damageReportDays: 7,
   refundTime: '5–10 business days',
-  businessHours: 'Monday – Friday, 9:00 AM – 6:00 PM',
+  businessHours: 'Monday to Friday, from 9:00 AM until 6:00 PM',
   // Cart placeholders (in the currency above): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,
   deliveryEstimate: '3–5 business days',
   // Order numbers look like "GLN-4K7Q2M" (demo checkout).
-  orderPrefix: 'GLN',
+  orderPrefix: 'ORV',
   // Optional background video for the home "About Us" block (muted, looping). Empty = poster only.
   homeVideoSrc: '',
   // Dark button under the footer tagline (stands in for the reference's "Buy template").
@@ -95,7 +95,6 @@ export const footerColumns = [
       { label: 'Privacy Policy', to: '/privacy-policy' },
       { label: 'Refund Policy', to: '/refund-policy' },
       { label: 'Instagram', href: site.social.instagram },
-      { label: '404', to: '/404' },
     ],
   },
 ]

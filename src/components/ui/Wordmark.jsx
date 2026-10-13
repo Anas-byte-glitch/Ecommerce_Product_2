@@ -1,6 +1,6 @@
 import { site } from '../../config/site'
 
-// "Glin" upright + "tura" italic, as on the reference navbar.
+// Brand start upright + end in italic (site.wordmark), as on the reference navbar.
 export default function Wordmark() {
   return (
     <>

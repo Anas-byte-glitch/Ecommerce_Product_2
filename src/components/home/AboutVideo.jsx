@@ -38,11 +38,11 @@ export default function AboutVideo() {
             <Reveal>
               <Eyebrow tone="dark">About Us</Eyebrow>
             </Reveal>
-            <TextReveal text="For Every Single Expression of Style" className="w-full text-cream type-display" />
+            <TextReveal text="Made for How You Dress Now" className="w-full text-cream type-display" />
           </div>
           <Reveal className="shrink-0">
             <Button to="/about" variant="light">
-              Explore About Us
+              Read Our Story
             </Button>
           </Reveal>
         </div>

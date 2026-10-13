@@ -1,0 +1,24 @@
+{
+  "phrases": [],
+  "forbidden": [
+    "glintura",
+    "framerusercontent",
+    "framer.website",
+    "framer",
+    "myshopify",
+    "contra.com",
+    "danixostudio",
+    "danixo",
+    "grace mitchell",
+    "ethan parker",
+    "noah bennett",
+    "emma carter",
+    "olivia brooks",
+    "sophia mitchell",
+    "charlotte hayes"
+  ],
+  "forbiddenContext": [
+    "data-framer-portal-id"
+  ],
+  "ignoreFiles": []
+}

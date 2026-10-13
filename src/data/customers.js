@@ -1,12 +1,13 @@
 import { placeholders } from '../assets/placeholders'
 import { site } from '../config/site'
 
-// "Featured Customers" strip. Product names are as shown on the reference.
+// "Featured Customers" strip (invented placeholder customers — replace with real, consenting customers).
+// `product` must be the name of a product in products.js.
 export const customers = [
-  { id: 'ethan-parker', name: 'Ethan Parker', product: 'Titan Link Bracelet' },
-  { id: 'noah-bennett', name: 'Noah Bennett', product: 'Atlas Signet Ring' },
-  { id: 'emma-carter', name: 'Emma Carter', product: 'Aurora Bar Necklace' },
-  { id: 'olivia-brooks', name: 'Olivia Brooks', product: 'Aurora Bar Necklace' },
-  { id: 'sophia-mitchell', name: 'Sophia Mitchell', product: 'Luna Hoop Earrings' },
-  { id: 'charlotte-hayes', name: 'Charlotte Hayes', product: 'Nova Signet Ring' },
+  { id: 'jonas-keller', name: 'Jonas Keller', product: 'Quill Link Bracelet' },
+  { id: 'amir-rahimi', name: 'Amir Rahimi', product: 'Pia Signet Ring' },
+  { id: 'hannah-ellery', name: 'Hannah Ellery', product: 'Marlow Line Necklace' },
+  { id: 'imogen-pryce', name: 'Imogen Pryce', product: 'Isla Pearl Pendant' },
+  { id: 'dalia-reyes', name: 'Dalia Reyes', product: 'Corvin Hoop Earrings' },
+  { id: 'esme-calloway', name: 'Esme Calloway', product: 'Wren Open Ring' },
 ].map((customer) => ({ ...customer, image: placeholders.portrait, link: site.social.instagram }))

@@ -5,7 +5,7 @@ export default function FreeShippingNote({ summary }) {
   return (
     <p className="text-ink-soft type-body" aria-live="polite">
       {summary.freeShipping
-        ? "You've unlocked free shipping"
+        ? "Your order ships free"
         : `Add ${formatPrice(summary.remainingForFreeShipping)} more for free shipping`}
     </p>
   )

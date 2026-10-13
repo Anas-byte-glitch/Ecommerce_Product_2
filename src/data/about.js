@@ -1,59 +1,59 @@
 import { site } from '../config/site'
 
-// Texts read from the reference About page (2026-10-01).
+// About page texts (original placeholder wording — adapt it to your own story).
 export const beliefs = [
   {
-    title: 'Our Story',
-    text: `Born from a passion for modern elegance, ${site.name} creates timeless jewelry that celebrates individuality through thoughtful design and exceptional craftsmanship.`,
+    title: 'Where We Began',
+    text: `${site.name} started with a simple idea: jewelry should feel personal. We design clean, lasting pieces that suit the way real people live, work and get dressed throughout the day.`,
   },
   {
-    title: 'Our Philosophy',
-    text: 'To redefine everyday luxury through thoughtfully designed jewelry that transcends trends, celebrates individuality, and remains timeless across every generation.',
+    title: 'What We Believe',
+    text: 'Good jewelry should outlast fashion. We aim for calm shapes, honest materials and a fit that feels just right, on the first day you wear a piece and on the thousandth.',
   },
   {
-    title: 'Our Craft',
-    text: 'From carefully selected materials to meticulous finishing, every detail reflects our pursuit of quality. We create jewelry with purpose—pieces that are meant to be worn often, cherished deeply, and passed on with meaning.',
+    title: 'How We Make It',
+    text: 'We choose each metal with care, test every clasp and finish every surface by hand. Nothing here is meant to sit in a drawer: our pieces are made to be worn daily, loved for years and handed on to someone who will love them.',
   },
   {
-    title: 'Our Standards',
-    text: 'Every piece is crafted with premium materials, refined by skilled artisans, and carefully inspected to ensure lasting beauty, comfort, and quality.',
+    title: 'Our Promise',
+    text: 'Each item is checked before it leaves us, made from sound materials with steady craftsmanship, so that it keeps its look, its comfort and its value.',
   },
 ]
 
 // Final values of the count-up (0 → value, formatted with thousands separators).
 export const stats = [
-  { value: 2000, suffix: '+', label: 'Happy Customers' },
-  { value: 25, suffix: '+', label: 'Collection' },
-  { value: 15, suffix: '+', label: 'Country Served' },
-  { value: 25, suffix: '+', label: 'Product Designed' },
+  { value: 3000, suffix: '+', label: 'Customers Served' },
+  { value: 14, suffix: '+', label: 'Collections' },
+  { value: 20, suffix: '+', label: 'Countries Served' },
+  { value: 25, suffix: '+', label: 'Pieces In Range' },
 ]
 
 export const materials = [
   {
     title: 'Silver',
-    text: 'Timeless and versatile, sterling silver offers a brilliant shine with a refined finish. Designed for everyday elegance and lasting style.',
+    text: 'Bright, cool and endlessly adaptable, sterling silver gives a clean polish that suits both quiet weekdays and dressed-up evenings out.',
   },
   {
     title: 'Gold',
-    text: 'Warm, radiant, and effortlessly luxurious. Our gold pieces are crafted to add a touch of sophistication to every occasion.',
+    text: 'Warm, glowing and generous, our gold-tone pieces bring a gentle, lasting richness to anything you wear them with, day or night.',
   },
   {
     title: 'Titanium',
-    text: 'Exceptionally lightweight yet incredibly strong, titanium is built for everyday comfort with outstanding durability and a modern finish.',
+    text: 'Very light yet remarkably tough, titanium resists scratches and keeps its colour, which makes it a comfortable choice for everyday use.',
   },
 ]
 
 // Reading order on desktop is column by column: 01, 03 (left) and 02, 04 (right) — the
 // `column` field says where each card goes around the tall image.
 export const reasons = [
-  { n: '01.', title: 'Premium Materials', column: 'left', text: 'Only carefully selected metals and finishes are used to ensure lasting beauty and everyday durability.' },
-  { n: '02.', title: 'Made To Last', column: 'right', text: 'Designed for daily wear with exceptional durability, comfort, and lasting quality.' },
-  { n: '03.', title: 'Timeless Design', column: 'left', text: 'Modern silhouettes inspired by classic craftsmanship that never go out of style.' },
-  { n: '04.', title: 'Crafted With Care', column: 'right', text: 'Every piece is finished with precision and attention to detail for a refined, luxurious feel.' },
+  { n: '01.', title: 'Honest Materials Only', column: 'left', text: 'We pick metals and finishes that hold up well, so each piece stays good-looking through daily wear.' },
+  { n: '02.', title: 'Comfort First', column: 'right', text: 'Smooth edges, even weight and clasps that hold: comfort comes first, always.' },
+  { n: '03.', title: 'Shapes That Last', column: 'left', text: 'Simple forms drawn from classic jewelry-making, chosen because they never feel dated.' },
+  { n: '04.', title: 'Finished By Hand, Always', column: 'right', text: 'Every surface is checked and polished with patience, for a smooth and quietly luxurious feel.' },
 ]
 
 export const founder = {
-  name: 'Grace Mitchell',
+  name: 'Maren Ashby',
   role: 'Founder',
-  quote: `" ${site.name} was built on the belief that beautiful jewelry should be worn, loved, and remembered not saved for special occasions"`,
+  quote: `" ${site.name} exists because lovely jewelry deserves to be worn on ordinary days, not kept in a drawer for a special one"`,
 }

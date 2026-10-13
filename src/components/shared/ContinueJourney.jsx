@@ -14,8 +14,8 @@ export default function ContinueJourney({ products = journeyProducts, className 
     <section className={cn('relative bg-white', className)}>
       <Container className="flex flex-col gap-16 md:gap-8">
         <SectionHeader
-          eyebrow="Explore more products"
-          title="Continue Your Journey"
+          eyebrow="More to explore"
+          title="See What Else Is Here"
           action={{ label: 'Show All', to: '/shop', className: 'w-[160px]' }}
           headerClassName="w-full md:max-w-[575px]"
         />

@@ -31,7 +31,7 @@ export default function WhyUs() {
         <SectionHeader
           gap="gap-2.5"
           eyebrow="Why Us"
-          title="What Makes Us Different"
+          title="Why Customers Choose Us"
           align="center"
           className="mx-auto w-full max-w-[846px]"
         />
@@ -44,8 +44,8 @@ export default function WhyUs() {
           <Reveal className="h-[460px] md:h-[466px] lg:h-[998px] lg:flex-1">
             <MediaBanner
               image={placeholders.promoTall}
-              title="Made to Be Exceptional"
-              cta={{ label: 'Explore Collections', to: '/shop' }}
+              title="Made to Be Noticed"
+              cta={{ label: 'Browse Collections', to: '/shop' }}
               className="h-full"
               contentClassName="lg:flex-col lg:items-start"
               titleClassName="lg:flex-none"

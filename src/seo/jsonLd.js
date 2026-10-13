@@ -32,17 +32,6 @@ export const websiteLd = () => ({
 
 export const siteGraph = () => ({ '@context': 'https://schema.org', '@graph': [organizationLd(), websiteLd()] })
 
-export const breadcrumbLd = (trail) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: trail.map(([name, path], index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    name,
-    item: absoluteUrl(path),
-  })),
-})
-
 export const productLd = (product) => ({
   '@context': 'https://schema.org',
   '@type': 'Product',

@@ -73,7 +73,7 @@
 
 /* Values measured on the reference — see docs/DESIGN_NOTES.md */
 @theme {
-  /* Framer variants: Phone <= 809, Tablet 810–1199, Desktop >= 1200 */
+  /* Breakpoints: Phone <= 809, Tablet 810–1199, Desktop >= 1200 */
   --breakpoint-*: initial;
   --breakpoint-md: 810px;
   --breakpoint-lg: 1200px;

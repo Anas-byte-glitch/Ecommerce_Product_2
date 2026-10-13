@@ -1,129 +1,130 @@
-// Product-page testimonial slider: three reviews per product, read from the reference.
+// Product-page testimonial slider: three reviews per product (original placeholder reviews — replace them
+// with your own customers' words before launch).
 export const productTestimonials = {
-  'aurora-bar-necklace': [
-    { name: "Olivia Carter", quote: "Absolutely stunning craftsmanship. The minimalist bar design is elegant enough for every occasion." },
-    { name: "Emma Wilson", quote: "Beautifully made and incredibly lightweight. It layers perfectly with my other necklaces." },
-    { name: "Sophia Bennett", quote: "The finish looks luxurious and the quality exceeded my expectations. Highly recommended." },
+  'marlow-line-necklace': [
+    { name: "Hannah Ellery", quote: "Quietly beautiful workmanship. A slim minimalist bar that looks refined enough for every occasion." },
+    { name: "Priya Nandakumar", quote: "Lovely weight on the neck and a really nice finish. It looks more expensive than it was." },
+    { name: "Callie Rowan", quote: "I stack it with two longer chains. The bar keeps everything looking tidy. Great quality." },
   ],
-  'luna-pearl-pendant': [
-    { name: "Isabella Moore", quote: "The pearl has a beautiful natural glow. It's classy, timeless, and beautifully crafted." },
-    { name: "Ava Thompson", quote: "Bought this as a gift and it was an instant favorite. The packaging felt so premium." },
-    { name: "Mia Anderson", quote: "Elegant without being too flashy. I've worn it almost every day since it arrived." },
+  'isla-pearl-pendant': [
+    { name: "Imogen Pryce", quote: "Gorgeous natural glow on this pearl. Classy, timeless and beautifully crafted for any day." },
+    { name: "Dalia Reyes", quote: "Bought it for my sister's birthday and she has not taken it off. Highly recommended." },
+    { name: "Frances Tilden", quote: "Pretty without trying too hard. It works for work and for dinners alike. I love it." },
   ],
-  'nova-heart-necklace': [
-    { name: "Charlotte Davis", quote: "The heart pendant is delicate and beautifully finished. A lovely everyday piece." },
-    { name: "Amelia Harris", quote: "Exactly what I was looking for. It feels premium and looks gorgeous with every outfit." },
-    { name: "Harper Martin", quote: "Simple, elegant, and meaningful. I've received so many compliments already." },
+  'corin-heart-necklace': [
+    { name: "Noor Haddad", quote: "The heart is smaller than I expected, which is exactly why I love it. I love it." },
+    { name: "Beatrice Lang", quote: "Lovely rose tone and the clasp is easy to close by myself. A good everyday necklace." },
+    { name: "Tamsin Ford", quote: "Gave it to my daughter and she wears it daily. Highly recommended." },
   ],
-  'harper-rope-chain': [
-    { name: "James Walker", quote: "The rope detailing catches the light beautifully. It feels solid and looks incredibly premium." },
-    { name: "Ethan Brooks", quote: "Excellent craftsmanship and comfortable to wear all day. Definitely worth every penny." },
-    { name: "Noah Carter", quote: "The finish is flawless and the chain has the perfect weight. I'll be buying another soon." },
+  'dune-rope-chain': [
+    { name: "Rafael Ortiz", quote: "Great texture and a comfortable weight. I wear it alone and with a small pendant. Love it." },
+    { name: "Keira Doyle", quote: "Looks richer than the price suggests. It sits nicely under a shirt collar. I love it." },
+    { name: "Anders Lund", quote: "Solid clasp, no tarnish after a month of use. Good chain for the money. A real favourite." },
   ],
-  'siena-gold-chain': [
-    { name: "Grace Mitchell", quote: "The gold finish is rich and elegant. It instantly elevates every outfit I wear." },
-    { name: "Lily Robinson", quote: "Perfect balance between bold and minimal. The quality is outstanding." },
-    { name: "Chloe Young", quote: "Looks far more expensive than its price. Beautiful shine and excellent craftsmanship." },
+  'brisa-silver-chain': [
+    { name: "Mina Okafor", quote: "Fine, light and shiny. It layers well with my other silver pieces." },
+    { name: "Joel Whitaker", quote: "Simple chain that does its job. I forget I am wearing it, which is the best compliment." },
+    { name: "Lena Marchetti", quote: "Perfect length for a thin pendant. Arrived neatly packed and ready to gift. I love it." },
   ],
-  'luna-signet-ring': [
-    { name: "Daniel Foster", quote: "Clean, modern, and extremely comfortable. It's become my everyday ring." },
-    { name: "Benjamin Scott", quote: "The polished finish is incredible. Fits perfectly and feels very well made." },
-    { name: "Lucas Parker", quote: "Classic design with premium quality. Exactly the signet ring I was searching for." },
+  'elowen-signet-ring': [
+    { name: "Ottilie Frame", quote: "Smooth, rounded edges and a satisfying heft. Great quality." },
+    { name: "Samira Qureshi", quote: "Fits true to size and looks lovely beside my other rings. A real favourite." },
+    { name: "Georgia Pell", quote: "I had a tiny initial engraved on the face and it came out beautifully. I love it." },
   ],
-  'celeste-diamond-band': [
-    { name: "Scarlett King", quote: "The stones sparkle beautifully without looking overdone. Absolutely gorgeous." },
-    { name: "Ella Wright", quote: "Elegant, comfortable, and beautifully crafted. I wear it every single day." },
-    { name: "Zoe Green", quote: "Looks luxurious and pairs perfectly with my engagement ring. Couldn't be happier." },
+  'odette-diamond-band': [
+    { name: "Rosalind Ames", quote: "Sparkles like crazy in daylight. I wear it on its own and it still draws a glance. Perfect." },
+    { name: "Chiara Bellini", quote: "Slim, comfortable and neatly set. None of the stones have loosened. I love it." },
+    { name: "Maeve Sutherland", quote: "Wore it for an anniversary dinner and everyone asked where it was from. I love it." },
   ],
-  'nova-open-ring': [
-    { name: "Hannah Baker", quote: "The open design feels modern and unique. It's lightweight but still feels premium." },
-    { name: "Layla Turner", quote: "Beautiful statement piece that matches both casual and formal outfits effortlessly." },
-    { name: "Nora Mitchell", quote: "The adjustable fit makes it incredibly comfortable. One of my favorite purchases." },
+  'wren-open-ring': [
+    { name: "Esme Calloway", quote: "The open shape is so easy to adjust and fits my index finger perfectly. Light and lovely." },
+    { name: "Talia Brennan", quote: "Light, pretty and a good thumb ring too. I bought a second one as a gift. I love it." },
+    { name: "Yara Mansour", quote: "I like how simple it is. Sits well with my other thin bands. Highly recommended." },
   ],
-  'stella-tennis-bracelet': [
-    { name: "Victoria Adams", quote: "The sparkle is breathtaking in natural light. It truly looks like fine jewelry." },
-    { name: "Audrey Foster", quote: "Elegant, secure, and beautifully finished. I've received compliments every time I wear it." },
-    { name: "Claire Morgan", quote: "The bracelet feels luxurious and the clasp is very secure. Worth every cent." },
+  'tessa-tennis-bracelet': [
+    { name: "Genevieve Hart", quote: "A beautiful line of sparkle that stays secure. Truly lovely." },
+    { name: "Adaeze Obi", quote: "I wore it to a wedding and received so many compliments. It feels delicate yet sturdy." },
+    { name: "Marguerite Vale", quote: "Sits flat on the wrist and catches the light nicely. A lovely gift to myself." },
   ],
-  'luna-charm-bracelet': [
-    { name: "Emily Collins", quote: "The charms have such beautiful detail. It feels elegant while still being playful." },
-    { name: "Madison Reed", quote: "Lightweight, comfortable, and beautifully crafted. It's become my everyday bracelet." },
-    { name: "Sophie Turner", quote: "The quality is outstanding and every charm catches the light perfectly." },
+  'vivian-charm-bracelet': [
+    { name: "Poppy Strand", quote: "The little charms are adorable and nothing feels flimsy. My niece loved it. Perfect." },
+    { name: "Sunita Rao", quote: "Light on the wrist and the clasp opens easily with one hand. Great value. I love it." },
+    { name: "Wilhelmina Cole", quote: "Rose gold looks warm on my skin. It is already my most worn bracelet." },
   ],
-  'celeste-drop-earrings': [
-    { name: "Natalie Brooks", quote: "Elegant and lightweight with the perfect amount of sparkle. They elevate every outfit." },
-    { name: "Chloe Bennett", quote: "Beautifully balanced and comfortable enough to wear all evening. Absolutely love them." },
-    { name: "Rachel Foster", quote: "The craftsmanship is exceptional. They look even more stunning in person." },
+  'anselm-drop-earrings': [
+    { name: "Cordelia Nash", quote: "They move gently and sparkle without being loud. Perfect with a simple dress. Truly lovely." },
+    { name: "Ingrid Solberg", quote: "Comfortable for a full day. The stones are bright and well set. Highly recommended." },
+    { name: "Zainab Idris", quote: "Elegant and not too heavy. I wore them to a gala and felt wonderful." },
   ],
-  'aurora-hoop-earrings': [
-    { name: "Jessica Moore", quote: "The perfect everyday hoops. Simple, timeless, and incredibly well made." },
-    { name: "Lauren Hayes", quote: "Exactly the size I was looking for. They feel secure and surprisingly lightweight." },
-    { name: "Megan Scott", quote: "Beautiful shine with a premium finish. I've worn them almost every day." },
+  'corvin-hoop-earrings': [
+    { name: "Rhiannon Webb", quote: "Light, round and exactly the size I wanted. Would buy again." },
+    { name: "Paloma Ruiz", quote: "My new everyday hoops. They have a clean look that goes with everything. I love it." },
+    { name: "Harriet Quill", quote: "Comfortable enough to sleep in. The gold tone has held up perfectly." },
   ],
-  'atlas-cuban-chain': [
-    { name: "Michael Carter", quote: "Solid construction with a luxurious finish. It feels much more expensive than it is." },
-    { name: "Ryan Brooks", quote: "The chain has the perfect weight and sits comfortably all day long." },
-    { name: "Joshua Bennett", quote: "Excellent quality and a timeless design. Easily my favorite chain." },
+  'rhett-cuban-chain': [
+    { name: "Dominic Reyes", quote: "Heavy, shiny and well made. It looks great under an open collar." },
+    { name: "Malik Thompson", quote: "The clasp is solid and the links sit flat. Highly recommended." },
+    { name: "Stefan Novak", quote: "Bold but not gaudy. I have worn it every weekend since it arrived." },
   ],
-  'orion-box-chain': [
-    { name: "David Collins", quote: "Minimalist and versatile. It pairs perfectly with both pendants and worn on its own." },
-    { name: "Andrew Walker", quote: "The finish is flawless and the chain feels incredibly durable." },
-    { name: "Tyler Mitchell", quote: "Beautiful craftsmanship with a clean modern look. Highly recommended." },
+  'sutter-box-chain': [
+    { name: "Callum Shaw", quote: "The matte black is sleek and subtle. It hangs well with a small pendant. Would buy again." },
+    { name: "Idris Bello", quote: "Surprisingly light for how it looks. Highly recommended." },
+    { name: "Mateo Vargas", quote: "Understated and comfortable. A smart chain for everyday wear. I love it." },
   ],
-  'titan-figaro-chain': [
-    { name: "Brandon Lewis", quote: "Bold without being too heavy. The Figaro pattern looks fantastic in person." },
-    { name: "Kevin Parker", quote: "Premium quality from the clasp to the finish. I'm genuinely impressed." },
-    { name: "Matthew Adams", quote: "Comfortable enough for daily wear while still making a statement." },
+  'lyle-figaro-chain': [
+    { name: "Luca Ferraro", quote: "The mix of long and short links looks great. Great quality." },
+    { name: "Oscar Lindqvist", quote: "Weighty enough to feel good yet comfortable all day. A real favourite." },
+    { name: "Terrence Bailey", quote: "Good clasp and a finish that has not faded. Highly recommended." },
   ],
-  'atlas-signet-ring': [
-    { name: "Christopher Reed", quote: "The polished surface is beautiful and the ring feels incredibly premium." },
-    { name: "Nathan Foster", quote: "A timeless signet ring with excellent craftsmanship. Perfect fit and finish." },
-    { name: "Aaron Hughes", quote: "Simple, masculine, and elegant. Exactly what I wanted." },
+  'pia-signet-ring': [
+    { name: "Gideon Archer", quote: "A proper signet with a clean polish. Fits true to size. Love it." },
+    { name: "Amir Rahimi", quote: "Looks sharp with a suit or a plain tee. Comfortable on the hand. I love it." },
+    { name: "Blake Sullivan", quote: "Solid and well finished. I get compliments every time I wear it." },
   ],
-  'titan-brushed-ring': [
-    { name: "Justin Cooper", quote: "The brushed texture gives it such a modern look. It feels solid and comfortable." },
-    { name: "Eric Morgan", quote: "Excellent quality and a beautiful matte finish. I've worn it every day." },
-    { name: "Dylan Ross", quote: "Minimalist styling with premium craftsmanship. Couldn't be happier." },
+  'calla-brushed-ring': [
+    { name: "Felix Hartmann", quote: "The brushed black finish is great and has not scratched yet. Highly recommended." },
+    { name: "Rowan Pike", quote: "Wide enough to stand out and light enough to forget. Worth every penny." },
+    { name: "Declan Murray", quote: "Minimal, strong and good looking. Exactly what I was after. I love it." },
   ],
-  'atlas-curb-bracelet': [
-    { name: "Logan Murphy", quote: "The links feel sturdy and the bracelet has a beautiful polished finish." },
-    { name: "Cameron Bailey", quote: "Comfortable to wear all day and looks fantastic with both casual and formal outfits." },
-    { name: "Jordan Price", quote: "Outstanding quality with a secure clasp. Easily one of my favorite accessories." },
+  'fenn-curb-bracelet': [
+    { name: "Everett Cole", quote: "A substantial bracelet with a lovely shine. Would buy again." },
+    { name: "Nikolai Petrov", quote: "Heavy but balanced, and the clasp feels secure. Looks great with a watch. I love it." },
+    { name: "Marcus Webb", quote: "Chunky in the best way. Got it for my birthday and wear it daily. Truly lovely." },
   ],
-  'orion-leather-bracelet': [
-    { name: "Mason Turner", quote: "The leather feels soft and premium while the hardware adds a modern touch. Excellent quality." },
-    { name: "Caleb Hughes", quote: "Comfortable from the first wear and pairs perfectly with my watch. Highly recommended." },
-    { name: "Gavin Brooks", quote: "Stylish, durable, and beautifully crafted. Exactly what I was looking for." },
+  'teague-leather-bracelet': [
+    { name: "Jonas Keller", quote: "Soft leather and a clasp that is easy to use. It is getting better with age. Would buy again." },
+    { name: "Tobias Greene", quote: "Casual and rugged, just as pictured. Fits my wrist well. Highly recommended." },
+    { name: "Silas Monroe", quote: "Great daily bracelet. The magnetic closure is a nice touch. Great quality." },
   ],
-  'titan-link-bracelet': [
-    { name: "Owen Richardson", quote: "The links have a solid premium feel and the bracelet catches the light beautifully." },
-    { name: "Carter Bennett", quote: "Perfect balance of bold and refined. It fits comfortably and looks incredible." },
-    { name: "Evan Mitchell", quote: "Excellent craftsmanship with a secure clasp. Easily one of my favorite pieces." },
+  'quill-link-bracelet': [
+    { name: "Elias Moreno", quote: "The gunmetal finish looks tough. I removed two links and it fits perfectly. So pretty." },
+    { name: "Hugo Bernard", quote: "Strong, light and comfortable. The fold-over clasp is reassuringly secure." },
+    { name: "Rhys Dalton", quote: "Looks sharp and takes knocks well. A good everyday piece. Highly recommended." },
   ],
-  'ryder-cross-hoop': [
-    { name: "Zoe Richardson", quote: "The cross detail is subtle yet stylish. They're lightweight enough for everyday wear." },
-    { name: "Abigail Foster", quote: "Beautifully designed and surprisingly comfortable. I've received so many compliments." },
-    { name: "Victoria Hayes", quote: "A unique pair of hoops with premium quality. They instantly elevate every outfit." },
+  'jasper-cross-hoop': [
+    { name: "Kieran Doyle", quote: "A neat little hoop, and the cross comes off whenever I want a plainer look." },
+    { name: "Nate Alvarez", quote: "Comfortable, small and secure. Nice detail without being flashy. Highly recommended." },
+    { name: "Wes Holloway", quote: "Good quality for the price. The click closure feels dependable. A real favourite." },
   ],
-  'elara-crystal-necklace': [
-    { name: "Penelope Morgan", quote: "The crystals sparkle beautifully without looking too flashy. Absolutely stunning." },
-    { name: "Stella Collins", quote: "Elegant, feminine, and beautifully finished. It feels much more expensive than its price." },
-    { name: "Ruby Thompson", quote: "The perfect necklace for special occasions while still being versatile enough for daily wear." },
+  'linnea-crystal-necklace': [
+    { name: "Daphne Ellis", quote: "The crystal sparkles beautifully and the chain is fine and light. Would buy again." },
+    { name: "Anouk Verhoeven", quote: "A simple pendant that makes an outfit feel finished. I love it. Highly recommended." },
+    { name: "Saoirse Keane", quote: "Gifted it to my mother and she was thrilled. The stone is bright and well set. Great quality." },
   ],
-  'ivy-twist-ring': [
-    { name: "Alice Bennett", quote: "The twisted design makes it feel unique and sophisticated. I absolutely love it." },
-    { name: "Ruby Carter", quote: "Beautiful craftsmanship with a comfortable fit. It stacks perfectly with my other rings." },
-    { name: "Clara Wilson", quote: "Simple, elegant, and timeless. I've been wearing it every single day." },
+  'maisie-twist-ring': [
+    { name: "Lottie Frazer", quote: "The twisted band has lovely texture and sits comfortably with other rings. A joy to wear." },
+    { name: "Amara Diallo", quote: "Shiny without being flashy. I wear it every single day. Highly recommended." },
+    { name: "Hester Blythe", quote: "Good fit, nice weight, and the colour matches my other gold pieces." },
   ],
-  'knox-rope-bracelet': [
-    { name: "Henry Walker", quote: "The rope texture adds so much character. It feels premium and extremely well made." },
-    { name: "Samuel Cooper", quote: "Comfortable, durable, and stylish. Exactly what I wanted in an everyday bracelet." },
-    { name: "Jack Morgan", quote: "Excellent quality with a secure clasp. It looks fantastic both on its own and layered." },
+  'soren-rope-bracelet': [
+    { name: "Gareth Lowe", quote: "The rope texture gives it real character. Highly recommended. Would buy again." },
+    { name: "Anton Weber", quote: "Slim enough to wear with a watch. The clasp is easy to use. Highly recommended." },
+    { name: "Cormac Brady", quote: "Strong, good looking and easy to layer. I would buy it again. Highly recommended." },
   ],
-  'ryder-black-stud': [
-    { name: "Ella Brooks", quote: "These studs are sleek, modern, and incredibly comfortable. Perfect for everyday wear." },
-    { name: "Sophie Carter", quote: "Minimalist with just the right amount of edge. The black finish looks amazing." },
-    { name: "Grace Foster", quote: "Excellent quality and secure backing. They've quickly become my favorite earrings." },
+  'beckett-black-stud': [
+    { name: "Ines Duarte", quote: "Tiny, sleek and comfortable. I have worn them for days without taking them out. Love it." },
+    { name: "Ruth Calder", quote: "The black finish looks sharp and the backs hold firmly. Great everyday studs." },
+    { name: "Maya Lindgren", quote: "Understated with a hint of edge. These went straight into my daily rotation. I love it." },
   ],
 }
 

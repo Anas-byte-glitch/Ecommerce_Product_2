@@ -9,7 +9,7 @@ import SharedSections from '../components/shared/SharedSections'
 export default function About() {
   return (
     <>
-      <ImageHero label="About Us" title="The Meaning Behind Every Piece" fade="about" />
+      <ImageHero label="About Us" title="The Thought Behind Each Piece" fade="about" />
       <div className="relative bg-white will-change-transform">
         <Beliefs />
         <Materials />

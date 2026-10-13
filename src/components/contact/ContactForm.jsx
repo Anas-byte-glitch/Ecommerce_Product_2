@@ -26,7 +26,7 @@ const control =
   'w-full appearance-none rounded-none border-0 bg-transparent font-display text-base leading-[19.2px] text-ink placeholder:text-muted focus:outline-none'
 
 // Photo (660 × stretches to the form on desktop; 0.73 ratio above the form below 1200px) next to
-// the form. The reference uses browser validation and a Framer Forms endpoint; this template has
+// the form. The reference uses browser validation and a hosted forms endpoint; this template has
 // NO backend: a valid submit sends nothing anywhere — it only shows the "Thank You" state (in
 // place of the photo, like the reference), the button reads "Thank you" and the form resets.
 // Wire `onSubmit` to your own service to send real messages (see docs).

@@ -10,7 +10,7 @@ const CARDS = [
 
 // Also used on /shop with its own eyebrow/title: `bottomSpace` adds the 140/120px bottom padding that
 // the home page gets from the ticker below it.
-export default function ForEveryone({ eyebrow = 'For Everyone', title = 'Style knows no gender', bottomSpace = false }) {
+export default function ForEveryone({ eyebrow = 'For Everyone', title = 'Made for All Wardrobes', bottomSpace = false }) {
   return (
     <section className={bottomSpace ? 'py-section-sm lg:py-section' : 'pt-section-sm lg:pt-section'}>
       <div className="flex flex-col gap-8">

@@ -14,7 +14,7 @@ export default function Favourites() {
 
   return (
     <>
-      <ImageHero label="Favourites" title="Your Loved Collection" />
+      <ImageHero label="Favourites" title="Pieces You Have Saved" />
       <div className="relative bg-white will-change-transform">
         <section className="py-section-sm lg:py-section">
           <Container>
@@ -24,13 +24,13 @@ export default function Favourites() {
               <div className="flex flex-col items-center gap-6 p-6 text-center">
                 <h2 className="text-ink type-h4">Nothing here yet</h2>
                 <p className="max-w-[420px] text-ink-soft type-body">
-                  Tap the heart on any piece to save it here.
+                  Press the heart on a piece to keep it here.
                 </p>
                 <Link
                   to="/shop"
                   className="inline-flex items-center justify-center bg-ink px-8 py-3 text-cream type-link-lg transition-opacity duration-300 hover:opacity-85"
                 >
-                  Explore Collections
+                  Browse Collections
                 </Link>
               </div>
             )}

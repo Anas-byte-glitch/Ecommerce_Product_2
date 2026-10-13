@@ -907,3 +907,56 @@ exactly unless noted. Titles: the reference sets only the brand on `/journals` a
   SEO 100 except `/cart` and `/checkout` (66, intentional `noindex`). Mobile LCP is 2.7–2.9 s under Lighthouse's simulated slow 4G (the
   hero image, a placeholder, fades in over 1.2 s after load; real photos will change this); the home page's mobile score sits at the 90
   limit because of main-thread time (react-dom + motion ≈ 150 kB gzip).
+
+## 28. Phase 9A — brand, original copy, leftover scan (2026-10-13)
+- **Brand:** Orvelle (wordmark `Orve` + italic `lle`, order prefix `ORV`), chosen by the owner from 6 candidates. Footer wordmark and navbar
+  keep their measured sizes; text widths are brand-dependent only inside fixed-height lines, so nothing moves. Founder renamed "Maren Ashby",
+  all customer/reviewer names are invented. No template-author data remained in src/ (legal pages read `site.js`).
+- **Owner decisions applied:** BreadcrumbList JSON-LD removed; footer "404" link removed (the Others column is one link shorter, so the footer is
+  63px shorter at 390px only — the grid height at 1440/1000 is set by the other columns).
+- **Copy method:** every text written fresh for the same purpose, then fitted to the reference line counts at 1440 / 1000 / 390 with a
+  block-by-block comparison (old vs new height of every heading / paragraph / list item, `main` + footer) — headings and paragraphs
+  were tuned until each wraps to the same number of lines. Product names were chosen from a pool of first names by measuring which
+  names wrap (or not) in the product card and the "Perfect match with" card exactly like the original name of the same product.
+  `matchWith` keeps the original pairing (mapped through the rename) so wrap profiles stay equal.
+- **Page heights, old (main) vs new, tolerance 2px:** see the table in the 9A report; at 1440 and 1000 all five routes are identical; at 390 the
+  only difference is −63px (footer link removal).
+- **Product rename map (reference → new):**
+
+| Reference name | Reference slug | New name | New slug |
+|---|---|---|---|
+| Aurora Bar Necklace | `aurora-bar-necklace` | Marlow Line Necklace | `marlow-line-necklace` |
+| Luna Pearl Pendant | `luna-pearl-pendant` | Isla Pearl Pendant | `isla-pearl-pendant` |
+| Nova Heart Necklace | `nova-heart-necklace` | Corin Heart Necklace | `corin-heart-necklace` |
+| Harper Rope Chain | `harper-rope-chain` | Dune Rope Chain | `dune-rope-chain` |
+| Siena Silver Chain | `siena-gold-chain` | Brisa Silver Chain | `brisa-silver-chain` |
+| Luna Signet Ring | `luna-signet-ring` | Elowen Signet Ring | `elowen-signet-ring` |
+| Celeste Diamond Band | `celeste-diamond-band` | Odette Diamond Band | `odette-diamond-band` |
+| Nova Open Ring | `nova-open-ring` | Wren Open Ring | `wren-open-ring` |
+| Stella Tennis Bracelet | `stella-tennis-bracelet` | Tessa Tennis Bracelet | `tessa-tennis-bracelet` |
+| Luna Charm Bracelet | `luna-charm-bracelet` | Vivian Charm Bracelet | `vivian-charm-bracelet` |
+| Celeste Drop Earrings | `celeste-drop-earrings` | Anselm Drop Earrings | `anselm-drop-earrings` |
+| Aurora Hoop Earrings | `aurora-hoop-earrings` | Corvin Hoop Earrings | `corvin-hoop-earrings` |
+| Atlas Cuban Chain | `atlas-cuban-chain` | Rhett Cuban Chain | `rhett-cuban-chain` |
+| Orion Box Chain | `orion-box-chain` | Sutter Box Chain | `sutter-box-chain` |
+| Titan Figaro Chain | `titan-figaro-chain` | Lyle Figaro Chain | `lyle-figaro-chain` |
+| Atlas Signet Ring | `atlas-signet-ring` | Pia Signet Ring | `pia-signet-ring` |
+| Titan Brushed Ring | `titan-brushed-ring` | Calla Brushed Ring | `calla-brushed-ring` |
+| Atlas Curb Bracelet | `atlas-curb-bracelet` | Fenn Curb Bracelet | `fenn-curb-bracelet` |
+| Orion Leather Bracelet | `orion-leather-bracelet` | Teague Leather Bracelet | `teague-leather-bracelet` |
+| Titan Link Bracelet | `titan-link-bracelet` | Quill Link Bracelet | `quill-link-bracelet` |
+| Ryder Cross Hoop | `ryder-cross-hoop` | Jasper Cross Hoop | `jasper-cross-hoop` |
+| Elara Crystal Necklace | `elara-crystal-necklace` | Linnea Crystal Necklace | `linnea-crystal-necklace` |
+| Ivy Twist Ring | `ivy-twist-ring` | Maisie Twist Ring | `maisie-twist-ring` |
+| Knox Rope Bracelet | `knox-rope-bracelet` | Soren Rope Bracelet | `soren-rope-bracelet` |
+| Ryder Black Stud | `ryder-black-stud` | Beckett Black Stud | `beckett-black-stud` |
+
+- **Leftover scan:** `scripts/scan-original-text.mjs` (dev-only, not shipped). `--fetch` stores the reference texts (55 pages) in the git-ignored
+  `reference/original-texts.json`; without flags it (a) greps src/, public/, dist/ and root files for forbidden strings (old brand, template host,
+  template author, old product names, old people names; whole-word, so `keyframeResolver` in the animation library is not a hit; the library's
+  `data-framer-portal-id` attribute is allow-listed in `scripts/scan-allowlist.json`) and (b) reports any run of 6+ consecutive words found
+  in both the reference texts and our data/JSX strings (`SCAN_RUN=4` for a stricter pass; remaining 4-word hits are standard legal boilerplate
+  such as "from time to time"). Exit code 1 on findings. Re-run after every copy change, after `npm run build`.
+- **Known differences left:** legal pages are not line-matched to the reference (their text is a template to be reviewed anyway); accordion
+  texts (closed by default) are shorter than the originals by up to ~35%; a few second/third review quotes differ in length (only the first
+  review is visible on load).
