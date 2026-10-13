@@ -50,7 +50,7 @@ export const productLd = (product) => ({
   description: product.description,
   sku: product.slug,
   category: product.categoryLabel,
-  image: product.images.map(imageUrl),
+  image: [...new Set(product.images.map(imageUrl))],
   brand: { '@type': 'Brand', name: site.name },
   url: absoluteUrl(`/product/${product.slug}`),
   offers: {

@@ -24,3 +24,7 @@ await withSource(async (load) => {
   writeFileSync('dist/robots.txt', robots)
   console.log(`sitemap.xml: ${getSitemapEntries().length} URLs · robots.txt written (${base})`)
 })
+
+// Keep a copy of vercel.json next to the built files, so uploading only dist/ to Vercel still works.
+import { copyFileSync, existsSync } from 'node:fs'
+if (existsSync('vercel.json')) copyFileSync('vercel.json', 'dist/vercel.json')
