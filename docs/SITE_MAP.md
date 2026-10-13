@@ -18,11 +18,11 @@ at 1440px on 2026-10-01. Our app uses the **same paths**.
 | `/about` | About | light | |
 | `/contact` | Contact | dark | form + support details + FAQ |
 | `/journals` | Journals | dark | 4 articles |
-| `/journals/:slug` | JournalArticle | light | |
-| `/terms` | Legal | dark | "Terms & Conditions" |
-| `/privacy-policy` | Legal | dark | |
-| `/refund-policy` | Legal | dark | |
-| `/404` | NotFound | dark | also used for unknown slugs and `*` |
+| `/journals/:slug` | JournalArticle | dark | fixed image hero (eyebrow "<brand> Editorial", title, excerpt); no shared sections |
+| `/terms` | Legal | light | plain header ("/ Terms /" + h1), text from `src/data/legal.js` |
+| `/privacy-policy` | Legal | light | |
+| `/refund-policy` | Legal | light | |
+| `/404` | NotFound | light | huge "404" + "Explore Collections" → `/shop`; also used for unknown slugs and `*`; footer "Others" links to it (as on the reference) |
 
 Not built: the "Buy template" link (contra.com), "My Account" (myshopify.com).
 
@@ -154,9 +154,9 @@ together, in this order, directly above the footer).
 | `/about` | ✓ | ✓ | ✓ | |
 | `/journals` | ✓ | ✓ | ✓ | |
 | `/contact` | — | — | — | |
-| `/journals/:slug` | — | — | — | |
-| `/terms`, `/privacy-policy`, `/refund-policy` | — | — | — | |
-| `/404` | — | — | — | |
+| `/journals/:slug` | — | — | — | verified on 2 articles |
+| `/terms`, `/privacy-policy`, `/refund-policy` | — | — | — | verified: none |
+| `/404` | — | — | — | verified: none |
 
 At 1440 the Journey strip shows **harper-rope-chain, nova-open-ring, luna-charm-bracelet** on every
 route that has it; below 1200px a 4th card, **titan-figaro-chain**, is shown too (verified on `/`,

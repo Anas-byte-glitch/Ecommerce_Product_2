@@ -10,12 +10,9 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 - **5A** Cart drawer + /cart
 - **5B-1** Demo checkout + success page
 - **5B-2 + 6** Search, Buy Now, About page, Contact page with FAQ (branch `phase-5b2-6`)
+- **7** Journals list + 4 article pages, legal pages, 404, shared newsletter form (UI only), navbar fade-in (branch `phase-7`). Moved to Phase 8: reference footer has no entrance fade-in (nothing to build); `vercel.json` rewrite exists, `public/_redirects` and `.htaccess` still to do.
 
 ## Remaining
-- **7** Journals list + 4 article pages (`/journals`, `/journals/:slug`), legal pages (`/terms`,
-  `/privacy-policy`, `/refund-policy`), the 404 page matching the reference, newsletter form
-  validation + success state (shared section and footer, UI only), footer/navbar fade-ins if the
-  reference has them.
 - **8** Polish:
   - all store settings only in `src/config/site.js` (brand name, email, phone, address, currency and
     formatting, shipping, return window, siteUrl, order prefix);

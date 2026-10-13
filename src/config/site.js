@@ -15,6 +15,11 @@ export const site = {
   contactEmail: 'hello@example.com',
   contactPhone: '+1 000 000 0000',
   officeAddress: 'Example Studio, 100 Placeholder Avenue, Sample City, ST 00000, Country',
+  // Used by the legal pages (src/data/legal.js) — adjust to your real policy.
+  returnWindowDays: 30,
+  damageReportDays: 7,
+  refundTime: '5–10 business days',
+  businessHours: 'Monday – Friday, 9:00 AM – 6:00 PM',
   // Cart placeholders (USD): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,

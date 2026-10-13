@@ -757,3 +757,42 @@ Page heights (ours identical): **2743 / 4183 / 3837** at 1440 / 1000 / 390. **No
 - FAQ ("Faq" / "Frequently Asked Questions"): `Accordion` with `gap-4` (16) and a 1075px-wide body; **all closed
   by default, several can be open** (verified on the reference), same animation/icon as the product page;
   closed 63.2 / 60.7 / 58 tall, open = +60.8 (2-line answers). Answers are in `src/data/faqs.js`.
+
+## 25. Journals, articles, legal pages, 404, newsletter (Phase 7, measured 2026-10-13)
+All numbers are reference values at 1440 / 1000 / 390; page heights of every page below match the reference
+exactly unless noted. Titles: the reference sets only the brand on `/journals` and legal pages and
+`"<Article title> - <brand>"` on articles.
+- **/journals.** Section padding 180/32/0 (24 / 16 below 1200px), header (eyebrow "Journals", h1 "Notes on the
+  modern elegance", max-w 780) then the featured card 32px below: 1376 × 480 (image 664 / 452 tablet, info
+  p-24; phone: image 358 × 350 on top, info gap 32). "More Journals" section padding 140/120, eyebrow "Explore more
+  journals", grid 3 / 2 / 1 columns gap 16, card gap 24, image 448 × 416 (468 tablet, 358 × 382 phone), meta
+  column 221 wide, date `type-badge`, title `type-h6`, read time right-aligned. Hover: image scales 1.1 over
+  0.6s. Shared sections follow. Data in `src/data/journals.js` (4 articles, no filters or pagination exist).
+- **/journals/:slug.** One component. Fixed hero (`ImageHero` with `excerpt`, `fade="article"`): eyebrow
+  "<brand> Editorial", h1, excerpt (Inter, 10px gap). Article section padding 140/120 with the same gap to
+  the Previous / Next navigation, content column 1200 wide: back link "All Journals" + tag / date / reading time,
+  body: heading `type-quote` (40px above, 20 below), paragraph `type-body-lg` (20 apart), list 32px above
+  with disc bullets indented 24 (20 phone). Previous / Next titles `type-h6-lg`, right-aligned for Next (230 wide,
+  200 phone). No shared sections. Differences: the arrow-link boxes measure 24px differently only because the
+  reference's text node excludes its arrow; phone previous/next title boxes are 10px wider than the reference's
+  190 (wrap identical); `time` 1px lower.
+- **Legal pages.** Plain page (no hero image): breadcrumb-style eyebrow "/ Terms /" at y=180, h1 centred
+  (`type-display`, 80/64/40), header ends right below the h1. Body section padding 140/120, content 836 wide
+  centred at 1440, 852 (50px side padding) at 1000, 358 at 390. Headings (numbered, Switzer 32/35.2, 28/30.8,
+  22.08/26.5) 40px above / 20 below, paragraphs `type-body` colour ink-soft 20 apart, lists directly below their
+  intro line, bullets indented 20. Texts: `src/data/legal.js` (one entry per page) — **this text is a template,
+  not legal advice**; brand, contact email, business hours, return window (`returnWindowDays`), damage report
+  window and refund time come from `src/config/site.js`. Difference: on the reference the refund page has 140px
+  bottom padding at 390 only (all other pages/widths 120); ours stays 120 (page 20px shorter there). Privacy is 1px taller at 390.
+- **404.** Section padding 180/32/140 (180/24/120 tablet, 180/16/120 phone), column gap 48, centred: h1 "404"
+  Switzer 238/190.4 ls -4.76 (140/112 -2.8 tablet, 94/75.2 -1.88 phone), then the dark button "Explore
+  Collections" (→ `/shop`, 232.4 × 50 / 226 × 47.5). The reference shows the same page for any unknown path.
+  Document title = brand. Hosting: `vercel.json` rewrites everything to `index.html` (unknown paths then render this page).
+- **Newsletter.** Reference: one form only (the footer has none), native browser validation (email, not
+  required when empty), POST to a third-party waitlist API, no visible success state. Ours:
+  `useNewsletterForm` + `NewsletterForm` (single implementation): required + valid email, inline error
+  (`aria-invalid`, `aria-describedby`), focus returns to the field, polite live region with a success note,
+  field resets. **Nothing is sent** (no backend; commented in the hook). The error / success notes are
+  deliberate additions (small red / white tags under the field).
+- **Navbar fade-in.** Reference (all pages): navbar opacity 0 → 1, ~1s linear, starting ~0.8s after load; footer
+  has none. Built on `Navbar` (`motion.header`), skipped under `prefers-reduced-motion`.

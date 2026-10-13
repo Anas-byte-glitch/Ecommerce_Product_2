@@ -1,9 +1,10 @@
 import { placeholders } from '../../assets/placeholders'
 import { cn } from '../../utils/cn'
 import TextReveal from '../ui/TextReveal'
+import NewsletterForm from './NewsletterForm'
 
-// Newsletter sign-up over a full-bleed, viewport-tall image (shared). UI only for now:
-// the form does not submit anywhere yet (validation comes in a later phase).
+// Newsletter sign-up over a full-bleed, viewport-tall image (shared). The form is the shared
+// <NewsletterForm /> (UI only, nothing is sent). The reference's footer has no form.
 export default function Newsletter({ className }) {
   return (
     <section aria-label="Newsletter" className={cn('relative bg-white pt-4 pb-section-sm lg:pb-section', className)}>
@@ -20,29 +21,7 @@ export default function Newsletter({ className }) {
                 alongside our growing community.
               </p>
             </div>
-            <form
-              className="relative flex w-full md:max-w-[481px]"
-              onSubmit={(event) => event.preventDefault()}
-            >
-              <label htmlFor="newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="newsletter-email"
-                type="email"
-                name="email"
-                required
-                autoComplete="email"
-                placeholder="your@email.com"
-                className="h-[53px] w-full appearance-none rounded-none bg-white py-4 pr-[136px] pl-4 font-display text-base/none text-ink outline-none placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:pr-[196px]"
-              />
-              <button
-                type="submit"
-                className="absolute inset-y-1 right-1 w-[120px] cursor-pointer bg-ink px-4 font-display text-[18px]/none text-cream transition-opacity duration-300 hover:opacity-85 md:w-[180px] md:text-[20px]/none"
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
       </div>

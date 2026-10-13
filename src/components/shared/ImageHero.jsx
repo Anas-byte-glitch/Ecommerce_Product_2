@@ -10,14 +10,15 @@ const fades = {
   women:
     'bg-[linear-gradient(180deg,#000_-28%,rgb(0_0_0/0.73)_-10%,rgb(0_0_0/0)_63%,#000_104%)]',
   men: 'bg-[linear-gradient(180deg,#000_-44%,rgb(0_0_0/0)_41%,#000_100%)]',
+  article: 'bg-[linear-gradient(180deg,#000_-10%,rgb(0_0_0/0)_41%,#000_100%)]',
   about: 'bg-[linear-gradient(180deg,#000_-31%,rgb(0_0_0/0)_41%,#000_100%)]',
 }
 
 // Full-screen hero for /shop, /women-category and /men-category: pinned (position: fixed) while
 // the page content scrolls over it, label + display heading bottom-left (heading max-w 680,
-// 878 with `wide` — the women's page).
+// 878 with `wide` — the women's page; 703 with an `excerpt` line under it — article pages).
 // Pages render it first, then wrap everything else in `relative bg-white`.
-export default function ImageHero({ image = placeholders.heroWide, label, title, fade = 'shop', wide = false }) {
+export default function ImageHero({ image = placeholders.heroWide, label, title, fade = 'shop', wide = false, excerpt }) {
   useNavOverHero()
   const reduceMotion = useReducedMotion()
 
@@ -38,9 +39,10 @@ export default function ImageHero({ image = placeholders.heroWide, label, title,
           />
           <div aria-hidden="true" className={`absolute inset-0 ${fades[fade]}`} />
         </div>
-        <div className={`relative z-10 flex w-full flex-col ${wide ? 'max-w-[878px]' : 'max-w-[680px]'} items-start gap-2`}>
+        <div className={`relative z-10 flex w-full flex-col ${wide ? 'max-w-[878px]' : excerpt ? 'max-w-[703px]' : 'max-w-[680px]'} items-start gap-2`}>
           <Eyebrow tone="dark">{label}</Eyebrow>
           <TextReveal as="h1" text={title} onMount startDelay={0.5} className="w-full text-cream type-display" />
+          {excerpt && <p className="mt-0.5 w-full text-mist type-body-lg">{excerpt}</p>}
         </div>
       </section>
       <div aria-hidden="true" className="h-screen" />
