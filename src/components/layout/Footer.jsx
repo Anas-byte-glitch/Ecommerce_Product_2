@@ -23,7 +23,7 @@ function PaymentBadge({ label, width }) {
         dominantBaseline="central"
         textAnchor="middle"
         fill="#222222"
-        fontFamily="Switzer, Inter, sans-serif"
+        fontFamily="Hanken Grotesk, Inter, sans-serif"
         fontSize="8.5"
         fontWeight="500"
       >

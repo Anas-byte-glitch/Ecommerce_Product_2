@@ -7,7 +7,7 @@ const variants = {
   muted: 'bg-mist text-ink', // on white backgrounds (cart)
 }
 
-// Square button, 12px 32px padding, Switzer 500 20/26 (18px below 1200px).
+// Square button, 12px 32px padding, display font 500 20/26 (18px below 1200px).
 // Renders a router <Link> with `to`, an <a> with `href`, otherwise a <button>.
 export default function Button({ variant = 'dark', to, href, className, children, ...props }) {
   const classes = cn(
