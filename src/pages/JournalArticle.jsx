@@ -22,7 +22,7 @@ function ArticleBody({ body }) {
         }
         if (block.type === 'list') {
           return (
-            <ul key={index} className="mt-8 list-disc text-ink-soft type-body-lg">
+            <ul key={index} className="mt-8 list-disc pl-5 md:pl-6 text-ink-soft type-body-lg">
               {block.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
