@@ -10,7 +10,7 @@ export const site = {
   // Neutral payment labels (no brand logos). Order matters: the 3rd pill is the widest.
   payments: ['Card', 'Bank', 'Pay Later', 'Wallet', 'Cash'],
   // Show a placeholder price under product-card titles (the reference shows none).
-  showPrices: true,
+  showPrices: false,
   // Cart placeholders (USD): free shipping from this subtotal, otherwise a flat rate.
   freeShippingThreshold: 150,
   flatShipping: 8,

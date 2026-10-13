@@ -29,6 +29,7 @@ export default function WhyUs() {
     <section className="pt-section-sm lg:pt-section">
       <Container className="flex flex-col gap-8">
         <SectionHeader
+          gap="gap-2.5"
           eyebrow="Why Us"
           title="What Makes Us Different"
           align="center"

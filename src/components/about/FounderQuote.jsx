@@ -8,7 +8,7 @@ import TextReveal from '../ui/TextReveal'
 // grey shows on both sides, as on the reference), name + role, large centred quote.
 export default function FounderQuote() {
   return (
-    <section className="py-section-sm lg:py-section">
+    <section className="py-section-sm md:py-section">
       <Container className="flex flex-col items-center gap-8">
         <Reveal className="flex flex-col items-center gap-4">
           <div className="relative flex size-[168px] items-center justify-center overflow-hidden rounded-pill bg-mist md:size-[260px]">
