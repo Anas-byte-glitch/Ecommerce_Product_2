@@ -8,3 +8,4 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 reference/
+assets-incoming/
