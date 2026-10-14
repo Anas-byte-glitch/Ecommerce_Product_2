@@ -9,3 +9,7 @@ dist-ssr
 .idea
 reference/
 assets-incoming/
+
+# image sourcing (9B)
+.cache/
+scripts/picks-gallery.html

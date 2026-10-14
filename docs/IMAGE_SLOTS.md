@@ -243,3 +243,11 @@ Columns: slot id · file name to save · where it appears · aspect · displayed
 4. **Processing script** `scripts/build-images.mjs`: reads `assets-incoming/`, writes WebP (JPEG fallback only if needed) at 480 / 800 / 1200 / 1600 / 2000 px wide (only up to the source width), plus `srcset` / `sizes` metadata the `Image` component can use, a tiny blur or dominant-colour placeholder and a total image-weight report per route. `sharp` stays out of the shipped dependencies (devDependency or run through `npx`); the processed files are committed so a buyer needs no tooling.
 5. **Home video.** A Pexels or Pixabay video whose licence allows redistribution inside a template (read the exact terms; if it only allows use, not redistribution of the file, host nothing and fall back). Re-encode to ≤ 2.5 MB, muted, looping, with a poster; no autoplay under `prefers-reduced-motion` or data-saver. If nothing suitable exists, use the still with a gentle CSS motion instead.
 6. **No layout movement:** keep the aspect ratios in the table; run the page-height comparison (DESIGN_NOTES §28 method) after wiring.
+
+## Pixabay Content License (Phase 9B-2) — terms NOT yet recorded
+
+The license text was not supplied (the request still contained the placeholder), so **no terms are recorded or assumed here**. Until the owner pastes the text and its key terms are added below, treat every Pixabay pick as unverified for commercial resale inside a template. `SOURCES.csv` links `https://pixabay.com/service/license-summary/` as the license page, which has not been read for this file.
+
+Key terms (to be filled from the pasted text): usage / commercial use · attribution · redistribution of the file as part of a product · identifiable people / trademarks · prohibited uses.
+
+Search tooling: `scripts/pixabay-search.mjs`, `scripts/pixabay-deep.mjs` (API key from git-ignored `.env.local`, 24 h cache in git-ignored `.cache/`). Picks: `docs/IMAGE_PICKS.md`.
