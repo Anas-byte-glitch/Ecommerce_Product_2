@@ -1,0 +1,781 @@
+[
+  {
+    "slot": "banner-bestsellers",
+    "file": "assets-source/banner-bestsellers.jpg",
+    "originalSize": "5472×3648",
+    "outputs": [
+      "src/assets/photos/banner-bestsellers-480.webp",
+      "src/assets/photos/banner-bestsellers-800.webp",
+      "src/assets/photos/banner-bestsellers-1200.webp",
+      "src/assets/photos/banner-bestsellers-1600.webp",
+      "src/assets/photos/banner-bestsellers-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-chain-necklace-on-white-surface-aldDZePniqg",
+    "author": "Syed F Hashemi",
+    "authorProfile": "https://unsplash.com/@sfhashemi",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-bestsellers",
+    "file": "assets-source/collection-men-bestsellers.jpg",
+    "originalSize": "4000×6000",
+    "outputs": [
+      "src/assets/photos/collection-men-bestsellers-480.webp",
+      "src/assets/photos/collection-men-bestsellers-800.webp",
+      "src/assets/photos/collection-men-bestsellers-1200.webp",
+      "src/assets/photos/collection-men-bestsellers-1600.webp",
+      "src/assets/photos/collection-men-bestsellers-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-wallet-on-a-rope-XW-E5VEQ0W0",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-bracelet",
+    "file": "assets-source/collection-men-bracelet.jpg",
+    "originalSize": "5472×3648",
+    "outputs": [
+      "src/assets/photos/collection-men-bracelet-480.webp",
+      "src/assets/photos/collection-men-bracelet-800.webp",
+      "src/assets/photos/collection-men-bracelet-1200.webp",
+      "src/assets/photos/collection-men-bracelet-1600.webp",
+      "src/assets/photos/collection-men-bracelet-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-couple-of-bracelets-sitting-on-top-of-a-wooden-table-md87xXz3le4",
+    "author": "Alexey Demidov",
+    "authorProfile": "https://unsplash.com/@alexeydemidov",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-chain",
+    "file": "assets-source/collection-men-chain.jpg",
+    "originalSize": "2835×4252",
+    "outputs": [
+      "src/assets/photos/collection-men-chain-480.webp",
+      "src/assets/photos/collection-men-chain-800.webp",
+      "src/assets/photos/collection-men-chain-1200.webp",
+      "src/assets/photos/collection-men-chain-1600.webp",
+      "src/assets/photos/collection-men-chain-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-gold-chain-on-black-background-0ziihuUXMcs",
+    "author": "Andrey Ilkevich",
+    "authorProfile": "https://unsplash.com/@ilkevich",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-earring",
+    "file": "assets-source/collection-men-earring.jpg",
+    "originalSize": "7084×4736",
+    "outputs": [
+      "src/assets/photos/collection-men-earring-480.webp",
+      "src/assets/photos/collection-men-earring-800.webp",
+      "src/assets/photos/collection-men-earring-1200.webp",
+      "src/assets/photos/collection-men-earring-1600.webp",
+      "src/assets/photos/collection-men-earring-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-diamond-earrings-on-a-reflective-surface-wTIZBpzHcmU",
+    "author": "Mihail Cioinica",
+    "authorProfile": "https://unsplash.com/@dreamscape_visions",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-newarrivals",
+    "file": "assets-source/collection-men-newarrivals.jpg",
+    "originalSize": "4672×7008",
+    "outputs": [
+      "src/assets/photos/collection-men-newarrivals-480.webp",
+      "src/assets/photos/collection-men-newarrivals-800.webp",
+      "src/assets/photos/collection-men-newarrivals-1200.webp",
+      "src/assets/photos/collection-men-newarrivals-1600.webp",
+      "src/assets/photos/collection-men-newarrivals-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-chain-on-top-of-a-wooden-table-IVpCWTS7jXE",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-onsale",
+    "file": "assets-source/collection-men-onsale.jpg",
+    "originalSize": "4530×2842",
+    "outputs": [
+      "src/assets/photos/collection-men-onsale-480.webp",
+      "src/assets/photos/collection-men-onsale-800.webp",
+      "src/assets/photos/collection-men-onsale-1200.webp",
+      "src/assets/photos/collection-men-onsale-1600.webp",
+      "src/assets/photos/collection-men-onsale-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-bracelet-on-brown-wooden-table-ejECTqgP-Xs",
+    "author": "Lucas Lenzi",
+    "authorProfile": "https://unsplash.com/@lucaslenzi",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-ring",
+    "file": "assets-source/collection-men-ring.jpg",
+    "originalSize": "3497×4801",
+    "outputs": [
+      "src/assets/photos/collection-men-ring-480.webp",
+      "src/assets/photos/collection-men-ring-800.webp",
+      "src/assets/photos/collection-men-ring-1200.webp",
+      "src/assets/photos/collection-men-ring-1600.webp",
+      "src/assets/photos/collection-men-ring-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-ring-is-sitting-on-top-of-a-rock-O8--45EdINk",
+    "author": "Jonathan Sanchez",
+    "authorProfile": "https://unsplash.com/@jonathansancheziam",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-bestsellers",
+    "file": "assets-source/collection-women-bestsellers.jpg",
+    "originalSize": "4416×2944",
+    "outputs": [
+      "src/assets/photos/collection-women-bestsellers-480.webp",
+      "src/assets/photos/collection-women-bestsellers-800.webp",
+      "src/assets/photos/collection-women-bestsellers-1200.webp",
+      "src/assets/photos/collection-women-bestsellers-1600.webp",
+      "src/assets/photos/collection-women-bestsellers-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-necklace-and-earrings-on-pastel-background-H988EpA-27A",
+    "author": "Jess Bailey",
+    "authorProfile": "https://unsplash.com/@jessbaileydesigns",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-bracelet",
+    "file": "assets-source/collection-women-bracelet.jpg",
+    "originalSize": "4724×3149",
+    "outputs": [
+      "src/assets/photos/collection-women-bracelet-480.webp",
+      "src/assets/photos/collection-women-bracelet-800.webp",
+      "src/assets/photos/collection-women-bracelet-1200.webp",
+      "src/assets/photos/collection-women-bracelet-1600.webp",
+      "src/assets/photos/collection-women-bracelet-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-and-silver-link-bracelet-2z7MxnXQs3k",
+    "author": "Sabrianna",
+    "authorProfile": "https://unsplash.com/@sabrinnaringquist",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-earring",
+    "file": "assets-source/collection-women-earring.jpg",
+    "originalSize": "4605×2976",
+    "outputs": [
+      "src/assets/photos/collection-women-earring-480.webp",
+      "src/assets/photos/collection-women-earring-800.webp",
+      "src/assets/photos/collection-women-earring-1200.webp",
+      "src/assets/photos/collection-women-earring-1600.webp",
+      "src/assets/photos/collection-women-earring-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-and-diamond-studded-ring-Lqfqsij4EvQ",
+    "author": "Sabrianna",
+    "authorProfile": "https://unsplash.com/@sabrinnaringquist",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-necklace",
+    "file": "assets-source/collection-women-necklace.jpg",
+    "originalSize": "2624×3936",
+    "outputs": [
+      "src/assets/photos/collection-women-necklace-480.webp",
+      "src/assets/photos/collection-women-necklace-800.webp",
+      "src/assets/photos/collection-women-necklace-1200.webp",
+      "src/assets/photos/collection-women-necklace-1600.webp",
+      "src/assets/photos/collection-women-necklace-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-necklace-on-white-textile-v3hCo9Jljfo",
+    "author": "Mathilde Langevin",
+    "authorProfile": "https://unsplash.com/@mathildelangevin",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-newarrivals",
+    "file": "assets-source/collection-women-newarrivals.jpg",
+    "originalSize": "5464×8192",
+    "outputs": [
+      "src/assets/photos/collection-women-newarrivals-480.webp",
+      "src/assets/photos/collection-women-newarrivals-800.webp",
+      "src/assets/photos/collection-women-newarrivals-1200.webp",
+      "src/assets/photos/collection-women-newarrivals-1600.webp",
+      "src/assets/photos/collection-women-newarrivals-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-white-box-with-gold-jewelry-on-it-MFmHV695pd4",
+    "author": "Nataliia Hordiiuk",
+    "authorProfile": "https://unsplash.com/@whynotnatali",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-onsale",
+    "file": "assets-source/collection-women-onsale.jpg",
+    "originalSize": "6000×4000",
+    "outputs": [
+      "src/assets/photos/collection-women-onsale-480.webp",
+      "src/assets/photos/collection-women-onsale-800.webp",
+      "src/assets/photos/collection-women-onsale-1200.webp",
+      "src/assets/photos/collection-women-onsale-1600.webp",
+      "src/assets/photos/collection-women-onsale-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-bunch-of-jewelry-laying-on-a-table-eTtaBcm-pPU",
+    "author": "Rotchel Balicao",
+    "authorProfile": "https://unsplash.com/@pppotchiii",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-women-ring",
+    "file": "assets-source/collection-women-ring.jpg",
+    "originalSize": "3744×5616",
+    "outputs": [
+      "src/assets/photos/collection-women-ring-480.webp",
+      "src/assets/photos/collection-women-ring-800.webp",
+      "src/assets/photos/collection-women-ring-1200.webp",
+      "src/assets/photos/collection-women-ring-1600.webp",
+      "src/assets/photos/collection-women-ring-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-ring-sitting-on-top-of-a-white-wall-ZX5Hx5M1d_c",
+    "author": "Tony Chen",
+    "authorProfile": "https://unsplash.com/@tony1218",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "hero-home",
+    "file": "assets-source/hero-home.jpg",
+    "originalSize": "3455×3455",
+    "outputs": [
+      "src/assets/photos/hero-home-480.webp",
+      "src/assets/photos/hero-home-800.webp",
+      "src/assets/photos/hero-home-1200.webp",
+      "src/assets/photos/hero-home-1600.webp",
+      "src/assets/photos/hero-home-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-colored-jewelries-ECr_8nuXpBA",
+    "author": "Tessa Edmiston",
+    "authorProfile": "https://unsplash.com/@thewildflowerpress",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "hero-men",
+    "file": "assets-source/hero-men.jpg",
+    "originalSize": "5376×3584",
+    "outputs": [
+      "src/assets/photos/hero-men-480.webp",
+      "src/assets/photos/hero-men-800.webp",
+      "src/assets/photos/hero-men-1200.webp",
+      "src/assets/photos/hero-men-1600.webp",
+      "src/assets/photos/hero-men-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-chain-on-a-black-background-R_pIyT1KF80",
+    "author": "PRAHANT STUDIO",
+    "authorProfile": "https://unsplash.com/@prahantstudio",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "hero-shop",
+    "file": "assets-source/hero-shop.jpg",
+    "originalSize": "6240×4160",
+    "outputs": [
+      "src/assets/photos/hero-shop-480.webp",
+      "src/assets/photos/hero-shop-800.webp",
+      "src/assets/photos/hero-shop-1200.webp",
+      "src/assets/photos/hero-shop-1600.webp",
+      "src/assets/photos/hero-shop-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-chain-with-a-black-band-i1B8PtxYmoY",
+    "author": "Tahlia Doyle",
+    "authorProfile": "https://unsplash.com/@tahliaclaire",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "hero-women",
+    "file": "assets-source/hero-women.jpg",
+    "originalSize": "4672×5840",
+    "outputs": [
+      "src/assets/photos/hero-women-480.webp",
+      "src/assets/photos/hero-women-800.webp",
+      "src/assets/photos/hero-women-1200.webp",
+      "src/assets/photos/hero-women-1600.webp",
+      "src/assets/photos/hero-women-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-necklace-rests-on-a-textured-surface-lrfBUbhhhB8",
+    "author": "Lena Laurentez",
+    "authorProfile": "https://unsplash.com/@lana_laurentez",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-01-main",
+    "file": "assets-source/product-01-main.jpg",
+    "originalSize": "3208×4812",
+    "outputs": [
+      "src/assets/photos/product-01-main-480.webp",
+      "src/assets/photos/product-01-main-800.webp",
+      "src/assets/photos/product-01-main-1200.webp",
+      "src/assets/photos/product-01-main-1600.webp",
+      "src/assets/photos/product-01-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-heart-pendant-necklace-on-white-background-u1Hv_erOQH0",
+    "author": "Sabrianna",
+    "authorProfile": "https://unsplash.com/@sabrinnaringquist",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-02-main",
+    "file": "assets-source/product-02-main.jpg",
+    "originalSize": "3968×5952",
+    "outputs": [
+      "src/assets/photos/product-02-main-480.webp",
+      "src/assets/photos/product-02-main-800.webp",
+      "src/assets/photos/product-02-main-1200.webp",
+      "src/assets/photos/product-02-main-1600.webp",
+      "src/assets/photos/product-02-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-necklace-on-a-white-box-YScm7xyIGjQ",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-03-main",
+    "file": "assets-source/product-03-main.jpg",
+    "originalSize": "2624×3936",
+    "outputs": [
+      "src/assets/photos/product-03-main-480.webp",
+      "src/assets/photos/product-03-main-800.webp",
+      "src/assets/photos/product-03-main-1200.webp",
+      "src/assets/photos/product-03-main-1600.webp",
+      "src/assets/photos/product-03-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/gold-necklace-on-white-textile-QgK0yj6kc6k",
+    "author": "Mathilde Langevin",
+    "authorProfile": "https://unsplash.com/@mathildelangevin",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-04-main",
+    "file": "assets-source/product-04-main.jpg",
+    "originalSize": "3418×5127",
+    "outputs": [
+      "src/assets/photos/product-04-main-480.webp",
+      "src/assets/photos/product-04-main-800.webp",
+      "src/assets/photos/product-04-main-1200.webp",
+      "src/assets/photos/product-04-main-1600.webp",
+      "src/assets/photos/product-04-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-round-pendant-on-white-textile-x6ssf7YpHXA",
+    "author": "Nataliya Melnychuk",
+    "authorProfile": "https://unsplash.com/@natinati",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-05-main",
+    "file": "assets-source/product-05-main.jpg",
+    "originalSize": "4672×7008",
+    "outputs": [
+      "src/assets/photos/product-05-main-480.webp",
+      "src/assets/photos/product-05-main-800.webp",
+      "src/assets/photos/product-05-main-1200.webp",
+      "src/assets/photos/product-05-main-1600.webp",
+      "src/assets/photos/product-05-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-chain-on-a-white-background-HcKx5XdvWts",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-06-main",
+    "file": "assets-source/product-06-main.jpg",
+    "originalSize": "3059×2872",
+    "outputs": [
+      "src/assets/photos/product-06-main-480.webp",
+      "src/assets/photos/product-06-main-800.webp",
+      "src/assets/photos/product-06-main-1200.webp",
+      "src/assets/photos/product-06-main-1600.webp",
+      "src/assets/photos/product-06-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-ring-sitting-on-top-of-a-white-surface-9zApi1Ez-3k",
+    "author": "Doris Schmidt",
+    "authorProfile": "https://unsplash.com/@akashaaurum",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-07-main",
+    "file": "assets-source/product-07-main.jpg",
+    "originalSize": "4000×3000",
+    "outputs": [
+      "src/assets/photos/product-07-main-480.webp",
+      "src/assets/photos/product-07-main-800.webp",
+      "src/assets/photos/product-07-main-1200.webp",
+      "src/assets/photos/product-07-main-1600.webp",
+      "src/assets/photos/product-07-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-wedding-ring-with-a-lot-of-diamonds-on-it-jKSIrbfZEmA",
+    "author": "Birgit Meyke",
+    "authorProfile": "https://unsplash.com/@birmey24",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-08-main",
+    "file": "assets-source/product-08-main.jpg",
+    "originalSize": "3962×5943",
+    "outputs": [
+      "src/assets/photos/product-08-main-480.webp",
+      "src/assets/photos/product-08-main-800.webp",
+      "src/assets/photos/product-08-main-1200.webp",
+      "src/assets/photos/product-08-main-1600.webp",
+      "src/assets/photos/product-08-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-ring-sitting-on-top-of-a-white-surface-dTwb4yQ7Xmw",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-09-main",
+    "file": "assets-source/product-09-main.jpg",
+    "originalSize": "4672×7008",
+    "outputs": [
+      "src/assets/photos/product-09-main-480.webp",
+      "src/assets/photos/product-09-main-800.webp",
+      "src/assets/photos/product-09-main-1200.webp",
+      "src/assets/photos/product-09-main-1600.webp",
+      "src/assets/photos/product-09-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-silver-bracelet-on-a-white-background-vykb1fpnJEE",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-10-main",
+    "file": "assets-source/product-10-main.jpg",
+    "originalSize": "3573×5359",
+    "outputs": [
+      "src/assets/photos/product-10-main-480.webp",
+      "src/assets/photos/product-10-main-800.webp",
+      "src/assets/photos/product-10-main-1200.webp",
+      "src/assets/photos/product-10-main-1600.webp",
+      "src/assets/photos/product-10-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-gold-chain-bracelets-sitting-on-top-of-a-white-box-Z3GHeY0NXGg",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-11-main",
+    "file": "assets-source/product-11-main.jpg",
+    "originalSize": "3679×5519",
+    "outputs": [
+      "src/assets/photos/product-11-main-480.webp",
+      "src/assets/photos/product-11-main-800.webp",
+      "src/assets/photos/product-11-main-1200.webp",
+      "src/assets/photos/product-11-main-1600.webp",
+      "src/assets/photos/product-11-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-silver-earrings-sitting-on-top-of-a-white-surface-dBYavr5vhco",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-12-main",
+    "file": "assets-source/product-12-main.jpg",
+    "originalSize": "3637×5455",
+    "outputs": [
+      "src/assets/photos/product-12-main-480.webp",
+      "src/assets/photos/product-12-main-800.webp",
+      "src/assets/photos/product-12-main-1200.webp",
+      "src/assets/photos/product-12-main-1600.webp",
+      "src/assets/photos/product-12-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-gold-hoop-earrings-on-a-white-stand-77vl4dH6KKQ",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-13-main",
+    "file": "assets-source/product-13-main.jpg",
+    "originalSize": "4672×7008",
+    "outputs": [
+      "src/assets/photos/product-13-main-480.webp",
+      "src/assets/photos/product-13-main-800.webp",
+      "src/assets/photos/product-13-main-1200.webp",
+      "src/assets/photos/product-13-main-1600.webp",
+      "src/assets/photos/product-13-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-chain-on-a-black-background-hioQ5H6tEVI",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-16-main",
+    "file": "assets-source/product-16-main.jpg",
+    "originalSize": "3648×5472",
+    "outputs": [
+      "src/assets/photos/product-16-main-480.webp",
+      "src/assets/photos/product-16-main-800.webp",
+      "src/assets/photos/product-16-main-1200.webp",
+      "src/assets/photos/product-16-main-1600.webp",
+      "src/assets/photos/product-16-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-ring-sitting-on-top-of-a-piece-of-concrete-ggDJX1b1e_w",
+    "author": "Jonathan Sanchez",
+    "authorProfile": "https://unsplash.com/@jonathansancheziam",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-17-main",
+    "file": "assets-source/product-17-main.jpg",
+    "originalSize": "3435×4580",
+    "outputs": [
+      "src/assets/photos/product-17-main-480.webp",
+      "src/assets/photos/product-17-main-800.webp",
+      "src/assets/photos/product-17-main-1200.webp",
+      "src/assets/photos/product-17-main-1600.webp",
+      "src/assets/photos/product-17-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-ring-on-black-textile-B9Jo-V2kpOg",
+    "author": "Ronan Furuta",
+    "authorProfile": "https://unsplash.com/@ronan18",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-18-main",
+    "file": "assets-source/product-18-main.jpg",
+    "originalSize": "4338×6507",
+    "outputs": [
+      "src/assets/photos/product-18-main-480.webp",
+      "src/assets/photos/product-18-main-800.webp",
+      "src/assets/photos/product-18-main-1200.webp",
+      "src/assets/photos/product-18-main-1600.webp",
+      "src/assets/photos/product-18-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-ring-on-a-black-background-WGd84KPGc5Q",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-19-main",
+    "file": "assets-source/product-19-main.jpg",
+    "originalSize": "6000×4000",
+    "outputs": [
+      "src/assets/photos/product-19-main-480.webp",
+      "src/assets/photos/product-19-main-800.webp",
+      "src/assets/photos/product-19-main-1200.webp",
+      "src/assets/photos/product-19-main-1600.webp",
+      "src/assets/photos/product-19-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/blue-and-silver-belt-buckle-6E5VATUAlrk",
+    "author": "Prayag Tejwani",
+    "authorProfile": "https://unsplash.com/@prayagtejwani",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-20-main",
+    "file": "assets-source/product-20-main.jpg",
+    "originalSize": "5304×7952",
+    "outputs": [
+      "src/assets/photos/product-20-main-480.webp",
+      "src/assets/photos/product-20-main-800.webp",
+      "src/assets/photos/product-20-main-1200.webp",
+      "src/assets/photos/product-20-main-1600.webp",
+      "src/assets/photos/product-20-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-chain-bracelet-laying-on-top-of-a-black-cloth-vZHv3eMHVds",
+    "author": "Bruno van der Kraan",
+    "authorProfile": "https://unsplash.com/@brunovdkraan",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-22-main",
+    "file": "assets-source/product-22-main.jpg",
+    "originalSize": "4000×4000",
+    "outputs": [
+      "src/assets/photos/product-22-main-480.webp",
+      "src/assets/photos/product-22-main-800.webp",
+      "src/assets/photos/product-22-main-1200.webp",
+      "src/assets/photos/product-22-main-1600.webp",
+      "src/assets/photos/product-22-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-diamond-studded-heart-pendant-necklace-lbqW0O09RAM",
+    "author": "Sabrianna",
+    "authorProfile": "https://unsplash.com/@sabrinnaringquist",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-23-main",
+    "file": "assets-source/product-23-main.jpg",
+    "originalSize": "3738×5606",
+    "outputs": [
+      "src/assets/photos/product-23-main-480.webp",
+      "src/assets/photos/product-23-main-800.webp",
+      "src/assets/photos/product-23-main-1200.webp",
+      "src/assets/photos/product-23-main-1600.webp",
+      "src/assets/photos/product-23-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-gold-ring-on-a-table-WDsohK10HAw",
+    "author": "Ruan Richard Rodrigues",
+    "authorProfile": "https://unsplash.com/@ricdeoliveira",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-24-main",
+    "file": "assets-source/product-24-main.jpg",
+    "originalSize": "4764×6669",
+    "outputs": [
+      "src/assets/photos/product-24-main-480.webp",
+      "src/assets/photos/product-24-main-800.webp",
+      "src/assets/photos/product-24-main-1200.webp",
+      "src/assets/photos/product-24-main-1600.webp",
+      "src/assets/photos/product-24-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-black-and-white-photo-of-a-rope-eFUsYsKOsgk",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-25-main",
+    "file": "assets-source/product-25-main.jpg",
+    "originalSize": "7084×4736",
+    "outputs": [
+      "src/assets/photos/product-25-main-480.webp",
+      "src/assets/photos/product-25-main-800.webp",
+      "src/assets/photos/product-25-main-1200.webp",
+      "src/assets/photos/product-25-main-1600.webp",
+      "src/assets/photos/product-25-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-diamond-earrings-on-a-reflective-surface-wTIZBpzHcmU",
+    "author": "Mihail Cioinica",
+    "authorProfile": "https://unsplash.com/@dreamscape_visions",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  }
+]
