@@ -3,6 +3,7 @@ import { Outlet, useLocation, useMatches } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
+import SmoothScroll from './SmoothScroll'
 import LiveAnnouncer from './LiveAnnouncer'
 import CartDrawer from '../cart/CartDrawer'
 import SearchDrawer from '../search/SearchDrawer'
@@ -35,6 +36,7 @@ export default function Layout() {
       >
         Skip to content
       </a>
+      <SmoothScroll />
       <ScrollToTop />
       <Navbar />
       <LiveAnnouncer />
