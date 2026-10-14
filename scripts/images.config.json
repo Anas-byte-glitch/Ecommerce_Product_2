@@ -1,0 +1,13 @@
+{
+  "widths": [480, 800, 1200, 1600, 2000],
+  "quality": 76,
+  "strictOrientation": false,
+  "minKeptAreaWhenOrientationDiffers": 0.3,
+  "roundTwoOnly": {
+    "product-02-main": ["YScm7xyIGjQ"],
+    "collection-women-bestsellers": ["H988EpA-27A"],
+    "collection-men-ring": ["O8--45EdINk"],
+    "product-16-main": ["ggDJX1b1e_w"]
+  },
+  "alts": {}
+}
