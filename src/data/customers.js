@@ -1,4 +1,3 @@
-import { placeholders } from '../assets/placeholders'
 import { site } from '../config/site'
 
 // "Featured Customers" strip (invented placeholder customers — replace with real, consenting customers).
@@ -10,4 +9,4 @@ export const customers = [
   { id: 'imogen-pryce', name: 'Imogen Pryce', product: 'Isla Pearl Pendant' },
   { id: 'dalia-reyes', name: 'Dalia Reyes', product: 'Corvin Hoop Earrings' },
   { id: 'esme-calloway', name: 'Esme Calloway', product: 'Wren Open Ring' },
-].map((customer) => ({ ...customer, image: placeholders.portrait, link: site.social.instagram }))
+].map((customer) => ({ ...customer, link: site.social.instagram }))

@@ -23,4 +23,4 @@ Currently excluded: `collection-men-bestsellers`, `product-24-main`, `product-18
 
 ## Rules the app follows
 - `photoOr('<slot id>', placeholder)` returns the photo or the placeholder (`src/assets/photos/index.js`).
-- A product with a real main photo only offers its real photos: the card hover image is the `-alt` photo if it exists, otherwise there is no swap (slow zoom); the gallery shows the real photos only (no thumbnail row for a single photo). A product without a real photo keeps all its SVG placeholders.
+- A product with a real main photo only offers its real photos: the card hover image is the `-alt` photo if it exists, otherwise the original cross-fade runs with the same photo; the gallery shows the real photos only (no thumbnail row for a single photo). A product without a real photo keeps all its SVG placeholders.

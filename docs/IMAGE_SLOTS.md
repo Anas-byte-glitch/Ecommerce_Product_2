@@ -1,6 +1,6 @@
 # Image and video slots (Phase 9B-1 inventory)
 
-Internal planning file (excluded from the sold package). **Total: 144 slots = 143 photos + 1 video** (the video is optional; it has a still poster, counted among the photos as `about-block`). Measured on the running site at 1440 and 390 px; every slot is `object-cover` inside a fixed box, so any photo whose crop-safe area is centred works and **no layout moves** when the real files replace the placeholders (keep each slot's aspect ratio when exporting).
+Internal planning file (excluded from the sold package). **Total: 138 slots = 137 photos + 1 video** (was 144; the 6 customer photos were replaced by initials avatars in round 3) (the video is optional; it has a still poster, counted among the photos as `about-block`). Measured on the running site at 1440 and 390 px; every slot is `object-cover` inside a fixed box, so any photo whose crop-safe area is centred works and **no layout moves** when the real files replace the placeholders (keep each slot's aspect ratio when exporting).
 
 ## Summary
 
@@ -13,8 +13,7 @@ Internal planning file (excluded from the sold package). **Total: 144 slots = 14
 | About | 5 |
 | Contact | 1 |
 | Journals | 4 |
-| Customers | 6 |
-| **Total** | **144** |
+| **Total** | **138** |
 
 ## How the placeholders map to slots today
 
@@ -27,7 +26,6 @@ Internal planning file (excluded from the sold package). **Total: 144 slots = 14
 | `collectionWide/Narrow/Half/Full` | collection-<slug> (14 tiles) |
 | `genderWomen/Men` | gender-women, gender-men and the three about materials tiles |
 | `promoTall` | banner-newarrivals, why-us, founder, contact-photo |
-| `portrait` | customer-01 … customer-06 |
 | `journalFeatured`, `journal` | journal-featured and 3 journal cards |
 | `aboutPoster` | about-block (poster) + optional video |
 | `newsletterWide` | newsletter |
@@ -217,18 +215,6 @@ Columns: slot id · file name to save · where it appears · aspect · displayed
 | `journal-how-to-build-a-collection-that-lasts` | `journal-how-to-build-a-collection-that-lasts.jpg` | /journals (card) and /journals/how-to-build-a-collection-that-lasts (article hero / OG image) | 448:416 landscape (≈ 1.08:1) | 448×416 | 358×382 | 1000×930 | below the fold | A tidy jewelry tray with five essentials (pendant, hoops, studs, slim bracelet, ring) neatly spaced, top-down. |
 | `journal-why-simple-shapes-stay-modern` | `journal-why-simple-shapes-stay-modern.jpg` | /journals (card) and /journals/why-simple-shapes-stay-modern (article hero / OG image) | 448:416 landscape (≈ 1.08:1) | 448×416 | 358×382 | 1000×930 | below the fold | Minimal still life: one smooth hoop and one plain band on a curved plaster form, strong shadow, calm palette. |
 
-### Customers / featured strip — 6
-
-| Slot id | File | Routes | Aspect | 1440 | 390 | Min source | Fold | Art direction |
-|---|---|---|---|---|---|---|---|---|
-| `customer-01` | `customer-01.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a wrist with a link bracelet on a linen shirt cuff. Natural light, slightly casual. |
-| `customer-02` | `customer-02.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a hand wearing a signet ring resting on a denim knee. Natural light, slightly casual. |
-| `customer-03` | `customer-03.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a neckline with a bar necklace on a white tee, cropped below the chin. Natural light, slightly casual. |
-| `customer-04` | `customer-04.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a pearl pendant on a dark knit, cropped below the chin. Natural light, slightly casual. |
-| `customer-05` | `customer-05.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a hand holding a pair of hoop earrings against a plain wall. Natural light, slightly casual. |
-| `customer-06` | `customer-06.jpg` | all pages with shared sections (Featured Customers strip) | 5:6 portrait (250×300) | 250×300 | 250×300 | 600×720 (min 500×600) | below the fold | Customer-style photo, no face: a hand with an open ring on a pale sleeve. Natural light, slightly casual. |
-
-
 ## Slots that are not photographs
 
 - `public/og-image.svg|png` (1200 × 630 social image) and the icon set are brand assets: make them from the logo in 9C, not from stock photos.
@@ -258,3 +244,6 @@ Only sites whose license page I could actually open are used. The pages were rea
 **Risk to decide before selling the template:** both licenses forbid selling the photos themselves unmodified / on a standalone basis. A sold template that **ships the photo files** inside the package is a grey area for Unsplash ("cannot be sold without significant modification"). Safer options: ship the template with the neutral placeholders and tell buyers to add their own photos, or get written confirmation from Unsplash before bundling. This is a legal question; the pick list does not settle it.
 
 Tooling kept from 9B-2: `scripts/pixabay-search.mjs`, `scripts/pixabay-deep.mjs` (key in git-ignored `.env.local`, cache in git-ignored `.cache/`). Picks: `docs/IMAGE_PICKS.md`; source rows: `SOURCES.csv`.
+
+## Round 3 note (2026-10-14)
+No new site. All round-3 picks are Unsplash (License page read earlier, terms above). Customer and reviewer photos are not photo slots any more: the Featured Customers strip uses initials avatars (`src/components/ui/Avatar.jsx`); reviews never had photos.

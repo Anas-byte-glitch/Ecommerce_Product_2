@@ -10,8 +10,7 @@ import Image from '../ui/Image'
 // image box 440px tall (200px on phones), badge top-left (hidden on phones), favourite top-right,
 // second image cross-fades in on hover; title + category label underneath.
 export default function ProductCard({ product, className, titleAs: Title = 'h3' }) {
-  const [image, hoverImage] = product.images
-  const hasHover = Boolean(hoverImage)
+  const [image, hoverImage = image] = product.images
 
   return (
     <Link
@@ -19,28 +18,18 @@ export default function ProductCard({ product, className, titleAs: Title = 'h3' 
       className={cn('group flex w-full flex-col items-start gap-3', className)}
     >
       <div className="relative h-[200px] w-full overflow-hidden bg-mist md:h-[440px]">
-        {hasHover ? (
-          <>
-            <Image
-              src={image}
-              alt={product.imageAlt}
-              className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0"
-            />
-            <Image
-              src={hoverImage}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 z-1 size-full object-cover opacity-0 transition-opacity duration-500 ease-card group-hover:opacity-100"
-            />
-          </>
-        ) : (
-          // No hover photo: no swap (a grey placeholder next to a real photo looks broken), a slow zoom instead.
-          <Image
-            src={image}
-            alt={product.imageAlt}
-            className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-card group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          />
-        )}
+        <Image
+          src={image}
+          alt={product.imageAlt}
+          className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0"
+        />
+        {/* Hover image: the second photo when the product has one, otherwise the same photo (the original cross-fade, no extra files). */}
+        <Image
+          src={hoverImage}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 z-1 size-full object-cover opacity-0 transition-opacity duration-500 ease-card group-hover:opacity-100"
+        />
         <div className="absolute inset-x-3 top-3 z-3 flex h-[34px] items-center justify-end">
           {product.badge && <Badge className="mr-auto hidden md:inline-flex">{product.badge}</Badge>}
           <FavouriteButton slug={product.slug} name={product.name} />
