@@ -244,3 +244,6 @@ Only sites whose license page I could actually open are used. The pages were rea
 **Risk to decide before selling the template:** both licenses forbid selling the photos themselves unmodified / on a standalone basis. A sold template that **ships the photo files** inside the package is a grey area for Unsplash ("cannot be sold without significant modification"). Safer options: ship the template with the neutral placeholders and tell buyers to add their own photos, or get written confirmation from Unsplash before bundling. This is a legal question; the pick list does not settle it.
 
 Tooling kept from 9B-2: `scripts/pixabay-search.mjs`, `scripts/pixabay-deep.mjs` (key in git-ignored `.env.local`, cache in git-ignored `.cache/`). Picks: `docs/IMAGE_PICKS.md`; source rows: `SOURCES.csv`.
+
+## Round 3 note (2026-10-14)
+No new site. All round-3 picks are Unsplash (License page read earlier, terms above). Customer and reviewer photos are not photo slots any more: the Featured Customers strip uses initials avatars (`src/components/ui/Avatar.jsx`); reviews never had photos.
