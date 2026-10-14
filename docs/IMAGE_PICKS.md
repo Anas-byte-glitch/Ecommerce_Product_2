@@ -1,6 +1,6 @@
 # Image picks — Priority 1 (Unsplash)
 
-Searched 2026-10-14 on Unsplash (license page read, see `docs/IMAGE_SLOTS.md`). Nothing was downloaded in that pass. **Update 9B-4 (2026-10-14, local): 36 of 44 slots now have a checked file in `assets-incoming/` (and `assets-source/`); 8 have none.** One pick was rejected and replaced (hero-women), one was replaced as too weak (product-05), nine empty slots were filled from Unsplash. See "9B-4 check" at the end. Every pick was checked on its own photo page (image id, photographer) and its original pixel size read from the image metadata (`images.unsplash.com/photo-…?fm=json`); the photo pages themselves do not show a size. Crop fit is checked against the slot aspect ratio and minimum size. Direct download page = Unsplash's own Download-button address (answers with a redirect to the file; I did not follow it).
+Searched 2026-10-14 on Unsplash (license page read, see `docs/IMAGE_SLOTS.md`). Nothing was downloaded in that pass. **Update 9B-4 (2026-10-14, local): 36 of 44 slots now have a checked file in `assets-incoming/` (and `assets-source/`); 8 have none.** One pick was rejected and replaced (hero-women), one was replaced as too weak (product-05), nine empty slots were filled from Unsplash. See "9B-4 check" at the end. **Update 9B-5 (2026-10-14, local): 41 of 44 slots have a checked file; 3 are empty (product-14, product-15, product-21). See "Round 2 result (9B-5)" at the end.** Every pick was checked on its own photo page (image id, photographer) and its original pixel size read from the image metadata (`images.unsplash.com/photo-…?fm=json`); the photo pages themselves do not show a size. Crop fit is checked against the slot aspect ratio and minimum size. Direct download page = Unsplash's own Download-button address (answers with a redirect to the file; I did not follow it).
 
 **Photographers used (strong sets):** Oscar Ramirez (@oscareduardohr, gold on white, 5 photos), Mathilde Langevin (@mathildelangevin, gold chains on white linen, 3), Sabrianna (@sabrinnaringquist, silver pavé pieces on white/grey, 4), Nataliia Hordiiuk (@whynotnatali, gold on cream plaster, 2). Others are single photos. Dark (men) side is thin.
 
@@ -105,3 +105,83 @@ Photographers used again: Oscar Ramirez (product-02), COPPERTIST WU (product-09)
 | `product-24-main.jpg` | product-24-main (portrait, 2000×2500) — round 2 | **NO PICK** | — | — | — | — | — | No pick. No dark rope/cord bracelet product shot found. | — | — |
 
 Notes: product-16 and the men-ring tile come from the same shoot (two angles), so the two pages will look alike. All five picks were looked at in a 900 px preview: no faces, watermarks, readable text or logos visible; at full size look once more at the signet ring's face and the cuff's inside.
+
+## Round 2 result (9B-5, 2026-10-14, local)
+
+The five Round 2 photos were not in `~/Downloads`, so they were downloaded directly from Unsplash (direct download pages above; image ids match the table). Each was inspected at full size.
+
+**Accepted (all five), now under the plain slot names in `assets-incoming/` and `assets-source/`, replacing the rejected round-1 files:**
+- `product-02-main.jpg` (Oscar Ramirez, YScm7xyIGjQ): flower pendant and chain clean, no text.
+- `product-09-main.jpg` (COPPERTIST WU, vykb1fpnJEE): outside of the cuff shows only the scale pattern and a small gold scale; the visible inner band is plain. No lettering anywhere in this angle.
+- `collection-men-ring.jpg` (Jonathan Sanchez, O8--45EdINk) and `product-16-main.jpg` (ggDJX1b1e_w): onyx face and gold band plain in both photos, no engraving or lettering.
+- `collection-women-bestsellers.jpg` (Jess Bailey, H988EpA-27A): the round charm tag is blank; clasp and extender have no marks.
+
+**Gap-fill (Unsplash only; Pexels and Pixabay answered 403 from this machine, so no other site was used and `docs/IMAGE_SLOTS.md` is unchanged). All four are free Unsplash photos (not Unsplash+), checked via the photo API.**
+
+| Save as | Slot | Photo page | Direct download page | Photographer | Site / license | License URL | Size (px) | Reason | Alt 1 | Alt 2 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `product-06-main.jpg` | product-06-main (portrait, 2000×2500) — 9B-5 gap-fill | https://unsplash.com/photos/a-silver-ring-sitting-on-top-of-a-white-surface-9zApi1Ez-3k | https://unsplash.com/photos/9zApi1Ez-3k/download?force=true | Doris Schmidt ([@akashaaurum](https://unsplash.com/@akashaaurum)) | Unsplash, Unsplash License | https://unsplash.com/license | 3059×2872 (4:5 crop 2297×2871) | Chunky silver ring on plain white, soft light, sharp. Weaker point: brushed, sculptural shape rather than a polished classic signet; white rather than ivory tile. Full-size check: only surface scratches, no hallmark or lettering. | — | — |
+| `product-20-main.jpg` | product-20-main (portrait, 2000×2500) — 9B-5 gap-fill | https://unsplash.com/photos/a-chain-bracelet-laying-on-top-of-a-black-cloth-vZHv3eMHVds | https://unsplash.com/photos/vZHv3eMHVds/download?force=true | Bruno van der Kraan ([@brunovdkraan](https://unsplash.com/@brunovdkraan)) | Unsplash, Unsplash License | https://unsplash.com/license | 5304×7952 (4:5 crop 5304×6630) | Steel wheat/Franco link bracelet on charcoal felt, dark and side-lit. Weaker point: bright steel, not gunmetal. Clasp plain, no stamp. | — | — |
+| `product-24-main.jpg` | product-24-main (portrait, 2000×2500) — 9B-5 gap-fill | https://unsplash.com/photos/a-black-and-white-photo-of-a-rope-eFUsYsKOsgk | https://unsplash.com/photos/eFUsYsKOsgk/download?force=true | COPPERTIST WU ([@coppertistwu](https://unsplash.com/@coppertistwu)) | Unsplash, Unsplash License | https://unsplash.com/license | 4764×6669 (4:5 crop 4764×5955) | Black woven-texture serpent bangle on black, low side light. Weaker point: a serpent head, not a plain rope; on black, not stone. No engraving visible on the visible faces. | — | — |
+| `collection-men-onsale.jpg` | collection-men-onsale (landscape, 2000×1162) — 9B-5 gap-fill | https://unsplash.com/photos/gold-bracelet-on-brown-wooden-table-ejECTqgP-Xs | https://unsplash.com/photos/ejECTqgP-Xs/download?force=true | Lucas Lenzi ([@lucaslenzi](https://unsplash.com/@lucaslenzi)) | Unsplash, Unsplash License | https://unsplash.com/license | 4530×2842 (1.72:1 crop 4530×2631) | Men's leather, braided and bead bracelets on grey weathered wood, soft daylight; non-black backdrop as asked. Clasps are out of focus, no logo readable. | — | — |
+
+**Still empty:**
+- `product-14-main` (matte black chain): no matte black jewelry chain on Unsplash; only industrial chains, pendants with beads, or silver chains. Near-miss: COPPERTIST WU silver curb chain on charcoal wood, https://unsplash.com/photos/a-silver-chain-on-a-black-surface-gPAT5kA-xDg (silver, not black).
+- `product-15-main` (gunmetal Figaro chain): none. Near-miss: COPPERTIST WU silver curb chain on dark stone, https://unsplash.com/photos/a-silver-chain-on-a-black-surface-PjTBx6i8WXo (silver curb, not gunmetal Figaro).
+- `product-21-main` (pair of silver hoops): the only good pair, COPPERTIST WU https://unsplash.com/photos/a-pair-of-silver-hoop-earrings-on-a-black-background-zRqBTu4ZJeY, was downloaded and **rejected**: at full size "COPPERTIST.WU" and "925" are engraved on the inner face of both hoops.
+
+**Round-1 files recommended for replacement (not replaced):**
+- `product-18-main.jpg` (WGd84KPGc5Q): the same dragon-scale cuff as product-09, not a curb bracelet.
+- `product-23-main.jpg` (WDsohK10HAw): a gold bangle with four stones, not a ring.
+- `product-25-main.jpg` (wTIZBpzHcmU): the same photo as `collection-men-earring.jpg`, and diamond halo studs instead of matte black studs.
+- `product-19-main.jpg` was re-checked and is fine: it is a black braided leather bracelet with a steel clasp on a stand (the Unsplash caption "belt buckle" is wrong); only a cool blue cast on the stand.
+- Minor: `product-17-main.jpg` is a silver perforated ring, not matte black; `product-01` and `product-22` are both halo pendants on box chains.
+
+### Final status of the 44 Priority 1 slots
+
+| File | Status | Real size (px) | Notes |
+|---|---|---|---|
+| `hero-home.jpg` | in assets-source | 3455×3455 (landscape 2400×1350: crop 3455×1943 ok) |  |
+| `hero-shop.jpg` | in assets-source | 6240×4160 (landscape 2400×1350: crop 6240×3510 ok) |  |
+| `hero-women.jpg` | in assets-source | 4672×5840 (landscape 2400×1350: crop 4672×2628 ok) |  |
+| `hero-men.jpg` | in assets-source | 5376×3584 (landscape 2400×1350: crop 5376×3024 ok) |  |
+| `banner-bestsellers.jpg` | in assets-source | 5472×3648 (landscape 1830×880: crop 5472×2631 ok) |  |
+| `collection-women-necklace.jpg` | in assets-source | 2624×3936 (landscape 1920×1000: crop 2624×1366 ok) |  |
+| `collection-women-ring.jpg` | in assets-source | 3744×5616 (portrait 800×1000: crop 3744×4680 ok) |  |
+| `collection-women-bracelet.jpg` | in assets-source | 4724×3149 (landscape 1360×1000: crop 4282×3149 ok) |  |
+| `collection-women-earring.jpg` | in assets-source | 4605×2976 (landscape 1360×1000: crop 4047×2976 ok) |  |
+| `collection-women-bestsellers.jpg` | in assets-source | 4416×2944 (landscape 1920×1000: crop 4416×2300 ok) | Round 2 (Jess Bailey). Sparse, cool lilac backdrop. Tiny blank disc tag, no lettering. |
+| `collection-women-newarrivals.jpg` | in assets-source | 5464×8192 (portrait 800×1000: crop 5464×6830 ok) |  |
+| `collection-women-onsale.jpg` | in assets-source | 6000×4000 (landscape 2000×1162: crop 6000×3486 ok) |  |
+| `collection-men-chain.jpg` | in assets-source | 2835×4252 (landscape 1920×1000: crop 2835×1476 ok) |  |
+| `collection-men-ring.jpg` | in assets-source | 3497×4801 (portrait 800×1000: crop 3497×4371 ok) | Round 2 (Jonathan Sanchez). Gold band with onyx, plain face. |
+| `collection-men-bracelet.jpg` | in assets-source | 5472×3648 (landscape 1360×1000: crop 4961×3648 ok) |  |
+| `collection-men-earring.jpg` | in assets-source | 7084×4736 (landscape 1360×1000: crop 6440×4736 ok) |  |
+| `collection-men-bestsellers.jpg` | in assets-source | 4000×6000 (portrait 800×1000: crop 4000×5000 ok) |  |
+| `collection-men-newarrivals.jpg` | in assets-source | 4672×7008 (landscape 1920×1000: crop 4672×2433 ok) |  |
+| `collection-men-onsale.jpg` | in assets-source | 4530×2842 (landscape 2000×1162: crop 4530×2631 ok) | Gap-fill (Lucas Lenzi). Leather and bead bracelets on grey wood, clasps blurred, no logo. |
+| `product-01-main.jpg` | in assets-source | 3208×4812 (portrait 2000×2500: crop 3208×4010 ok) |  |
+| `product-02-main.jpg` | in assets-source | 3968×5952 (portrait 2000×2500: crop 3968×4960 ok) | Round 2 (Oscar Ramirez). Gold flower pendant, not pearl. |
+| `product-03-main.jpg` | in assets-source | 2624×3936 (portrait 2000×2500: crop 2624×3280 ok) |  |
+| `product-04-main.jpg` | in assets-source | 3418×5127 (portrait 2000×2500: crop 3418×4272 ok) |  |
+| `product-05-main.jpg` | in assets-source | 4672×7008 (portrait 2000×2500: crop 4672×5840 ok) |  |
+| `product-06-main.jpg` | in assets-source | 3059×2872 (portrait 2000×2500: crop 2297×2871 ok) | Gap-fill (Doris Schmidt). Brushed sculptural silver ring, not a classic signet. |
+| `product-07-main.jpg` | in assets-source | 4000×3000 (portrait 2000×2500: crop 2400×3000 ok) |  |
+| `product-08-main.jpg` | in assets-source | 3962×5943 (portrait 2000×2500: crop 3962×4952 ok) |  |
+| `product-09-main.jpg` | in assets-source | 4672×7008 (portrait 2000×2500: crop 4672×5840 ok) | Round 2 (COPPERTIST WU). Oxidised textured cuff, not a tennis bracelet. Same cuff as product-18. |
+| `product-10-main.jpg` | in assets-source | 3573×5359 (portrait 2000×2500: crop 3573×4466 ok) |  |
+| `product-11-main.jpg` | in assets-source | 3679×5519 (portrait 2000×2500: crop 3679×4598 ok) |  |
+| `product-12-main.jpg` | in assets-source | 3637×5455 (portrait 2000×2500: crop 3637×4546 ok) |  |
+| `product-13-main.jpg` | in assets-source | 4672×7008 (portrait 2000×2500: crop 4672×5840 ok) |  |
+| `product-14-main.jpg` | **missing** | — | Still missing. No matte black jewelry chain found. |
+| `product-15-main.jpg` | **missing** | — | Still missing. No gunmetal Figaro chain found. |
+| `product-16-main.jpg` | in assets-source | 3648×5472 (portrait 2000×2500: crop 3648×4560 ok) | Round 2 (Jonathan Sanchez). Gold band (brief: silver), same shoot as men-ring tile. |
+| `product-17-main.jpg` | in assets-source | 3435×4580 (portrait 2000×2500: crop 3435×4293 ok) | Silver perforated ring, not matte black. |
+| `product-18-main.jpg` | in assets-source | 4338×6507 (portrait 2000×2500: crop 4338×5422 ok) | Recommend replacing: same dragon-scale cuff as product-09, not a curb bracelet. |
+| `product-19-main.jpg` | in assets-source | 6000×4000 (portrait 2000×2500: crop 3200×4000 ok) | Checked: black braided leather bracelet with steel clasp (fits the slot); blue cast on the stand. |
+| `product-20-main.jpg` | in assets-source | 5304×7952 (portrait 2000×2500: crop 5304×6630 ok) | Gap-fill (Bruno van der Kraan). Steel wheat-link bracelet on charcoal fabric; steel, not gunmetal. |
+| `product-21-main.jpg` | **missing** | — | Still missing. Candidate zRqBTu4ZJeY rejected: brand name and 925 engraved on the hoops. |
+| `product-22-main.jpg` | in assets-source | 4000×4000 (portrait 2000×2500: crop 3200×4000 ok) |  |
+| `product-23-main.jpg` | in assets-source | 3738×5606 (portrait 2000×2500: crop 3738×4672 ok) | Recommend replacing: a gold bangle with stones, not a ring. |
+| `product-24-main.jpg` | in assets-source | 4764×6669 (portrait 2000×2500: crop 4764×5955 ok) | Gap-fill (COPPERTIST WU). Black woven serpent bangle on black; serpent head, not a plain rope. |
+| `product-25-main.jpg` | in assets-source | 7084×4736 (portrait 2000×2500: crop 3788×4736 ok) | Recommend replacing: same photo as collection-men-earring; diamond studs, not matte black. |
