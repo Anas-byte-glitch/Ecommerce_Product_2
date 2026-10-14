@@ -1,11 +1,16 @@
 import { materials } from '../../data/about'
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import Container from '../ui/Container'
 import HoverTile from '../ui/HoverTile'
 import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 
-const images = [placeholders.genderWomen, placeholders.genderMen, placeholders.genderWomen]
+const images = [
+  photoOr('material-silver', placeholders.genderWomen),
+  photoOr('material-gold', placeholders.genderMen),
+  photoOr('material-titanium', placeholders.genderWomen),
+]
 
 // "Our materials": three tiles (458.67 × 494 desktop, 2 + 1 on tablet, stacked 358 × 460 on
 // phones, no gaps). Hover shows the material name and its text.

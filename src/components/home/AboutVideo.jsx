@@ -1,4 +1,5 @@
 import { useReducedMotion } from 'motion/react'
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import { site } from '../../config/site'
 import Button from '../ui/Button'
@@ -10,6 +11,8 @@ import Image from '../ui/Image'
 // Full-bleed, viewport-tall media block. The reference plays a video here; we show a poster
 // placeholder, or a muted looping video when `site.homeVideoSrc` is set (poster only under
 // prefers-reduced-motion).
+const poster = photoOr('about-block', placeholders.aboutPoster)
+
 export default function AboutVideo() {
   const reduceMotion = useReducedMotion()
   const showVideo = Boolean(site.homeVideoSrc) && !reduceMotion
@@ -21,7 +24,7 @@ export default function AboutVideo() {
           <video
             className="absolute inset-0 size-full object-cover"
             src={site.homeVideoSrc}
-            poster={placeholders.aboutPoster}
+            poster={poster.src}
             autoPlay
             muted
             loop
@@ -29,7 +32,7 @@ export default function AboutVideo() {
             aria-hidden="true"
           />
         ) : (
-          <Image src={placeholders.aboutPoster} alt="" className="absolute inset-0 size-full object-cover" />
+          <Image src={poster} alt="" className="absolute inset-0 size-full object-cover" />
         )}
         <div aria-hidden="true" className="absolute inset-0 z-1 bg-fade-up" />
 

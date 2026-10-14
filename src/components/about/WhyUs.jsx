@@ -1,3 +1,4 @@
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import { reasons } from '../../data/about'
 import Container from '../ui/Container'
@@ -43,7 +44,7 @@ export default function WhyUs() {
           </div>
           <Reveal className="h-[460px] md:h-[466px] lg:h-[998px] lg:flex-1">
             <MediaBanner
-              image={placeholders.promoTall}
+              image={photoOr('why-us', placeholders.promoTall)}
               title="Made to Be Noticed"
               cta={{ label: 'Browse Collections', to: '/shop' }}
               className="h-full"

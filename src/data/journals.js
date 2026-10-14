@@ -1,3 +1,4 @@
+import { photoOr } from '../assets/photos'
 import { placeholders } from '../assets/placeholders'
 import { site } from '../config/site'
 
@@ -13,7 +14,7 @@ export const journals = [
     title: "Dressing Up an Ordinary Day",
     excerpt: "See how a few well-chosen pieces can lift a regular day and make your usual outfits feel more like you.",
     featured: true,
-    image: placeholders.journalFeatured,
+    image: photoOr('journal-featured', placeholders.journalFeatured),
     body: [
       { type: 'heading', text: "Start With Something Simple" },
       { type: 'paragraph', text: "You do not need an occasion to wear something lovely. The jewelry that earns its place is the kind you put on without thinking, because it feels like part of you. Styles shift every season, yet a good chain or a neat pair of hoops keeps working, adding a little polish and character without asking for attention. Whether you are heading to a meeting, a long lunch or a night out, the right pieces do not decorate an outfit so much as finish it, quietly and in your own voice." },
@@ -32,7 +33,7 @@ export const journals = [
     readTime: "5 min",
     title: "Keeping Your Jewelry Bright",
     excerpt: "A few easy habits keep metal gleaming and stones clear, so your favourite pieces look their best for longer.",
-    image: placeholders.journal,
+    image: photoOr('journal-keeping-your-jewelry-bright', placeholders.journal),
     body: [
       { type: 'heading', text: "Make It the Last Step" },
       { type: 'paragraph', text: "Perfume, hairspray and lotion all leave a film on metal and stones, and over time that film dulls the shine. Get into the habit of dressing first and putting your jewelry on afterwards. When you get home, take it off before you cook, clean or relax, so everyday life does not wear it down." },
@@ -51,7 +52,7 @@ export const journals = [
     readTime: "8 min",
     title: "How to Build a Collection That Lasts",
     excerpt: "A well-edited jewelry box grows over time. Here is how to choose pieces you will keep picking up, day after day.",
-    image: placeholders.journal,
+    image: photoOr('journal-how-to-build-a-collection-that-lasts', placeholders.journal),
     body: [
       { type: 'heading', text: "Begin With the Basics" },
       { type: 'paragraph', text: "Every strong collection starts with a handful of pieces that work with almost everything. Think about what you already wear most, then choose jewelry that suits those clothes and fits your routine. Comfort matters just as much as looks, since the pieces you enjoy wearing are the ones you will actually wear." },
@@ -81,7 +82,7 @@ export const journals = [
     readTime: "7 min",
     title: "Why Simple Shapes Stay Modern",
     excerpt: "Fashions change quickly, but clean, honest design keeps its appeal. Here is why restraint lasts.",
-    image: placeholders.journal,
+    image: photoOr('journal-why-simple-shapes-stay-modern', placeholders.journal),
     body: [
       { type: 'heading', text: "Less, Done Well" },
       { type: 'paragraph', text: "The designs we still admire decades later are rarely the most elaborate. They are the ones where every line has a reason. A smooth hoop, a plain band or a slim chain asks nothing of the eye, and that calm is exactly why it never feels out of date. When there is nothing to distract you, proportion and finish do all the talking." },

@@ -220,3 +220,9 @@ Gap list and tiers: `docs/IMAGE_GAPS.md`. Same site and license as before (Unspl
 | `collection-men-bestsellers.jpg` | `collection-men-bestsellers` (men-category tile) — round 3, tier A | https://unsplash.com/photos/silver-ring-on-black-textile-B9Jo-V2kpOg | https://unsplash.com/photos/B9Jo-V2kpOg/download?force=true | Ronan Furuta ([@ronan18](https://unsplash.com/@ronan18)) | Unsplash, Unsplash License | https://unsplash.com/license | 3435×4580 (crop 3435×4294, min 800×1000) | Replaces the excluded photo (a knife and rope): a perforated silver ring on black, portrait. Same photo as product-17 (different page). Save over the existing file and remove it from excludeSlots. | https://unsplash.com/photos/a-ring-is-sitting-on-top-of-a-rock-O8--45EdINk |
 
 Notes: `collection-men-bestsellers.jpg` overwrites the existing (held-back) file; when you adopt it, remove `collection-men-bestsellers` from `excludeSlots` in `scripts/images.config.json`. `founder` needs an alt in `images.config.json` ("Hands polishing a ring at a jeweller's bench") when its file is processed. The `cta-to-men` clasp is an ornamental animal-head shape, not lettering: check it at full size. The sources' second use of one photo is listed in SOURCES.csv with the second file name.
+
+## Round 3 – status after processing (2026-10-14)
+
+- Wired: newsletter, gender-women/men, banner-newarrivals, about-block, cta-to-men, why-us, material-silver/gold/titanium, contact-photo, founder (with alt), collection-men-bestsellers, journal-keeping-your-jewelry-bright, journal-why-simple-shapes-stay-modern.
+- Rejected picks (still SVG placeholders, need new photos): hero-about, journal-featured, journal-how-to-build-a-collection-that-lasts.
+- `cta-to-women` is in `excludeSlots` (the ring resembles a trademarked design); the men's page keeps the placeholder until a replacement is chosen.

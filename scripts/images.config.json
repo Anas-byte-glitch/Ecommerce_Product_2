@@ -10,11 +10,11 @@
   "strictOrientation": false,
   "minKeptAreaWhenOrientationDiffers": 0.3,
   "excludeSlots": [
-    "collection-men-bestsellers",
     "product-24-main",
     "product-18-main",
     "product-25-main",
-    "product-06-main"
+    "product-06-main",
+    "cta-to-women"
   ],
   "roundTwoOnly": {
     "product-02-main": [
@@ -52,6 +52,7 @@
     "product-22-main": "Large halo pendant with a clear centre stone on a silver chain",
     "product-23-main": "Gold bangle set with small orange stones on a stone ledge",
     "product-24-main": "Black woven bangle on a black background",
-    "product-25-main": "Pair of round crystal stud earrings reflected on a black surface"
+    "product-25-main": "Pair of round crystal stud earrings reflected on a black surface",
+    "founder": "Hands working on a ring at a jeweller's bench"
   }
 }

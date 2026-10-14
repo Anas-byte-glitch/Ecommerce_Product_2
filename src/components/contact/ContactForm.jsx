@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import { cn } from '../../utils/cn'
 import { isValidEmail, isValidPhone } from '../../utils/validation'
@@ -72,7 +73,7 @@ export default function ContactForm() {
             </p>
           </div>
         ) : (
-          <Image src={placeholders.promoTall} alt="" className="absolute inset-0 size-full object-cover" />
+          <Image src={photoOr('contact-photo', placeholders.promoTall)} alt="" className="absolute inset-0 size-full object-cover" />
         )}
       </div>
 

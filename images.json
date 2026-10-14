@@ -1,5 +1,24 @@
 [
   {
+    "slot": "about-block",
+    "file": "assets-source/about-block.jpg",
+    "originalSize": "4551×3034",
+    "outputs": [
+      "src/assets/photos/about-block-480.webp",
+      "src/assets/photos/about-block-800.webp",
+      "src/assets/photos/about-block-1200.webp",
+      "src/assets/photos/about-block-1600.webp",
+      "src/assets/photos/about-block-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-ring-on-persons-finger-e_vZmriImrE",
+    "author": "Tahlia Doyle",
+    "authorProfile": "https://unsplash.com/@tahliaclaire",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "banner-bestsellers",
     "file": "assets-source/banner-bestsellers.jpg",
     "originalSize": "5472×3648",
@@ -14,6 +33,44 @@
     "photoPage": "https://unsplash.com/photos/gold-chain-necklace-on-white-surface-aldDZePniqg",
     "author": "Syed F Hashemi",
     "authorProfile": "https://unsplash.com/@sfhashemi",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "banner-newarrivals",
+    "file": "assets-source/banner-newarrivals.jpg",
+    "originalSize": "4160×6240",
+    "outputs": [
+      "src/assets/photos/banner-newarrivals-480.webp",
+      "src/assets/photos/banner-newarrivals-800.webp",
+      "src/assets/photos/banner-newarrivals-1200.webp",
+      "src/assets/photos/banner-newarrivals-1600.webp",
+      "src/assets/photos/banner-newarrivals-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-necklace-with-a-square-pendant-hanging-from-it-cmXos-_tvBs",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "collection-men-bestsellers",
+    "file": "assets-source/collection-men-bestsellers.jpg",
+    "originalSize": "3435×4580",
+    "outputs": [
+      "src/assets/photos/collection-men-bestsellers-480.webp",
+      "src/assets/photos/collection-men-bestsellers-800.webp",
+      "src/assets/photos/collection-men-bestsellers-1200.webp",
+      "src/assets/photos/collection-men-bestsellers-1600.webp",
+      "src/assets/photos/collection-men-bestsellers-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-ring-on-black-textile-B9Jo-V2kpOg",
+    "author": "Ronan Furuta",
+    "authorProfile": "https://unsplash.com/@ronan18",
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
@@ -266,6 +323,101 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "contact-photo",
+    "file": "assets-source/contact-photo.jpg",
+    "originalSize": "4160×6240",
+    "outputs": [
+      "src/assets/photos/contact-photo-480.webp",
+      "src/assets/photos/contact-photo-800.webp",
+      "src/assets/photos/contact-photo-1200.webp",
+      "src/assets/photos/contact-photo-1600.webp",
+      "src/assets/photos/contact-photo-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-black-case-filled-with-lots-of-gold-rings-RpZGLsz_0Vo",
+    "author": "Oscar Ramirez",
+    "authorProfile": "https://unsplash.com/@oscareduardohr",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "cta-to-men",
+    "file": "assets-source/cta-to-men.jpg",
+    "originalSize": "4672×3337",
+    "outputs": [
+      "src/assets/photos/cta-to-men-480.webp",
+      "src/assets/photos/cta-to-men-800.webp",
+      "src/assets/photos/cta-to-men-1200.webp",
+      "src/assets/photos/cta-to-men-1600.webp",
+      "src/assets/photos/cta-to-men-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-chain-with-a-gold-clasp-on-a-black-background-6YO54NMWlgg",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "founder",
+    "file": "assets-source/founder.jpg",
+    "originalSize": "4551×3034",
+    "outputs": [
+      "src/assets/photos/founder-480.webp",
+      "src/assets/photos/founder-800.webp",
+      "src/assets/photos/founder-1200.webp",
+      "src/assets/photos/founder-1600.webp",
+      "src/assets/photos/founder-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-ring-on-persons-finger-e_vZmriImrE",
+    "author": "Tahlia Doyle",
+    "authorProfile": "https://unsplash.com/@tahliaclaire",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "gender-men",
+    "file": "assets-source/gender-men.jpg",
+    "originalSize": "2835×4252",
+    "outputs": [
+      "src/assets/photos/gender-men-480.webp",
+      "src/assets/photos/gender-men-800.webp",
+      "src/assets/photos/gender-men-1200.webp",
+      "src/assets/photos/gender-men-1600.webp",
+      "src/assets/photos/gender-men-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-gold-chain-on-black-background-0ziihuUXMcs",
+    "author": "Andrey Ilkevich",
+    "authorProfile": "https://unsplash.com/@ilkevich",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "gender-women",
+    "file": "assets-source/gender-women.jpg",
+    "originalSize": "4752×3168",
+    "outputs": [
+      "src/assets/photos/gender-women-480.webp",
+      "src/assets/photos/gender-women-800.webp",
+      "src/assets/photos/gender-women-1200.webp",
+      "src/assets/photos/gender-women-1600.webp",
+      "src/assets/photos/gender-women-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/selective-focus-photo-of-persons-hand-with-five-rings-lk7s8i5NdqE",
+    "author": "Maddi Bazzocco",
+    "authorProfile": "https://unsplash.com/@maddibazzocco",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "hero-home",
     "file": "assets-source/hero-home.jpg",
     "originalSize": "3455×3455",
@@ -337,6 +489,120 @@
     "photoPage": "https://unsplash.com/photos/a-necklace-rests-on-a-textured-surface-lrfBUbhhhB8",
     "author": "Lena Laurentez",
     "authorProfile": "https://unsplash.com/@lana_laurentez",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "journal-keeping-your-jewelry-bright",
+    "file": "assets-source/journal-keeping-your-jewelry-bright.jpg",
+    "originalSize": "6000×4000",
+    "outputs": [
+      "src/assets/photos/journal-keeping-your-jewelry-bright-480.webp",
+      "src/assets/photos/journal-keeping-your-jewelry-bright-800.webp",
+      "src/assets/photos/journal-keeping-your-jewelry-bright-1200.webp",
+      "src/assets/photos/journal-keeping-your-jewelry-bright-1600.webp",
+      "src/assets/photos/journal-keeping-your-jewelry-bright-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-ring-on-white-textile-rtAEbQ6RrgI",
+    "author": "LUM3N",
+    "authorProfile": "https://unsplash.com/@lum3n",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "journal-why-simple-shapes-stay-modern",
+    "file": "assets-source/journal-why-simple-shapes-stay-modern.jpg",
+    "originalSize": "2160×2700",
+    "outputs": [
+      "src/assets/photos/journal-why-simple-shapes-stay-modern-480.webp",
+      "src/assets/photos/journal-why-simple-shapes-stay-modern-800.webp",
+      "src/assets/photos/journal-why-simple-shapes-stay-modern-1200.webp",
+      "src/assets/photos/journal-why-simple-shapes-stay-modern-1600.webp",
+      "src/assets/photos/journal-why-simple-shapes-stay-modern-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-gold-hoop-earrings-sitting-on-top-of-a-table-NgJfAcaKfc0",
+    "author": "JESUS ECA",
+    "authorProfile": "https://unsplash.com/@jesus_eca",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "material-gold",
+    "file": "assets-source/material-gold.jpg",
+    "originalSize": "6240×4160",
+    "outputs": [
+      "src/assets/photos/material-gold-480.webp",
+      "src/assets/photos/material-gold-800.webp",
+      "src/assets/photos/material-gold-1200.webp",
+      "src/assets/photos/material-gold-1600.webp",
+      "src/assets/photos/material-gold-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-gold-chain-with-a-black-band-i1B8PtxYmoY",
+    "author": "Tahlia Doyle",
+    "authorProfile": "https://unsplash.com/@tahliaclaire",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "material-silver",
+    "file": "assets-source/material-silver.jpg",
+    "originalSize": "3208×4812",
+    "outputs": [
+      "src/assets/photos/material-silver-480.webp",
+      "src/assets/photos/material-silver-800.webp",
+      "src/assets/photos/material-silver-1200.webp",
+      "src/assets/photos/material-silver-1600.webp",
+      "src/assets/photos/material-silver-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-heart-pendant-necklace-on-white-background-u1Hv_erOQH0",
+    "author": "Sabrianna",
+    "authorProfile": "https://unsplash.com/@sabrinnaringquist",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "material-titanium",
+    "file": "assets-source/material-titanium.jpg",
+    "originalSize": "3648×5472",
+    "outputs": [
+      "src/assets/photos/material-titanium-480.webp",
+      "src/assets/photos/material-titanium-800.webp",
+      "src/assets/photos/material-titanium-1200.webp",
+      "src/assets/photos/material-titanium-1600.webp",
+      "src/assets/photos/material-titanium-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-ring-sitting-on-top-of-a-piece-of-concrete-ggDJX1b1e_w",
+    "author": "Jonathan Sanchez",
+    "authorProfile": "https://unsplash.com/@jonathansancheziam",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "newsletter",
+    "file": "assets-source/newsletter.jpg",
+    "originalSize": "6960×4580",
+    "outputs": [
+      "src/assets/photos/newsletter-480.webp",
+      "src/assets/photos/newsletter-800.webp",
+      "src/assets/photos/newsletter-1200.webp",
+      "src/assets/photos/newsletter-1600.webp",
+      "src/assets/photos/newsletter-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/three-strand-of-beads-on-a-black-background-oDnR9pertPI",
+    "author": "Andrea Guidera",
+    "authorProfile": "https://unsplash.com/@houseofstylephotography",
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
@@ -679,6 +945,25 @@
     "photoPage": "https://unsplash.com/photos/a-close-up-of-a-gold-ring-on-a-table-WDsohK10HAw",
     "author": "Ruan Richard Rodrigues",
     "authorProfile": "https://unsplash.com/@ricdeoliveira",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "why-us",
+    "file": "assets-source/why-us.jpg",
+    "originalSize": "3302×4403",
+    "outputs": [
+      "src/assets/photos/why-us-480.webp",
+      "src/assets/photos/why-us-800.webp",
+      "src/assets/photos/why-us-1200.webp",
+      "src/assets/photos/why-us-1600.webp",
+      "src/assets/photos/why-us-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-white-shell-with-two-necklaces-on-it-tdlAPdvsMyw",
+    "author": "Voska Studio",
+    "authorProfile": "https://unsplash.com/@voskastudio",
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
