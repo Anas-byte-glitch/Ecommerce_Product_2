@@ -15,7 +15,7 @@ const rows = [
   ['elowen-signet-ring', 'Elowen Signet Ring', 'rings', 'women', null, 55, null, '2025-09-17', 10],
   ['odette-diamond-band', 'Odette Diamond Band', 'rings', 'women', null, 79, 99, '2025-09-20', 8],
   ['wren-open-ring', 'Wren Open Ring', 'rings', 'women', null, 45, null, '2025-09-23', 11],
-  ['tessa-tennis-bracelet', 'Tessa Tennis Bracelet', 'bracelets', 'women', 'Best Sellers', 129, null, '2025-09-26', 2],
+  ['tessa-scale-cuff', 'Tessa Scale Cuff', 'bracelets', 'women', 'Best Sellers', 129, null, '2025-09-26', 2],
   ['vivian-charm-bracelet', 'Vivian Charm Bracelet', 'bracelets', 'women', null, 69, null, '2025-09-29', 13],
   ['anselm-drop-earrings', 'Anselm Drop Earrings', 'earrings', 'women', null, 59, null, '2025-10-02', 15],
   ['corvin-hoop-earrings', 'Corvin Hoop Earrings', 'earrings', 'women', null, 49, null, '2025-10-05', 7],
@@ -45,9 +45,14 @@ const categoryLabels = {
 
 export const products = rows.map(
   ([slug, name, category, audience, badge, price, compareAtPrice, createdAt, salesRank], index) => {
-    // Real photo for the card / gallery main shot when assets-source/ has a valid product-NN-main file;
-    // the other slots (hover, detail, lifestyle) keep their SVG placeholders until their files exist.
-    const main = photoOr(`product-${String(index + 1).padStart(2, '0')}-main`, placeholders.product)
+    // Photos come from src/assets/photos (npm run images): product-NN-main / -alt / -detail / -lifestyle.
+    const id = `product-${String(index + 1).padStart(2, '0')}`
+    const real = (suffix) => photoOr(`${id}-${suffix}`, null)
+    const main = real('main') ?? placeholders.product
+    // Slots without a photo must not sit next to real ones: a product with a real photo only offers its real
+    // photos (hover image = second real photo, gallery = real photos); a product without one keeps the SVG placeholders.
+    const realPhotos = ['main', 'alt', 'detail', 'lifestyle'].map(real).filter(Boolean)
+    const hasPhoto = Boolean(real('main'))
     return {
       slug,
       name,
@@ -59,14 +64,16 @@ export const products = rows.map(
       compareAtPrice: compareAtPrice ?? undefined,
       onSale: compareAtPrice != null,
       imageAlt: main.alt ? `${name}: ${main.alt}` : name,
-      images: [main, placeholders.productAlt],
+      images: hasPhoto ? [main, real('alt')].filter(Boolean) : [placeholders.product, placeholders.productAlt],
       // Product page gallery: 4 images, like the reference (Aurora's 2nd image is 4:5, the rest 1:1).
-      gallery: [
-        main,
-        slug === 'marlow-line-necklace' ? placeholders.galleryPortrait : placeholders.productAlt,
-        placeholders.galleryWide,
-        placeholders.galleryWideAlt,
-      ],
+      gallery: hasPhoto
+        ? realPhotos
+        : [
+            placeholders.product,
+            slug === 'marlow-line-necklace' ? placeholders.galleryPortrait : placeholders.productAlt,
+            placeholders.galleryWide,
+            placeholders.galleryWideAlt,
+          ],
       ...productDetails[slug], // description, details, materials, dimensions, care, matchWith
       createdAt,
       salesRank,

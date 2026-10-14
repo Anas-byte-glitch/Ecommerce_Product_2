@@ -19,6 +19,7 @@ export default function ProductGallery({ images, name, mainAlt = name, badge }) 
           </div>
         )}
       </div>
+      {images.length > 1 && (
       <div className="flex w-full gap-2">
         {images.map((image, index) => (
           <button
@@ -37,6 +38,7 @@ export default function ProductGallery({ images, name, mainAlt = name, badge }) 
           </button>
         ))}
       </div>
+      )}
     </div>
   )
 }
