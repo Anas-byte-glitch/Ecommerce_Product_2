@@ -20,7 +20,7 @@ Internal file (excluded from the release Zips). Keep it updated as parts are fin
 
 ## Remaining
 - **9B-1** (done) image/video inventory: `docs/IMAGE_SLOTS.md` (144 slots), `docs/IMAGE_SHOPPING_LIST.md` (sources unreachable from the build environment → manual download into `assets-incoming/`).
-- **9B-2** processing script, wiring, `images.json`/`CREDITS.md`, video.
+- **9B-2** (done 2026-10-14) `npm run images` (validate → WebP 480–2000 → `src/assets/photos`, `images.json`, `CREDITS.md`, `docs/IMAGE_STATUS.md`), wiring via `photoOr()`; 41 of 144 slots use real photos, the rest keep SVG placeholders; video not done (still poster/placeholder). See DESIGN_NOTES §29.
 - **9B** Real images (Unsplash/Pexels/Pixabay, licences checked, `images.json` + `CREDITS.md`, WebP/srcset via the `Image`
   component and the `placeholders` map), licensed home video or still.
 - **9C** Optional prerender step, buyer documentation, `npm run package` (source + built Zips from an allowlist),
