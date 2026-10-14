@@ -1,11 +1,12 @@
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import Reveal from '../ui/Reveal'
 import SectionHeader from '../ui/SectionHeader'
 import HoverTile from '../ui/HoverTile'
 
 const CARDS = [
-  { title: "Women's", to: '/women-category', image: placeholders.genderWomen },
-  { title: "Men's", to: '/men-category', image: placeholders.genderMen },
+  { title: "Women's", to: '/women-category', image: photoOr('gender-women', placeholders.genderWomen) },
+  { title: "Men's", to: '/men-category', image: photoOr('gender-men', placeholders.genderMen) },
 ]
 
 // Also used on /shop with its own eyebrow/title: `bottomSpace` adds the 140/120px bottom padding that

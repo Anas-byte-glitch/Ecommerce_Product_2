@@ -1,3 +1,4 @@
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import { getProductsBySlugs } from '../../data/products'
 import Container from '../ui/Container'
@@ -24,7 +25,7 @@ export default function NewArrivals() {
           <ProductGrid products={products.slice(0, 2)} columns={COLUMN} className={COLUMN_SIZE} />
           <Reveal className="h-[460px] md:h-[466px] lg:h-[966px] lg:flex-1">
             <MediaBanner
-              image={placeholders.promoTall}
+              image={photoOr('banner-newarrivals', placeholders.promoTall)}
               title="Meet the Newest Pieces"
               cta={{ label: 'Browse Collections', to: '/shop' }}
               className="h-full"

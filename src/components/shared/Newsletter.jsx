@@ -1,3 +1,4 @@
+import { photoOr } from '../../assets/photos'
 import { placeholders } from '../../assets/placeholders'
 import { cn } from '../../utils/cn'
 import TextReveal from '../ui/TextReveal'
@@ -10,7 +11,7 @@ export default function Newsletter({ className }) {
   return (
     <section aria-label="Newsletter" className={cn('relative bg-white pt-4 pb-section-sm lg:pb-section', className)}>
       <div className="relative flex h-screen w-full flex-col justify-end overflow-hidden">
-        <Image src={placeholders.newsletterWide} alt="" className="absolute inset-0 size-full object-cover" />
+        <Image src={photoOr('newsletter', placeholders.newsletterWide)} alt="" className="absolute inset-0 size-full object-cover" />
         <div aria-hidden="true" className="absolute inset-0 z-1 bg-fade-up" />
 
         <div className="relative z-3 flex h-full flex-col p-4 md:h-auto md:p-6 lg:p-8">

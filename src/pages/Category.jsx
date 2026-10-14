@@ -21,7 +21,7 @@ export default function Category({ audience }) {
           title={category.browseTitle}
           collections={getCollectionsByAudience(audience)}
         />
-        <AudienceCta label={cross.label} title={cross.title} cta={cross.cta} to={cross.to} balanced={audience === 'men'} />
+        <AudienceCta label={cross.label} title={cross.title} cta={cross.cta} to={cross.to} image={photoOr(`cta-to-${audience === 'women' ? 'men' : 'women'}`, placeholders.bannerWide)} balanced={audience === 'men'} />
         <SharedSections />
       </div>
     </>
