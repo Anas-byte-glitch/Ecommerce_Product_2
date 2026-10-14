@@ -67,12 +67,12 @@ export const productDetails = {
     care: "Adjust it slowly and not too often. Wipe it dry after wear and keep it away from water and body creams. Please keep it out of direct sunlight. Avoid dropping it on hard surfaces.",
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "vivian-charm-bracelet"],
   },
-  'tessa-tennis-bracelet': {
-    description: "A continuous line of small stones that moves smoothly with your wrist. Tessa is the dressy one in the collection, and it still wears easily by day, on its own or with a watch beside it.",
-    details: `The Tessa Tennis Bracelet from ${site.name}: twenty-four bright stones in an unbroken silver line, secure and elegant.`,
-    materials: "Sterling silver (925) with AAA cubic zirconia, rhodium-plated so it stays bright. Free from lead and cadmium. Tested for skin safety.",
-    dimensions: "Length: 7 in. Twenty-four stones, 3 mm each. Width: 4 mm. Box clasp with safety catch. Supplied in a gift box. All measurements are approximate.",
-    care: "Close the safety catch every time. Avoid chemicals and water, and use a soft dry cloth to bring the sparkle back. Please keep it out of direct sunlight. Avoid dropping it on hard surfaces.",
+  'tessa-scale-cuff': {
+    description: "A slim open cuff with a soft scale pattern and one tiny gold accent. It slips on in a second and wears comfortably all day. Tessa is the textured one in the collection, on its own or stacked.",
+    details: `The Tessa Scale Cuff from ${site.name}: a slim open silver cuff with a scale texture and one small gold detail, light and easy to wear.`,
+    materials: "Sterling silver (925) with an oxidised finish and a small gold-plated accent. Free from lead and cadmium. Tested for skin safety.",
+    dimensions: "Inner width: 58 mm and gently adjustable. Band width: 6 mm. Open cuff, no clasp. Supplied in a gift box. All measurements are approximate.",
+    care: "Silver darkens a little over time, which is part of the look. Wipe it with a soft dry cloth and keep it away from water and chemicals. Please keep it out of direct sunlight. Avoid dropping it on hard surfaces.",
     matchWith: ["corin-heart-necklace", "dune-rope-chain", "wren-open-ring"],
   },
   'vivian-charm-bracelet': {
