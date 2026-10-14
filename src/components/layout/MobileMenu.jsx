@@ -8,6 +8,7 @@ export default function MobileMenu({ onNavigate }) {
   return (
     <m.div
       id="mobile-menu"
+      data-lenis-prevent
       className="h-[calc(100dvh-var(--spacing-nav))] overflow-y-auto bg-white lg:hidden"
       initial={{ clipPath: 'inset(0% 0% 100% 0%)' }}
       animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}

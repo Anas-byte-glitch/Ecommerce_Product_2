@@ -361,6 +361,25 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "cta-to-women",
+    "file": "assets-source/cta-to-women.jpg",
+    "originalSize": "5184×3456",
+    "outputs": [
+      "src/assets/photos/cta-to-women-480.webp",
+      "src/assets/photos/cta-to-women-800.webp",
+      "src/assets/photos/cta-to-women-1200.webp",
+      "src/assets/photos/cta-to-women-1600.webp",
+      "src/assets/photos/cta-to-women-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-stack-of-rings-sitting-on-top-of-a-white-napkin-xA7VWeBs6d0",
+    "author": "Diego Castañeda",
+    "authorProfile": "https://unsplash.com/@disfruta_cafe",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "founder",
     "file": "assets-source/founder.jpg",
     "originalSize": "4551×3034",

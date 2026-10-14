@@ -225,4 +225,4 @@ Notes: `collection-men-bestsellers.jpg` overwrites the existing (held-back) file
 
 - Wired: newsletter, gender-women/men, banner-newarrivals, about-block, cta-to-men, why-us, material-silver/gold/titanium, contact-photo, founder (with alt), collection-men-bestsellers, journal-keeping-your-jewelry-bright, journal-why-simple-shapes-stay-modern.
 - Rejected picks (still SVG placeholders, need new photos): hero-about, journal-featured, journal-how-to-build-a-collection-that-lasts.
-- `cta-to-women` is in `excludeSlots` (the ring resembles a trademarked design); the men's page keeps the placeholder until a replacement is chosen.
+- `cta-to-women` accepted by the owner and wired (the men's page CTA).

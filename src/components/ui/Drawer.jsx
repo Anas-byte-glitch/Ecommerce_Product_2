@@ -92,7 +92,7 @@ export default function Drawer({ open, onClose, title, children, footer }) {
                 <X size={20} strokeWidth={2.25} aria-hidden="true" />
               </button>
             </div>
-            <div className="flex-1 overflow-y-auto px-6 py-4">{children}</div>
+            <div data-lenis-prevent className="flex-1 overflow-y-auto px-6 py-4">{children}</div>
             {footer && <div className="border-t border-mist px-6 py-5">{footer}</div>}
           </m.div>
         </div>
