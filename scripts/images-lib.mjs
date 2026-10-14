@@ -51,6 +51,12 @@ export async function validate({ dir = 'assets-source' } = {}) {
     const slot = slots[base]
     const res = { file, slot: base, ok: true, problems: [], warnings: [] }
     files.push(res)
+    if ((config.excludeSlots ?? []).includes(base)) {
+      // config.excludeSlots: the file stays in assets-source/ but the slot keeps its SVG placeholder
+      res.ok = false
+      res.excluded = true
+      continue
+    }
     if (!slot) {
       res.ok = false
       res.problems.push('wrong name: no slot with this file name')

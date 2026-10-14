@@ -1,4 +1,6 @@
-// Re-runnable image build. Usage: node scripts/build-images.mjs [--check]
+// Re-runnable image build. Usage: node scripts/build-images.mjs [--check] [--help]   (npm run images / images:check)
+//  Settings live in scripts/images.config.json: widths, quality, strictOrientation, excludeSlots (a slot can have a file in
+//  assets-source/ and still keep its SVG placeholder), roundTwoOnly (slots usable only with a given photo), alts. See docs/IMAGES.md.
 //  1. validates assets-source/ against docs/IMAGE_SLOTS.md + SOURCES.csv (scripts/images-lib.mjs);
 //     a file with any problem is NOT used and its slot keeps the SVG placeholder;
 //  2. writes WebP widths (480/800/1200/1600/2000, never above the source width) to src/assets/photos/,
@@ -12,6 +14,10 @@ import crypto from 'node:crypto'
 import sharp from 'sharp'
 import { validate, config, root } from './images-lib.mjs'
 
+if (process.argv.includes('--help')) {
+  console.log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').filter((l) => l.startsWith('//')).slice(0, 12).join('\n'))
+  process.exit(0)
+}
 const check = process.argv.includes('--check')
 const out = path.join(root, 'src/assets/photos')
 fs.mkdirSync(out, { recursive: true })
@@ -27,9 +33,11 @@ const sizesFor = (base) =>
       : '100vw'
 
 const r = await validate()
-console.log(`${r.files.filter((f) => f.ok).length} valid, ${r.files.filter((f) => !f.ok).length} rejected, ${r.missing.length} placeholders kept`)
-for (const f of r.files.filter((f) => !f.ok)) console.log(`REJECTED ${f.file}: ${f.problems.join('; ')}`)
-if (check) process.exit(r.files.some((f) => !f.ok) ? 1 : 0)
+const rejected = r.files.filter((f) => !f.ok && !f.excluded)
+const excluded = r.files.filter((f) => f.excluded)
+console.log(`${r.files.filter((f) => f.ok).length} valid, ${excluded.length} excluded by config, ${rejected.length} rejected, ${r.missing.length} placeholders kept`)
+for (const f of rejected) console.log(`REJECTED ${f.file}: ${f.problems.join('; ')}`)
+if (check) process.exit(rejected.length ? 1 : 0)
 
 const manifest = {}
 for (const f of r.files.filter((f) => f.ok)) {
@@ -120,8 +128,10 @@ const status = [
   `${used.length} of ${Object.keys(r.slots).length} slots use a real photo; ${r.missing.length} keep their SVG placeholder. Processed WebP total ${(total / 1048576).toFixed(1)} MB.`,
   '',
   '## Rejected files (not used)',
-  ...(r.files.filter((f) => !f.ok).map((f) => `- \`${f.file}\`: ${f.problems.join('; ')}`).concat([]) || []),
-  ...(r.files.some((f) => !f.ok) ? [] : ['- none']),
+  ...(rejected.length ? rejected.map((f) => `- \`${f.file}\`: ${f.problems.join('; ')}`) : ['- none']),
+  '',
+  '## Excluded by config (file kept in assets-source/, slot keeps its placeholder)',
+  ...(excluded.length ? excluded.map((f) => `- \`${f.file}\``) : ['- none']),
   '',
   '## Warnings on used files',
   ...used.flatMap((f) => f.warnings.map((w) => `- \`${f.file}\`: ${w}`)),
