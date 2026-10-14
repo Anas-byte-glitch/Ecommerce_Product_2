@@ -1,3 +1,5 @@
+import { cn } from '../../utils/cn'
+
 // The one image component. All image slots in the app go through it, so real photos can be wired in
 // later (Phase 9) without touching any component:
 //  • `src` is a URL string OR an object `{ src, srcSet?, webp?, width?, height? }` — change an entry of
@@ -6,8 +8,10 @@
 //  • `sizes` tells the browser how wide the slot is (pass it per slot when srcSet is used).
 //  • Slots reserve their size with the parent's width/height or aspect-ratio classes, so nothing shifts;
 //    `width` / `height` (or the object's) add the intrinsic ratio when the parent has no fixed box.
+//  • Real photos (src/assets/photos) carry `sizes`, `alt` (empty = decorative) and a `bg` class (dominant-colour
+//    placeholder while loading); an explicit `alt` / `sizes` prop wins over them.
 //  • `priority` is for the LCP image only: eager + fetchpriority="high". Everything else is lazy + async.
-export default function Image({ src, srcSet, sizes, webp, alt = '', priority = false, width, height, className, ...rest }) {
+export default function Image({ src, srcSet, sizes, webp, alt, priority = false, width, height, className, ...rest }) {
   const source = typeof src === 'object' && src !== null ? src : { src }
   const set = srcSet ?? source.srcSet
   const webpSet = webp ?? source.webp
@@ -15,21 +19,21 @@ export default function Image({ src, srcSet, sizes, webp, alt = '', priority = f
     <img
       src={source.src}
       srcSet={set}
-      sizes={sizes}
-      alt={alt}
+      sizes={sizes ?? (set ? source.sizes : undefined)}
+      alt={alt ?? source.alt ?? ''}
       width={width ?? source.width}
       height={height ?? source.height}
       loading={priority ? 'eager' : 'lazy'}
       fetchPriority={priority ? 'high' : undefined}
       decoding="async"
-      className={className}
+      className={cn(source.bg, className)}
       {...rest}
     />
   )
   if (!webpSet) return img
   return (
     <picture>
-      <source type="image/webp" srcSet={webpSet} sizes={sizes} />
+      <source type="image/webp" srcSet={webpSet} sizes={sizes ?? source.sizes} />
       {img}
     </picture>
   )

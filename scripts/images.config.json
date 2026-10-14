@@ -1,13 +1,50 @@
 {
-  "widths": [480, 800, 1200, 1600, 2000],
+  "widths": [
+    480,
+    800,
+    1200,
+    1600,
+    2000
+  ],
   "quality": 76,
   "strictOrientation": false,
   "minKeptAreaWhenOrientationDiffers": 0.3,
   "roundTwoOnly": {
-    "product-02-main": ["YScm7xyIGjQ"],
-    "collection-women-bestsellers": ["H988EpA-27A"],
-    "collection-men-ring": ["O8--45EdINk"],
-    "product-16-main": ["ggDJX1b1e_w"]
+    "product-02-main": [
+      "YScm7xyIGjQ"
+    ],
+    "collection-women-bestsellers": [
+      "H988EpA-27A"
+    ],
+    "collection-men-ring": [
+      "O8--45EdINk"
+    ],
+    "product-16-main": [
+      "ggDJX1b1e_w"
+    ]
   },
-  "alts": {}
+  "alts": {
+    "product-01-main": "Silver pendant set with small clear stones on a fine box chain",
+    "product-02-main": "Gold necklace with a small flower pendant resting on a white block",
+    "product-03-main": "Fine gold chain lying on a mirror and white linen",
+    "product-04-main": "Chunky gold chain draped over a grey stone on white fabric",
+    "product-05-main": "Polished silver curb chain curving across a white background",
+    "product-06-main": "Brushed silver sculptural ring on a white surface",
+    "product-07-main": "Silver band set with small diamonds on a white surface",
+    "product-08-main": "Gold open-shaped ring on a white plinth",
+    "product-09-main": "Textured silver cuff bracelet on a pale background",
+    "product-10-main": "Gold chain bracelets draped over a white arch",
+    "product-11-main": "Pair of sculpted silver earrings on a white plinth",
+    "product-12-main": "Pair of chunky gold hoop earrings on a white step",
+    "product-13-main": "Silver curb chain hanging against a black background",
+    "product-16-main": "Black onyx signet ring on a concrete wedge in raking light",
+    "product-17-main": "Perforated silver ring on black textile",
+    "product-18-main": "Textured silver cuff bracelet on a black background",
+    "product-19-main": "Black braided leather bracelet with a steel clasp on a display stand",
+    "product-20-main": "Silver chain bracelet lying on dark charcoal fabric",
+    "product-22-main": "Large halo pendant with a clear centre stone on a silver chain",
+    "product-23-main": "Gold bangle set with small orange stones on a stone ledge",
+    "product-24-main": "Black woven bangle on a black background",
+    "product-25-main": "Pair of round crystal stud earrings reflected on a black surface"
+  }
 }

@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build && node scripts/generate-seo-files.mjs",
     "lint": "eslint . --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "images": "node scripts/build-images.mjs",
+    "images:check": "node scripts/build-images.mjs --check"
   },
   "dependencies": {
     "lucide-react": "^0.525.0",

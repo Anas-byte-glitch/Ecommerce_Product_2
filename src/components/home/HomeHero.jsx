@@ -1,5 +1,6 @@
 import { m, useReducedMotion } from 'motion/react'
 import { placeholders } from '../../assets/placeholders'
+import { photoOr } from '../../assets/photos'
 import { useNavOverHero } from '../../utils/useNavOverHero'
 import { appearSpring } from '../../utils/motion'
 import Button from '../ui/Button'
@@ -40,7 +41,7 @@ export default function HomeHero() {
         <div className="absolute inset-0">
           <MotionImage
             priority
-            src={placeholders.heroWide}
+            src={photoOr('hero-home', placeholders.heroWide)}
             alt=""
             className="size-full object-cover"
             initial={reduceMotion ? false : { opacity: 0, scale: 1.1 }}

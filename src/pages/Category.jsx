@@ -1,4 +1,6 @@
 import AudienceCta from '../components/shared/AudienceCta'
+import { placeholders } from '../assets/placeholders'
+import { photoOr } from '../assets/photos'
 import CollectionBento from '../components/shared/CollectionBento'
 import ImageHero from '../components/shared/ImageHero'
 import SharedSections from '../components/shared/SharedSections'
@@ -11,7 +13,7 @@ export default function Category({ audience }) {
 
   return (
     <>
-      <ImageHero label={category.eyebrow} title={category.title} fade={audience} wide={audience === 'women'} />
+      <ImageHero image={photoOr(`hero-${audience}`, placeholders.heroWide)} label={category.eyebrow} title={category.title} fade={audience} wide={audience === 'women'} />
       <div className="relative bg-white will-change-transform">
         <CollectionBento
           audience={audience}

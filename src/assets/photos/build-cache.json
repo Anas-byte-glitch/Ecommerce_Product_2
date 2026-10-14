@@ -19,7 +19,8 @@
   "color": "#e8e8e8",
   "sizes": "100vw",
   "sha": "f70594533b810b75373c9dc88e82619272e1f9c5",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-bestsellers": {
   "w": 2000,
@@ -41,7 +42,8 @@
   "color": "#181818",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "3b79c9ac22bd4bdc302718f39824b8940dbe28ee",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-bracelet": {
   "w": 2000,
@@ -63,7 +65,8 @@
   "color": "#b8a898",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "a25455cc8e8db18aa106375170eddc6af9598b8d",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-chain": {
   "w": 2000,
@@ -85,7 +88,8 @@
   "color": "#080808",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "77078648c459c19bf1a514254670218b92d494c6",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-earring": {
   "w": 2000,
@@ -107,7 +111,8 @@
   "color": "#080808",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "2c0d797ed7f5fa3296f6a22da6cf1d492a04d193",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-newarrivals": {
   "w": 2000,
@@ -129,7 +134,8 @@
   "color": "#181818",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "26c691235f2d0140a240ba93ac197cdac81b9fea",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-onsale": {
   "w": 2000,
@@ -151,7 +157,8 @@
   "color": "#181818",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "9f89d7f3b742a55b381bc899f5a06badf38e088d",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-men-ring": {
   "w": 2000,
@@ -173,7 +180,8 @@
   "color": "#685838",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "c4012949e7f47576f74ec8eb773d6f79f47e05a5",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-bestsellers": {
   "w": 2000,
@@ -195,7 +203,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "6392fd04345c6f517d3906cb3f5fa24532b18276",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-bracelet": {
   "w": 2000,
@@ -217,7 +226,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "8e50f8fe01e1055f89530bc11b717b19e035ae9d",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-earring": {
   "w": 2000,
@@ -239,7 +249,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "c304e0e3c868d0775efee3f7c75f2cc84c6cc96a",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-necklace": {
   "w": 2000,
@@ -261,7 +272,8 @@
   "color": "#a8a8a8",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "a6cb4890a9cf35000c2e86fcd39a634a8f18ec66",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-newarrivals": {
   "w": 2000,
@@ -283,7 +295,8 @@
   "color": "#b88858",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "a917fe3c08fa4866408d7a2e319efa2986d34d31",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-onsale": {
   "w": 2000,
@@ -305,7 +318,8 @@
   "color": "#e8c898",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "2885095d401d5b9553b2dcf3928e7c4b4c894ed6",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "collection-women-ring": {
   "w": 2000,
@@ -327,7 +341,8 @@
   "color": "#f8f8e8",
   "sizes": "(min-width: 810px) 50vw, 100vw",
   "sha": "7d00ec5b5a0697efcad148c4d17c09f047a2c5bd",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "hero-home": {
   "w": 2000,
@@ -349,7 +364,8 @@
   "color": "#d8d8d8",
   "sizes": "100vw",
   "sha": "d20d4db3876ed0b354d3770768ceebca0f798a42",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "hero-men": {
   "w": 2000,
@@ -371,7 +387,8 @@
   "color": "#080808",
   "sizes": "100vw",
   "sha": "9a7274aa6eb6cc546938ba40e3372bd3727bf024",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "hero-shop": {
   "w": 2000,
@@ -393,7 +410,8 @@
   "color": "#f8f8f8",
   "sizes": "100vw",
   "sha": "e68ab33c04d4be322d0eebe9a876f7ae96517ea4",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "hero-women": {
   "w": 2000,
@@ -415,7 +433,8 @@
   "color": "#a8a8a8",
   "sizes": "100vw",
   "sha": "33247371c8e4447890b0bed3190ffc684d679a10",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
  },
  "product-01-main": {
   "w": 2000,
@@ -437,7 +456,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "8fcaeb7cf357fdd8cd16a93fe291093641aed9ec",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Silver pendant set with small clear stones on a fine box chain"
  },
  "product-02-main": {
   "w": 2000,
@@ -459,7 +479,8 @@
   "color": "#d8d8d8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "90315d652e8ea94eb12e67a805a9efc2a5fa99ad",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Gold necklace with a small flower pendant resting on a white block"
  },
  "product-03-main": {
   "w": 2000,
@@ -481,7 +502,8 @@
   "color": "#b8b8b8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "96cf800068a2824126e75f498ba0e1b435776438",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Fine gold chain lying on a mirror and white linen"
  },
  "product-04-main": {
   "w": 2000,
@@ -503,7 +525,8 @@
   "color": "#c8c8c8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "9f91a25113c6032ddddddab7a0e5db200f4681de",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Chunky gold chain draped over a grey stone on white fabric"
  },
  "product-05-main": {
   "w": 2000,
@@ -525,7 +548,8 @@
   "color": "#f8f8f8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "d34390f61db9a3a63ed38976615a7de87a5679d6",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Polished silver curb chain curving across a white background"
  },
  "product-06-main": {
   "w": 2000,
@@ -547,7 +571,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "d20d4f2f2b401af87093464ff38900b5eafc723d",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Brushed silver sculptural ring on a white surface"
  },
  "product-07-main": {
   "w": 2000,
@@ -569,7 +594,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "3f7029d63eef541a79c972d4d61533fd7b73020b",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Silver band set with small diamonds on a white surface"
  },
  "product-08-main": {
   "w": 2000,
@@ -591,7 +617,8 @@
   "color": "#d8d8d8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "282b55b8f3afbabbd862c0ae1627ffa1128b4921",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Gold open-shaped ring on a white plinth"
  },
  "product-09-main": {
   "w": 2000,
@@ -613,7 +640,8 @@
   "color": "#e8e8e8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "bc908886137a90e8a95beff2389fdda5c482c31b",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Textured silver cuff bracelet on a pale background"
  },
  "product-10-main": {
   "w": 2000,
@@ -635,7 +663,8 @@
   "color": "#d8c8c8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "b6e6c0c4b16c8982b9b6eff3987eeb4c86b965d5",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Gold chain bracelets draped over a white arch"
  },
  "product-11-main": {
   "w": 2000,
@@ -657,7 +686,8 @@
   "color": "#d8d8d8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "66b656972849f13acfcd09941191a58719bdc079",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Pair of sculpted silver earrings on a white plinth"
  },
  "product-12-main": {
   "w": 2000,
@@ -679,7 +709,8 @@
   "color": "#d8d8d8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "d6a5d549e040a0338876e3110029b82ca0361cfa",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Pair of chunky gold hoop earrings on a white step"
  },
  "product-13-main": {
   "w": 2000,
@@ -701,7 +732,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "3118ec15347cc38643c86abb6a7e5b716dd5373f",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Silver curb chain hanging against a black background"
  },
  "product-16-main": {
   "w": 2000,
@@ -723,7 +755,8 @@
   "color": "#181818",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "c5a7aac880a152821a2789d3d0ca730707987731",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Black onyx signet ring on a concrete wedge in raking light"
  },
  "product-17-main": {
   "w": 2000,
@@ -745,7 +778,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "ef15a4d0c2a7a4899054db0fd711b4d6d44112c5",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Perforated silver ring on black textile"
  },
  "product-18-main": {
   "w": 2000,
@@ -767,7 +801,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "1416d1e3d3510b683f9a99e750b8ccb460219a11",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Textured silver cuff bracelet on a black background"
  },
  "product-19-main": {
   "w": 2000,
@@ -789,7 +824,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "f8d3a191fac31c481e221b32fafd81e4d702ef8f",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Black braided leather bracelet with a steel clasp on a display stand"
  },
  "product-20-main": {
   "w": 2000,
@@ -811,7 +847,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "c5826d9a05523eceb6e720a48ac518d185d90e09",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Silver chain bracelet lying on dark charcoal fabric"
  },
  "product-22-main": {
   "w": 2000,
@@ -833,7 +870,8 @@
   "color": "#c8c8c8",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "8ffbd3a9c301707ed312b4ada79005bf09be0b75",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Large halo pendant with a clear centre stone on a silver chain"
  },
  "product-23-main": {
   "w": 2000,
@@ -855,7 +893,8 @@
   "color": "#282808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "ab43f75bd05a0a15d531241bba129fa69d139d05",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Gold bangle set with small orange stones on a stone ledge"
  },
  "product-24-main": {
   "w": 2000,
@@ -877,7 +916,8 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "e40e3d7d5a569a7b84b3fef716e4f91472a41ef7",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Black woven bangle on a black background"
  },
  "product-25-main": {
   "w": 2000,
@@ -899,6 +939,7 @@
   "color": "#080808",
   "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
   "sha": "2c0d797ed7f5fa3296f6a22da6cf1d492a04d193",
-  "settings": "[[480,800,1200,1600,2000],76]"
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Pair of round crystal stud earrings reflected on a black surface"
  }
 }
