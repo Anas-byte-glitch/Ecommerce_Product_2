@@ -1,5 +1,6 @@
 import { site } from '../../config/site'
 import { placeholders } from '../../assets/placeholders'
+import { photoOr } from '../../assets/photos'
 import { getProductsBySlugs } from '../../data/products'
 import Container from '../ui/Container'
 import MediaBanner from '../ui/MediaBanner'
@@ -24,7 +25,7 @@ export default function BestSellers() {
         <ProductGrid products={getProductsBySlugs(BEST_SELLERS)}>
           <Reveal className="col-span-2 h-[460px] md:h-[398px] lg:h-[439px]">
             <MediaBanner
-              image={placeholders.bannerWide}
+              image={photoOr('banner-bestsellers', placeholders.bannerWide)}
               title={`${site.name} Daily Essentials`}
               cta={{ label: 'Shop Best Sellers', to: '/shop' }}
               className="h-full"

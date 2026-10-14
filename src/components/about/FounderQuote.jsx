@@ -1,4 +1,5 @@
 import { placeholders } from '../../assets/placeholders'
+import { photoOr } from '../../assets/photos'
 import { founder } from '../../data/about'
 import Container from '../ui/Container'
 import Reveal from '../ui/Reveal'
@@ -13,7 +14,8 @@ export default function FounderQuote() {
       <Container className="flex flex-col items-center gap-8">
         <Reveal className="flex flex-col items-center gap-4">
           <div className="relative flex size-[168px] items-center justify-center overflow-hidden rounded-pill bg-mist md:size-[260px]">
-            <Image src={placeholders.promoTall} alt={`Portrait of ${founder.name}`} className="aspect-[2/3] h-[106%] object-cover" />
+            {/* alt comes from the photo's own description (scripts/images.config.json); a placeholder is decorative (alt=""). */}
+            <Image src={photoOr('founder', placeholders.promoTall)} className="aspect-[2/3] h-[106%] object-cover" />
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-ink-soft type-quote">{founder.name}</p>

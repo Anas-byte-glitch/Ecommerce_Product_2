@@ -1,4 +1,5 @@
 import { placeholders } from '../assets/placeholders'
+import { photoOr } from '../assets/photos'
 import { productDetails } from './productDetails'
 
 // 25 products, order = /favourite grid on the reference (see docs/SITE_MAP.md).
@@ -43,28 +44,34 @@ const categoryLabels = {
 }
 
 export const products = rows.map(
-  ([slug, name, category, audience, badge, price, compareAtPrice, createdAt, salesRank]) => ({
-    slug,
-    name,
-    categoryLabel: categoryLabels[category],
-    category,
-    audience, // 'women' | 'men' | 'unisex'
-    badge, // 'Best Sellers' | 'New Arrivals' | null
-    price,
-    compareAtPrice: compareAtPrice ?? undefined,
-    onSale: compareAtPrice != null,
-    images: [placeholders.product, placeholders.productAlt],
-    // Product page gallery: 4 images, like the reference (Aurora's 2nd image is 4:5, the rest 1:1).
-    gallery: [
-      placeholders.product,
-      slug === 'marlow-line-necklace' ? placeholders.galleryPortrait : placeholders.productAlt,
-      placeholders.galleryWide,
-      placeholders.galleryWideAlt,
-    ],
-    ...productDetails[slug], // description, details, materials, dimensions, care, matchWith
-    createdAt,
-    salesRank,
-  }),
+  ([slug, name, category, audience, badge, price, compareAtPrice, createdAt, salesRank], index) => {
+    // Real photo for the card / gallery main shot when assets-source/ has a valid product-NN-main file;
+    // the other slots (hover, detail, lifestyle) keep their SVG placeholders until their files exist.
+    const main = photoOr(`product-${String(index + 1).padStart(2, '0')}-main`, placeholders.product)
+    return {
+      slug,
+      name,
+      categoryLabel: categoryLabels[category],
+      category,
+      audience, // 'women' | 'men' | 'unisex'
+      badge, // 'Best Sellers' | 'New Arrivals' | null
+      price,
+      compareAtPrice: compareAtPrice ?? undefined,
+      onSale: compareAtPrice != null,
+      imageAlt: main.alt ? `${name}: ${main.alt}` : name,
+      images: [main, placeholders.productAlt],
+      // Product page gallery: 4 images, like the reference (Aurora's 2nd image is 4:5, the rest 1:1).
+      gallery: [
+        main,
+        slug === 'marlow-line-necklace' ? placeholders.galleryPortrait : placeholders.productAlt,
+        placeholders.galleryWide,
+        placeholders.galleryWideAlt,
+      ],
+      ...productDetails[slug], // description, details, materials, dimensions, care, matchWith
+      createdAt,
+      salesRank,
+    }
+  },
 )
 
 export const getProduct = (slug) => products.find((p) => p.slug === slug)

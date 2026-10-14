@@ -34,7 +34,7 @@ function ProductView({ product }) {
       <section className="bg-white pt-[180px]">
         <div className="mx-auto flex w-full max-w-site flex-col gap-8 px-4 md:px-6 lg:flex-row lg:items-start lg:gap-6 lg:px-8">
           <div className="w-full lg:sticky lg:top-6 lg:flex-1">
-            <ProductGallery images={product.gallery} name={product.name} badge={badge} />
+            <ProductGallery images={product.gallery} name={product.name} mainAlt={product.imageAlt} badge={badge} />
           </div>
 
           <div className="flex w-full flex-col gap-8 lg:sticky lg:top-0 lg:flex-1">

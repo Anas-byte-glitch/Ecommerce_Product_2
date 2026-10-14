@@ -22,7 +22,7 @@ export default function CartLine({ line, size = 'small', onNavigate }) {
         aria-hidden="true"
         className={cn('relative shrink-0 overflow-hidden bg-mist', size === 'large' ? 'size-24 md:size-40' : 'size-24')}
       >
-        <Image src={product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
+        <Image src={product.images[0]} alt="" sizes="120px" className="absolute inset-0 size-full object-cover" />
       </Link>
       <div className="flex min-w-0 flex-1 flex-col justify-between gap-3">
         <div className="flex items-start justify-between gap-4">

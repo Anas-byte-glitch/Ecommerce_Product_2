@@ -55,4 +55,6 @@ function sitePlugin() {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), sitePlugin()],
+  // Photos stay separate, cacheable files (a tiny 480 px WebP would otherwise be inlined as base64 into the JS).
+  build: { assetsInlineLimit: (file) => (file.endsWith('.webp') ? false : undefined) },
 })

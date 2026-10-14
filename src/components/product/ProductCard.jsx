@@ -20,8 +20,7 @@ export default function ProductCard({ product, className, titleAs: Title = 'h3' 
       <div className="relative h-[200px] w-full overflow-hidden bg-mist md:h-[440px]">
         <Image
           src={image}
-          alt={product.name}
-         
+          alt={product.imageAlt}
           className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0"
         />
         <Image

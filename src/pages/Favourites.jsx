@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { placeholders } from '../assets/placeholders'
+import { photoOr } from '../assets/photos'
 import ImageHero from '../components/shared/ImageHero'
 import SharedSections from '../components/shared/SharedSections'
 import Container from '../components/ui/Container'
@@ -14,7 +16,7 @@ export default function Favourites() {
 
   return (
     <>
-      <ImageHero label="Favourites" title="Pieces You Have Saved" />
+      <ImageHero image={photoOr('hero-shop', placeholders.heroWide)} label="Favourites" title="Pieces You Have Saved" />
       <div className="relative bg-white will-change-transform">
         <section className="py-section-sm lg:py-section">
           <Container>

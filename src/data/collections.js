@@ -1,4 +1,5 @@
 import { placeholders } from '../assets/placeholders'
+import { photoOr } from '../assets/photos'
 
 // Sub-collections, URL: /{audience}-category/{slug}. Product lists match the reference.
 // Array order = bento tile order on /women-category and /men-category (verified from the
@@ -11,7 +12,7 @@ export const collections = [
     label: 'Necklaces',
     title: "Women's Necklaces",
     tileLabel: 'Necklace',
-    image: placeholders.collectionWide,
+    image: photoOr('collection-women-necklace', placeholders.collectionWide),
     products: ['marlow-line-necklace', 'isla-pearl-pendant', 'corin-heart-necklace', 'linnea-crystal-necklace'],
   },
   {
@@ -20,7 +21,7 @@ export const collections = [
     label: 'Rings',
     title: "Women's Rings",
     tileLabel: 'Rings',
-    image: placeholders.collectionNarrow,
+    image: photoOr('collection-women-ring', placeholders.collectionNarrow),
     products: ['elowen-signet-ring', 'odette-diamond-band', 'wren-open-ring', 'maisie-twist-ring'],
   },
   {
@@ -29,7 +30,7 @@ export const collections = [
     label: 'Bracelets',
     title: "Women's Bracelets",
     tileLabel: 'Bracelets',
-    image: placeholders.collectionHalf,
+    image: photoOr('collection-women-bracelet', placeholders.collectionHalf),
     products: ['tessa-tennis-bracelet', 'vivian-charm-bracelet'],
   },
   {
@@ -38,7 +39,7 @@ export const collections = [
     label: 'Earrings',
     title: "Women's Earrings",
     tileLabel: 'Earrings',
-    image: placeholders.collectionHalf,
+    image: photoOr('collection-women-earring', placeholders.collectionHalf),
     products: ['anselm-drop-earrings', 'corvin-hoop-earrings'],
   },
   {
@@ -47,7 +48,7 @@ export const collections = [
     label: 'Best Sellers',
     title: "Women's Bestsellers",
     tileLabel: 'Best Sellers',
-    image: placeholders.collectionWide,
+    image: photoOr('collection-women-bestsellers', placeholders.collectionWide),
     products: ['marlow-line-necklace', 'tessa-tennis-bracelet'],
   },
   {
@@ -56,7 +57,7 @@ export const collections = [
     label: 'New Arrivals',
     title: "Women's New Arrivals",
     tileLabel: 'New Arrivals',
-    image: placeholders.collectionNarrow,
+    image: photoOr('collection-women-newarrivals', placeholders.collectionNarrow),
     products: ['linnea-crystal-necklace', 'maisie-twist-ring'],
   },
   {
@@ -65,7 +66,7 @@ export const collections = [
     label: 'On Sale',
     title: "Women's Exclusive Sale",
     tileLabel: 'On Sale',
-    image: placeholders.collectionFull,
+    image: photoOr('collection-women-onsale', placeholders.collectionFull),
     products: ['corin-heart-necklace', 'odette-diamond-band'],
   },
   {
@@ -74,7 +75,7 @@ export const collections = [
     label: 'Chains',
     title: "Men's Chains",
     tileLabel: 'Chains',
-    image: placeholders.collectionWide,
+    image: photoOr('collection-men-chain', placeholders.collectionWide),
     products: ['rhett-cuban-chain', 'sutter-box-chain', 'lyle-figaro-chain'],
   },
   {
@@ -83,7 +84,7 @@ export const collections = [
     label: 'Rings',
     title: "Men's Rings",
     tileLabel: 'Rings',
-    image: placeholders.collectionNarrow,
+    image: photoOr('collection-men-ring', placeholders.collectionNarrow),
     products: ['pia-signet-ring', 'calla-brushed-ring'],
   },
   {
@@ -92,7 +93,7 @@ export const collections = [
     label: 'Bracelets',
     title: "Men's Bracelets",
     tileLabel: 'Bracelets',
-    image: placeholders.collectionHalf,
+    image: photoOr('collection-men-bracelet', placeholders.collectionHalf),
     products: ['fenn-curb-bracelet', 'teague-leather-bracelet', 'quill-link-bracelet', 'soren-rope-bracelet'],
   },
   {
@@ -101,7 +102,7 @@ export const collections = [
     label: 'Earrings',
     title: "Men's Earrings",
     tileLabel: 'Earrings',
-    image: placeholders.collectionHalf,
+    image: photoOr('collection-men-earring', placeholders.collectionHalf),
     products: ['jasper-cross-hoop', 'beckett-black-stud'],
   },
   {
@@ -110,7 +111,7 @@ export const collections = [
     label: 'Best Sellers',
     title: "Men's Bestsellers",
     tileLabel: 'Best Sellers',
-    image: placeholders.collectionNarrow,
+    image: photoOr('collection-men-bestsellers', placeholders.collectionNarrow),
     products: ['rhett-cuban-chain', 'fenn-curb-bracelet'],
   },
   {
@@ -119,7 +120,7 @@ export const collections = [
     label: 'New Arrivals',
     title: "Men's New Arrivals",
     tileLabel: 'New Arrivals',
-    image: placeholders.collectionWide,
+    image: photoOr('collection-men-newarrivals', placeholders.collectionWide),
     products: ['soren-rope-bracelet', 'beckett-black-stud'],
   },
   {
@@ -128,7 +129,7 @@ export const collections = [
     label: 'On Sale',
     title: 'Men Exclusive Sale',
     tileLabel: 'On Sale',
-    image: placeholders.collectionFull,
+    image: photoOr('collection-men-onsale', placeholders.collectionFull),
     products: [], // reference shows "This Collection Is Coming Soon"
   },
 ]

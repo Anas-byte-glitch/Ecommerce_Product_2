@@ -23,7 +23,7 @@ export default function OrderSummary({ summary, title = 'Order summary', classNa
           {summary.lines.map((line) => (
             <li key={line.slug} className="flex items-center gap-4">
               <div className="relative size-16 shrink-0 overflow-hidden bg-mist">
-                <Image src={line.product.images[0]} alt="" className="absolute inset-0 size-full object-cover" />
+                <Image src={line.product.images[0]} alt="" sizes="120px" className="absolute inset-0 size-full object-cover" />
               </div>
               <div className="flex min-w-0 flex-1 flex-col gap-1">
                 <p className="text-ink type-h6">{line.product.name}</p>
