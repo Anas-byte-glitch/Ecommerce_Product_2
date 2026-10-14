@@ -19,7 +19,6 @@ import newsletterWide from './newsletter-wide.svg'
 import promoTall from './promo-tall.svg'
 import genderWomen from './gender-women.svg'
 import genderMen from './gender-men.svg'
-import portrait from './portrait.svg'
 import galleryPortrait from './gallery-portrait.svg'
 import galleryWide from './gallery-wide.svg'
 import galleryWideAlt from './gallery-wide-alt.svg'
@@ -46,7 +45,6 @@ export const placeholders = {
   promoTall, // 2:3
   genderWomen, // 7:8
   genderMen, // 7:8
-  portrait, // 5:6, featured customers
   // Product page gallery (reference image ratios: 1:1, 4:5, 16:9)
   galleryPortrait,
   galleryWide,

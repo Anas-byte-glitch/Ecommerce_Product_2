@@ -1,6 +1,6 @@
 # Image shopping list (download by hand)
 
-The build environment cannot reach Unsplash, Pexels or Pixabay (see docs/IMAGE_SLOTS.md and the 9B-1 report), so the files have to be downloaded manually. **144 files = 143 photos + 1 video.** Save every file with the **exact filename** shown, into the git-ignored folder `assets-incoming/` at the project root.
+The build environment cannot reach Unsplash, Pexels or Pixabay (see docs/IMAGE_SLOTS.md and the 9B-1 report), so the files have to be downloaded manually. **138 files = 137 photos + 1 video** (customer photos were replaced by initials avatars). Save every file with the **exact filename** shown, into the git-ignored folder `assets-incoming/` at the project root.
 
 ## Network test (2026-10-14, build environment)
 
@@ -118,9 +118,9 @@ Tips: use the search terms in English; "4:5" means portrait (taller than wide); 
 | 32 | `product-25-alt` | earrings jewelry close up black angle | portrait | 1600×2000 | Beckett Black Stud from a different angle or a closer crop on the same dark slate look, so the hover swap feels like turning the piece around. | `assets-incoming/product-25-alt.jpg` |
 
 
-## Priority 3 — product detail + lifestyle shots, about, contact, journals, customers, call-to-action banners
+## Priority 3 — product detail + lifestyle shots, about, contact, journals, call-to-action banners
 
-68 files.
+62 files.
 
 | # | Slot id | Search terms | Orientation | Min size | Art direction | Save as |
 |---|---|---|---|---|---|---|
@@ -136,12 +136,6 @@ Tips: use the search terms in English; "4:5" means portrait (taller than wide); 
 | 10 | `journal-keeping-your-jewelry-bright` | jewelry care cloth | landscape | 1000×930 | Care guide: a soft cloth, a small dish of rings and a dry brush on a bathroom shelf or marble, clean light. | `assets-incoming/journal-keeping-your-jewelry-bright.jpg` |
 | 11 | `journal-how-to-build-a-collection-that-lasts` | jewelry tray essentials | landscape | 1000×930 | A tidy jewelry tray with five essentials (pendant, hoops, studs, slim bracelet, ring) neatly spaced, top-down. | `assets-incoming/journal-how-to-build-a-collection-that-lasts.jpg` |
 | 12 | `journal-why-simple-shapes-stay-modern` | jewelry minimal still life | landscape | 1000×930 | Minimal still life: one smooth hoop and one plain band on a curved plaster form, strong shadow, calm palette. | `assets-incoming/journal-why-simple-shapes-stay-modern.jpg` |
-| 13 | `customer-01` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a wrist with a link bracelet on a linen shirt cuff. Natural light, slightly casual. | `assets-incoming/customer-01.jpg` |
-| 14 | `customer-02` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a hand wearing a signet ring resting on a denim knee. Natural light, slightly casual. | `assets-incoming/customer-02.jpg` |
-| 15 | `customer-03` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a neckline with a bar necklace on a white tee, cropped below the chin. Natural light, slightly casual. | `assets-incoming/customer-03.jpg` |
-| 16 | `customer-04` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a pearl pendant on a dark knit, cropped below the chin. Natural light, slightly casual. | `assets-incoming/customer-04.jpg` |
-| 17 | `customer-05` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a hand holding a pair of hoop earrings against a plain wall. Natural light, slightly casual. | `assets-incoming/customer-05.jpg` |
-| 18 | `customer-06` | wrist hand jewelry casual | portrait | 600×720 | Customer-style photo, no face: a hand with an open ring on a pale sleeve. Natural light, slightly casual. | `assets-incoming/customer-06.jpg` |
 | 19 | `product-01-detail` | necklace detail macro polished | portrait | 1600×2000 | Macro detail of a polished silver necklace: the clasp, the chain links or the surface finish, shallow depth of field, same colour palette as the main shot. | `assets-incoming/product-01-detail.jpg` |
 | 20 | `product-01-lifestyle` | necklace worn hand neck women no face | portrait | 1600×2000 | Marlow Line Necklace worn: on a bare neckline cropped below the chin. Natural light, neutral clothing, no visible logos. | `assets-incoming/product-01-lifestyle.jpg` |
 | 21 | `product-02-detail` | necklace detail macro warm | portrait | 1600×2000 | Macro detail of a warm gold necklace: the clasp, the chain links or the surface finish, shallow depth of field, same colour palette as the main shot. | `assets-incoming/product-02-detail.jpg` |
