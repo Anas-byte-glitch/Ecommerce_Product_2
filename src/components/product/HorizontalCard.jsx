@@ -5,12 +5,18 @@ import Image from '../ui/Image'
 
 // "Perfect match with" row: 160px square image + info (category top, title/price bottom).
 export default function HorizontalCard({ product }) {
-  const [image, hoverImage = image] = product.images
+  const [image, hoverImage] = product.images
   return (
     <Link to={`/product/${product.slug}`} className="group flex h-40 w-full items-start gap-4">
       <div className="relative size-40 shrink-0 overflow-hidden bg-mist">
-        <Image src={image} alt={product.imageAlt} sizes="160px" className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0" />
-        <Image src={hoverImage} alt="" sizes="160px" aria-hidden="true" className="absolute inset-0 z-1 size-full object-cover" />
+        {hoverImage ? (
+          <>
+            <Image src={image} alt={product.imageAlt} sizes="160px" className="absolute inset-0 z-2 size-full object-cover transition-opacity duration-500 ease-card group-hover:opacity-0" />
+            <Image src={hoverImage} alt="" sizes="160px" aria-hidden="true" className="absolute inset-0 z-1 size-full object-cover" />
+          </>
+        ) : (
+          <Image src={image} alt={product.imageAlt} sizes="160px" className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-card group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100" />
+        )}
       </div>
       <div className="flex h-full min-w-0 flex-1 flex-col items-start justify-between p-2">
         <p className="text-ink-soft type-badge">{product.categoryLabel}</p>

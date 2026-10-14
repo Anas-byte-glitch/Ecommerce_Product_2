@@ -41,10 +41,10 @@ export const productTestimonials = {
     { name: "Talia Brennan", quote: "Light, pretty and a good thumb ring too. I bought a second one as a gift. I love it." },
     { name: "Yara Mansour", quote: "I like how simple it is. Sits well with my other thin bands. Highly recommended." },
   ],
-  'tessa-tennis-bracelet': [
-    { name: "Genevieve Hart", quote: "A beautiful line of sparkle that stays secure. Truly lovely." },
-    { name: "Adaeze Obi", quote: "I wore it to a wedding and received so many compliments. It feels delicate yet sturdy." },
-    { name: "Marguerite Vale", quote: "Sits flat on the wrist and catches the light nicely. A lovely gift to myself." },
+  'tessa-scale-cuff': [
+    { name: "Genevieve Hart", quote: "A beautiful texture that catches the light softly. Truly lovely." },
+    { name: "Adaeze Obi", quote: "Easy to slip on and it never pinches. It feels delicate yet sturdy." },
+    { name: "Marguerite Vale", quote: "Sits comfortably on the wrist and looks good stacked. A lovely gift to myself." },
   ],
   'vivian-charm-bracelet': [
     { name: "Poppy Strand", quote: "The little charms are adorable and nothing feels flimsy. My niece loved it. Perfect." },

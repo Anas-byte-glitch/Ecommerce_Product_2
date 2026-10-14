@@ -31,7 +31,7 @@ export const collections = [
     title: "Women's Bracelets",
     tileLabel: 'Bracelets',
     image: photoOr('collection-women-bracelet', placeholders.collectionHalf),
-    products: ['tessa-tennis-bracelet', 'vivian-charm-bracelet'],
+    products: ['tessa-scale-cuff', 'vivian-charm-bracelet'],
   },
   {
     slug: 'women-earring',
@@ -49,7 +49,7 @@ export const collections = [
     title: "Women's Bestsellers",
     tileLabel: 'Best Sellers',
     image: photoOr('collection-women-bestsellers', placeholders.collectionWide),
-    products: ['marlow-line-necklace', 'tessa-tennis-bracelet'],
+    products: ['marlow-line-necklace', 'tessa-scale-cuff'],
   },
   {
     slug: 'women-newarrivals',

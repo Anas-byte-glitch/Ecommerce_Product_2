@@ -9,6 +9,13 @@
   "quality": 76,
   "strictOrientation": false,
   "minKeptAreaWhenOrientationDiffers": 0.3,
+  "excludeSlots": [
+    "collection-men-bestsellers",
+    "product-24-main",
+    "product-18-main",
+    "product-25-main",
+    "product-06-main"
+  ],
   "roundTwoOnly": {
     "product-02-main": [
       "YScm7xyIGjQ"
