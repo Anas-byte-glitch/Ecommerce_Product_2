@@ -244,10 +244,17 @@ Columns: slot id · file name to save · where it appears · aspect · displayed
 5. **Home video.** A Pexels or Pixabay video whose licence allows redistribution inside a template (read the exact terms; if it only allows use, not redistribution of the file, host nothing and fall back). Re-encode to ≤ 2.5 MB, muted, looping, with a poster; no autoplay under `prefers-reduced-motion` or data-saver. If nothing suitable exists, use the still with a gentle CSS motion instead.
 6. **No layout movement:** keep the aspect ratios in the table; run the page-height comparison (DESIGN_NOTES §28 method) after wiring.
 
-## Pixabay Content License (Phase 9B-2) — terms NOT yet recorded
+## Image sources and licenses (Phase 9B-3, checked 2026-10-14)
 
-The license text was not supplied (the request still contained the placeholder), so **no terms are recorded or assumed here**. Until the owner pastes the text and its key terms are added below, treat every Pixabay pick as unverified for commercial resale inside a template. `SOURCES.csv` links `https://pixabay.com/service/license-summary/` as the license page, which has not been read for this file.
+Only sites whose license page I could actually open are used. The pages were read through the fetch tool, which returns a summary rather than verbatim text, so **open each license page once yourself before shipping**.
 
-Key terms (to be filled from the pasted text): usage / commercial use · attribution · redistribution of the file as part of a product · identifiable people / trademarks · prohibited uses.
+| Site | License page (opened?) | Result |
+|---|---|---|
+| **Unsplash** | https://unsplash.com/license (yes) | **Used for all picks.** Terms as read: free to download, copy, modify, distribute and use, **commercial and non-commercial**, no permission needed, **attribution not required** (appreciated; suggested form "Photo by NAME on Unsplash"). **Not allowed:** selling images **without significant modification**; compiling Unsplash images to replicate a similar or competing service. The page text I got says nothing about identifiable people, brands/trademarks or property releases, so those are not covered by what I read: avoid logos, recognisable faces and branded products (a photo of an "Oura smart ring" was rejected for this). "Unsplash+" photos need a paid plan and were skipped. |
+| Pixabay | https://pixabay.com/service/license-summary/ (yes; only a summary, the binding text is /service/terms/, not opened) | **Not used for picks.** As read: free use, modification allowed, attribution optional; **cannot sell or distribute content on a "Standalone" basis** (no creative effort applied); recognisable trademarks/logos/brands cannot be used commercially; no misleading or immoral use, especially recognisable people. Earlier Pixabay search (9B-2) found no consistent jewelry set. |
+| Pexels, Kaboompics, StockSnap, Burst (Shopify), Life of Pix, Reshot | not opened (the host does not resolve from this environment) | **Not used** (license unread = unclear). Candidates for a later round if the hosts are allowed. |
+| Google Images, Pinterest, social media, stock-for-sale sites | n/a | never used |
 
-Search tooling: `scripts/pixabay-search.mjs`, `scripts/pixabay-deep.mjs` (API key from git-ignored `.env.local`, 24 h cache in git-ignored `.cache/`). Picks: `docs/IMAGE_PICKS.md`.
+**Risk to decide before selling the template:** both licenses forbid selling the photos themselves unmodified / on a standalone basis. A sold template that **ships the photo files** inside the package is a grey area for Unsplash ("cannot be sold without significant modification"). Safer options: ship the template with the neutral placeholders and tell buyers to add their own photos, or get written confirmation from Unsplash before bundling. This is a legal question; the pick list does not settle it.
+
+Tooling kept from 9B-2: `scripts/pixabay-search.mjs`, `scripts/pixabay-deep.mjs` (key in git-ignored `.env.local`, cache in git-ignored `.cache/`). Picks: `docs/IMAGE_PICKS.md`; source rows: `SOURCES.csv`.
