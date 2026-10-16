@@ -242,3 +242,8 @@ All free under the Unsplash License (license page read earlier). Download the or
 
 Rejected in this round: the Bulgari-tagged necklace photo (brand), a postcard-with-stamps chain photo (text), a near-black hanging chain (not a product shot).
 Already accepted from earlier rounds and now wired: product-06, 18, 24, 25 (removed from `excludeSlots`).
+
+### Round 4 – outcome
+- `hero-about`: the workbench photo was rejected (visible brand text: MAGNETIC TOOL HOLDER, deli No.78400). Using a copy of `collection-women-onsale` (warm gold flat lay) until a better photo is found.
+- `product-21-main`: accepted by the owner despite a tiny S925 stamp (only legible at full zoom) and a small file for its size.
+- Account links: Gabriel Dalton https://unsplash.com/@photoswithgabe · Natalie Sysko https://unsplash.com/@nattthebat · Cabri Caldwell https://unsplash.com/@minimizethenorganize
