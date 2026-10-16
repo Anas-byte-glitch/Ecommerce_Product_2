@@ -69,6 +69,7 @@ export default function JournalArticle() {
   return (
     <>
       <ImageHero
+        image={journal.image}
         label={`${site.name} Editorial`}
         title={journal.title}
         excerpt={journal.excerpt}

@@ -528,6 +528,29 @@
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": ""
  },
+ "hero-about": {
+  "w": 2000,
+  "h": 1333,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 13302,
+   "800": 29092,
+   "1200": 51682,
+   "1600": 79268,
+   "2000": 105070
+  },
+  "color": "#e8c898",
+  "sizes": "100vw",
+  "sha": "2885095d401d5b9553b2dcf3928e7c4b4c894ed6",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": ""
+ },
  "hero-home": {
   "w": 2000,
   "h": 2000,
@@ -619,6 +642,52 @@
   "sha": "33247371c8e4447890b0bed3190ffc684d679a10",
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": ""
+ },
+ "journal-featured": {
+  "w": 2000,
+  "h": 2667,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 34928,
+   "800": 97818,
+   "1200": 248750,
+   "1600": 480678,
+   "2000": 772292
+  },
+  "color": "#080808",
+  "sizes": "100vw",
+  "sha": "98375afe9a47ef7287e0aba12d92a441adde90af",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Fine gold disc necklace worn over a white linen shirt"
+ },
+ "journal-how-to-build-a-collection-that-lasts": {
+  "w": 2000,
+  "h": 2667,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 33046,
+   "800": 72058,
+   "1200": 132052,
+   "1600": 204074,
+   "2000": 278692
+  },
+  "color": "#f8f8f8",
+  "sizes": "100vw",
+  "sha": "4ce282b14282eb18fcc6f672011436c5fc46cdb7",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Stacked bamboo trays holding rings, bracelets and necklaces"
  },
  "journal-keeping-your-jewelry-bright": {
   "w": 2000,
@@ -1057,6 +1126,52 @@
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": "Silver curb chain hanging against a black background"
  },
+ "product-14-main": {
+  "w": 2000,
+  "h": 2800,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 25596,
+   "800": 74256,
+   "1200": 163950,
+   "1600": 278670,
+   "2000": 402396
+  },
+  "color": "#181818",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "b85c0dc7207dbe87624d519c3cb7a9e661e1135a",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Fine silver curb chain lying in a curve on dark wood"
+ },
+ "product-15-main": {
+  "w": 2000,
+  "h": 1333,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 8720,
+   "800": 17670,
+   "1200": 30758,
+   "1600": 45212,
+   "2000": 58456
+  },
+  "color": "#b8b8b8",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "43499a02612372d56c58d15278af6df2fc2428fb",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Silver link chain resting on white fabric"
+ },
  "product-16-main": {
   "w": 2000,
   "h": 3000,
@@ -1171,6 +1286,29 @@
   "sha": "c5826d9a05523eceb6e720a48ac518d185d90e09",
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": "Silver chain bracelet lying on dark charcoal fabric"
+ },
+ "product-21-main": {
+  "w": 2000,
+  "h": 1125,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 2692,
+   "800": 5474,
+   "1200": 9928,
+   "1600": 14668,
+   "2000": 19568
+  },
+  "color": "#c8c8c8",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "47b3331971917065949743d82aceec85b6e2b63f",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Pair of small silver hoop earrings on a light grey background"
  },
  "product-22-main": {
   "w": 2000,

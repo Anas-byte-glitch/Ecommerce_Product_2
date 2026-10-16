@@ -437,6 +437,25 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "hero-about",
+    "file": "assets-source/hero-about.jpg",
+    "originalSize": "6000×4000",
+    "outputs": [
+      "src/assets/photos/hero-about-480.webp",
+      "src/assets/photos/hero-about-800.webp",
+      "src/assets/photos/hero-about-1200.webp",
+      "src/assets/photos/hero-about-1600.webp",
+      "src/assets/photos/hero-about-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-bunch-of-jewelry-laying-on-a-table-eTtaBcm-pPU",
+    "author": "Rotchel Balicao",
+    "authorProfile": "https://unsplash.com/@pppotchiii",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "hero-home",
     "file": "assets-source/hero-home.jpg",
     "originalSize": "3455×3455",
@@ -511,6 +530,44 @@
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "journal-featured",
+    "file": "assets-source/journal-featured.jpg",
+    "originalSize": "2693×3591",
+    "outputs": [
+      "src/assets/photos/journal-featured-480.webp",
+      "src/assets/photos/journal-featured-800.webp",
+      "src/assets/photos/journal-featured-1200.webp",
+      "src/assets/photos/journal-featured-1600.webp",
+      "src/assets/photos/journal-featured-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-person-wearing-a-necklace-vLv310j9m0A",
+    "author": "Natalie Sysko",
+    "authorProfile": "https://unsplash.com/@nattthebat",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-16"
+  },
+  {
+    "slot": "journal-how-to-build-a-collection-that-lasts",
+    "file": "assets-source/journal-how-to-build-a-collection-that-lasts.jpg",
+    "originalSize": "3024×4032",
+    "outputs": [
+      "src/assets/photos/journal-how-to-build-a-collection-that-lasts-480.webp",
+      "src/assets/photos/journal-how-to-build-a-collection-that-lasts-800.webp",
+      "src/assets/photos/journal-how-to-build-a-collection-that-lasts-1200.webp",
+      "src/assets/photos/journal-how-to-build-a-collection-that-lasts-1600.webp",
+      "src/assets/photos/journal-how-to-build-a-collection-that-lasts-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/bamboo-jewelry-trays-with-rings-mVPBVljgshU",
+    "author": "Cabri Caldwell",
+    "authorProfile": "https://unsplash.com/@minimizethenorganize",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-16"
   },
   {
     "slot": "journal-keeping-your-jewelry-bright",
@@ -874,6 +931,44 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "product-14-main",
+    "file": "assets-source/product-14-main.jpg",
+    "originalSize": "4672×6541",
+    "outputs": [
+      "src/assets/photos/product-14-main-480.webp",
+      "src/assets/photos/product-14-main-800.webp",
+      "src/assets/photos/product-14-main-1200.webp",
+      "src/assets/photos/product-14-main-1600.webp",
+      "src/assets/photos/product-14-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-chain-on-a-black-surface-gPAT5kA-xDg",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-16"
+  },
+  {
+    "slot": "product-15-main",
+    "file": "assets-source/product-15-main.jpg",
+    "originalSize": "5184×3456",
+    "outputs": [
+      "src/assets/photos/product-15-main-480.webp",
+      "src/assets/photos/product-15-main-800.webp",
+      "src/assets/photos/product-15-main-1200.webp",
+      "src/assets/photos/product-15-main-1600.webp",
+      "src/assets/photos/product-15-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/silver-chain-link-necklace-on-white-textile-YbLLE8N16h8",
+    "author": "Gabriel Dalton",
+    "authorProfile": "https://unsplash.com/@photoswithgabe",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-16"
+  },
+  {
     "slot": "product-16-main",
     "file": "assets-source/product-16-main.jpg",
     "originalSize": "3648×5472",
@@ -967,6 +1062,25 @@
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-21-main",
+    "file": "assets-source/product-21-main.jpg",
+    "originalSize": "4061×2284",
+    "outputs": [
+      "src/assets/photos/product-21-main-480.webp",
+      "src/assets/photos/product-21-main-800.webp",
+      "src/assets/photos/product-21-main-1200.webp",
+      "src/assets/photos/product-21-main-1600.webp",
+      "src/assets/photos/product-21-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/pair-of-silver-hoop-earrings-on-white-background-06ky0cL_6X0",
+    "author": "Barry A",
+    "authorProfile": "https://unsplash.com/@barryalbert24",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-16"
   },
   {
     "slot": "product-22-main",
