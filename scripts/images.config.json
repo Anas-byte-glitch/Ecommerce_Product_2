@@ -9,12 +9,7 @@
   "quality": 76,
   "strictOrientation": false,
   "minKeptAreaWhenOrientationDiffers": 0.3,
-  "excludeSlots": [
-    "product-24-main",
-    "product-18-main",
-    "product-25-main",
-    "product-06-main"
-  ],
+  "excludeSlots": [],
   "roundTwoOnly": {
     "product-02-main": [
       "YScm7xyIGjQ"
@@ -50,7 +45,7 @@
     "product-20-main": "Silver chain bracelet lying on dark charcoal fabric",
     "product-22-main": "Large halo pendant with a clear centre stone on a silver chain",
     "product-23-main": "Gold bangle set with small orange stones on a stone ledge",
-    "product-24-main": "Black woven bangle on a black background",
+    "product-24-main": "Black woven bangle forming a circle on a black background",
     "product-25-main": "Pair of round crystal stud earrings reflected on a black surface",
     "founder": "Hands working on a ring at a jeweller's bench"
   }

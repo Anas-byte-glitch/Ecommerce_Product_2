@@ -873,6 +873,29 @@
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": "Polished silver curb chain curving across a white background"
  },
+ "product-06-main": {
+  "w": 2000,
+  "h": 1878,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 2962,
+   "800": 6672,
+   "1200": 13116,
+   "1600": 21144,
+   "2000": 29520
+  },
+  "color": "#e8e8e8",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "d20d4f2f2b401af87093464ff38900b5eafc723d",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Brushed silver sculptural ring on a white surface"
+ },
  "product-07-main": {
   "w": 2000,
   "h": 1500,
@@ -1080,6 +1103,29 @@
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": "Perforated silver ring on black textile"
  },
+ "product-18-main": {
+  "w": 2000,
+  "h": 3000,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 5134,
+   "800": 12178,
+   "1200": 25044,
+   "1600": 42492,
+   "2000": 63582
+  },
+  "color": "#080808",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "1416d1e3d3510b683f9a99e750b8ccb460219a11",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Textured silver cuff bracelet on a black background"
+ },
  "product-19-main": {
   "w": 2000,
   "h": 1333,
@@ -1171,6 +1217,52 @@
   "sha": "ab43f75bd05a0a15d531241bba129fa69d139d05",
   "settings": "[[480,800,1200,1600,2000],76]",
   "alt": "Gold bangle set with small orange stones on a stone ledge"
+ },
+ "product-24-main": {
+  "w": 2000,
+  "h": 2800,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 5836,
+   "800": 14212,
+   "1200": 28048,
+   "1600": 45246,
+   "2000": 65334
+  },
+  "color": "#080808",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "e40e3d7d5a569a7b84b3fef716e4f91472a41ef7",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Black woven bangle forming a circle on a black background"
+ },
+ "product-25-main": {
+  "w": 2000,
+  "h": 1337,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600,
+   2000
+  ],
+  "bytes": {
+   "480": 17428,
+   "800": 40164,
+   "1200": 73664,
+   "1600": 116574,
+   "2000": 161458
+  },
+  "color": "#080808",
+  "sizes": "(min-width: 1200px) 448px, (min-width: 810px) 33vw, 50vw",
+  "sha": "2c0d797ed7f5fa3296f6a22da6cf1d492a04d193",
+  "settings": "[[480,800,1200,1600,2000],76]",
+  "alt": "Pair of round crystal stud earrings reflected on a black surface"
  },
  "why-us": {
   "w": 2000,

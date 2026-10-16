@@ -226,3 +226,19 @@ Notes: `collection-men-bestsellers.jpg` overwrites the existing (held-back) file
 - Wired: newsletter, gender-women/men, banner-newarrivals, about-block, cta-to-men, why-us, material-silver/gold/titanium, contact-photo, founder (with alt), collection-men-bestsellers, journal-keeping-your-jewelry-bright, journal-why-simple-shapes-stay-modern.
 - Rejected picks (still SVG placeholders, need new photos): hero-about, journal-featured, journal-how-to-build-a-collection-that-lasts.
 - `cta-to-women` accepted by the owner and wired (the men's page CTA).
+
+## Round 4 – last 7 slots (2026-10-16)
+
+All free under the Unsplash License (license page read earlier). Download the original ("Download free" → Original size) and save under the slot file name in `assets-source/`.
+
+| Slot file | Photo page | Photographer | Size | Notes |
+|---|---|---|---|---|
+| `product-14-main.jpg` | https://unsplash.com/photos/a-silver-chain-on-a-black-surface-gPAT5kA-xDg | COPPERTIST WU | 4672×6541 | Fine curb chain on dark wood, portrait. Dark, like the men's range. |
+| `product-15-main.jpg` | https://unsplash.com/photos/silver-chain-link-necklace-on-white-textile-YbLLE8N16h8 | Gabriel Dalton | 5184×3456 | Silver link chain on white fabric (landscape, crops to 4:5). |
+| `product-21-main.jpg` | https://unsplash.com/photos/pair-of-silver-hoop-earrings-on-white-background-06ky0cL_6X0 | Barry A (@barryalbert24) | 4061×2284 | Two silver huggie hoops on light grey (landscape, crops to 4:5, 1827×2284 kept). |
+| `hero-about.jpg` | https://unsplash.com/photos/a-cluttered-workbench-filled-with-various-crafting-supplies-and-tools-WJlXDnpyobs | YiChuan Li (@liyichuan) | 9504×6336 | Jewellery workbench with parts and tools, no people. Darker than the cream palette but fits the hero fade. |
+| `journal-featured.jpg` | https://unsplash.com/photos/a-close-up-of-a-person-wearing-a-necklace-vLv310j9m0A | Natalie Sysko | 2693×3591 | Fine gold disc necklace on a white shirt, shoulder crop, no face (hair/ear only). |
+| `journal-how-to-build-a-collection-that-lasts.jpg` | https://unsplash.com/photos/bamboo-jewelry-trays-with-rings-mVPBVljgshU | Cabri Caldwell | 3024×4032 | Stacked bamboo trays with rings, bracelets, necklaces (crops to ≈1.08:1). |
+
+Rejected in this round: the Bulgari-tagged necklace photo (brand), a postcard-with-stamps chain photo (text), a near-black hanging chain (not a product shot).
+Already accepted from earlier rounds and now wired: product-06, 18, 24, 25 (removed from `excludeSlots`).
