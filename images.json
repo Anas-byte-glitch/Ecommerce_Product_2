@@ -722,6 +722,25 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "product-06-main",
+    "file": "assets-source/product-06-main.jpg",
+    "originalSize": "3059×2872",
+    "outputs": [
+      "src/assets/photos/product-06-main-480.webp",
+      "src/assets/photos/product-06-main-800.webp",
+      "src/assets/photos/product-06-main-1200.webp",
+      "src/assets/photos/product-06-main-1600.webp",
+      "src/assets/photos/product-06-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-silver-ring-sitting-on-top-of-a-white-surface-9zApi1Ez-3k",
+    "author": "Doris Schmidt",
+    "authorProfile": "https://unsplash.com/@akashaaurum",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "product-07-main",
     "file": "assets-source/product-07-main.jpg",
     "originalSize": "4000×3000",
@@ -893,6 +912,25 @@
     "dateChecked": "2026-10-14"
   },
   {
+    "slot": "product-18-main",
+    "file": "assets-source/product-18-main.jpg",
+    "originalSize": "4338×6507",
+    "outputs": [
+      "src/assets/photos/product-18-main-480.webp",
+      "src/assets/photos/product-18-main-800.webp",
+      "src/assets/photos/product-18-main-1200.webp",
+      "src/assets/photos/product-18-main-1600.webp",
+      "src/assets/photos/product-18-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-close-up-of-a-ring-on-a-black-background-WGd84KPGc5Q",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
     "slot": "product-19-main",
     "file": "assets-source/product-19-main.jpg",
     "originalSize": "6000×4000",
@@ -964,6 +1002,44 @@
     "photoPage": "https://unsplash.com/photos/a-close-up-of-a-gold-ring-on-a-table-WDsohK10HAw",
     "author": "Ruan Richard Rodrigues",
     "authorProfile": "https://unsplash.com/@ricdeoliveira",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-24-main",
+    "file": "assets-source/product-24-main.jpg",
+    "originalSize": "4764×6669",
+    "outputs": [
+      "src/assets/photos/product-24-main-480.webp",
+      "src/assets/photos/product-24-main-800.webp",
+      "src/assets/photos/product-24-main-1200.webp",
+      "src/assets/photos/product-24-main-1600.webp",
+      "src/assets/photos/product-24-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-black-and-white-photo-of-a-rope-eFUsYsKOsgk",
+    "author": "COPPERTIST WU",
+    "authorProfile": "https://unsplash.com/@coppertistwu",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "dateChecked": "2026-10-14"
+  },
+  {
+    "slot": "product-25-main",
+    "file": "assets-source/product-25-main.jpg",
+    "originalSize": "7084×4736",
+    "outputs": [
+      "src/assets/photos/product-25-main-480.webp",
+      "src/assets/photos/product-25-main-800.webp",
+      "src/assets/photos/product-25-main-1200.webp",
+      "src/assets/photos/product-25-main-1600.webp",
+      "src/assets/photos/product-25-main-2000.webp"
+    ],
+    "site": "Unsplash",
+    "photoPage": "https://unsplash.com/photos/a-pair-of-diamond-earrings-on-a-reflective-surface-wTIZBpzHcmU",
+    "author": "Mihail Cioinica",
+    "authorProfile": "https://unsplash.com/@dreamscape_visions",
     "license": "Unsplash License",
     "licenseUrl": "https://unsplash.com/license",
     "dateChecked": "2026-10-14"
